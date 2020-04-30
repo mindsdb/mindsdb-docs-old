@@ -31,6 +31,9 @@ nav:
   - Features:
     - Column metrics: features/ColumnMetrics.md
     - Data sources: features/DataSources.md
+  - Lightwood: 
+    - Installing Lightwood: lightwood/info.md
+    - API: lightwood/API.md
   - Comparisons:
     - Comparison with other Libraries: comparisons/ComparsionWithOtherLibraries.md
     - Comparing MindsDB accuracy: comparisons/AccuracyComparison.md
@@ -46,7 +49,7 @@ nav:
     - Advanced Examples: tutorials/AdvancedExamples.md
     - Advanced Use Cases:
       - High-Tech & Manufacturing:
-        - Predictive Maintenance: PredictiveMaintenance.md
+        - Predictive Maintenance: tutorials/PredictiveMaintenance.md
       - Financial Services:
         - Credit Scoring: tutorials/CreditScoring.md
       - Retail & Online:
@@ -58,4 +61,7 @@ nav:
       - Travel:
         - Hotel Booking Demand: tutorials/HotelBooking.md
       - Telecomunications:
-        - Customer Churn Reduction: tutorials/
+        - Customer Churn Reduction: tutorials/ChurnReduction.md
+  - Contributing:
+    - FAQ: FAQ.md
+    - Inside MindsDB: InsideMindsDB.md
