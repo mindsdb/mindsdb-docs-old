@@ -21,7 +21,6 @@ markdown_extensions:
   - codehilite
   - admonition
 nav:
-  - Home: index.md
   - Getting started:
     - Installing MindsDB: Installing.md
     - Google Colab: GoogleColab.md
@@ -42,4 +41,3 @@ nav:
     - Advanced Examples: tutorials/AdvancedExamples.md
     - Financial Services:
       - Credit Scoring: tutorials/CreditScoring.md
-  - Config: Config.md
