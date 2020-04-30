@@ -36,8 +36,26 @@ nav:
     - Comparing MindsDB accuracy: comparisons/AccuracyComparison.md
   - Integrations:
     - Amazon SageMaker: integrations/AwsSageMaker.md
+    - Bring your own container:
+      - MindsDB container: integrations/MindsDBSageContainer.md
+      - Train and host MindsDB models: integrations/UseMindsDBinSage.md
+      - Train and host MindsDB models using SageMaker SDK: integrations/SageMakerSDK.md
+      - Invoke MindsDB endpoint on SageMaker: integrations/CallSageMakerEndpoint.md
   - Tutorials:
     - Basic Examples: tutorials/BasicExample.md
     - Advanced Examples: tutorials/AdvancedExamples.md
-    - Financial Services:
-      - Credit Scoring: tutorials/CreditScoring.md
+    - Advanced Use Cases:
+      - High-Tech & Manufacturing:
+        - Predictive Maintenance: PredictiveMaintenance.md
+      - Financial Services:
+        - Credit Scoring: tutorials/CreditScoring.md
+      - Retail & Online:
+        - Custiner Lifetime Value Optimization: tutorials/CustomerLifetimeValue.md
+        - Fraud Detection: tutorials/FraudDetection.md
+      - Health Care:
+        - Patient Health: tutorials/PatientHealthOutcomes.md
+        - Medical Diagnosis: tutorials/MedicalDiagnosis.md
+      - Travel:
+        - Hotel Booking Demand: tutorials/HotelBooking.md
+      - Telecomunications:
+        - Customer Churn Reduction: tutorials/
