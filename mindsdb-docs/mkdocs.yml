@@ -1,1 +1,26 @@
-site_name: My Docs
+site_name: MindsDB
+repo_name: 'mindsdb/mindsdb'
+repo_url: 'https://github.com/mindsdb/mindsdb'
+theme:
+  name: 'material'
+  logo: 'assets/mdb_logo.png'
+  palette:
+    primary: '#00b06d'
+    accent: '#00b06d'
+extra:
+  search:
+    language: 'en'
+  social:
+    - type: 'github'
+      link: 'https://github.com/mindsdb/mindsdb'
+    - type: 'twitter'
+      link: 'https://twitter.com/mindsdb'
+    - type: 'link'
+      link: 'https://www.mindsdb.com'
+markdown_extensions:
+  - codehilite
+  - admonition
+
+nav:
+  - Home: index.md
+  - Config: Config.md
