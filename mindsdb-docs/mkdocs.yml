@@ -4,8 +4,9 @@ repo_url: 'https://github.com/mindsdb/mindsdb'
 theme:
   name: 'material'
   palette:
-    primary: '#00b06d'
-    accent: '#00b06d'
+    primary: 'green'
+    accent: 'green'
+  logo: assets/mdb_logo_w.svg
 plugins:
     - search:
         lang: 'en'
@@ -21,4 +22,24 @@ markdown_extensions:
   - admonition
 nav:
   - Home: index.md
+  - Getting started:
+    - Installing MindsDB: Installing.md
+    - Google Colab: GoogleColab.md
+    - Running on Jupyter Notebook: JupyterNotebook.md
+  - Configuration:
+    - Predictor interface: PredictorInterface.md
+    - Configuration Settings: Config.md
+  - Features:
+    - Column metrics: features/ColumnMetrics.md
+    - Data sources: features/DataSources.md
+  - Comparisons:
+    - Comparison with other Libraries: comparisons/ComparsionWithOtherLibraries.md
+    - Comparing MindsDB accuracy: comparisons/AccuracyComparison.md
+  - Integrations:
+    - Amazon SageMaker: integrations/AwsSageMaker.md
+  - Tutorials:
+    - Basic Examples: tutorials/BasicExample.md
+    - Advanced Examples: tutorials/AdvancedExamples.md
+    - Financial Services:
+      - Credit Scoring: tutorials/CreditScoring.md
   - Config: Config.md
