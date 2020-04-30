@@ -20,7 +20,6 @@ extra:
 markdown_extensions:
   - codehilite
   - admonition
-
 nav:
   - Home: index.md
   - Config: Config.md
