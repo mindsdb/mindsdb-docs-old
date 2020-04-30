@@ -8,4 +8,4 @@ on SageMaker and get the predictions. The code can be found inside the [mindsdb-
 
 ## Training and Inference flow on SageMaker
 
-![MindsDB-SageMaker](assets/mdb-sage-flow.png)
+![MindsDB-SageMaker](/assets/mdb-sage-flow.png)
