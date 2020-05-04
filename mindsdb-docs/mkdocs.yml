@@ -1,8 +1,9 @@
-site_name: MindsDB
+site_name: MindsDB Documentation
 repo_name: 'mindsdb/mindsdb'
 repo_url: 'https://github.com/mindsdb/mindsdb'
 theme:
   name: 'material'
+  custom_dir: overrides
   palette:
     primary: 'green'
     accent: 'green'
