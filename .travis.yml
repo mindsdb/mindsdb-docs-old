@@ -15,5 +15,5 @@ deploy:
     github_token: $GITHUB_TOKEN
     local_dir: site
     on:
-      branch: master
+      branch: gh-pages
       condition: $DEPLOYMENT_ENV = "true"
