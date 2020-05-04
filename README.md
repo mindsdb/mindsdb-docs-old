@@ -1,5 +1,6 @@
 # MindsDB Documentation
-
+   <a href="https://community.mindsdb.com/"><img src="https://img.shields.io/discourse/posts?server=https%3A%2F%2Fcommunity.mindsdb.com%2F" alt="MindsDB Community"></a>
+  <img alt="Website" src="https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fdocs.mindsdb.com%2F">
 
 ## Running the docs locally
 
@@ -46,7 +47,8 @@ overrides
 └─ main.html
 .mkdocs.yml                            # Mkdocs configuration file
 ```
-## How can you help us?
+## How can you help us? [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/mindsdb/mindsdb-docs/issues)
+
 * Report a bug
 * Improve documentation
 * Propose new feature
