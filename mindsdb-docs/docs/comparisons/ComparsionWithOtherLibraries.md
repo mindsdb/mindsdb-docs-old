@@ -30,31 +30,6 @@ We will look at doing this with Sklearn, Tensorflow, Ludwig and Mindsdb.
 * Tensorflow is the state of the art deep learning model building library from google.
 * Ludwig is a library from Uber that aims to help people build machine learning models without knowledge of machine learning (similar to mindsdb)
 
-### Preprocessing
-
-*Note: This step is only required for Sklearn and Tensorflow, for Ludwig and mindsdb we will be using the raw csv file*
-
-When working with data we first have to see what type of data we are dealing with, in our case we have some numerical, categorical data. We first need to convert categorical data columns into numerical data.
-
-```python
-# loading data
-import pandas as pd
-data = pd.read_csv("home_rentals.csv")
-
-# dealing with categorical values
-data=pd.get_dummies(data, prefix=['condition','type'], columns=['location','neighborhood'])
-
-# splitting data into train and test set
-from sklearn.model_selection import train_test_split
-train_data, test_data = train_test_split(data, test_size=0.2)
-
-# seperating the input and output
-train_label = train_data['rental_price']
-test_label = test_data['rental_price']
-del train_data['rental_price']
-del test_data['rental_price']
-```
-
 ### Building the model
 
 Now we will build the actual models to train on the training dataset and run some predictions on the testing dataset. For the purpose of this example, we'll build a simple linear regression with both Tensorflow and Sklearn, in order to keep the code to a minimum.
