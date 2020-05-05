@@ -62,6 +62,8 @@ Now we will build the actual models to train on the training dataset and run som
 #### Tensorflow
 
 ```python
+import tensorflow as tf
+
 # placeholders for input data and label
 X = tf.placeholder('float')
 Y = tf.placeholder('float')
@@ -69,8 +71,8 @@ Y = tf.placeholder('float')
 W = tf.Variable(tf.random.normal(), name = "weight")
 b = tf.Variable(tf.random.normal(), name = "bias")
 
-learning_rate = #your learning rate
-epochs = # no of times data should be fed
+learning_rate = 0.01 #your learning rate
+epochs = 100 # no of times data should be fed
 
 y_pred = tf.add(tf.multiply(X, W), b)
 cost = tf.reduce_sum(tf.pow(y_pred-Y, 2)) / (2 * len(train_data))
