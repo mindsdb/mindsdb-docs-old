@@ -117,10 +117,12 @@ print(y_pred)
 #### Ludwig
 
 ```python
-from ludwig import LudwigModel
+from ludwig.api import LudwigModel
+
 import pandas as pd
 
-df = pd.read_csv("home_rentals.csv") # reading data
+# read data
+train_dataf = pd.read_csv("train.csv") 
 # defining the data
 model_definition = {
     'input_features':[
@@ -138,7 +140,15 @@ model_definition = {
 }
 # creating and training the model
 model = LudwigModel(model_definition)
-train_stats = model.train(data_df=df)
+train_stats = model.train(data_df=train_dataf)
+
+# read test data
+test_dataf = pd.read_csv("test.csv")
+
+#predict data
+predictions = model.predict(data_df=test_dataf)
+
+print(predictions)
 model.close()
 ```
 
