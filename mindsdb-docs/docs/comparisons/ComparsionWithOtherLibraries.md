@@ -190,19 +190,18 @@ model.close()
 ### Mindsdb
 
 ```python
-import mindsdb
+from mindsdb import Predictor
 
-# Instantiate a mindsdb Predictor
-mdb = mindsdb.Predictor(name='real_estate_model')
+# tell mindsDB what we want to learn and from what data
+Predictor(name='home_rentals_price').learn(
+    to_predict='rental_price', # the column we want to learn to predict given all the data in the file
+    from_data='train.csv' # the path to the file where we can learn from, (note: can be url)
+)
+# use the model to make predictions
+result = Predictor(name='home_rentals_price').predict(when={'number_of_rooms': 2, 'initial_price': 2000, 'number_of_bathrooms':1, 'sqft': 1190})
 
-# We tell the Predictor what column or key we want to learn and from what data
-mdb.learn(from_data="home_rentals.csv" , to_predict='rental_price')
-
-mdb = mindsdb.Predictor(name='real_estate_model')
-
-# Predict a single data point
-result = mdb.predict(when={'number_of_rooms': 2,'number_of_bathrooms':1, 'sqft': 1190})
-print('The predicted price is ${price} with {conf} confidence'.format(price=result[0]['rental_price'], conf=result[0]['rental_price_confidence']))
+# now print the results
+print('The predicted price is between ${price} with {conf} confidence'.format(price=result[0].explanation['rental_price']['confidence_interval'], conf=result[0].explanation['rental_price']['confidence']))
 ```
 
-Generally speaking, Mindsdb differentiates itself from other libraries by its **simplicity**. Lastly, Mindsdb scout provides you with an easy way to visiualize more insights about the model, this can also be done by calling `mdb.get_model_data('model_name')`, but it's easier to use Mindsdb-Scout to visualize the data, rather than looking at the raw json.
+Generally speaking, Mindsdb differentiates itself from other libraries by its **simplicity**. Lastly, [Mindsdb Scout](https://www.mindsdb.com/product) provides you with an easy way to visiualize more insights about the model. This can also be done by calling `mdb.get_model_data('model_name')`, but it's easier to use Mindsdb Scout to visualize the data, rather than looking at the raw json.
