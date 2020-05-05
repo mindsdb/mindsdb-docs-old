@@ -20,7 +20,7 @@ Mindsdb can read data from csv, json, excel, file urls, s3 objects , dataframes 
 
 ## Code Samples
 
-We are going to use **[home_rentals.csv](https://s3.eu-west-2.amazonaws.com/mindsdb-example-data/home_rentals.csv)** dataset for comparison purpose.
+We are going to use **[home_rentals.csv](https://github.com/mindsdb/mindsdb-examples/tree/master/benchmarks/home_rentals)** dataset for comparison purpose. Inside the `dataset` dir, you can find the dataset split into `train` and `test` data.
 
 Our goal is to predict the rental_price of the house given the information we have in `home_rental.csv`.
 
@@ -110,7 +110,7 @@ from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 
 #load data
-data = pd.read_csv("train.csv")
+data = pd.read_csv("home_rentals.csv")
 #target value
 labels = data['rental_price']
 train1 = data.drop(['rental_price'],axis=1)
