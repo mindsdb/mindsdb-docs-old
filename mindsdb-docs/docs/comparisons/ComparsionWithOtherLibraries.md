@@ -101,17 +101,50 @@ print(predictions)
 #### Sklearn
 
 ```python
-import sklearn
-from sklearn.linear_model import LinearRegression
+from sklearn import datasets, linear_model
+from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+import pandas as pd
 
-regressor = LinearRegression()
+#load data
+data = pd.read_csv("train.csv")
+#target value
+labels = data['rental_price']
+train1 = data.drop(['rental_price'],axis=1)
 
-# feed the training data and label to train the model
-regressor.fit(train_data, train_label)
+#train test split
+x_train , x_test , y_train , y_test = train_test_split(train1 , labels)
 
-# get predictions for the test data
-y_pred = regressor.predict(test_data)
-print(y_pred)
+# label encode values
+le = LabelEncoder()
+le.fit(x_train['location'].astype(str))
+x_train['location'] = le.transform(x_train['location'].astype(str))
+x_test['location'] = le.transform(x_test['location'].astype(str))
+
+le.fit(x_train['neighborhood'].astype(str))
+x_train['neighborhood'] = le.transform(x_train['neighborhood'].astype(str))
+x_test['neighborhood'] = le.transform(x_test['neighborhood'].astype(str))
+
+# Create linear regression object
+regr = linear_model.LinearRegression()
+
+# Train the model using the training sets
+regr.fit(x_train, y_train)
+
+# Make predictions using the testing set
+prediction = regr.predict(x_test)
+
+# The coefficients
+print('Prediction ', prediction)
+print('Coefficients: \n', regr.coef_)
+
+# The mean squared error
+print('Mean squared error: %.2f'
+      % mean_squared_error(y_test, prediction))
+# The coefficient of determination: 1 is perfect prediction
+print('Coefficient of determination: %.2f'
+      % r2_score(y_test, prediction))
 ```
 
 #### Ludwig
