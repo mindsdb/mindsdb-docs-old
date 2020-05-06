@@ -72,7 +72,7 @@ You can help in the following ways:
  * If you know python, you can also help us debug open issues. Issues labels with the `good first issue` tag should be [the easiest to start with](https://github.com/mindsdb/mindsdb/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
  * You can help us with documentation and examples.
  * Tell your friends, write a blog post about MindsDB.
- * Join our team, we are growing fast so[we should have a few open positions](https://angel.co/mindsdb).
+ * Join our team, we are growing fast so [we should have a few open positions](https://career.mindsdb.com/).
 
 ### Why is it called MindsDB?
 
