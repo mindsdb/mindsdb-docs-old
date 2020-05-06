@@ -34,13 +34,13 @@ pip install mindsdb
 
 2. Try manually installing pytorch following the simple instructions on their official website: https://pytorch.org/get-started/locally/
 
-3. If you are using linux install `tkinter` from your package manager in certain situations.
+3. If you are using Linux install `tkinter` from your package manager in certain situations.
 
 - Ubuntu/Debian: `sudo apt-get install python3-tk tk`
 - Fedora: `sudo dnf -y install python3-tkinter`
 - Arch: `sudo pacman -S tk`
 
-4. If you are using windows, but are not using Conda, try installing conda and running the installation from the **anaconda prompt**.
+4. If you are using Windows, but are not using Anacond or Conda, try installing one of them and running the installation from the **anaconda prompt**.
 
 5. If you've previously installed mindsdb and are having issues upgrading to a new version, try installing with the command: `pip install mindsdb --upgrade`, if that still fails, try: `pip install mindsdb --no-cache-dir --force-reinstall`.
 
