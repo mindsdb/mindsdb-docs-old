@@ -44,7 +44,7 @@ tenureNumber of months the customer has stayed with the company
 ```python
 import mindsdb
 import pandas as pd
-from sklearn.metrics import balanced_accuracy_score
+from sklearn.metrics import accuracy_score
 
 
 def run():
@@ -60,18 +60,20 @@ def run():
     predictions = mdb.predict(when_data='dataset/test.csv',
                               unstable_parameters_dict={'always_use_model_predictions': True})
 
-    results = [str(x['Churn']) for x in predictions]
-    real = list(map(str, list(test_df['Churn'])))
+    predicted_val = [x.explanation['Churn']['predicted_value'] for x in predictions]
 
-    accuracy = balanced_accuracy_score(real, results)
+    real_val = list(map(str, list(test_df['Churn'])))
+
+    accuracy = accuracy_score(real_val, predicted_val)
 
     #show additional info for each transaction row
     additional_info = [x.explanation for x in predictions]
+
     return {
         'accuracy': accuracy,
-        'accuracy_function': 'balanced_accuracy_score',
+        'accuracy_function': 'accuracy_score',
         'backend': backend,
-        'additinal_indfo': additional_info
+        'prediction_per_row': additional_info
     }
 
 
