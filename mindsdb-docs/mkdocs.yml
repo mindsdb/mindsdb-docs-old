@@ -26,7 +26,7 @@ nav:
     - Installing MindsDB: Installing.md
     - Google Colab: GoogleColab.md
     - Running on Jupyter Notebook: JupyterNotebook.md
-  - Tutorials: tutorials/BasicExample.md
+  - Tutorials:
     - Basic Examples: tutorials/BasicExample.md
     - Advanced Examples: tutorials/AdvancedExamples.md
     - Advanced Use Cases:
