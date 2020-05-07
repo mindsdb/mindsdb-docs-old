@@ -16,16 +16,16 @@ The German Credit dataset is a publically available from the [UCI Machine Learni
 
 <details>
   <summary>Click to expand Features Informations:</summary>
-  
-* Attribute 1: (qualitative)
-   * Status of existing checking account
-   *  A11 : ... < 0 DM
-   *  A12 : 0 <= ... < 200 DM
-   *  A13 : ... >= 200 DM / salary assignments for at least 1 year
-   *  A14 : no checking account
 
+```
+* Attribute 1: (qualitative)
+    * Status of existing checking account
+    *  A11 : ... < 0 DM
+    *  A12 : 0 <= ... < 200 DM
+    *  A13 : ... >= 200 DM / salary assignments for at least 1 year
+    *  A14 : no checking account
 * Attribute 2: (numerical)
-  * Duration in month
+    * Duration in month
 
 * Attribute 3: (qualitative)
     * Credit history
@@ -134,6 +134,7 @@ The German Credit dataset is a publically available from the [UCI Machine Learni
     * A201 : yes
     * A202 : no
 
+```
 
 </details>
 
@@ -151,21 +152,24 @@ def run(sample=False):
 
     mdb.learn(to_predict='class',from_data='processed_data/train.csv',backend=backend)
 
-    predictions = mdb.predict(when_data='processed_data/test.csv', use_gpu=True)
+    predictions = mdb.predict(when_data='processed_data/test.csv')
 
-    predicted_class = [x['class'] for x in predictions]
-    real_class = list(pd.read_csv('processed_data/test.csv')['class'])
+    predicted_val = [x.explanation['class']['predicted_value'] for x in predictions]
+    real_val = list(pd.read_csv('processed_data/test.csv')['class'])
 
-    accuracy = balanced_accuracy_score(real_class, predicted_class)
-    print(f'Balacned accuracy score of {accuracy}')
+    accuracy = balanced_accuracy_score(real_val, predicted_val)
 
-    cm = confusion_matrix(real_class, predicted_class)
-
+    cm = confusion_matrix(real_val, predicted_val)
     print(cm)
+
+    #show additional info for each transaction row
+    additional_info = [x.explanation for x in predictions]
+
     return {
-        'accuracy': accuracy
-        ,'accuracy_function': 'balanced_accuracy_score'
-        ,'backend': backend
+        'accuracy': accuracy,
+        'accuracy_function': 'balanced_accuracy_score',
+        'backend': backend,
+        'single_row_predictions': additional_info
     }
 
 
