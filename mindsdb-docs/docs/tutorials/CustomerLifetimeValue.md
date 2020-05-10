@@ -32,7 +32,7 @@ predictor.learn(from_data='train.tsv', to_predict=['sentiment'])
 accuracy_data = predictions.test('test.tsv', accuracy_score)
 
 accuracy_pct = accuracy_data['sentiment_accuracy'] * 100
-print(f'Accuracy of {acc}% !')
+print(f'Accuracy of {accuracy_pct}% !')
 ```
 
 ## Mindsdb accuracy
