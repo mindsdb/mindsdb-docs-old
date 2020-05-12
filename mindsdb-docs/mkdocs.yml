@@ -27,9 +27,9 @@ nav:
     - Google Colab: GoogleColab.md
     - Running on Jupyter Notebook: JupyterNotebook.md
   - Tutorials:
-    - Basic Examples: tutorials/BasicExample.md
-    - Advanced Examples: tutorials/AdvancedExamples.md
-    - Advanced Use Cases:
+    - Starter Example: tutorials/BasicExample.md
+    - Predictor interface: PredictorInterface.md
+    - Use Cases:
       - High-Tech & Manufacturing:
         - Predictive Maintenance: tutorials/PredictiveMaintenance.md
       - Financial Services:
@@ -43,16 +43,14 @@ nav:
       - Travel:
         - Hotel Booking Demand: tutorials/HotelBooking.md
       - Telecomunications:
-        - Customer Churn Reduction: tutorials/ChurnReduction.md
-  - Configuration:
-    - Predictor interface: PredictorInterface.md
-    - Configuration Settings: Config.md
-  - Features:
-    - Column metrics: features/ColumnMetrics.md
+        - Customer Churn Reduction: tutorials/ChurnReduction.md        
+    - Advanced Data types: tutorials/AdvancedExamples.md 
     - Data sources: features/DataSources.md
-  - Lightwood: 
-    - Installing Lightwood: lightwood/info.md
-    - API: lightwood/API.md
+    - Configuration Settings: Config.md
+    - Column metrics: features/ColumnMetrics.md
+  - Custom model building: 
+    - Introduction to Lightwood: lightwood/info.md
+    - Predictor API: lightwood/API.md
   - Comparisons:
     - Comparison with other Libraries: comparisons/ComparsionWithOtherLibraries.md
     - Comparing MindsDB accuracy: comparisons/AccuracyComparison.md
