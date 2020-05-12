@@ -16,7 +16,7 @@ We have created a few tutorials that will help you to successfully install and u
 
 ## Overview of MindsDB Scout
 
-The MindsDB Scout interface is divided into 4 sections.
+The MindsDB Scout interface is divided into 4 dashboards.
 
 * [Connection](/scout/Connection)
 * [Datasources](/scout/Datasources)

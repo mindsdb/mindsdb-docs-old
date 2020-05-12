@@ -1,6 +1,6 @@
 # Connection
 
-In the connection section, you can connect the MindsDB Scout to MindsDB Server. There are 3 `Where to Run` available options to choose from.
+In the connection dashboard, you can connect the MindsDB Scout to MindsDB Server. There are 3 `Where to Run` available options to choose from.
 
 ## Locally 
 
