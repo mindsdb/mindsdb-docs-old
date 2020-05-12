@@ -51,6 +51,16 @@ nav:
   - Custom model building: 
     - Introduction to Lightwood: lightwood/info.md
     - Predictor API: lightwood/API.md
+  - Explainability:
+    - MindsDB Scout: 
+      - Introduction: scout/Introduction.md
+      - Connection: scout/Connection.md
+      - Datasources: scout/Datasources.md
+      - Predictors: scout/Predictors.md
+      - Query: scout/Query.md
+  - MindsDB Server:
+    - Getting Started: server/InstallServer.md
+    - API Docs: server/ApiServer.md
   - Comparisons:
     - Comparison with other Libraries: comparisons/ComparsionWithOtherLibraries.md
     - Comparing MindsDB accuracy: comparisons/AccuracyComparison.md
