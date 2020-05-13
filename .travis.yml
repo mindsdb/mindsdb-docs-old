@@ -6,7 +6,7 @@ install:
 before_script:
   - cd mindsdb-docs
 #build docs  
-scripts: mkdocs build --verbose --clean --strict 
+scripts: mkdocs build --verbose --clean 
 # deploy to github pages
 deploy:
     provider: pages
