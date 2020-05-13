@@ -8,6 +8,8 @@ before_script:
 #build docs  
 scripts: mkdocs build --verbose --clean 
 # deploy to github pages
+before_script:
+  - cd mindsdb-docs
 deploy:
     provider: pages
     skip_cleanup: true
