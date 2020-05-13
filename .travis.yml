@@ -1,13 +1,12 @@
+
 language: python
 python: 3.7
 install:
   - pip install mkdocs mkdocs-material pymdown-extensions pygments
-scripts: echo "publish docs"
-#build docs
-before_deploy:
+before_script:
   - cd mindsdb-docs
-  - mkdocs build --verbose --clean --strict
- 
+#build docs  
+scripts: mkdocs build --verbose --clean 
 # deploy to github pages
 deploy:
     provider: pages
