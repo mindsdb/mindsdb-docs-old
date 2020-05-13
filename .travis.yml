@@ -1,9 +1,18 @@
+
 language: python
 python: 3.7
 install:
   - pip install mkdocs mkdocs-material pymdown-extensions pygments
-#build docs
 before_script:
   - cd mindsdb-docs
-scripts: mkdocs gh-deploy
-
+#build docs  
+scripts: mkdocs build --verbose --clean --strict 
+# deploy to github pages
+deploy:
+    provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: site
+    on:
+      branch: master
+      condition: $DEPLOYMENT_ENV = "true"
