@@ -1,6 +1,13 @@
 # Predictors
 
-The Predictor, in MindsDB’s words, means the machine learning model. In this dashboard, you will train the models from the Datasources. The available options are to Upload the already existing model or Train a New one.
+The Predictor, in MindsDB’s words, means the machine learning model. In this dashboard, you will train the models from the Datasources. 
+
+#### How to train Predictor?
+
+MindsDB SCout offers two options for Predictor training:
+
+* Upload the already existing model.
+* Train a new one.
 
 ![Predictors](/assets/scout/predictors.png)
 
