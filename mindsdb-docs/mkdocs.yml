@@ -60,6 +60,8 @@ nav:
       - Query: scout/Query.md
   - MindsDB Server:
     - Getting Started: server/InstallServer.md
+    - Python SDK: server/PythonSDK.md
+    - JavaSCript SDK: server/JavaScriptSDK.md
   - Comparisons:
     - Comparison with other Libraries: comparisons/ComparsionWithOtherLibraries.md
     - Comparing MindsDB accuracy: comparisons/AccuracyComparison.md
