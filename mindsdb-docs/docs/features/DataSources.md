@@ -19,7 +19,7 @@ However, the DataSource class provides a way to implement data loading transform
 
 Some special implementations of datasources that already do cleaning and various tasks:
 
-You can learn about them in [here](https://github.com/mindsdb/mindsdb/tree/master/mindsdb/libs/data_sources):
+You can learn about them in [mindsdb repository](https://github.com/mindsdb/mindsdb/tree/master/mindsdb/libs/data_sources).
 
 ### FileDS
 
@@ -49,7 +49,8 @@ FileDS arguments are:
 
 ### S3DS
 
-Use an s3 object as the input.
+Use an [s3](https://aws.amazon.com/s3/) object as the input.
+
 ```python
 from mindsdb import Predictor, S3DS
 
@@ -67,7 +68,7 @@ This data source also takes the optional initialization/constructor arguments:
 
 ### MySqlDS
 
-Used to select data from Mysql or Mariadb.
+Used to select data from [MySQL](https://www.mysql.com/) or [MariaDB](https://mariadb.org/).
 
 ```python
 from mindsdb import Predictor, MySqlDS
@@ -89,7 +90,7 @@ This data source also takes the optional initialization/constructor arguments:
 
 ### PostgresDS
 
-Used to select data from Postgres.
+Used to select data from [PostgreSQL](https://www.postgresql.org/).
 
 ```python
 from mindsdb import Predictor, PostgresDS
@@ -112,7 +113,7 @@ This data source also takes the optional initialization/constructor arguments:
 
 ### ClickhouseDS
 
-Used to select data from ClickHouse.
+Used to select data from [ClickHouse](https://clickhouse.tech/).
 
 ```python
 from mindsdb import Predictor, ClickhouseDS
