@@ -2,11 +2,12 @@
 id: data-sources
 title: Data sources
 ---
-Our goal is to make it very simple to ingest and prepare data that we can feed into MindsDB we call these **DataSources**, here are the basics:
+Our goal is to make it very simple to ingest and prepare data that can be feed into MindsDB as **DataSources**. Here are the basics:
 
-MindsDB.learn **from_data** argument can be any of the follows:
- * **file**: can be a path in the localsystem, stringio object or a url to a file, supported types are (csv, json, xlsx, xls).
-  * **data frame**: A [pandas DataFrame](), pandas is one of the most use data preparation libraries out there, so it makes sense that we support this.
+mindsdb.learn **from_data** argument can be any of the following:
+ 
+ * **file**: can be a path in the local system, stringio object or a url to a file, supported types are (csv, json, xlsx, xls).
+ * **data frame**: A [pandas DataFrame](), pandas is one of the most useful data preparation libraries out there, so it makes sense that we support this.
  * **MindsDB data source**: MindsDB has a special class for datasources which lends itself for simple data ingestion and preparation, as well as to combine various datasources to learn from.
 
 *Note: By default, only the FileDS data source is available, to make sure the other data sources work, install mindsdb via `pip install mindsdb[extra_data_sources]`, or replace `mindsdb` to `mindsdb[extra_data_sources]` in whatever install instructions are given for your platform*
@@ -40,7 +41,7 @@ mdb.learn(
 ```
 FileDS arguments are:
 
-* ***file*** can be a path in the localsystem, stringio object or a url to a file, supported types are (csv, json, xlsx, xls).
+* ***file*** can be a path in the local system, stringio object or a url to a file, supported types are (csv, json, xlsx, xls).
 * ***clean_header*** (default=True) clean column names, so that they don't have special characters or white spaces.
 * ***clean_rows*** (default=True) Goes row by row making sure that nulls are nulls and that no corrupt data exists in them, it also cleans empty rows
 * ***custom_parser*** (default=None) special function to extract the actual table structure from the file in case you need special transformations.
@@ -54,10 +55,10 @@ from mindsdb import Predictor, S3DS
 
 s3_ds = S3DS(bucket_name='mindsdb-example-data', file_path='home_rentals.csv')`
 
-Predictor(name='test').learn(from_data=s3_ds,... etc)
+Predictor(name='test').learn(from_data=s3_ds, to_predict='target')
 ```
 
-This data source also take the optional initialization/constructor arguments:
+This data source also takes the optional initialization/constructor arguments:
 
 * access_key -- The AWS access key [string]
 * secret_key -- The AWS secret key [string]
@@ -73,12 +74,12 @@ from mindsdb import Predictor, MySqlDS
 
 mysql_ds = MySqlDS(query="SELECT COUNT(*), SUM(spend), SUM(is_click), website FROM advertising_data", user="my_user", password="my very secret password", database="main_db")
 
-Predictor(name='test').learn(from_data=mysql_ds,... etc)
+Predictor(name='test').learn(from_data=mysql_ds, to_predict='target')
 ```
 
-This data source also take the optional initialization/constructor arguments:
+This data source also takes the optional initialization/constructor arguments:
 
-* query -- Query whith which to extract the data, mutually exclusive with `table` [string]
+* query -- Query which extracts the data, mutually exclusive with `table` [string]
 * host -- The host of the database (e.g. localhost or some ip) [string]
 * user -- User for the database [string]
 * password -- Password for the user [string]
@@ -95,12 +96,12 @@ from mindsdb import Predictor, PostgresDS
 
 pg_ds = PostgresDS(query="SELECT COUNT(*), SUM(spend), SUM(is_click), website FROM advertising_data", user="my_user", password="my very secret password", database="main_db")
 
-Predictor(name='test').learn(from_data=pg_ds,... etc)
+Predictor(name='test').learn(from_data=pg_ds, to_predict='target')
 ```
 
-This data source also take the optional initialization/constructor arguments:
+This data source also takes the optional initialization/constructor arguments:
 
-* query -- Query whith which to extract the data, mutually exclusive with `table` [string]
+* query -- Query which extracts the data, mutually exclusive with `table` [string]
 * host -- The host of the database (e.g. localhost or some ip) [string]
 * user -- User for the database [string]
 * password -- Password for the user [string]
@@ -109,8 +110,24 @@ This data source also take the optional initialization/constructor arguments:
 * table -- Table from which to select all the data, mutually exclusive with `query` [string]
 
 
+### ClickhouseDS
 
+Used to select data from ClickHouse.
 
+```python
+from mindsdb import Predictor, ClickhouseDS
 
+ch_ds = ClickhouseDS(query="SELECT COUNT(*), SUM(spend), SUM(is_click), website FROM default.advertising_data",
+                     user="my_user", password="my very secret password")
 
-#
+Predictor(name='test').learn(from_data=ch_ds, to_predict='target')
+```
+
+This data source also take the optional initialization/constructor arguments:
+
+* query -- Query whith which to extract the data, mutually exclusive with `table` [string]
+* host -- The host of the database (e.g. localhost or some ip) [string]
+* user -- User for the database [string]
+* password -- Password for the user [string]
+* port -- Port of the database [integer]
+* table -- Table from which to select all the data, mutually exclusive with `query` [string]
