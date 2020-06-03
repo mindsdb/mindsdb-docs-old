@@ -58,11 +58,10 @@ import pandas as pd
 from sklearn.metrics import balanced_accuracy_score
 
 def run():
-    backend='lightwood'
 
     mdb = mindsdb.Predictor(name='cc_fraud')
 
-    mdb.learn(from_data='processed_data/train.csv', to_predict='Class', backend=backend, window_size=5)
+    mdb.learn(from_data='processed_data/train.csv', to_predict='Class')
 
     predictions = mdb.predict(when_data='processed_data/test.csv')
 

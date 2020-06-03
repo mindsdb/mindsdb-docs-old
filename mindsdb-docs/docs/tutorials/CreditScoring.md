@@ -146,11 +146,10 @@ from sklearn.metrics import balanced_accuracy_score, confusion_matrix
 
 
 def run(sample=False):
-    backend = 'lightwood'
 
     mdb = Predictor(name='german_data')
 
-    mdb.learn(to_predict='class',from_data='processed_data/train.csv',backend=backend)
+    mdb.learn(to_predict='class', from_data='processed_data/train.csv')
 
     predictions = mdb.predict(when_data='processed_data/test.csv')
 
@@ -158,9 +157,6 @@ def run(sample=False):
     real_val = list(pd.read_csv('processed_data/test.csv')['class'])
 
     accuracy = balanced_accuracy_score(real_val, predicted_val)
-
-    cm = confusion_matrix(real_val, predicted_val)
-    print(cm)
 
     #show additional info for each transaction row
     additional_info = [x.explanation for x in predictions]
