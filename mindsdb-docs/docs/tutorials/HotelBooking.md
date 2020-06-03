@@ -61,16 +61,13 @@ from sklearn.metrics import balanced_accuracy_score
 
 
 def run():
-    backend = 'lightwood'
 
     mdb = mindsdb.Predictor(name='hotel_booking')
 
-    mdb.learn(from_data='dataset/train.csv', to_predict='is_canceled', backend=backend,
-              disable_optional_analysis=True)
+    mdb.learn(from_data='dataset/train.csv', to_predict='is_canceled')
 
     test_df = pd.read_csv('dataset/test.csv')
-    predictions = mdb.predict(when_data='dataset/test.csv',
-                              unstable_parameters_dict={'always_use_model_predictions': True})
+    predictions = mdb.predict(when_data='dataset/test.csv')
 
     results = [str(x['is_canceled']) for x in predictions]
     real = list(map(str, list(test_df['is_canceled'])))

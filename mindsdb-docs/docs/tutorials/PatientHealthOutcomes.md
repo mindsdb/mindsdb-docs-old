@@ -50,16 +50,14 @@ import pandas as pd
 from sklearn.metrics import balanced_accuracy_score
 
 def run():
-    backend='lightwood'
-
     mdb = mindsdb.Predictor(name='hd')
 
-    mdb.learn(from_data='processed_data/train.csv', to_predict='target', backend=backend, window_size=5)
+    mdb.learn(from_data='processed_data/train.csv', to_predict='target')
 
     predictions = mdb.predict(when_data='processed_data/test.csv')
 
     pred_val = [int(x['target']) for x in predictions]
-    real_val = [int(x) for x in list(pd.read_csv(open('processed_data/test.csv', 'r'))['target'])]
+    real_val = [int(x) for x in list(pd.read_csv('processed_data/test.csv')['target'])]
 
     accuracy = balanced_accuracy_score(real_val, pred_val)
 

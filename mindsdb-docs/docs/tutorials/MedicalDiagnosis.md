@@ -56,14 +56,12 @@ from sklearn.metrics import balanced_accuracy_score
 
 
 def run(sample):
-    backend='lightwood'
-
     mdb = mindsdb.Predictor(name='cancer_model')
 
-    mdb.learn(from_data='processed_data/train.csv', to_predict='diagnosis', backend=backend)
+    mdb.learn(from_data='processed_data/train.csv', to_predict='diagnosis')
 
     test_df = pd.read_csv('processed_data/test.csv')
-    predictions = mdb.predict(when_data='processed_data/test.csv', unstable_parameters_dict={'always_use_model_predictions': True})
+    predictions = mdb.predict(when_data='processed_data/test.csv')
 
     results = [str(x['diagnosis']) for x in predictions]
     real = list(map(str,list(test_df['diagnosis'])))
