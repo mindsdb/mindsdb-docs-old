@@ -105,7 +105,7 @@ Teach the predictor to make predictions on a given dataset, extract information 
 
 * rebuild_model -- Defaults to `True`, if this is set to `False` the model will be loaded and the model analysis and data analysis will be re-run, but a new model won't be trained.
 
-* use_gpu -- Defaults to `None` (autodetect), set to `True` if you have a GPU and want to make sure it's used or to `False` if you want to rain the model on the CPU, this will speed up model training a lot in most situations. Note, that the default learning backend (lightwood) only work with relatively new (2016+) GPUs.
+* use_gpu -- Defaults to `None` (autodetect), set to `True` if you have a GPU and want to make sure it's used or to `False` if you want to train the model on the CPU, this will speed up model training a lot in most situations. Note, that the default learning backend (lightwood) only work with relatively new (2016+) GPUs.
 
 * disable_optional_analysis -- Disable the optional components of the model analysis phase, making learning faster but reducing the amount of information you can visualize in Scout or by reading the `get_model_data` information.
 
