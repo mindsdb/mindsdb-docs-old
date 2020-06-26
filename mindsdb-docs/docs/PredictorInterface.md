@@ -129,7 +129,7 @@ Make a prediction about a given dataset.
 
 * update_cached_model -- Deprecated argument, left for backwards compatibility, to be removed or revamped in v2.0, refrain from using, it has no effects.
 
-* use_gpu -- Defaults to `None` (autodetect), set to `True` if you have a GPU and want to make sure it's used or to `False` if you want to rain the model on the CPU, this will speed up model training a lot in most situations. Note, that the default learning backend (lightwood) only work with relatively new (2016+) GPUs.
+* use_gpu -- Defaults to `None` (autodetect), set to `True` if you have a GPU and want to make sure it's used or to `False` if you want to train the model on the CPU, this will speed up model training a lot in most situations. Note, that the default learning backend (lightwood) only work with relatively new (2016+) GPUs.
 
 * unstable_parameters_dict -- A dictionary of unstable parameters that haven't made it to the final interface. If you are interested in using these but are unsure of how they work, please shot us an email or create a github issue detailing your problem. Generally speaking, these are meant to be used by the mindsdb team and developers/contributors and will make it to the public interface once they are ready for prime-time. Thus, they aren't throughly documented since they and their behavior changes often.
 
