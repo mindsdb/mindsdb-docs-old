@@ -5,9 +5,9 @@
 
 ## Running the docs locally
 
-First install the mkdocs in your python virtual environment:
+First install the mkdocs and mkdocs-matherial theme in your python virtual environment:
 ```
-pip install mkdocs
+pip install mkdocs mkdocs-material
 ```
 Then, navigate to the `/mindsdb-docs` directory and start the server:
 
