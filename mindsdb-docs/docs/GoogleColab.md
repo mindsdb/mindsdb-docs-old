@@ -87,4 +87,4 @@ print(predictions['reading_score_confidence'])
 print(predictions['reading_score'])
 ```
 
-You can find our GoogleColab example here: https://colab.research.google.com/drive/1qsIkMeAQFE-MOEANd1c6KMyT44OnycSb
+You can find our  [Google Colab Example](https://colab.research.google.com/drive/1qsIkMeAQFE-MOEANd1c6KMyT44OnycSb)  here: 

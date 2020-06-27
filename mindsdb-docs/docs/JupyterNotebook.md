@@ -5,11 +5,7 @@ title: Running on Jupyter Notebook
 
 ## Create a notebook
 
-Go here - https://jupyter.org/
-
-Click on the Link ‘Try it in your browser!’ https://jupyter.org/try
-
-Click the top left tile ‘Try Jupyter with Python!’ https://mybinder.org/v2/gh/ipython/ipython-in-depth/master?filepath=binder/Index.ipynb
+Click on the Link [to Try it in your browser with Classic Notebook](https://mybinder.org/v2/gh/ipython/ipython-in-depth/master?filepath=binder/Index.ipynb) : 
 
 You’ll see a screen load with ‘Binder’ at the top.  This should resolve to a screen, with a file menu near the top.
 

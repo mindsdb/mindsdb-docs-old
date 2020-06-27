@@ -40,7 +40,7 @@ pip install mindsdb
 - Fedora: `sudo dnf -y install python3-tkinter`
 - Arch: `sudo pacman -S tk`
 
-4. If you are using Windows, but are not using Anacond or Conda, try installing one of them and running the installation from the **anaconda prompt**.
+4. If you are using Windows, but are not using Anaconda or Conda, try installing one of them and running the installation from the **anaconda prompt**.
 
 5. If you've previously installed mindsdb and are having issues upgrading to a new version, try installing with the command: `pip install mindsdb --upgrade`, if that still fails, try: `pip install mindsdb --no-cache-dir --force-reinstall`.
 
@@ -59,4 +59,5 @@ sh -c "$(curl -sSL https://raw.githubusercontent.com/mindsdb/mindsdb/master/dist
 ## Hardware
 
 Due to the fact that pytorch only supports certain instruction sets, mindsdb can only use certain types of GPUs.
-Currently, on AWS, `g3` and `p3` instance types should be fine, but `p2` and `g2` instances are not supported
+Currently, on AWS, `g3` and `p3` instance types should be fine, but `p2` and `g2` instances are not supported.
+VPS on DigitalOcean with 3 GB Memory and above should work.
