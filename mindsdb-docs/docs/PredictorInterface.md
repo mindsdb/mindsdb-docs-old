@@ -93,8 +93,6 @@ Teach the predictor to make predictions on a given dataset, extract information 
 
 *  **timeseries specific parameters**: group_by, window_size, order_by -- For more information on how to use these, please see the [advanced examples section dealing with timeseries](https://mindsdb.github.io/mindsdb/docs/advanced-mindsdb#timeseries-predictions). Please note, these are currently subject to change, though they will remain backwards compatible until v2.0.
 
-* sample_margin_of_error -- Maximum expected difference between the true population parameter, such as the mean, and the sample estimate. Essentially, if this argument has a value bigger than 0 Mindsdb will not run the data analysis phase on all the data, but rather select a sample, if your dataset is large (> 10,000 rows) or has a lot of columns or a lot of text or multimedia columns, you might find it speeds up mindsdb quite a lot to give this argument a value between `0.05` and `0.15`, avoid going above `0.2` as a general rule of thumb. (default to 0).
-
 * ignore_columns -- Ignore certain columns from your data entirely.
 
 * stop_training_in_x_seconds -- Stop training the model after this amount of seconds, note, the full amount it takes for mindsdb to run might be up to twice the amount you specify in this value. Thought, usually, the model training constitutes ~70-90% of the total mindsdb runtime.
@@ -111,8 +109,12 @@ Teach the predictor to make predictions on a given dataset, extract information 
 
 * output_categories_importance_dictionary -- A dictionary containing a number representing the importance for each (or some) values from the column to be predicted. An example of how his can be used (assume the column we are predicting is called `is_true` and takes two falues): `{'is_true': {'True':0.6, 'False':1}}`. The bigger the number (maximum value is one), the more important will it be for the model to predict that specific value correctly (usually at the cost of predicting other values correctly and getting more false positives for that value).
 
-* advanced_args -- A dictionary of advanced arguments that haven't made it to the final interface. If you are interested in using these but are unsure of how they work, please shot us an email or create a github issue detailing your problem. Generally speaking, these are meant to be used by the mindsdb team and developers/contributors and will make it to the public interface once they are ready for prime-time. Thus, they aren't throughly documented since they and their behavior changes often.
+* advanced_args -- A dictionary of advanced arguments. Includes `force_disable_cache`, `force_categorical_encoding`, `handle_foreign_keys`,
+`use_selfaware_model`, `deduplicate_data`.
 
+* sample_settings -- A dictionary of options for sampling from the dataset. Includes `sample_for_analysis`. `sample_for_training`, `sample_margin_of_error`, `sample_confidence_level`, `sample_percentage`, `sample_function`.
+
+If you are interested in using advanced_args or sample_settings but you are unsure of how they work, please shot us an email or create a github issue and we will help you.
 
 ## Predict
 `predict(self, when_data = None, update_cached_model = False, use_gpu=False, advanced_args={}, backend=None, run_confidence_variation_analysis=False):`
@@ -127,11 +129,11 @@ Make a prediction about a given dataset.
 
 * use_gpu -- Defaults to `None` (autodetect), set to `True` if you have a GPU and want to make sure it's used or to `False` if you want to train the model on the CPU, this will speed up model training a lot in most situations. Note, that the default learning backend (lightwood) only work with relatively new (2016+) GPUs.
 
-* unstable_parameters_dict -- A dictionary of unstable parameters that haven't made it to the final interface. If you are interested in using these but are unsure of how they work, please shot us an email or create a github issue detailing your problem. Generally speaking, these are meant to be used by the mindsdb team and developers/contributors and will make it to the public interface once they are ready for prime-time. Thus, they aren't throughly documented since they and their behavior changes often.
+* advanced_args -- A dictionary of advanced arguments. Includes `force_disable_cache`.
 
 * backend -- The machine learning backend to use in order to train the model. This can be a string equal to `lightwood` (default) or `ludwig`, this can also be a custom model object, for an example of those this works, please see [this example](https://github.com/mindsdb/mindsdb/blob/master/tests/functional_testing/custom_model.py). Note, you shouldn't use a different backend than the one you used to train the model, this will result in undefined behavior in the worst case scenario and most likely lead to a weired error. This defaults to whatever backend was last used when calling `learn` on this predictor.
 
-* run_confidence_variation_analysis -- Run a confidence variation analysis on each of the given input column, currently only works when making single predictions via `when`. It provides some more in-depth analysis of a given prediction, by specifying how the confidence would increase/decrease based on which of the columns in the prediction were not present (had null, None or empty values).
+* run_confidence_variation_analysis -- Run a confidence variation analysis on each of the given input column, currently only works when making single predictions via `when_data`. It provides some more in-depth analysis of a given prediction, by specifying how the confidence would increase/decrease based on which of the columns in the prediction were not present (had null, None or empty values).
 
 
 ## DataSources
