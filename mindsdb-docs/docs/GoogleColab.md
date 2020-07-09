@@ -54,11 +54,9 @@ mdb.learn(
 ## Testing
 
 `mdb.predict` needs 1 of 2 arguments to run a prediction:
-* `when` is a dictionary of values for the columns we want to use for the prediction (i.e. we want to predict the reading score of a student who got a writing score of 80, a math score of 40, and has a standard lunch)
-OR
-* `when_data` is a file with one or more values for the columns we want to use for the prediction
+* `when_data` is a file with one or more values or a dictionary of values for the columns we want to use for the prediction.
 
-The following example uses a dictionary via the `when` argument:
+The following example uses a dictionary via the `when_data` argument:
 
 
 ```python
@@ -67,7 +65,7 @@ mdb = Predictor(name='reading_score_predictor')
 
 # Make a prediction using a dictionary of input values
 predictions = mdb.predict(
-  when={
+  when_data={
       'writing_score' : 80,
       'math_score' : 40,
       'lunch' : 'standard'
