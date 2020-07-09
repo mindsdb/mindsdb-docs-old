@@ -18,6 +18,7 @@ plugins:
             link: 'https://twitter.com/mindsdb'
           - type: 'link'
             link: 'https://www.mindsdb.com'
+    - table-reader
 markdown_extensions:
   - codehilite
   - admonition
@@ -58,10 +59,8 @@ nav:
       - Datasources: scout/Datasources.md
       - Predictors: scout/Predictors.md
       - Query: scout/Query.md
-  - MindsDB Server:
-    - Getting Started: server/InstallServer.md
-    - Python SDK: server/PythonSDK.md
-    - JavaScript SDK: server/JavaScriptSDK.md
+  - MindsDB SDK:
+    - JS and Python SDK: server/SDKs.md
   - Comparisons:
     - Comparison with other Libraries: comparisons/ComparsionWithOtherLibraries.md
     - Comparing MindsDB accuracy: comparisons/AccuracyComparison.md
