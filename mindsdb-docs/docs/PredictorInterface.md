@@ -3,7 +3,7 @@ id: predictor-interface
 title: Predictor interface
 ---
 
-This section goes into detail about each of the methods exposed by mindsdb and each of the arguments they work with.
+This section goes into detail about each of the methods exposed by mindsdb_native and each of the arguments they work with.
 
 ## Predictor
 
@@ -36,7 +36,7 @@ Takes no argument, returns a list with all the models and some information about
 
 `predictor.get_model_data(model_name='model_name')`
 
-Returns all the data we have about a given model, this is a rather complex python dictionary meant to be interpreted by the Scout GUI, we recommend looking at the training logs mindsdb gives to see some of these insight in an easy to read format.
+Returns all the data we have about a given model, this is a rather complex python dictionary meant to be interpreted by the Scout GUI, we recommend looking at the training logs mindsdb_native gives to see some of these insight in an easy to read format.
 
 * model_name -- Required argument, the name of the model to return data about.
 
@@ -54,9 +54,9 @@ Exports this predictor's data (or the data of another predictor) to a zip file i
 
 `predictor.load(mindsdb_storage_dir='path/to/predictor.zip')`
 
-Loads a predictor that was previously exported into the current mindsdb storage path so you can use it later.
+Loads a predictor that was previously exported into the current mindsdb_native storage path so you can use it later.
 
-* mindsdb_storage_dir -- full_path that contains your mindsdb predictor zip file.
+* mindsdb_storage_dir -- full_path that contains your mindsdb_native predictor zip file.
 
 ### Load Model
 
@@ -66,7 +66,7 @@ Backwards compatible interface for the `load` functionality that can be called a
 
 `predictor.delete_model(model_name='blah')`
 
-Deletes a given predictor from the storage path mindsdb is currently operating with.
+Deletes a given predictor from the storage path mindsdb_native is currently operating with.
 
 * model_name -- The name of the model to delete (defaults to the name of the current Predictor).
 
@@ -77,25 +77,25 @@ Deletes a given predictor from the storage path mindsdb is currently operating w
 Analyse the dataset inside the data source, file, ulr or pandas dataframe given. This runs all the steps prior to actually training a predictive model
 
 * from_data -- the data that you want to analyse, this can be either a file, a pandas data frame, a url or a mindsdb data source.
-* sample_margin_of_error -- Maximum expected difference between the true population parameter, such as the mean, and the sample estimate. Essentially, if this argument has a value bigger than 0 Mindsdb will not run the data analysis phase on all the data, but rather select a sample, if your dataset is large (> 10,000 rows) or has a lot of columns or a lot of text or multimedia columns, you might find it speeds up mindsdb quite a lot to give this argument a value between `0.05` and `0.15`, avoid going above `0.2` as a general rule of thumb. (default to 0).
+* sample_margin_of_error -- Maximum expected difference between the true population parameter, such as the mean, and the sample estimate. Essentially, if this argument has a value bigger than 0 Mindsdb will not run the data analysis phase on all the data, but rather select a sample, if your dataset is large (> 10,000 rows) or has a lot of columns or a lot of text or multimedia columns, you might find it speeds up mindsdb_native quite a lot to give this argument a value between `0.05` and `0.15`, avoid going above `0.2` as a general rule of thumb. (default to 0).
 
 ### Learn
 
 `predictor.learn(from_data=a_data_source, to_predict='a_column')`
 
-Teach the predictor to make predictions on a given dataset, extract information about the dataset and extract information about the resulting machine learning model making the predictions. This is the "main" functionality of mindsdb together with the "predict" method.
+Teach the predictor to make predictions on a given dataset, extract information about the dataset and extract information about the resulting machine learning model making the predictions. This is the "main" functionality of mindsdb_native together with the "predict" method.
 
 * from_data -- the data that you want to use for training, this can be either a file, a pandas data frame, a url or a mindsdb data source.
 
 * to_predict -- The columns/keys to be predicted (aka the targets, output columns, target variables), can be either a string (when specifying a single column) or a list of strings (when specifying multiple columns).
 
-* test_from_data -- Specify a different data source on which mindsdb should test the machine learning model, by default mindsdb takes testing and validation samples from your dataset to use during training and analysis, and only trains the predictive model on ~80% of the data. This might seem sub-optimal if you're not used to machine learning, but trust us, it allows us to have much better confidence in the model we give you.
+* test_from_data -- Specify a different data source on which mindsdb should test the machine learning model, by default mindsdb_native takes testing and validation samples from your dataset to use during training and analysis, and only trains the predictive model on ~80% of the data. This might seem sub-optimal if you're not used to machine learning, but trust us, it allows us to have much better confidence in the model we give you.
 
 *  **timeseries specific parameters**: group_by, window_size, order_by -- For more information on how to use these, please see the [advanced examples section dealing with timeseries](https://mindsdb.github.io/mindsdb/docs/advanced-mindsdb#timeseries-predictions). Please note, these are currently subject to change, though they will remain backwards compatible until v2.0.
 
 * ignore_columns -- Ignore certain columns from your data entirely.
 
-* stop_training_in_x_seconds -- Stop training the model after this amount of seconds, note, the full amount it takes for mindsdb to run might be up to twice the amount you specify in this value. Thought, usually, the model training constitutes ~70-90% of the total mindsdb runtime.
+* stop_training_in_x_seconds -- Stop training the model after this amount of seconds, note, the full amount it takes for mindsdb_native to run might be up to twice the amount you specify in this value. Thought, usually, the model training constitutes ~70-90% of the total mindsdb_native runtime.
 
 * stop_training_in_accuracy -- Deprecated argument, left for backwards compatibility, to be removed or revamped in v2.0, refrain from using, it has no effects.
 
@@ -142,4 +142,4 @@ Mindsdb exposes a number of data sources that can be used with the predictor, yo
 
 ## Constants and Configuration
 
-For the constants and configuration options exposed by mindsdb at large please refer to [this section](https://mindsdb.github.io/mindsdb/docs/config)
+For the constants and configuration options exposed by mindsdb_native at large please refer to [this section](/Config/).
