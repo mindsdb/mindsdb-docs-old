@@ -91,7 +91,7 @@ Teach the predictor to make predictions on a given dataset, extract information 
 
 * test_from_data -- Specify a different data source on which mindsdb should test the machine learning model, by default mindsdb takes testing and validation samples from your dataset to use during training and analysis, and only trains the predictive model on ~80% of the data. This might seem sub-optimal if you're not used to machine learning, but trust us, it allows us to have much better confidence in the model we give you.
 
-* <timeseries specific parameters>: group_by, window_size, order_by -- For more information on how to use these, please see the [advanced examples section dealing with timeseries](https://mindsdb.github.io/mindsdb/docs/advanced-mindsdb#timeseries-predictions). Please note, these are currently subject to change, though they will remain backwards compatible until v2.0.
+*  **timeseries specific parameters**: group_by, window_size, order_by -- For more information on how to use these, please see the [advanced examples section dealing with timeseries](https://mindsdb.github.io/mindsdb/docs/advanced-mindsdb#timeseries-predictions). Please note, these are currently subject to change, though they will remain backwards compatible until v2.0.
 
 * sample_margin_of_error -- Maximum expected difference between the true population parameter, such as the mean, and the sample estimate. Essentially, if this argument has a value bigger than 0 Mindsdb will not run the data analysis phase on all the data, but rather select a sample, if your dataset is large (> 10,000 rows) or has a lot of columns or a lot of text or multimedia columns, you might find it speeds up mindsdb quite a lot to give this argument a value between `0.05` and `0.15`, avoid going above `0.2` as a general rule of thumb. (default to 0).
 
@@ -107,17 +107,15 @@ Teach the predictor to make predictions on a given dataset, extract information 
 
 * use_gpu -- Defaults to `None` (autodetect), set to `True` if you have a GPU and want to make sure it's used or to `False` if you want to train the model on the CPU, this will speed up model training a lot in most situations. Note, that the default learning backend (lightwood) only work with relatively new (2016+) GPUs.
 
-* disable_optional_analysis -- Disable the optional components of the model analysis phase, making learning faster but reducing the amount of information you can visualize in Scout or by reading the `get_model_data` information.
-
-* equal_accuracy_for_all_output_categories -- When you have unbalanced target variable values, this will treat all of them as equally important when training the model. To see more information about this and an example, please see (this section)[https://mindsdb.github.io/mindsdb/docs/advanced-mindsdb#unbalanced-dataset]
+* equal_accuracy_for_all_output_categories -- When you have unbalanced target variable values, this will treat all of them as equally important when training the model. To see more information about this and an example, please see (this section)[https://docs.mindsdb.com/tutorials/AdvancedExamples/#unbalanced-dataset]
 
 * output_categories_importance_dictionary -- A dictionary containing a number representing the importance for each (or some) values from the column to be predicted. An example of how his can be used (assume the column we are predicting is called `is_true` and takes two falues): `{'is_true': {'True':0.6, 'False':1}}`. The bigger the number (maximum value is one), the more important will it be for the model to predict that specific value correctly (usually at the cost of predicting other values correctly and getting more false positives for that value).
 
-* unstable_parameters_dict -- A dictionary of unstable parameters that haven't made it to the final interface. If you are interested in using these but are unsure of how they work, please shot us an email or create a github issue detailing your problem. Generally speaking, these are meant to be used by the mindsdb team and developers/contributors and will make it to the public interface once they are ready for prime-time. Thus, they aren't throughly documented since they and their behavior changes often.
+* advanced_args -- A dictionary of advanced arguments that haven't made it to the final interface. If you are interested in using these but are unsure of how they work, please shot us an email or create a github issue detailing your problem. Generally speaking, these are meant to be used by the mindsdb team and developers/contributors and will make it to the public interface once they are ready for prime-time. Thus, they aren't throughly documented since they and their behavior changes often.
 
 
 ## Predict
-`predict(self, when={}, when_data = None, update_cached_model = False, use_gpu=False, unstable_parameters_dict={}, backend=None, run_confidence_variation_analysis=False):`
+`predict(self, when={}, when_data = None, update_cached_model = False, use_gpu=False, advanced_args={}, backend=None, run_confidence_variation_analysis=False):`
 
 `predictor.predict(from_data=a_data_source)`
 
