@@ -73,7 +73,7 @@ Used to select data from [MySQL](https://www.mysql.com/) or [MariaDB](https://ma
 ```python
 from mindsdb import Predictor, MySqlDS
 
-mysql_ds = MySqlDS(query="SELECT COUNT(*), SUM(spend), SUM(is_click), website FROM advertising_data", user="my_user", password="my very secret password", database="main_db")
+mysql_ds = MySqlDS(query="SELECT COUNT(*), SUM(spend), SUM(is_click), website FROM advertising_data", user="my_user", password="my very secret password", database="main_db", table='advertising_data', port=3306)
 
 Predictor(name='test').learn(from_data=mysql_ds, to_predict='target')
 ```
