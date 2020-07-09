@@ -29,8 +29,7 @@ Predictor(name='real_estate_model').learn(
 mdb = mindsdb.Predictor(name='real_estate_model')
 
 # use the model to make predictions
-# Note: you can use the `when_data` argument if you want to use a file with one or more rows instead of a python dictionary
-result = Predictor(name='home_rentals_price').predict(when={'number_of_rooms': 1, 'initial_price': 1222, 'sqft': 1190})
+result = Predictor(name='home_rentals_price').predict(when_data={'number_of_rooms': 1, 'initial_price': 1222, 'sqft': 1190})
 
 # The result will be an array containing predictions for each data point (in this case only one), a confidence for said prediction and a few other extra informations
 print('The predicted price is between ${price} with {conf} confidence'.format(price=result[0].explanation['rental_price']['confidence_interval'], conf=result[0].explanation['rental_price']['confidence']))
@@ -47,13 +46,13 @@ This information can be useful in allowing you to figure out which parts of your
 
 ### About getting predictions from the model
 
-Please note the **when** argument, in this case assuming we only know that:
+Please note the **when_data** argument, in this case assuming we only know that:
 
 * 'number_of_rooms': 1,
 * 'initial_price':1222
 * 'sqft': 1190
 
-So, as long as the columns that you pass in the **when** statement exists in the data it learned from it will work (see columns in [home_rentals.csv](https://s3.eu-west-2.amazonaws.com/mindsdb-example-data/home_rentals.csv)).
+So, as long as the columns that you pass in the **when_data** statement exists in the data it learned from it will work (see columns in [home_rentals.csv](https://s3.eu-west-2.amazonaws.com/mindsdb-example-data/home_rentals.csv)).
 
 ### Running online
 

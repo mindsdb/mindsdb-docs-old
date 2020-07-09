@@ -115,15 +115,13 @@ Teach the predictor to make predictions on a given dataset, extract information 
 
 
 ## Predict
-`predict(self, when={}, when_data = None, update_cached_model = False, use_gpu=False, advanced_args={}, backend=None, run_confidence_variation_analysis=False):`
+`predict(self, when_data = None, update_cached_model = False, use_gpu=False, advanced_args={}, backend=None, run_confidence_variation_analysis=False):`
 
 `predictor.predict(from_data=a_data_source)`
 
 Make a prediction about a given dataset.
 
-* when -- a dictionary used for making a single prediction, each key is the name of an input column and each value is the value for that cell in the column.
-
-* when_data -- the data that you want to make the predictions for, this can be either a file, a pandas data frame, a url or a mindsdb data source.
+* when_data -- the data that you want to make the predictions for, this can be either a file, a pandas data frame, a url, a dictionary used for single prediction(column name: value) or a mindsdb data source.
 
 * update_cached_model -- Deprecated argument, left for backwards compatibility, to be removed or revamped in v2.0, refrain from using, it has no effects.
 
