@@ -91,7 +91,7 @@ Teach the predictor to make predictions on a given dataset, extract information 
 
 * test_from_data -- Specify a different data source on which mindsdb should test the machine learning model, by default mindsdb_native takes testing and validation samples from your dataset to use during training and analysis, and only trains the predictive model on ~80% of the data. This might seem sub-optimal if you're not used to machine learning, but trust us, it allows us to have much better confidence in the model we give you.
 
-*  **timeseries specific parameters**: group_by, window_size, order_by -- For more information on how to use these, please see the [advanced examples section dealing with timeseries](https://mindsdb.github.io/mindsdb/docs/advanced-mindsdb#timeseries-predictions). Please note, these are currently subject to change, though they will remain backwards compatible until v2.0.
+*  **timeseries specific parameters**: group_by, window_size, order_by -- For more information on how to use these, please see the [advanced examples section dealing with timeseries](/tutorials/AdvancedExamples#what-is-a-timeseries). Please note, these are currently subject to change, though they will remain backwards compatible until v2.0.
 
 * ignore_columns -- Ignore certain columns from your data entirely.
 
@@ -99,13 +99,13 @@ Teach the predictor to make predictions on a given dataset, extract information 
 
 * stop_training_in_accuracy -- Deprecated argument, left for backwards compatibility, to be removed or revamped in v2.0, refrain from using, it has no effects.
 
-* backend -- The machine learning backend to use in order to train the model. This can be a string equal to `lightwood` (default) or `ludwig`, this can also be a custom model object, for an example of those this works, please see [this example](https://github.com/mindsdb/mindsdb/blob/master/tests/functional_testing/custom_model.py).
+* backend -- The machine learning backend to use in order to train the model. This can be a string equal to `lightwood` (default) or `ludwig`, this can also be a custom model object.
 
 * rebuild_model -- Defaults to `True`, if this is set to `False` the model will be loaded and the model analysis and data analysis will be re-run, but a new model won't be trained.
 
 * use_gpu -- Defaults to `None` (autodetect), set to `True` if you have a GPU and want to make sure it's used or to `False` if you want to train the model on the CPU, this will speed up model training a lot in most situations. Note, that the default learning backend (lightwood) only work with relatively new (2016+) GPUs.
 
-* equal_accuracy_for_all_output_categories -- When you have unbalanced target variable values, this will treat all of them as equally important when training the model. To see more information about this and an example, please see (this section)[https://docs.mindsdb.com/tutorials/AdvancedExamples/#unbalanced-dataset]
+* equal_accuracy_for_all_output_categories -- When you have unbalanced target variable values, this will treat all of them as equally important when training the model. To see more information about this and an example, please see [advanced section](/tutorials/AdvancedExamples#unbalanced-dataset).
 
 * output_categories_importance_dictionary -- A dictionary containing a number representing the importance for each (or some) values from the column to be predicted. An example of how his can be used (assume the column we are predicting is called `is_true` and takes two falues): `{'is_true': {'True':0.6, 'False':1}}`. The bigger the number (maximum value is one), the more important will it be for the model to predict that specific value correctly (usually at the cost of predicting other values correctly and getting more false positives for that value).
 
@@ -131,14 +131,14 @@ Make a prediction about a given dataset.
 
 * advanced_args -- A dictionary of advanced arguments. Includes `force_disable_cache`.
 
-* backend -- The machine learning backend to use in order to train the model. This can be a string equal to `lightwood` (default) or `ludwig`, this can also be a custom model object, for an example of those this works, please see [this example](https://github.com/mindsdb/mindsdb/blob/master/tests/functional_testing/custom_model.py). Note, you shouldn't use a different backend than the one you used to train the model, this will result in undefined behavior in the worst case scenario and most likely lead to a weired error. This defaults to whatever backend was last used when calling `learn` on this predictor.
+* backend -- The machine learning backend to use in order to train the model. This can be a string equal to `lightwood` (default) or `ludwig`, this can also be a custom model object. Note, you shouldn't use a different backend than the one you used to train the model, this will result in undefined behavior in the worst case scenario and most likely lead to a weired error. This defaults to whatever backend was last used when calling `learn` on this predictor.
 
 * run_confidence_variation_analysis -- Run a confidence variation analysis on each of the given input column, currently only works when making single predictions via `when_data`. It provides some more in-depth analysis of a given prediction, by specifying how the confidence would increase/decrease based on which of the columns in the prediction were not present (had null, None or empty values).
 
 
 ## DataSources
 
-Mindsdb exposes a number of data sources that can be used with the predictor, you can find the documentation detailing this [here](https://mindsdb.github.io/mindsdb/docs/data-sources)
+Mindsdb exposes a number of data sources that can be used with the predictor, you can find more details in the [datasources section](/features/DataSources/).
 
 ## Constants and Configuration
 

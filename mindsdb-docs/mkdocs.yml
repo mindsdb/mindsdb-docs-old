@@ -49,6 +49,7 @@ nav:
     - Data sources: features/DataSources.md
     - Configuration Settings: Config.md
     - Column metrics: features/ColumnMetrics.md
+    - MindsDB SDK: server/SDKs.md
   - Custom model building: 
     - Introduction to Lightwood: lightwood/info.md
     - Predictor API: lightwood/API.md
@@ -59,7 +60,6 @@ nav:
       - Datasources: scout/Datasources.md
       - Predictors: scout/Predictors.md
       - Query: scout/Query.md
-  - MindsDB SDK: server/SDKs.md
   - Comparisons:
     - Comparison with other Libraries: comparisons/ComparsionWithOtherLibraries.md
     - Comparing MindsDB accuracy: comparisons/AccuracyComparison.md
