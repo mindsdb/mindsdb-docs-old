@@ -7,7 +7,7 @@ Our goal is to make it very simple to ingest and prepare data that can be feed i
 mindsdb.learn **from_data** argument can be any of the following:
  
  * **file**: can be a path in the local system, stringio object or a url to a file, supported types are (csv, json, xlsx, xls).
- * **data frame**: A [pandas DataFrame](), pandas is one of the most useful data preparation libraries out there, so it makes sense that we support this.
+ * **data frame**: A [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), pandas is one of the most useful data preparation libraries out there, so it makes sense that we support this.
  * **MindsDB data source**: MindsDB has a special class for datasources which lends itself for simple data ingestion and preparation, as well as to combine various datasources to learn from.
 
 *Note: By default, only the FileDS data source is available, to make sure the other data sources work, install mindsdb via `pip install mindsdb[extra_data_sources]`, or replace `mindsdb` to `mindsdb[extra_data_sources]` in whatever install instructions are given for your platform*
@@ -19,7 +19,7 @@ However, the DataSource class provides a way to implement data loading transform
 
 Some special implementations of datasources that already do cleaning and various tasks:
 
-You can learn about them in [mindsdb repository](https://github.com/mindsdb/mindsdb/tree/master/mindsdb/libs/data_sources).
+You can learn about them in [mindsdb repository](https://github.com/mindsdb/mindsdb_native/tree/stable/mindsdb_native/libs/data_sources).
 
 ### FileDS
 
