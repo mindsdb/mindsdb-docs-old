@@ -9,7 +9,7 @@ This section goes into detail about each of the methods exposed by mindsdb_nativ
 
 ### Constructor
 
-`predictor = Predictor(name='blah')`
+`predictor = Predictor(name='weather_forecast')`
 
 Constructs a new mindsdb predictor
 
@@ -23,61 +23,6 @@ WARNING_LOG_LEVEL = 30
 ERROR_LOG_LEVEL = 40
 NO_LOGS_LOG_LEVEL = 50
 ```
-
-### Get Models
-
-`predictor.get_models()`
-
-Takes no argument, returns a list with all the models and some information about them
-
-**Note: this is akin to a static method, it acts the same way no matter what predictor object you call it on, but due to various consideration it hasn't been swtiched to a static method yet**
-
-### Get Model Data
-
-`predictor.get_model_data(model_name='model_name')`
-
-Returns all the data we have about a given model, this is a rather complex python dictionary meant to be interpreted by the Scout GUI, we recommend looking at the training logs mindsdb_native gives to see some of these insight in an easy to read format.
-
-* model_name -- Required argument, the name of the model to return data about.
-
-**Note: this is akin to a static method, it acts the same way no matter what predictor object you call it on, but due to various consideration it hasn't been swtiched to a static method yet**
-
-### Export Model
-
-`predictor.export_model()`
-
-Exports this predictor's data (or the data of another predictor) to a zip file inside the directory you call it from.
-
-* model_name -- The name of the model to export (defaults to the name of the current Predictor).
-
-### Load
-
-`predictor.load(mindsdb_storage_dir='path/to/predictor.zip')`
-
-Loads a predictor that was previously exported into the current mindsdb_native storage path so you can use it later.
-
-* mindsdb_storage_dir -- full_path that contains your mindsdb_native predictor zip file.
-
-### Load Model
-
-Backwards compatible interface for the `load` functionality that can be called as `load_model` instead.
-
-### Delete Model
-
-`predictor.delete_model(model_name='blah')`
-
-Deletes a given predictor from the storage path mindsdb_native is currently operating with.
-
-* model_name -- The name of the model to delete (defaults to the name of the current Predictor).
-
-### Analyse dataset
-
-`predictor.analyse_dataset(from_data=a_data_source)`
-
-Analyse the dataset inside the data source, file, ulr or pandas dataframe given. This runs all the steps prior to actually training a predictive model
-
-* from_data -- the data that you want to analyse, this can be either a file, a pandas data frame, a url or a mindsdb data source.
-* sample_margin_of_error -- Maximum expected difference between the true population parameter, such as the mean, and the sample estimate. Essentially, if this argument has a value bigger than 0 Mindsdb will not run the data analysis phase on all the data, but rather select a sample, if your dataset is large (> 10,000 rows) or has a lot of columns or a lot of text or multimedia columns, you might find it speeds up mindsdb_native quite a lot to give this argument a value between `0.05` and `0.15`, avoid going above `0.2` as a general rule of thumb. (default to 0).
 
 ### Learn
 
@@ -117,9 +62,10 @@ Teach the predictor to make predictions on a given dataset, extract information 
 If you are interested in using advanced_args or sample_settings but you are unsure of how they work, please shot us an email or create a github issue and we will help you.
 
 ## Predict
+
 `predict(self, when_data = None, update_cached_model = False, use_gpu=False, advanced_args={}, backend=None, run_confidence_variation_analysis=False):`
 
-`predictor.predict(from_data=a_data_source)`
+`predictor.predict(from_data=the_data_source)`
 
 Make a prediction about a given dataset.
 
@@ -135,6 +81,15 @@ Make a prediction about a given dataset.
 
 * run_confidence_variation_analysis -- Run a confidence variation analysis on each of the given input column, currently only works when making single predictions via `when_data`. It provides some more in-depth analysis of a given prediction, by specifying how the confidence would increase/decrease based on which of the columns in the prediction were not present (had null, None or empty values).
 
+## Test
+` predictor.test(when_data=data, accuracy_score_functions='r2_score', score_using='predicted_value', predict_args={'use_gpu': True}):`
+
+Test the overall confidence of the predictor e.g {'rental_price_accuracy': 0.95}.
+
+* when_data -- Use this when you have data in either a file, a pandas data frame, or url to a file that you want to predict from.
+* accuracy_score_functions -- A single function or a dictionary for the form `{f'{target_name}': acc_func}` when multiple targets are used.
+* score_using -- What values from the `explanation` of the target to be used in the score function.
+* predict_args -- Dictionary of arguments to be passed to `predict` (same arguments that predict accepts), e.g: `predict_args={'use_gpu': True}`.
 
 ## DataSources
 
