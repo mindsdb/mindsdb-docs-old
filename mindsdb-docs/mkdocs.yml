@@ -29,7 +29,8 @@ nav:
     - Running on Jupyter Notebook: JupyterNotebook.md
   - Tutorials:
     - Starter Example: tutorials/BasicExample.md
-    - Predictor interface: PredictorInterface.md
+    - Predictor Interface: PredictorInterface.md
+    - Functional Interface: FunctionalInterface.md
     - Use Cases:
       - High-Tech & Manufacturing:
         - Predictive Maintenance: tutorials/PredictiveMaintenance.md

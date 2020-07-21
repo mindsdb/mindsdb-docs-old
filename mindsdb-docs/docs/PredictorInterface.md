@@ -3,9 +3,11 @@ id: predictor-interface
 title: Predictor interface
 ---
 
-This section goes into detail about each of the methods exposed by mindsdb_native and each of the arguments they work with.
+This section goes into detail about each of the methods exposed by Predictor and each of the arguments they work with.
 
 ## Predictor
+
+>Note: The Predictor in MindsDB's words means Machine Learning Model.
 
 ### Constructor
 
