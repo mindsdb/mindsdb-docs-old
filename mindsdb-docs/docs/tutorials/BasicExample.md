@@ -3,8 +3,9 @@ id: basic-mindsdb
 title: Learning from Examples
 ---
 
-This is a basic example of mindsdb_native usage in predicting the real estate prices for an area.
+This is a basic example of mindsdb_native usage in predicting the real estate prices for an area. If you want to follow out visually, watch bellow video:
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/W69iSFgNpgQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Goal
 The goal is to be able to predict the best **rental_price** for new properties given the information that we have in home_rentals.csv.
@@ -38,7 +39,9 @@ print('The predicted price is between ${price} with {conf} confidence'.format(pr
 ## Notes
 
 ### About the Learning
-The first thing we can do is to learn from the csv file. Learn in the scope of MindsDB is to let it figure out a neural network that can best learn from this data as well as train and test such a model given the data that we have (learn more about it in [inside mindsdb_native](/InsideMindsDB/)).
+The first thing we can do is to learn from the csv file. Learn in the scope of MindsDB is to let it figure out a neural network that can best learn from this data as well as train and test such a model given the data that we have.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b4nWvf9o2ls" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 When you run this script, note that it will start logging various information about the data and about the training process.
 
