@@ -9,7 +9,9 @@ This document contains information on each of these scores, as well as an outlin
 
 A score of zero is considered very bad, whilst a score of one is considered perfect.
 
-# The Scores
+# Data Quality Scores
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fsHHMpPkwJg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Value Distribution Score
 
