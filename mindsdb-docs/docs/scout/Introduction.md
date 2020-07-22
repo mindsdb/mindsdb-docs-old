@@ -11,8 +11,8 @@ MindsDB Scout works on the most widely used operating systems. One of the requir
 We have created a few tutorials that will help you to successfully install and use MindsDB Scout:
 
 * [An Overview of MindsDB Scout](https://www.mindsdb.com/blog/mindsdb-scout-overview)
-* [MindsDB Scout (Graphical User Interface) - Video Overview](https://www.youtube.com/watch?v=fOwdv4j26CA)
 * [Perform Data Science with MindsDB Scout](https://www.mindsdb.com/blog/data-science-with-scout)
+* MindsDB Scout tutorial <iframe width="560" height="315" src="https://www.youtube.com/embed/fOwdv4j26CA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Overview of MindsDB Scout
 
