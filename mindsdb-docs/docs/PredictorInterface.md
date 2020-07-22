@@ -93,6 +93,14 @@ Test the overall confidence of the predictor e.g {'rental_price_accuracy': 0.95}
 * score_using -- What values from the `explanation` of the target to be used in the score function.
 * predict_args -- Dictionary of arguments to be passed to `predict` (same arguments that predict accepts), e.g: `predict_args={'use_gpu': True}`.
 
+## Predictor Quality
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TTDbwvB1swA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Prediction Quality
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WWSFl1Ws5_0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## DataSources
 
 Mindsdb exposes a number of data sources that can be used with the predictor, you can find more details in the [datasources section](/features/DataSources/).
