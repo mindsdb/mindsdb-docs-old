@@ -9,21 +9,21 @@ Click on the Link [to Try it in your browser with Classic Notebook](https://mybi
 
 You’ll see a screen load with ‘Binder’ at the top.  This should resolve to a screen, with a file menu near the top.
 
-![](https://imgur.com/sYV91pv)
+<blockquote class="imgur-embed-pub" lang="en" data-id="sYV91pv"><a href="//imgur.com/sYV91pv"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 On the far left to the file menu, select file, then drag down ‘New Notebook’ and from there select ‘Python 3’.
 
-![](https://imgur.com/7m7huHY)
+<blockquote class="imgur-embed-pub" lang="en" data-id="7m7huHY"><a href="//imgur.com/7m7huHY"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 You will then see Python command line
 
-![](https://imgur.com/kl9kdv0)
+<blockquote class="imgur-embed-pub" lang="en" data-id="kl9kdv0"><a href="//imgur.com/kl9kdv0"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 ## Installing mindsdb and running
 
 In the command line type: `!pip install git+https://github.com/mindsdb/mindsdb.git@master --user --no-cache-dir --upgrade --force-reinstall;` then press the `Run` button in the top bar and wait for the install to finish.
 
-![](https://imgur.com/MNkPyy3)
+<blockquote class="imgur-embed-pub" lang="en" data-id="MNkPyy3"><a href="//imgur.com/MNkPyy3"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 Now we can run one of our mindsdb examples, first by training a model:
 
