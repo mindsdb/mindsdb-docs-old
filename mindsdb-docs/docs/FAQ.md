@@ -44,9 +44,9 @@ MindsDB roadmap is aimed to be aligned with our goals:
 
 We support tabular data, this is CSV, Excel, JSON, text files, pandas data frame, URLs, s3 files or MySQL, Mongo, ClickHouse, PostgreSQL data stores. For more information please see the [data sources documentation](/features/DataSources/).
 
-### How does it work? ###
+### How does it work? 
 
-in very simple terms, MindsDB follows the following steps:
+In very simple terms, MindsDB follows the following steps:
 
  * **to learn**:
     * break data source intro train, test, validate
@@ -82,3 +82,13 @@ How about the DB part?. Although in the future we will support all kinds of data
 As to becoming a **Mind** to your **DB**.
 
 Why the bear? Who *doesn't* like bears! Anyway, a bear for UC Berkeley where this all was initially coded.
+
+
+### What is the difference between AI and Machine Learning?
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yn3OouYjvzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### What is XAI?
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Yjm7diITMXA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
