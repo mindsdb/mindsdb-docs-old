@@ -22,6 +22,8 @@ Mindsdb can read data from csv, json, excel, file urls, s3 objects , dataframes 
 
 We are going to use **[home_rentals.csv](https://github.com/mindsdb/mindsdb-examples/tree/master/benchmarks/home_rentals)** dataset for comparison purpose. Inside the `dataset` dir, you can find the dataset split into `train` and `test` data.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tLaLfaIJf-Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Our goal is to predict the rental_price of the house given the information we have in `home_rental.csv`.
 
 We will look at doing this with Sklearn, Tensorflow, Ludwig and Mindsdb.
