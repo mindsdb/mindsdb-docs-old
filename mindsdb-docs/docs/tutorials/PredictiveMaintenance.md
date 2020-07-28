@@ -11,6 +11,28 @@ title: Predictive Maintenance
 
 ###### [![Data](https://img.shields.io/badge/GET--DATA-RoboticFailure-green)](https://github.com/mindsdb/mindsdb-examples/tree/master/others/robotic_failure/dataset)
 
+This dataset contains force and torque measurements on a robot after failure detection. Each failure is characterized by 15 force/torque samples collected at regular time intervals.
+
+
+{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/others/robotic_failure/dataset/test.csv', nrows=7) }}
+
+<details>
+  <summary>Click to expand Features Informations:</summary>
+
+```
+id
+time
+F_x
+F_y
+F_z
+T_x
+T_y
+T_z
+target
+
+Fx1 ... Fx15 is the evolution of force Fx in the observation window
+```
+</details>
 
 ```python
 import mindsdb
@@ -47,4 +69,10 @@ if __name__ == '__main__':
     print(run())
 ```
 
-{'accuracy': 0.8399922571492469, 'accuracy_function': 'balanced_accuracy_score', 'backend': 'lightwood'}
+## Mindsdb accuracy
+
+| Accuraccy       | Backend  | Last run | MindsDB Version | Latest Version|
+|----------------|-------------------|----------------------|-----------------|--------------|
+| 0.8399922571492469 | Lightwood | 15 April 2020 | [![MindsDB](https://img.shields.io/badge/pypi--package-1.16.0-green)](https://pypi.org/project/MindsDB/1.16.0/)|   <a href="https://pypi.org/project/MindsDB/"><img src="https://badge.fury.io/py/MindsDB.svg" alt="PyPi Version"></a>|
+
+
