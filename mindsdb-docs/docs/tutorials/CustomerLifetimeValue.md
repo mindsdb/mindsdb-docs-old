@@ -13,7 +13,7 @@ title: Customer Lifetime Value Optimization
 
 ###### [![Data](https://img.shields.io/badge/GET--DATA-ImdbMovieReview-green)](https://github.com/mindsdb/mindsdb-examples/tree/master/benchmarks/imdb_movie_review)
 
-This is a [dataset](http://ai.stanford.edu/~amaas/data/sentiment/) for binary sentiment classification containing a set of 25,000 highly polar movie reviews for training, and 25,000 for testing. There is additional unlabeled data for use as well. Raw text and already processed bag of words formats are provided.
+This is a [dataset](http://ai.stanford.edu/~amaas/data/sentiment/) for binary sentiment classification containing a set of 25,000 highly popular movie reviews for training, and 25,000 for testing. There is additional unlabeled data for use as well. Raw text and already processed bag of words formats are provided.
 
 ## Features informations
 * review

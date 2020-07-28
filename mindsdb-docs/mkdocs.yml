@@ -63,7 +63,6 @@ nav:
       - Query: scout/Query.md
   - Comparisons:
     - Comparison with other Libraries: comparisons/ComparsionWithOtherLibraries.md
-    - Comparing MindsDB accuracy: comparisons/AccuracyComparison.md
   - Integrations:
     - Amazon SageMaker: integrations/AwsSageMaker.md
     - Bring your own container:
