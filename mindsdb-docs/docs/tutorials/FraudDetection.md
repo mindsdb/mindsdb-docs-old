@@ -9,12 +9,12 @@ title: Fraud Detection
 
 ## Processed Dataset 
 
-###### [![Data](https://img.shields.io/badge/GET--DATA-DefaultofCreditCard-green)](https://github.com/mindsdb/mindsdb-examples/tree/master/benchmarks/credit_card_fraud/processed_data)
+###### [![Data](https://img.shields.io/badge/GET--DATA-DefaultofCreditCard-green)](https://github.com/mindsdb/mindsdb-examples/tree/master/classics/credit_card_fraud/processed_data)
 
 The [datasets](https://www.kaggle.com/mlg-ulb/creditcardfraud) contains transactions made by credit cards in September 2013 by european cardholders.
 This dataset presents transactions that occurred in two days, where we have 492 frauds out of 284,807 transactions. The dataset is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions. The goal is to identify fraudulent credit card transactions. Feature 'Class' is the response variable and it takes value 1 in case of fraud and 0 otherwise.
 
-{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/benchmarks/credit_card_fraud/processed_data/test.csv', nrows=7) }}
+{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/classics/credit_card_fraud/processed_data/test.csv', nrows=7) }}
 
 <details>
   <summary>Click to expand Features Informations:</summary>

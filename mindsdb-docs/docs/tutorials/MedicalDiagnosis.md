@@ -7,15 +7,15 @@ title: Medical Diagnosis
 |----------------|------------|--------------------|
 | Health Care | Health | Business Executive/Physician |
 
-###### [![Data](https://img.shields.io/badge/GET--DATA-BreastCancer-green)](https://github.com/mindsdb/mindsdb-examples/tree/master/benchmarks/cancer50/processed_data)
+###### [![Data](https://img.shields.io/badge/GET--DATA-BreastCancer-green)](https://github.com/mindsdb/mindsdb-examples/tree/master/classics/cancer50/processed_data)
 
 Breast Cancer Wisconsin (Diagnostic) [Data Set](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29). From the given information of the breast cancer dataset, classify whether it is a malignant cancer or benign cancer.
 
-{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/benchmarks/cancer50/raw_data/cancer50.csv', nrows=7) }}
+{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/classics/cancer50/raw_data/cancer50.csv', nrows=7) }}
 
 <details>
   <summary>Click to expand Features Informations:</summary>
-  
+
 ```
 1. id ID number
 2. diagnosis The diagnosis of breast tissues (M = malignant, B = benign)

@@ -9,15 +9,15 @@ title: Patient Hearth Health
 
 ## Processed Dataset 
 
-###### [![Data](https://img.shields.io/badge/GET--DATA-HearthDisease-green)](https://github.com/mindsdb/mindsdb-examples/tree/master/benchmarks/heart_disease/processed_data)
+###### [![Data](https://img.shields.io/badge/GET--DATA-HearthDisease-green)](https://github.com/mindsdb/mindsdb-examples/tree/master/classics/heart_disease/processed_data)
 
 In the Heart Disease UCI dataset, the data comes from 4 databases: the Hungarian Institute of Cardiology, the University Hospital in Zurich, the University Hospital in Basel Switzerland, and the V.A. Medical Center Long Beach and Cleveland Clinic Foundation. The "goal" is to determine the presence of heart disease in the patient.
 
-{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/benchmarks/heart_disease/raw_data/heart.csv', nrows=7) }}
+{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/classics/heart_disease/raw_data/heart.csv', nrows=7) }}
 
 <details>
   <summary>Click to expand Features Informations:</summary>
-  
+
 ```
 1. age: age in years
 2. sex: sex (1 = male; 0 = female)

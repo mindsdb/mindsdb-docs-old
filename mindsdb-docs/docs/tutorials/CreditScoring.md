@@ -10,11 +10,11 @@ title: Credit Scoring
 
 ## Processed Dataset 
 
-###### [![Data](https://img.shields.io/badge/GET--DATA-DefaultofCreditCard-green)](https://github.com/mindsdb/mindsdb-examples/tree/master/benchmarks/german_credit_data/processed_data)
+###### [![Data](https://img.shields.io/badge/GET--DATA-DefaultofCreditCard-green)](https://github.com/mindsdb/mindsdb-examples/tree/master/classics/german_credit_data/processed_data)
 
 The German Credit dataset is a publically available from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Statlog+%28German+Credit+Data%29). The dataset contains data on 20 variables and the classification whether an applicant is considered a Good or a Bad credit risks.
 
-{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/benchmarks/german_credit_data/processed_data/test.csv', nrows=7) }}
+{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/classics/german_credit_data/processed_data/test.csv', nrows=7) }}
 
 <details>
   <summary>Click to expand Features Informations:</summary>

@@ -9,16 +9,16 @@ title: Hotel Booking Demand
 
 ## Processed Dataset 
 
-###### [![Data](https://img.shields.io/badge/GET--DATA-HotelBooking-green)](https://github.com/mindsdb/mindsdb-examples/tree/master/benchmarks/hotel-booking/dataset)
+###### [![Data](https://img.shields.io/badge/GET--DATA-HotelBooking-green)](https://github.com/mindsdb/mindsdb-examples/tree/master/classics/hotel-booking/dataset)
 
 This [data set](https://www.kaggle.com/jessemostipak/hotel-booking-demand) contains booking information for a city hotel and a resort hotel, and includes information such as when the booking was made, length of stay, the number of adults, children, and/or babies, and the number of available parking spaces, among other things.
 
-{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/benchmarks/hotel-booking/raw_data/hotel_bookings.csv', nrows=7) }}
+{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/classics/hotel-booking/raw_data/hotel_bookings.csv', nrows=7) }}
 
 
 <details>
   <summary>Click to expand Features Informations:</summary>
-  
+
 ```
 1. hotel Hotel (H1 = Resort Hotel or H2 = City Hotel)
 2. is_canceled Value indicating if the booking was canceled (1) or not (0)
