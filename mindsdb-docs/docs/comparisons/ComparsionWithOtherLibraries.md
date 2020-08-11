@@ -40,41 +40,64 @@ Now we will build the actual models to train on the training dataset and run som
 
 ```python
 import tensorflow as tf
+import pandas as pd
+import numpy as np
+from tensorflow import keras
+from tensorflow.keras import layers
+from sklearn.preprocessing import MinMaxScaler
 
-# placeholders for input data and label
-X = tf.placeholder('float')
-Y = tf.placeholder('float')
+# process data
+df = pd.read_csv("home_rentals.csv")
+labels = df.pop('rental_price').values.reshape(-1, 1)
+features = df._get_numeric_data().values
 
-W = tf.Variable(tf.random.normal(), name = "weight")
-b = tf.Variable(tf.random.normal(), name = "bias")
+xscaler = MinMaxScaler()
+features = xscaler.fit_transform(features)
 
-learning_rate = 0.01 #your learning rate
-epochs = 100 # no of times data should be fed
+yscaler = MinMaxScaler()
+labels = yscaler.fit_transform(labels)
 
-y_pred = tf.add(tf.multiply(X, W), b)
-cost = tf.reduce_sum(tf.pow(y_pred-Y, 2)) / (2 * len(train_data))
-# Choosing the optimizer
-optimizer = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost)
-# Initialize the Global variables
-init = tf.global_variables_initializer()
+input_dim = 4  # only numerical features for this example
+output_dim = 1 # predict rental_price
 
-# Run inside a session
-with tf.Session() as sess:
-    sess.run(init)
-    for epoch in range(epochs):
-        # feeding the training data
-        for (_x, _y) in zip(train_data, train_label):
-            sess.run(optimizer, feed_dict = {X : _x, Y : _y})
-        # Calculate the cost
-        c = sess.run(cost, feed_dict = {X : train_data, Y : train_label})
-        print("epoch", (epoch + 1), ": cost =", c, "W =", sess.run(W), "b =", sess.run(b))
-    # save your weights and bias
-    weight = sess.run(W)
-    bias = sess.run(b)
+# neural network definition
+inputs = keras.Input(shape=(4))
+x = layers.Dense(100)(inputs)
+outputs = layers.Dense(1)(x)
+model = keras.Model(inputs=inputs, outputs=outputs)
+optimizer = keras.optimizers.SGD(learning_rate=1e-4)
 
-# Getting the predictions
-predictions = weight* (test_data) + bias
-print(predictions)
+# transform data to TensorFlow format
+dataset = tf.data.Dataset.from_tensor_slices((features.astype(np.float32), 
+                                              labels.astype(np.float32)))
+dataset = dataset.shuffle(buffer_size=64).batch(32)
+
+def compute_loss(labels, predictions):
+  return tf.reduce_mean(tf.square(labels - predictions))  # mean squared error
+
+def train_on_batch(x, y):
+  with tf.GradientTape() as tape:
+    predictions = model(x)
+    loss = compute_loss(y, predictions)
+    gradients = tape.gradient(loss, model.trainable_weights)
+    optimizer.apply_gradients(zip(gradients, model.trainable_weights))
+  return loss  
+
+epochs = 50
+for epoch in range(epochs):
+  for step, (x, y) in enumerate(dataset):
+    loss = train_on_batch(x, y)
+  if epoch % 10 == 0:
+    print(f'Epoch {epoch}: last batch loss = {float(loss)}')
+
+# predict for test sample
+feat = [[2,     # rooms
+         1,     # bathrooms
+         1190,  # square feet
+         2000]] # initial price
+
+print("The predicted price is %f " % yscaler.inverse_transform(
+    model.predict(xscaler.transform(feat))))
 ```
 
 #### Sklearn
