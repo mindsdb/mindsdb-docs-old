@@ -14,7 +14,7 @@ curl https://bootstrap.pypa.io/get-pip.py | python3
 pip3 install --upgrade pip
 ```
 
-To install conda (only required on some windows environments) [download conda from here](https://www.anaconda.com/download/#windows)
+To install conda (only required on some windows environments) [download conda from here](https://www.anaconda.com/download/#windows).
 Once that's done run the **anaconda prompt**.
 
 

@@ -54,6 +54,7 @@ mdb.learn(
 ## Testing
 
 `mdb.predict` needs 1 of 2 arguments to run a prediction:
+
 * `when_data` is a file with one or more values or a dictionary of values for the columns we want to use for the prediction.
 
 The following example uses a dictionary via the `when_data` argument:
@@ -85,4 +86,4 @@ print(predictions['reading_score_confidence'])
 print(predictions['reading_score'])
 ```
 
-You can find our  [Google Colab Example](https://colab.research.google.com/drive/1qsIkMeAQFE-MOEANd1c6KMyT44OnycSb)  here: 
+You can find our [Google Colab Example](https://colab.research.google.com/drive/1qsIkMeAQFE-MOEANd1c6KMyT44OnycSb)  here.
