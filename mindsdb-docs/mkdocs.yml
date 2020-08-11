@@ -4,10 +4,8 @@ repo_url: 'https://github.com/mindsdb/mindsdb'
 theme:
   name: 'material'
   custom_dir: overrides
-  palette:
-    primary: 'green'
-    accent: 'green'
   logo: assets/mdb_logo_w.svg
+  favicon: assets/mdb_logo.png
 plugins:
     - search:
         lang: 'en'
@@ -63,6 +61,8 @@ nav:
       - Query: scout/Query.md
   - Comparisons:
     - Comparison with other Libraries: comparisons/ComparsionWithOtherLibraries.md
+  - AutoML in Databases:
+    - ClickHouse: databases/Clickhouse.md
   - Integrations:
     - Amazon SageMaker: integrations/AwsSageMaker.md
     - Bring your own container:
@@ -74,3 +74,5 @@ nav:
     - FAQ: FAQ.md
     - Inside MindsDB: InsideMindsDB.md
 google_analytics: ['UA-96178523-1', 'docs.mindsdb.com']
+extra_css:
+  - stylesheets/extra.css
