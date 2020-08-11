@@ -39,9 +39,10 @@ Run the code and you should see the prediction response from the endpoint:
 ## [call.py](https://github.com/mindsdb/mindsdb-sagemaker-container/blob/master/local_test/call.py) Script
 
 The required arguments are:
-* endpoint - the name of the SageMaker endpoint
-* dataset - the location of test dataset
-* content type - mime type of the data
+
+* endpoint - The name of the SageMaker endpoint.
+* dataset - The location of test dataset.
+* content type - The mime type of the data.
 
 
 ```python
