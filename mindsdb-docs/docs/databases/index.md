@@ -4,7 +4,7 @@ Starting from MindsDB 2.0 version you can train machine learning models straight
 
 ![MindsDB-Databases](/assets/databases/ex-dbs.png)
 
-This integration works by accessing external tables as if they are internal, in short words by exposing machine learning models as tables that can be queried. You simply train the models with an INSERT statement. Then SELECT what you want to predict and you pass in the WHERE statement for the prediction.
+This integration works by accessing MindsDB as if it is external MySQL database, in short words by exposing machine learning models as tables that can be queried. You simply train the models with an INSERT statement. Then SELECT what you want to predict and you pass in the WHERE statement for the prediction.
 
 ![MindsDB-AutoML in Databases](/assets/databases/db-automl.png)
 
