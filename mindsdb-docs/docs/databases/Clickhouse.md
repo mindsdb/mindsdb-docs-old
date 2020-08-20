@@ -1,23 +1,24 @@
-# Machine Learning models as tables in ClickHouse
+# Machine Learning Models as Tables in ClickHouse
 
-Now, you can train machine learning models straight form the database by using MindsDB and [ClickHouse](https://clickhouse.tech/). Any ClickHouse user can create, train and test machine learning models by using SQL. This integration works by:
+Now, you can train machine learning models straight from the database by using MindsDB and [ClickHouse](https://clickhouse.tech/).
 
 ![MindsDB-ClickHouse](/assets/clickhouse-mdb-diagram.png)
 
-* Exposing machine learning models as tables that can be queried. You simply train the models with an INSERT statement. Then SELECT what you want to predict and you pass in the WHERE statement for the prediction.
 
 ### Prerequisite
 
-You will need MindsDB version < 2.0.0 and ClickHouse installed.
+You will need MindsDB version >= 2.0.0 and ClickHouse installed.
 
 ### Configuration
 
-The minimum required configuration is:
+!!! info "Default configuration"
+    MindsDB will try to use the default configuration(hosts, ports, usernames) for each of the database integrations. If you want to extend that or you are
+    using different parameters creata a new config.json file. 
+The minimum required configuration inside config.json is:
 
 ```json
 {
    "config_version": 1,
-   "use_gpu": false,
    "api": {
        "http": {
            "host": "0.0.0.0",
@@ -64,31 +65,31 @@ The minimum required configuration is:
 ```
 
 * api -- This key is used for starting the MindsDB server by providing the host and port.
-* mysql -- This key is used for databases integrations that works throug MySQL protocol. The required key's are username, password and MySQL host.
-* integrations -- This key specifies the integration type in this case `default_clickhouse`. The required key's are user, host, password and port to the ClickHouse.
-* interface -- This key is used by MindsDB and provides path to the directory where MindsDB shall save some configuration and model files.
+* mysql -- This key is used for database integrations that works through MySQL protocol. The required key's are username, password and MySQL host.
+* integrations -- This key specifies the integration type in this case `default_clickhouse`. The required keys are user, host, password and port to the ClickHouse.
+* interface -- This key is used by MindsDB and provides the path to the directory where MindsDB shall save some configuration and model files.
 
 ### Start MindsDB
 
 ```python
-python3 -m mindsdb --api mysql --config config.json
+python3 -m mindsdb --api=mysql --config=config.json
 ```
 The --api parameter specifies the type of API to use in this case mysql. 
 The --config specifies the location of the configuration file. 
 
 ### Train new model
 
-To train new model, insert new record inside the mindsdb.predictors table as:
+To train a new model, insert a new record inside the mindsdb.predictors table as:
 
 ```sql
 
-INSERT INTO mindsdb.predictors(name, predict, select_data_query, training_options) VALUES ('airq_predictor', 'SO2', 'SELECT * FROM data.pollution_measurement', {});
+INSERT INTO mindsdb.predictors(name, predict, select_data_query, training_options) VALUES ('airq_predictor', 'SO2', 'SELECT * FROM data.pollution_measurement', {"option": "value"});
 ```
 
 * name (string) -- The name of the predictor.
 * predict (string) --  The feature you want to predict, in this example SO2.
 * select_data_query (string) -- The SELECT query that will ingest the data to train the model.
-* training_options (dictionary) -- optional value that contains additional training parameters. For a full list of the parameters check the [PredictorInterface](/PredictorInterface/#learn).
+* training_options (JSON as string) -- optional value that contains additional training parameters. For a full list of the parameters check the [PredictorInterface](/PredictorInterface/#learn).
 
 ### Query the model
 
@@ -102,7 +103,12 @@ SELECT
 FROM airq_predictor
 WHERE (NO2 = 0.005) AND (CO = 1.2) AND (PM10 = 5)
 ```
-You should get simmilar response from MindsDB as:
+You should get a similar response from MindsDB as:
+
+| price  | predicted | info   |
+|----------------|------------|------|
+| 0.001156540079952395 | 0.9869 | Check JSON bellow  |
+
 
 ```json
 {
@@ -126,4 +132,4 @@ You should get simmilar response from MindsDB as:
 }
 ```
 
-To get additonal information about the integration check out [Machine Learning Models as Tables](https://www.mindsdb.com/blog/machine-learning-models-as-tables) tutorial.
+To get additional information about the integration check out [Machine Learning Models as Tables with ClickHouse](https://www.mindsdb.com/blog/machine-learning-models-as-tables) tutorial.
