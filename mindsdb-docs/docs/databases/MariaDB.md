@@ -2,7 +2,7 @@
 
 Now, you can train machine learning models straight from the database by using MindsDB and [MariaDB](https://mariadb.org/).
 
-![MindsDB-ClickHouse](/assets/clickhouse-mdb-diagram.png)
+![MindsDB-ClickHouse](/assets/databases/mdb-maria.png)
 
 ### Prerequisite
 
