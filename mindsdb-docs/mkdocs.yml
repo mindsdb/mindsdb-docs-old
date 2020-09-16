@@ -23,9 +23,9 @@ markdown_extensions:
 nav:
   - Installing MindsDB: Installing.md
   - AutoML in Databases:
-    - Machine Learning Models as Tables: databases/index.md
-    - AutoML in ClickHouse: databases/Clickhouse.md
-    - AutoML in  MariaDB: databases/MariaDB.md
+    - AI Tables: databases/index.md
+    - AI Tables in MariaDB: databases/MariaDB.md
+    - AI Tables in ClickHouse: databases/Clickhouse.md
   - AutoML from code:
     - Python native: 
       - Starter Example: tutorials/BasicExample.md
