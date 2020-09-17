@@ -18,10 +18,10 @@ You will need MindsDB version >= 2.0.0 and MariaDB installed:
 
 The avaiable configuration options are:
 
-* api -- This key is used for starting the MindsDB http server by providing:
+* api['http] -- This key is used for starting the MindsDB http server by providing:
     * host(default 0.0.0.0.) - The mindsdb server address.
     * port(default 47334) - The mindsdb server port.
-* mysql -- This key is used for database integrations that works through MySQL protocol. The required keys are:
+* api['mysql'] -- This key is used for database integrations that works through MySQL protocol. The required keys are:
     * user(default root).
     * password(default empty).
     * host(default localhost).
@@ -117,13 +117,13 @@ To train a new model, insert a new record inside the mindsdb.predictors table as
 INSERT INTO
    mindsdb.predictors(name, predict, select_data_query, training_options) 
 VALUES
-   ('used_cars_model', 'price', 'SELECT * FROM test.UsedCarsData', {"option": "value"});
+   ('used_cars_model', 'price', 'SELECT * FROM test.UsedCarsData', "option,value");
 ```
 
 * name (string) -- The name of the predictor.
-* predict (string) --  The feature you want to predict, in this example SO2.
+* predict (string) --  The feature you want to predict, in this example price. To predict multiple featurs include a comma separated string e.g 'price,year'.
 * select_data_query (string) -- The SELECT query that will ingest the data to train the model.
-* training_options (JSON as string) -- optional value that contains additional training parameters. For a full list of the parameters check the [PredictorInterface](/PredictorInterface/#learn).
+* training_options (JSON as comma separated string) -- optional value that contains additional training parameters. For a full list of the parameters check the [PredictorInterface](/PredictorInterface/#learn).
 
 ### Query the model
 
@@ -186,5 +186,38 @@ You should get a similar response from MindsDB as:
 }
 
 ```
+### Delete the model
+
+To delete the predictor that you have previously created, you need to delete it from `mindsdb.predictors` table. The name should be equal to name added in the INSERT statment while creating the predictor, e.g:
+
+```sql
+DELETE FROM mindsdb.predictors WHERE name='used_cars_model'
+```
+
+### Train and predict multiple features
+
+You can train a model that will predict multiple features by adding a comma separated features values in the predict column. e.g to predict the `price` and a `year`:
+
+```sql
+INSERT INTO
+   mindsdb.predictors(name, predict, select_data_query, training_options) 
+VALUES
+   ('used_cars_model', 'price,year', 'SELECT * FROM test.UsedCarsData', "option,value"});
+```
+And query it using the `select_data_query`:
+
+```sql
+SELECT
+   price AS predicted,
+FROM
+   mindsdb.used_cars_model 
+WHERE
+    select_data_query='SELECT year FROM price_data';
+```
+
+The requirements to query with `select_data_query` are:
+
+* It must be a valid SQL statement
+* It must return columns with names the same as predictor fields.
 
 If you want to follow along with a tutorial check out [AI Tables in MariaDB](mindsdb.com/blog) tutorial.

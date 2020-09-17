@@ -20,10 +20,10 @@ You will need MindsDB version >= 2.0.0 and ClickHouse installed.
 
 The avaiable configuration options are:
 
-* api -- This key is used for starting the MindsDB http server by providing:
+* api['http] -- This key is used for starting the MindsDB http server by providing:
     * host(default 0.0.0.0.) - The mindsdb server address.
     * port(default 47334) - The mindsdb server port.
-* mysql -- This key is used for database integrations that works through MySQL protocol. The required keys are:
+* api['mysql'] -- This key is used for database integrations that works through MySQL protocol. The required keys are:
     * user(default root).
     * password(default empty).
     * host(default localhost).
@@ -34,7 +34,7 @@ The avaiable configuration options are:
         * file_level - "INFO", "DEBUG", "ERROR".
         * folder logs - Directory of log files.
         * format - Format of log message e.g "%(asctime)s - %(levelname)s - %(message)s".
-* integrations -- This key specifies the integration type in this case `default_clickhouse`. The required keys are:
+* integrations['default_clickhouse'] -- This key specifies the integration type in this case `default_clickhouse`. The required keys are:
     * user(default default) - The ClickHouse user name.
     * host(default localhost) - Connect to the ClickHouse server on the given host. 
     * password - The password of the ClickHouse user. 
@@ -166,6 +166,12 @@ You should get a similar response from MindsDB as:
         }]
     }
 }
+```
+### Delete the model
+If you want to delete the predictor that you have previously created run:
+
+```sql
+INSERT INTO mindsdb.commands values ('DELETE predictor airq_predictor');
 ```
 
 To get additional information about the integration check out [Machine Learning Models as Tables with ClickHouse](https://www.mindsdb.com/blog/machine-learning-models-as-tables) tutorial.
