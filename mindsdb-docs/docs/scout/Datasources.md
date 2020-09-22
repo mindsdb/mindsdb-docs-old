@@ -1,6 +1,6 @@
-# Datasources
+# Datasets
 
-In the Datasources dashboard, you can upload your dataset to MindsDB Server (on your remote/local machine). The available options to upload the data are from the local file system or from URL. After upload, you will be able to preview (search, sort, order) the data and get the data quality statistics.
+In the Datasets dashboard, you can upload your dataset to MindsDB Server (on your remote/local machine). The available options to upload the data are from the local file system or from URL. After upload, you will be able to preview (search, sort, order) the data and get the data quality statistics.
 
 ![Datasources](/assets/scout/datasources.png)
 
