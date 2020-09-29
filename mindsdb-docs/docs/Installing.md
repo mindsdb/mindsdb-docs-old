@@ -63,3 +63,23 @@ sh -c "$(curl -sSL https://raw.githubusercontent.com/mindsdb/mindsdb/master/dist
 Due to the fact that pytorch only supports certain instruction sets, mindsdb can only use certain types of GPUs.
 Currently, on AWS, `g3` and `p3` instance types should be fine, but `p2` and `g2` instances are not supported.
 VPS on DigitalOcean with 3 GB Memory and above should work.
+
+
+## MindsDB Server
+
+After installing MindsDB Server can be started by running:
+
+```
+python -m mindsdb
+```
+
+You should see simmilar message as:
+
+```
+GUI should be available by http://0.0.0.0:47334/static/index.html
+Start on 0.0.0.0:47334
+Serving on http://0.0.0.0:47334
+```
+
+* To access MindsDB API's visit `http://0.0.0.0:47334`.
+* To access MindsDB Scout visit  `http://0.0.0.0:47334/static/index.html`
