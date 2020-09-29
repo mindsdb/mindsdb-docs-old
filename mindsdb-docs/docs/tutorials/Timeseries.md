@@ -13,13 +13,14 @@ To build a timeseries model you need to pass `timeseries_settings` dictionary to
 
 ```
 timeseries_settings = {
-  order_by: List<String>    | Mandatory
-  group_by: List<String>    | Optional
-  nr_predictions: Int       | Optional
-  use_previous_target: Bool | Optional
-  keep_order_column:   Bool | Optional
-  window: Int               | Mandatory if `dynamic_window` is not passed
-  dynamic_window: Int       | Mandatory if `window` is not passed
+  order_by: List<String>              | Mandatory
+  group_by: List<String>              | Optional (default: [])
+  nr_predictions: Int                 | Optional (default: 1)
+  use_previous_target: Bool           | Optional (default: True)
+  keep_order_column:   Bool           | Optional (default: True)
+  window: Int                         | Mandatory if `dynamic_window` is not passed
+  dynamic_window: Int                 | Mandatory if `window` is not passed
+  historical_columns: List<String>    | Optional (default: [])
 }
 ```
 
@@ -68,7 +69,7 @@ When querying the original training data (the one passed to `learn`) from a data
 
 
 ### Database example (from SQL)
-@TODO
+-- Pending, feel free to contribute some or ask us directly about this feature
 
 ### Database example (from code)
-@TDOO
+-- Pending, feel free to contribute some or ask us directly about this feature
