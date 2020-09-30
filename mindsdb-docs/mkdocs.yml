@@ -27,16 +27,16 @@ nav:
     - AI Tables in MariaDB: databases/MariaDB.md
     - AI Tables in ClickHouse: databases/Clickhouse.md
   - AutoML from code:
-    - Python native: 
+    - Python native:
       - Starter Example: tutorials/BasicExample.md
-      - Google Colab: GoogleColab.md
+      - Timeseries Data: tutorials/Timesereis.md
+      - Running on Google Colab: GoogleColab.md
       - Running on Jupyter Notebook: JupyterNotebook.md
       - Predictor Interface: PredictorInterface.md
       - Functional Interface: FunctionalInterface.md
-      - Advanced Data types: tutorials/AdvancedExamples.md 
+      - Advanced usecases: tutorials/AdvancedExamples.md
       - Data sources: features/DataSources.md
       - Configuration Settings: Config.md
-      - Column metrics: features/ColumnMetrics.md
       - MindsDB SDK: server/SDKs.md
       - Use Cases:
         - High-Tech & Manufacturing:
@@ -52,12 +52,19 @@ nav:
         - Travel:
           - Hotel Booking Demand: tutorials/HotelBooking.md
         - Telecomunications:
-          - Customer Churn Reduction: tutorials/ChurnReduction.md   
+          - Customer Churn Reduction: tutorials/ChurnReduction.md
+  - AutoML Integrations:
+    - Amazon SageMaker: integrations/AwsSageMaker.md
+    - Bring your own container:
+      - MindsDB container: integrations/MindsDBSageContainer.md
+      - Train and host MindsDB models: integrations/UseMindsDBinSage.md
+      - Train and host MindsDB models using SageMaker SDK: integrations/SageMakerSDK.md
+      - Invoke MindsDB endpoint on SageMaker: integrations/CallSageMakerEndpoint.md
   - AutoML building blocks: 
     - Introduction to Lightwood: lightwood/info.md
     - Predictor API: lightwood/API.md
   - AutoML Explainability:
-    - MindsDB Scout: 
+    - MindsDB Scout:
       - Getting Started: scout/Introduction.md
       - Connection: scout/Connection.md
       - Datasources: scout/Datasources.md
