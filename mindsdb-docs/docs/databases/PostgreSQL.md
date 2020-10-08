@@ -6,7 +6,7 @@ Now, you can train machine learning models straight from the database by using M
 
 ### Prerequisite
 
-You will need MindsDB version >= 2.0.0 and PostgreSQL installed:
+You will need MindsDB version >= 2.3.0 and PostgreSQL installed:
 
 * [Install MindsDB](/Installing/)
 * [Install PostgreSQL](https://www.postgresql.org/download/)
@@ -15,25 +15,25 @@ You will need MindsDB version >= 2.0.0 and PostgreSQL installed:
 ### Configuration
 
 !!! info "Default configuration"
-    MindsDB will try to use the default configuration(hosts, ports, usernames) for each of the database integrations. If you want to extend that or you are using different parameters creata a new config.json file. 
+    MindsDB will try to use the default configuration(hosts, ports, usernames) for each of the database integrations. If you want to extend that or you are using different parameters create a new config.json file. 
 
 The avaiable configuration options are:
 
 * api['http] -- This key is used for starting the MindsDB http server by providing:
-    * host(default 0.0.0.0.) - The mindsdb server address.
+    * host(default 127.0.0.1) - The mindsdb server address.
     * port(default 47334) - The mindsdb server port.
 * api['mysql'] -- This key is used for database integrations that works through MySQL protocol. The required keys are:
     * user(default root).
     * password(default empty).
-    * host(default localhost).
+    * host(default 127.0.0.1).
     * port(default 47335).
 * integrations['default_postgres'] -- This key specifies the integration type in this case `default_postgres`. The required keys are:
-    * user(default root) - The Postgres user name.
-    * host(default localhost) - Connect to the PostgreSQL server on the given host. 
+    * user(default postgres) - The Postgres user name.
+    * host(default 127.0.0.1) - Connect to the PostgreSQL server on the given host. 
     * password - The password of the Postgres account. 
     * type - Integration type(mariadb, postgresql, mysql, clickhouse, mongodb).
-    * port(default 3306) - The TCP/IP port number to use for the connection. 
-* log['level'] -- The logging configuration:
+    * port(default 5432) - The TCP/IP port number to use for the connection. 
+* log['level'] -- The logging configuration(not required):
     * console - "INFO", "DEBUG", "ERROR".
     * file - Location of the log file.
 * storage_dir -- The directory where mindsdb will store models and configuration.
