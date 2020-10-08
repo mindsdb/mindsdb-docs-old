@@ -24,7 +24,9 @@ nav:
   - Installing MindsDB: Installing.md
   - AutoML in Databases:
     - AI Tables: databases/index.md
+    - AI Tables in PostgreSQL: databases/PostgreSQL.md
     - AI Tables in MariaDB: databases/MariaDB.md
+    - AI Tables in MySQL: databases/MySQL.md
     - AI Tables in ClickHouse: databases/Clickhouse.md
   - AutoML from code:
     - Python native:
