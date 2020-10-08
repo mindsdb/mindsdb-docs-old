@@ -27,14 +27,14 @@ The avaiable configuration options are:
     * password(default empty).
     * host(default 127.0.0.1).
     * port(default 47335).
-    * enabled(true|false).
 * integrations['default_mysql'] -- This key specifies the integration type in this case `default_mysql`. The required keys are:
     * user(default root) - The MySQL user name.
     * host(default 127.0.0.1) - Connect to the MySQL server on the given host. 
     * password - The password of the MySQL account. 
     * type - Integration type(mariadb, postgresql, mysql, clickhouse, mongodb).
     * port(default 3306) - The TCP/IP port number to use for the connection. 
-* log['level'] -- The logging configuration:
+    * enabled(true|false) - Enable MySQL integration.
+* log['level'] -- The logging configuration(optional):
     * console - "INFO", "DEBUG", "ERROR".
     * file - Location of the log file.
 * storage_dir -- The directory where mindsdb will store models and configuration.
