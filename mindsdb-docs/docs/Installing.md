@@ -22,13 +22,13 @@ Once that's done, you can install mindsdb from your terminal or from the **anaco
 
 ## Standard installation
 
-### Installing MindsDB with pip:
+### Install MindsDB with pip:
 
 ```bash
 pip install mindsdb
 ```
 
-### Installing within virtual environment
+### Install using virtual environment
 We suggest you to run MindsDB on a virtual environment to avoid dependency issues. Make sure your Python version is >=3.6. To set up a virtual environment:
 
 1. Create and activate venv:
@@ -41,7 +41,7 @@ source venv/bin/activate
 pip install mindsdb
 ```
  
-### Install within Host Environment
+### Install using Host Environment
 You can use MindsDB on your own computer in under a minute, if you already have a python environment setup, just run the following command:
 
 1. Install MindsDB:
