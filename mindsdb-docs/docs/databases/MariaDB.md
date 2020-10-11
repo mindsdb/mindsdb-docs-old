@@ -70,7 +70,7 @@ The avaiable configuration options are:
            "user": "pass"
        }
    },
-   "config_version": "1.1",
+   "config_version": "1.3",
    "debug": true,
    "integrations": {
        "default_mariadb": {
