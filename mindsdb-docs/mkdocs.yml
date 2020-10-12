@@ -61,7 +61,6 @@ nav:
   - AutoML Explainability:
     - MindsDB Scout:
       - Getting Started: scout/Introduction.md
-      - Connection: scout/Connection.md
       - Datasources: scout/Datasources.md
       - Predictors: scout/Predictors.md
       - Query: scout/Query.md
