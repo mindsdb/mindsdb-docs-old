@@ -50,50 +50,39 @@ The avaiable configuration options are:
     <summary> Configuration example</summary>  
 ```json
 {
-   "api": {
-       "http": {
-           "host": "0.0.0.0",
-           "port": "47334"
-       },
-       "mysql": {
-           "certificate_path": "path/to/cert", 
-           "host": "127.0.0.1",
-           "log": {
-               "console_level": "INFO",
-               "file": "mysql.log",
-               "file_level": "INFO",
-               "folder": "logs/",
-               "format": "%(asctime)s - %(levelname)s - %(message)s"
-           },
-           "password": "root",
-           "port": "47335",
-           "user": "pass"
-       }
-   },
-   "config_version": "1.1",
-   "debug": true,
-   "integrations": {
-       "default_mariadb": {
+    "api": {
+        "http": {
+            "host": "0.0.0.0",
+            "port": "47334"
+        },
+        "mysql": {
+            "host": "127.0.0.1",
+            "password": "",
+            "port": "47335",
+            "user": "root"
+        }
+    },
+    "config_version": "1.3",
+    "debug": true,
+    "integrations": {
+        "default_mariadb": {
            "enabled": true,
            "host": "localhost",
            "password": "password",
            "port": 3306,
            "type": "mariadb",
            "user": "root"
-       }
-   },
-   "interface": {
-       "datastore": {
-           "enabled": true,
-           "storage_dir": "/var/lib"
-       },
-       "mindsdb_native":{
-           "enabled": true,
-           "storage_dir": "/var/lib"
-       }
-   }
+        }
+    },
+    "log": {
+        "level": {
+            "console": "DEBUG",
+            "file": "INFO"
+        }
+    },
+    "storage_dir": "/storage"
 }
-```        
+```
 </details> 
 
 !!! warning "Install CONNECT Storage Engine"
