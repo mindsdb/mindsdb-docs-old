@@ -104,7 +104,7 @@ The avaiable configuration options are:
 To start mindsdb run following command:
 
 ```python
-python3 -m mindsdb --api=mysql --config=config.json
+python3 -m mindsdb --api=http,mysql --config=config.json
 ```
 The --api parameter specifies the type of API to use in this case mysql. 
 The --config specifies the location of the configuration file. 
