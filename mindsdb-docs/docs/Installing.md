@@ -112,10 +112,10 @@ python -m mindsdb
 You should see simmilar message as:
 
 ```
-GUI should be available by http://0.0.0.0:47334/static/index.html
-Start on 0.0.0.0:47334
-Serving on http://0.0.0.0:47334
+GUI should be available by http://127.0.0.1:47334/static/index.html
+Start on 127.0.0.1:47334
+Serving on http://127.0.0.1:47334
 ```
 
-* To access MindsDB API's visit `http://0.0.0.0:47334`.
-* To access MindsDB Scout visit  `http://0.0.0.0:47334/static/index.html`
+* To access MindsDB API's visit `http://127.0.0.1:47334`.
+* To access MindsDB Scout visit  `http://127.0.0.1:47334/static/index.html`
