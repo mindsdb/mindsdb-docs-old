@@ -3,7 +3,7 @@ dist: xenial
 language: python
 python: 3.7
 install:
-  - pip install mkdocs mkdocs-material pymdown-extensions pygments mkdocs-table-reader-plugin
+  - pip install mkdocs mkdocs-material pymdown-extensions pygments mkdocs-table-reader-plugin==0.3.0
 before_script:
   - cd mindsdb-docs
 #build docs  
