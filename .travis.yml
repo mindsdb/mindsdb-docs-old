@@ -1,19 +1,19 @@
-
+os: linux
+dist: xenial
 language: python
 python: 3.7
 install:
-  - pip install mkdocs mkdocs-material pymdown-extensions pygments
+  - pip install mkdocs mkdocs-material pymdown-extensions pygments mkdocs-table-reader-plugin==0.3.0
 before_script:
   - cd mindsdb-docs
 #build docs  
-scripts: mkdocs build --verbose --clean 
+script: mkdocs build --verbose --clean 
 # deploy to github pages
-before_script:
-  - cd mindsdb-docs
 deploy:
     provider: pages
-    skip_cleanup: true
-    github_token: $GITHUB_TOKEN
+    strategy: git
+    cleanup: true
+    token: $GITHUB_TOKEN
     local_dir: site
     on:
       branch: master
