@@ -31,12 +31,12 @@ nav:
   - AutoML from code:
     - Python native:
       - Starter Example: tutorials/BasicExample.md
-      - Timeseries Data: tutorials/Timeseries.md
       - Running on Google Colab: GoogleColab.md
       - Running on Jupyter Notebook: JupyterNotebook.md
       - Predictor Interface: PredictorInterface.md
       - Functional Interface: FunctionalInterface.md
       - Advanced usecases: tutorials/AdvancedExamples.md
+      - Timeseries Data: tutorials/Timeseries.md
       - Data sources: features/DataSources.md
       - Configuration Settings: Config.md
       - MindsDB SDK: server/SDKs.md

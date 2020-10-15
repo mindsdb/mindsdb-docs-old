@@ -28,7 +28,7 @@ Let's go through these settings one by one:
 
 * order_by - The columns based on which the data should be ordered
 * group_by - The columns based on which to group multiple unrelated entities present in your timeseries data. For example, let's say your data consists of sequential readings from 3x sensors. Treating the problem as a timeseries makes sense for individual sensors, so you would specify: `group_by=['sensor_id']`
-* nr_predictions - The number of points in the future that predictions should be made for, defaults to `1`. [Status: Not Implemented]
+* nr_predictions - The number of points in the future that predictions should be made for, defaults to `1`. Once trained, the model will be able to predict up to this many points into the future.
 * use_previous_target - Use the previous values of the target column[s] for making predictions. Defaults to `True`. [Status: Experimental]
 * keep_order_column - Whether or not to use the column[s] based on which the data is ordered for making predictions. This might be relevant if the order columns is, for example, a simple auto-incrementing index. Defaults to `True`. [Status: Not Implemented]
 * window - The number of rows to "look back" into when making a prediction, after the rows are ordered by the order_by column and split into groups.
