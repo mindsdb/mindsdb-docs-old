@@ -65,6 +65,14 @@ If for some reason this fail, don't worry, simply follow the below [What to do i
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Uw2Phj5Q0xA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
+### Install on Windows using MindsDB installers
+You can install MindsDB on your windows using an installler.
+
+Download [MindsDB Installer for Windows](https://mindsdb-installer.s3-us-west-2.amazonaws.com/mindsdb-installer/windows/MindsDB-Server-Latest-Setup.exe)
+
+This installer will install python, all of the dependency, and creates a shortcut on the desktop for starting MindsDB server.
+
 ## What to do if installation fails
 
 1. Python 64 bit version is required. Depending on your environment, you might have to use `pip3` instead of `pip`, and `python3.x` instead of `python` in the above commands.
