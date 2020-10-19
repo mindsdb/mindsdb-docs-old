@@ -10,8 +10,7 @@ Lightwood was inspired on [Keras](https://keras.io/)+[Ludwig](https://github.com
 
 ## Installing Lightwood
 
-
-### On Linux, OSX, Windows and all other operating systems
+You can install Lightwood using `pip`:
 ```bash
 pip3 install lightwood
 ```
@@ -24,7 +23,7 @@ cd lightwood;
 pip install --no-cache-dir -e .
 ```
 
-**Please note that, depending on your os and python setup, you might want to use `pip` instead of `pip3`, so please try the commands with `pip` if the ones above fail**
+>Please note that, depending on your os and python setup, you might want to use `pip` instead of `pip3`.
 
 You need python 3.6 or higher.
 
@@ -34,83 +33,38 @@ Note on MacOS, you need to install libomp:
 brew install libomp
 ```
 
-### Installing Lightwood on Windows
+### Install using virtual environment
 
-Install `pip` to the latest version
+We suggest you to install Lightwood on a virtual environment to avoid dependency issues. Make sure your Python version is >=3.6. To set up a virtual environment:
+
+#### Install on Windows
+
+Install the latest version of `pip`:
 
 ```bash
 python -m pip install --upgrade pip
 pip --version
 ```
-Install lightwood using `pip`
 
-```bash
-pip install lightwood
-```
-### Installing Lightwood on a Virtual Environment
-
-A virtual environment essentially allows you to create a “virtual” isolated Python installation and install packages into that virtual installation.
-`virtualenv` is used to manage Python packages for different projects.
-Please ensure to follow these steps for installing lightwood on a virtual environment
-
-#### Installing Virtual Environment
-
-If virtual environment is not installed please do the same by entering the following command for the respective operating system
-
-On macOS and Linux
-
-```bash
-python3 -m pip install --user virtualenv
-```
-
-On Windows:
+Activate your virtual environment and install lightwood:
 
 ```bash
 py -m pip install --user virtualenv
-```
-You can also use `python` instead of `py`
-
-#### Creating the Virtual Environment
-
-After having done the above steps you should create a virtual environment on the respective operating system.
-
-On macOS and Linux:
-
-```bash
-python3 -m venv env
-```
-
-On Windows:
-
-```bash
-py -m venv env
-```
-You can also use `python` instead of `py`
-
-#### Activating the Virtual Environment
-
-Before installing lightwood in a virtual environment you need to first activate the `venv`
-
-On macOS and Linux:
-
-```bash
-source env/bin/activate
-```
-
-On Windows:
-
-```bash
 .\env\Scripts\activate
+pip install lightwood
 ```
-This will activate the `venv` and now finally lightwood is ready to be installed using `pip`
+>You can also use `python` instead of `py`
 
-#### Installing lightwood on `venv`
+#### Install on Linux or macOS 
+
+Before installing Lightwood in a virtual environment you need to first create and activate the `venv`:
 
 ```bash
-pip3 install lightwood
+python -m venv env
+source env/bin/activate
+pip install lightwood
 ```
-This will install lightwood in a virtual environment successfully.
-Please keep in mind `pip3` can be replaced with `pip` depending on the os and python setup. 
+
 
 ## Quick example
 

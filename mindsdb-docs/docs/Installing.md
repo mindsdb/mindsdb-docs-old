@@ -31,7 +31,7 @@ pip install mindsdb
 ### Install using virtual environment
 We suggest you to run MindsDB on a virtual environment to avoid dependency issues. Make sure your Python version is >=3.6. To set up a virtual environment:
 
-#### Install in Windows
+#### Install on Windows
 1. Create and activate venv:
 ```bash
 py -m venv venv
@@ -42,7 +42,7 @@ py -m venv venv
 pip install mindsdb
 ```
 
-#### Install in Linux and macOS
+#### Install on Linux and macOS
 1. Create and activate venv:
 ```bash
 python -m venv venv
