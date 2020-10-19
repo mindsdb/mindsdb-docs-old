@@ -16,10 +16,10 @@ MindsDB Scout works on the most widely used operating systems. One of the requir
 When MindsDB server is started it will display the URL for accessing Scout:
 
 ```
-GUI should be available by http://localhost:47334/static/index.html
+GUI should be available by http://localhost:47334/index.html
 ```
 
-Open up `http://localhost:47334/static/index.html` on your browser and the Scout should be started
+Open up `http://localhost:47334/index.html` on your browser and the Scout should be started
 
 ## Tutorial
 We have created a few tutorials that will help you to successfully install and use MindsDB Scout:
