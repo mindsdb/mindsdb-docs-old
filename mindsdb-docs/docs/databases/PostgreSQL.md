@@ -96,7 +96,7 @@ The --config specifies the location of the configuration file.
 To train a new model, insert a new record inside the mindsdb.predictors table as:
 
 ```sql
-INSERT INTO mindsdb.predictors(name, predict, select_data_query, training_options) VALUES ('us_consumption', 'consumption', 'SELECT * FROM us_consumption', '{"timeseries_settings":{"order_by": ["t"],"window":20}}');
+INSERT INTO mindsdb.predictors(name, predict, select_data_query, training_options) VALUES ('us_consumption', 'consumption', 'SELECT * FROM us_consumption', '{"timeseries_settings":{"order_by": ["t"], "window":20}}');
 
 ```
 
@@ -184,3 +184,5 @@ The requirements to query with `select_data_query` are:
 
 * It must be a valid SQL statement
 * It must return columns with names the same as predictor fields.
+
+To get additional information follow the [AiTables in PostgreSQL tutorail](/databases/tutorials/AiTablesInPostgreSQL/).
