@@ -96,14 +96,14 @@ The --config specifies the location of the configuration file.
 To train a new model, insert a new record inside the mindsdb.predictors table as:
 
 ```sql
-INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES ('us_consumption', 'consumption', 'SELECT * FROM us_consumption');
+INSERT INTO mindsdb.predictors(name, predict, select_data_query, training_options) VALUES ('us_consumption', 'consumption', 'SELECT * FROM us_consumption', '{"timeseries_settings":{"order_by": ["t"],"window":20}}');
 
 ```
 
 * name (string) -- The name of the predictor.
 * predict (string) --  The feature you want to predict, in this example consumption. To predict multiple featurs include a comma separated string e.g 'consumption,income'.
 * select_data_query (string) -- The SELECT query that will ingest the data to train the model.
-* training_options (JSON as comma separated string) -- optional value that contains additional training parameters. For a full list of the parameters check the [PredictorInterface](/PredictorInterface/#learn).
+* training_options (JSON as comma separated string) -- optional value that contains additional training parameters. For a full list of the parameters check the [PredictorInterface](/PredictorInterface/#learn). If you are using timeseries data check the [Timeseries settings](/tutorials/Timeseries/).
 
 ### Query the model
 
