@@ -30,6 +30,7 @@ nav:
     - AI Tables in ClickHouse: databases/Clickhouse.md
     - Tutorials:
       - AI Tables in PostgreSQL: databases/tutorials/AiTablesInPostgreSQL.md
+      - AI Tables in MySQL: databases/tutorials/AiTablesInMySQL.md
   - AutoML from code:
     - Python native:
       - Starter Example: tutorials/BasicExample.md
