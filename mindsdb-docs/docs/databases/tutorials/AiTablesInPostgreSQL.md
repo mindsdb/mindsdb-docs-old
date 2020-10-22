@@ -3,7 +3,7 @@
 Anyone that has dealt with Machine Learning understands that data is a fundamental ingredient to it. Given that a great deal of the world’s organized data already exists inside databases, doesn't it make sense to bring machine learning capabilities straight to the database itself? Bringing Machine Learning to those who know their data best can significantly augment the capacity to solve important problems.
 To do so, we have developed a concept called AI-Tables.
 
-What is AI Tables
+## What is AI Tables
 
 AI-Tables differ from normal tables in that they can generate predictions upon being queried and returning such predictions as if it was data that existed in the table. Simply put, an AI-Table allows you to use machine learning models as if they were normal database tables, in something that in plain SQL looks like this:
 SELECT <predicted_variable> FROM <ML_model> WHERE <conditions>
@@ -62,7 +62,7 @@ Or, if you are using pgAdmin, DBeaver or another SQL client just use the import 
 SELECT * FROM airline_passenger_satisfaction LIMIT 10;
 ```
 
-![SELECT FROM us_consumption](/assets/tutorials/aitables-postgresql/select_table.png)
+![SELECT FROM us_consumption](../../assets/tutorials/aitables-postgresql/select_table.png)
 
 ## Add Configuration
 
@@ -139,12 +139,12 @@ The arguments sent to MindsDB are:
 * --config - The path to the configuration file that we have created.
 If everything works as expected you should see the following message:
 
-![MindsDB Started](/assets/tutorials/aitables-postgresql/mindsdb_started.png)
+![MindsDB Started](../../assets/tutorials/aitables-postgresql/mindsdb_started.png)
 
 
 Upon successful setup, MindsDB should create a new schema called mindsdb. 
 
-![MindsDB Schema](/assets/tutorials/aitables-postgresql/list_schema.png)
+![MindsDB Schema](../../assets/tutorials/aitables-postgresql/list_schema.png)
 
 
 In the mindsdb schema, two new tables should be created called commands and predictors. The mindsdb.predictors table is the table where MindsDB will keep information about trained and in training models.
@@ -169,7 +169,7 @@ To check that the training successfully finished we can SELECT from mindsdb.pred
 SELECT * FROM mindsdb.predictors WHERE name='passenger_satisfaction_model';
 ```
 
-![Status](/assets/tutorials/aitables-postgresql/select_status.png)
+![Status](../../assets/tutorials/aitables-postgresql/select_status.png)
 
 The status complete means that training successfully finished. Now, let’s query the model. The trained model behaves like an AI Table and can be queried as it is a standard database table. To get the prediction we need to execute `SELECT` query and in the `WHERE` clause include the other features values as Customer Type, Type of Travel, Seat comfort etc. 
 
@@ -177,7 +177,7 @@ The status complete means that training successfully finished. Now, let’s quer
 SELECT satisfaction AS predicted, satisfaction_confidence AS confidence FROM mindsdb.passenger_satisfaction_model WHERE  "Customer Type"='Loyal Customer' AND "Inflight wifi service"=5 AND "Type of Travel"='Business travel' AND "Class"='Eco';
 ```
 
-![SELECT FROM model](/assets/tutorials/aitables-postgresql/select_model.png)
+![SELECT FROM model](../../assets/tutorials/aitables-postgresql/select_model.png)
 
 In a second we should get the prediction back from MindsDB. So, MindsDB thinks that the value for consumption rate is around 0.87 with pretty much big confidence 97%. There is additional information that we can get back from MindsDB by selecting the explain column from the model as:
 
