@@ -171,7 +171,7 @@ SELECT * FROM mindsdb.predictors WHERE name='metro_traffic_model';
 The status complete means that training successfully finished. Now, let’s query the model. The trained model behaves like an AI Table and can be queried as it is a standard database table. To get the prediction we need to execute a `SELECT` query and in the `WHERE` clause include the when_data as an JSON string that includes features values such as date_time, weather, temperature, holiday etc.
 
 ```sql
-mysql> select * from mindsdb.metro_traffic_model where when_data='{"temp": "288","snow_1h":0, "date_time": "2012-10-02", "holiday":"Columbus Day"}';
+SELECT traffic_volume FROM metro_traffic_model WHERE temp = "288" AND snow_1h = "0" AND date_time = "2012-10-02" AND holiday = "Columbus Day";
 ```
 
 In a second we should get the prediction back from MindsDB. So, MindsDB thinks that the value for traffic_volume value is 4524 with pretty much big confidence 99%.
