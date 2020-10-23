@@ -3,12 +3,14 @@
 Anyone that has dealt with Machine Learning understands that data is a fundamental ingredient to it. Given that a great deal of the world’s organized data already exists inside databases, doesn't it make sense to bring machine learning capabilities straight to the database itself? Bringing Machine Learning to those who know their data best can significantly augment the capacity to solve important problems.
 To do so, we have developed a concept called AI-Tables.
 
-What is AI Tables
+## What is AI Tables
 
-AI-Tables differ from normal tables in that they can generate predictions upon being queried and returning such predictions as if it was data that existed in the table. Simply put, an AI-Table allows you to use machine learning models as if they were normal database tables, in something that in plain SQL looks like this:'
+AI-Tables differ from normal tables in that they can generate predictions upon being queried and returning such predictions as if it was data that existed in the table. Simply put, an AI-Table allows you to use machine learning models as if they were normal database tables, in something that in plain SQL looks like this:
+
 ```sql
 SELECT <predicted_variable> FROM <ML_model> WHERE <conditions>
 ```
+
 Now, in this tutorial you will get a step-by-step instructions on how to enable AI-Tables in your database and how to build, train and query a Machine Learning model only by using SQL statements!
 
 ## How to install MySQL?
@@ -61,7 +63,7 @@ Let’s Select some data from metro_trafic table to check that the data was succ
 SELECT * FROM metro_trafic LIMIT 10;
 ```
 
-![SELECT FROM us_consumption](/mindsdb-docs/docs/assets/tutorials/aitables-mysql/select_table.png)
+![SELECT FROM us_consumption](/assets/tutorials/aitables-mysql/select_table.png)
 
 ## Add Configuration
 
@@ -138,12 +140,12 @@ The arguments sent to MindsDB are:
 * --config - The path to the configuration file that we have created.
 If everything works as expected you should see the following message:
 
-![MindsDB Started](/mindsdb-docs/docs/assets/tutorials/aitables-postgresql/mindsdb_started.png)
+![MindsDB Started](/assets/tutorials/aitables-postgresql/mindsdb_started.png)
 
 
 Upon successful setup, MindsDB should create a new database called mindsdb.
 
-![MindsDB Schema](/mindsdb-docs/docs/assets/tutorials/aitables-mysql/list_tables.png)
+![MindsDB Schema](/assets/tutorials/aitables-mysql/list_tables.png)
 
 
 In the mindsdb database, two new tables should be created called commands and predictors. The mindsdb.predictors table is the table where MindsDB will keep information about trained and in training models.
@@ -168,7 +170,7 @@ To check that the training successfully finished we can SELECT from mindsdb.pred
 SELECT * FROM mindsdb.predictors WHERE name='metro_traffic_model';
 ```
 
-![Status](/mindsdb-docs/docs/assets/tutorials/aitables-mysql/select_status.png)
+![Status](/assets/tutorials/aitables-mysql/select_status.png)
 
 The status complete means that training successfully finished. Now, let’s query the model. The trained model behaves like an AI Table and can be queried as it is a standard database table. To get the prediction we need to execute a `SELECT` query and in the `WHERE` clause include the when_data as an JSON string that includes features values such as date_time, weather, temperature, holiday etc.
 
