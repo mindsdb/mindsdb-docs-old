@@ -6,10 +6,14 @@ To do so, we have developed a concept called AI-Tables.
 ## What is AI Tables
 
 AI-Tables differ from normal tables in that they can generate predictions upon being queried and returning such predictions as if it was data that existed in the table. Simply put, an AI-Table allows you to use machine learning models as if they were normal database tables, in something that in plain SQL looks like this:
+
 ```sql
 SELECT <predicted_variable> FROM <ML_model> WHERE <conditions>
 ```
+
 Now, in this tutorial you will get a step-by-step instructions on how to enable AI-Tables in your database and how to build, train and query a Machine Learning model only by using SQL statements!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/L4Hr0e2K1tc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## How to install PostgreSQL?
 
