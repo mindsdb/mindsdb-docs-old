@@ -11,7 +11,7 @@ Now, in this tutorial you will get a step-by-step instructions on how to enable 
 
 ## How to install PostgreSQL?
 
-If you don’t have PostgreSQL installed you can download the installers for various platforms from the official documentation.
+If you don’t have PostgreSQL installed you can [download the installers](https://www.postgresql.org/download/) for various platforms from the official documentation.
 
 ## Example dataset
 
