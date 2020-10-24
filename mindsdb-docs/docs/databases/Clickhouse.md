@@ -16,7 +16,7 @@ You will need MindsDB version >= 2.0.0 and ClickHouse installed.
 
 !!! info "Default configuration"
     MindsDB will try to use the default configuration(hosts, ports, usernames) for each of the database integrations. If you want to extend that or you are
-    using different parameters creata a new config.json file. 
+    using different parameters create a new config.json file.
 
 The avaiable configuration options are:
 
@@ -36,10 +36,10 @@ The avaiable configuration options are:
         * format - Format of log message e.g "%(asctime)s - %(levelname)s - %(message)s".
 * integrations['default_clickhouse'] -- This key specifies the integration type in this case `default_clickhouse`. The required keys are:
     * user(default default) - The ClickHouse user name.
-    * host(default localhost) - Connect to the ClickHouse server on the given host. 
-    * password - The password of the ClickHouse user. 
+    * host(default localhost) - Connect to the ClickHouse server on the given host.
+    * password - The password of the ClickHouse user.
     * type - Integration type(mariadb, postgresql, mysql, clickhouse).
-    * port(default 8123) - The TCP/IP port number to use for the connection. 
+    * port(default 8123) - The TCP/IP port number to use for the connection.
 * interface -- This key is used by MindsDB and provides the path to the directory where MindsDB shall save configuration and model files:
     * datastore
         * enabled(default false) - If not provided MindsDB will use default storage inside /var.
@@ -53,52 +53,40 @@ The avaiable configuration options are:
     <summary> Configuration example</summary>  
 ```json
 {
-   "config_version": 1,
-   "api": {
-       "http": {
-           "host": "0.0.0.0",
-           "port": "47334"
-       } ,
-    "mysql": {
-           "certificate_path": "/flows/config/cert.pem",
-           "datasources": [],
-           "host": "127.0.0.1",
-           "log": {
-               "console_level": "INFO",
-               "file": "mysql.log",
-               "file_level": "INFO",
-               "folder": "logs/",
-               "format": "%(asctime)s - %(levelname)s - %(message)s"
-           },
-           "password": "mysql pass",
-           "port": "47335",
-           "user": "mysql user"
-       }
-   },
-   "debug": false,
-   "integrations": {
-       "default_clickhouse": {
-           "enabled": true,
-           "type": "clickhouse",
-           "host": "localhost",
-           "password": "pass",
-           "port": 8123,
-           "user": "default"
-       }
-   },
-   "interface":{
-       "datastore": {
-           "enabled": false,
-           "storage_dir": "/path/to/storage"
-       }, 
-    "mindsdb_native": {
-           "enabled": true,
-           "storage_dir": "/path/to/storage"
-       }	
-   }
+    "api": {
+        "http": {
+            "host": "0.0.0.0",
+            "port": "47334"
+        },
+        "mysql": {
+            "host": "127.0.0.1",
+            "password": "",
+            "port": "47335",
+            "user": "root"
+        }
+    },
+    "config_version": "1.3",
+    "debug": true,
+    "integrations": {
+      "default_clickhouse": {
+          "enabled": true,
+          "host": "localhost",
+          "password": "root",
+          "port": 3307,
+          "type": "mysql",
+          "user": "root"
+      }
+    },
+    "log": {
+        "level": {
+            "console": "DEBUG",
+            "file": "INFO"
+        }
+    },
+    "storage_dir": "/storage"
 }
 ```
-</details> 
+</details>
 
 ### Start MindsDB
 To start mindsdb run following command:
@@ -106,8 +94,8 @@ To start mindsdb run following command:
 ```python
 python3 -m mindsdb --api=mysql --config=config.json
 ```
-The --api parameter specifies the type of API to use in this case mysql. 
-The --config specifies the location of the configuration file. 
+The --api parameter specifies the type of API to use in this case mysql.
+The --config specifies the location of the configuration file.
 
 ### Train new model
 
@@ -115,7 +103,7 @@ To train a new model, insert a new record inside the mindsdb.predictors table as
 
 ```sql
 INSERT INTO
-   mindsdb.predictors(name, predict, select_data_query, training_options) 
+   mindsdb.predictors(name, predict, select_data_query, training_options)
 VALUES
    ('airq_predictor', 'SO2', 'SELECT * FROM data.pollution_measurement', {"option": "value"});
 ```
@@ -130,13 +118,13 @@ VALUES
 To query the model and get the predictions SELECT the target variable, confidence and explanation for that prediction.
 
 ```sql
-SELECT 
+SELECT
     SO2 AS predicted,
     SO2_confidence AS confidence,
     SO2_explain AS info
 FROM airq_predictor
-WHERE (NO2 = 0.005) 
-    AND (CO = 1.2) 
+WHERE (NO2 = 0.005)
+    AND (CO = 1.2)
     AND (PM10 = 5)
 ```
 You should get a similar response from MindsDB as:
