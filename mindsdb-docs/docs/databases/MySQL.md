@@ -181,3 +181,6 @@ The requirements to query with `select_data_query` are:
 
 * It must be a valid SQL statement
 * It must return columns with names the same as predictor fields.
+
+
+To get additional information follow the AiTables in [MySQL tutorial](https://docs.mindsdb.com/databases/tutorials/AiTablesInMySQL/).
