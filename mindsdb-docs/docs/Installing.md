@@ -28,6 +28,13 @@ Once that's done, you can install mindsdb from your terminal or from the **anaco
 pip install mindsdb
 ```
 
+### Install on Windows using MindsDB installers
+You can install MindsDB on your windows using an installler.
+
+Download [MindsDB Installer for Windows](https://mindsdb-installer.s3-us-west-2.amazonaws.com/mindsdb-installer/windows/MindsDB-Server-Latest-Setup.exe)
+
+This installer will install python, all of the dependency, and creates a shortcut on the desktop for starting MindsDB server.
+
 ### Install using virtual environment
 We suggest you to run MindsDB on a virtual environment to avoid dependency issues. Make sure your Python version is >=3.6. To set up a virtual environment:
 
@@ -64,14 +71,6 @@ You can use MindsDB on your own computer in under a minute, if you already have 
 If for some reason this fail, don't worry, simply follow the below [What to do if installation fails](https://docs.mindsdb.com/Installing/#what-to-do-if-installation-fails) which will lead you through a more thorough procedure which should fix most issues.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Uw2Phj5Q0xA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-### Install on Windows using MindsDB installers
-You can install MindsDB on your windows using an installler.
-
-Download [MindsDB Installer for Windows](https://mindsdb-installer.s3-us-west-2.amazonaws.com/mindsdb-installer/windows/MindsDB-Server-Latest-Setup.exe)
-
-This installer will install python, all of the dependency, and creates a shortcut on the desktop for starting MindsDB server.
 
 ## What to do if installation fails
 
