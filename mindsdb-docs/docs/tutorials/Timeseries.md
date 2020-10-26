@@ -17,9 +17,7 @@ timeseries_settings = {
   group_by: List<String>              | Optional (default: [])
   nr_predictions: Int                 | Optional (default: 1)
   use_previous_target: Bool           | Optional (default: True)
-  keep_order_column:   Bool           | Optional (default: True)
-  window: Int                         | Mandatory if `dynamic_window` is not passed
-  dynamic_window: Int                 | Mandatory if `window` is not passed
+  window: Int                         | Mandatory
   historical_columns: List<String>    | Optional (default: [])
 }
 ```
@@ -30,9 +28,7 @@ Let's go through these settings one by one:
 * group_by - The columns based on which to group multiple unrelated entities present in your timeseries data. For example, let's say your data consists of sequential readings from 3x sensors. Treating the problem as a timeseries makes sense for individual sensors, so you would specify: `group_by=['sensor_id']`
 * nr_predictions - The number of points in the future that predictions should be made for, defaults to `1`. Once trained, the model will be able to predict up to this many points into the future.
 * use_previous_target - Use the previous values of the target column[s] for making predictions. Defaults to `True`. [Status: Experimental]
-* keep_order_column - Whether or not to use the column[s] based on which the data is ordered for making predictions. This might be relevant if the order columns is, for example, a simple auto-incrementing index. Defaults to `True`. [Status: Not Implemented]
 * window - The number of rows to "look back" into when making a prediction, after the rows are ordered by the order_by column and split into groups.
-* dynamic_window - The number of seconds to "look back" into when making a prediction, this argument is mutually exclusive with `window`. The `window` argument could be used to specify something like "Always use the previous 10 rows", while this argument is used to specify something like "Always use the previous 10 hours" (which can result in a variable number of rows for each sample).
 
 ### Code example
 
@@ -48,24 +44,54 @@ mdb.learn(
       group_by: ['machine_id'] # The ordering should be done on a per-machine basis, rather than for every single row
       nr_predictions: 3 # Predict failures for the timestamp given and for 2 more timesteps in the future
       use_previous_target: True # Us the previous values in the target column (`failure`), since when the last failure happened could be a relevant data-point for our prediction.
-      keep_order_column: False #The timestamp of the sample should have no relevance to the machine failing, it's just here to order the observations, so we won't be using it for making predictions, just for ordering.
       window: 20 # Consider the previous 20 rows for every single row our model is trying to predict o
     }
 )
 
-results = mdb.predict(when_data='assembly_machines_data.tsv')
+results = mdb.predict(when_data='new_assembly_machines_data.tsv')
 ```
 
 ### Historical data
 When making timeseries predictions, it's important to provide mindsdb with the context for those predictions, i.e. with the previous rows that came before the one you are trying to predict for.
 
-This can be done automatically when using mindsdb from within a database (see bellow) or manually by passing the historical data as part of the structured file or dataframe given to `when_data`.
+Say your columns are: `date, nr_customers, store`.
+You order by `date`, group by `store` and need to predict `nr_customers`. You set `window=3`.
 
-Historical data should contain one additional columns called `make_predictions` which can be set to `true` or `false`, this column should be set to `false` for all rows that are there to simply provide historical context. Also, make sure to provide the values for the target columns for all rows that are there to provide historical context if `use_previous_target` is set to `True`.
+You train your model and then want to make a prediction using a csv with the following content:
+```
+date,       nr_customers, store
+2020-10-06, unknown     , A1
+```
+
+This prediction will be less than ideal, since mindsdb doesn't know how many customers came to the store on `2020-10-05` or `2020-10-04`, which is probably the main insight the trained model is using to make predictions. So instead you need to pass a file with the following content:
+
+```
+date,       nr_customers, store
+2020-10-04, 55          , A1
+2020-10-05, 123         , A1
+2020-10-06, None        , A1
+```
+
+Note that mindsdb will generate a prediction for every row here (even if the target value `nr_customers` already exists), but you only care about the prediction for the last row, the previous 2 are there to provide historical context.
+
+Also note that, if you window was, say, equal to `5`, you would have had to provide 4 more rows instead of 2 more.
+Also note that, if you were to give the file:
+
+```
+date,       nr_customers, store
+2020-10-04, 55          , B11
+2020-10-05, 123         , A2
+2020-10-06, None        , A1
+```
+
+This wouldn't count as historical context, since you are grouping by the `store` column, so only rows where `store` is `A1` will be relevant historical context for predicting a row where the `store == A1`
 
 
 ### Database integration
-When querying the original training data (the one passed to `learn`) from a database, mindsdb is able to automatically infer the queries required to get historical data for the `predict` calls in order to provide the previous rows for a given sample that we want to predict for.
+
+There is an experimental feature, when you train mindsdb from a database, that auto-generates a query to select historical context, based on the query you used to source your training data.
+
+This can be enabled by passing `advanced_args={'use_database_history': True}` to the `predict` call (or to the `SELECT` call if operating from within a database). This is still very experimental and has many blindspots, so if you're interested in using this please contact us so we can help and get your feedback on how to improve this.
 
 
 ### Database example (from SQL)
