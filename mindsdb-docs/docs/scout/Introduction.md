@@ -3,7 +3,7 @@
 MindsDB Scout is a graphical user interface that sits on top of MindsDB and MindsDB Server. It lets you to upload, analyze and visualize your data, train machine learning models and query them with few clicks directly from the Databases, your local file system or external resources.
 
 
-## Download MindsDB Scout(Depricated option)
+## Download MindsDB Scout(Deprecated option)
 
 MindsDB Scout works on the most widely used operating systems. One of the requirements before installing it is to have Python >=3.6 installed. You can download it for free from the [MindsDB product page](https://www.mindsdb.com/product).
 

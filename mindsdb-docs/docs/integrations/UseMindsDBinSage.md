@@ -3,7 +3,7 @@ id: use-mindsdb-in-sage
 title: Train and host MindsDB models
 ---
 
-The following section explaines how to train and host models using [Amazon SageMaker console](https://console.aws.amazon.com/sagemaker/).
+The following section explains how to train and host models using [Amazon SageMaker console](https://console.aws.amazon.com/sagemaker/).
 
 ## Create Train Job
 

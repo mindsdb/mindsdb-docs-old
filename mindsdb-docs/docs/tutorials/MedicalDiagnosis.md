@@ -89,6 +89,6 @@ if __name__ == '__main__':
 ## Mindsdb accuracy
 
 
-| Accuraccy       | Backend  | Last run | MindsDB Version | Latest Version|
+| Accuracy       | Backend  | Last run | MindsDB Version | Latest Version|
 |----------------|-------------------|----------------------|-----------------|--------------|
 | 0.9666666666666667 | Lightwood | 17 April 2020 | [![MindsDB](https://img.shields.io/badge/pypi--package-1.16.1-green)](https://pypi.org/project/MindsDB/1.16.1/)|   <a href="https://pypi.org/project/MindsDB/"><img src="https://badge.fury.io/py/MindsDB.svg" alt="PyPi Version"></a>|
