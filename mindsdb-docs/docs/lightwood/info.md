@@ -7,6 +7,9 @@ Lightwood is a Pytorch based framework with two objectives:
 
 Lightwood was inspired on [Keras](https://keras.io/)+[Ludwig](https://github.com/uber/ludwig) but runs on Pytorch and gives you full control of what you can do.
 
+## Prerequisites
+
+Python >=3.6 64bit version
 
 ## Installing Lightwood
 
