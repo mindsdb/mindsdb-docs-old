@@ -1,3 +1,5 @@
 mkdocs 
 mkdocs-material
 mkdocs-table-reader-plugin == 0.3.0
+pymdown-extensions 
+pygments 
