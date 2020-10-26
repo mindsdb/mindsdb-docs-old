@@ -42,9 +42,9 @@ Finally, the various stats are passed on as part of the metadata, so that furthe
 
 * **Train mode**: When calling `learn`,the model interface will feed the data to a machine learning framework which does the training in order to build a model.
 
-* **Preidct mode**: When calling `predict`, the model interface will feed the data to the model built by `learn` in order to generate a prediction.
+* **Predict mode**: When calling `predict`, the model interface will feed the data to the model built by `learn` in order to generate a prediction.
 
-* **Data adaption**: The `ModelInterface` phase is simply a lighteight wrapper over the model [backends](https://github.com/mindsdb/mindsdb_native/tree/stable/mindsdb_native/libs/backends) which handle adapting the data frame used by mindsdb into a format they can work with. During this process additional metadata for the machine learning libraries/frameworks is generated based on the results of the **Stats Generator** phase.
+* **Data adaption**: The `ModelInterface` phase is simply a lightweight wrapper over the model [backends](https://github.com/mindsdb/mindsdb_native/tree/stable/mindsdb_native/libs/backends) which handle adapting the data frame used by mindsdb into a format they can work with. During this process additional metadata for the machine learning libraries/frameworks is generated based on the results of the **Stats Generator** phase.
 
 * **Learning backend**: The learning backends as the [ensemble learning](https://en.wikipedia.org/wiki/Ensemble_learning) libraries used by mindsdb to train the model that will generate the predictions.
 Currently the two learning backends we are working on supporting are Ludwig (maintained mainly by Uber, fully supported) and Lightwood (created by us, based on the pre 1.0 version of mindsdb, work in progress).

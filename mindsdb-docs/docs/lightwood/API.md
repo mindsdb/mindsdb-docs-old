@@ -170,4 +170,4 @@ print(my_predictor.calculate_accuracy(from_data=data_source))
 
 ```
 !!! note ""
-    Returns the predictors overall accurary. 
+    Returns the predictors overall accuracy. 

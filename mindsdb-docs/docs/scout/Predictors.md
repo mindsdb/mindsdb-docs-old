@@ -4,7 +4,7 @@ The Predictor, in MindsDB’s words, means the machine learning model. In this d
 
 #### How to train Predictor?
 
-MindsDB SCout offers two options for Predictor training:
+MindsDB Scout offers two options for Predictor training:
 
 * Upload the already existing model.
 * Train a new one.

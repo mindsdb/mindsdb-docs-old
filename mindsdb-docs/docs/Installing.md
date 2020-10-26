@@ -116,7 +116,7 @@ After installing MindsDB Server can be started by running:
 python -m mindsdb
 ```
 
-You should see simmilar message as:
+You should see similar message as:
 
 ```
 GUI should be available by http://127.0.0.1:47334/index.html

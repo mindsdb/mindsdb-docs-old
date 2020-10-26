@@ -17,7 +17,7 @@ You will need MindsDB version >= 2.3.0 and MySQL installed:
 !!! info "Default configuration"
     MindsDB will try to use the default configuration(hosts, ports, usernames) for each of the database integrations. If you want to extend that or you are using different parameters create a new config.json file. 
 
-The avaiable configuration options are:
+The available configuration options are:
 
 * api['http] -- This key is used for starting the MindsDB http server by providing:
     * host(default 127.0.0.1) - The mindsdb server address.
