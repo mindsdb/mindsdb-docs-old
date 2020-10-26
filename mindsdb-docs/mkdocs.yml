@@ -72,6 +72,5 @@ nav:
   - Contributing:
     - FAQ: FAQ.md
     - Inside MindsDB: InsideMindsDB.md
-google_analytics: ['UA-96178523-1', 'docs.mindsdb.com']
 extra_css:
   - stylesheets/extra.css

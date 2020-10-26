@@ -5,7 +5,7 @@
 
 ## Running the docs locally
 
-First install the mkdocs and mkdocs-matherial theme in your python virtual environment:
+First install the mkdocs and mkdocs-material theme in your python virtual environment:
 ```
 pip install mkdocs mkdocs-material
 ```
