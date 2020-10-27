@@ -67,7 +67,7 @@ SELECT * FROM metro_trafic LIMIT 10;
 
 ## Add Configuration
 
-As a prerequisite for using MySQL we need to enable the Federated Storage engine. Check out official [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/federated-storage-engine.html) to see how you can do that.
+As a prerequisite for using [MySQL](https://www.mysql.com/downloads/) we need to enable the Federated Storage engine. Check out official [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/federated-storage-engine.html) to see how you can do that.
 The last step is to create the MindsDB’s configuration file. MindsDB will try to use the default configuration options like host, port, username for the MySQL. In case you want to extend them or change the default values you need to add a config.json file. Create a new file config.json and include the following information:
 
 ```json
