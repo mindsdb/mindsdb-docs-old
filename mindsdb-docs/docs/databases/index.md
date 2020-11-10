@@ -2,7 +2,7 @@
 
 Starting from MindsDB 2.0 version you can train machine learning models straight from the database by using MindsDB and the most popular database management systems like MySQL, MariaDB, PostgreSQL, ClickHouse. Any database user can now create, train and test machine learning models with the same knowledge they have of SQL. 
 
-![MindsDB-Databases](/assets/databases/ex-dbs.png)
+![MindsDB-Databases](../assets/databases/ex-dbs.png)
 
 ## AITables example
 
@@ -51,9 +51,11 @@ WHERE  model = "a6"
 
 As you can see with AI-Tables, we are aiming to simplify Machine Learning mechanics to simple SQL queries, so that you can focus on the important part; which is to think about what predictions you need and what data you want your ML to learn from to make such predictions. 
  
-![MindsDB-AutoML in Databases](/assets/databases/db-automl.png)
+![MindsDB-AutoML in Databases](../assets/databases/db-automl.png)
 
 Currently, we are supporting the integration with:
 
-* [MariaDB](/databases/MariaDB)
-* [ClickHouse](/databases/Clickhouse)
+* [MariaDB](MariaDB.md)
+* [ClickHouse](Clickhouse.md)
+* [PostgreSQL](PostgreSQL.md)
+* [MySQL](MySQL.md)
