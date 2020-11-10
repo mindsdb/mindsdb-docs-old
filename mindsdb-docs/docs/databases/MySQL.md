@@ -2,13 +2,13 @@
 
 Now, you can train machine learning models straight from the database by using MindsDB and [MySQL](https://www.mysql.com/).
 
-![MindsDB-MySQL](/assets/databases/mdb-mysql.png)
+![MindsDB-MySQL](../assets/databases/mdb-mysql.png)
 
 ### Prerequisite
 
 You will need MindsDB version >= 2.3.0 and MySQL installed:
 
-* [Install MindsDB](/Installing/)
+* [Install MindsDB](../Installing.md)
 * [Install MySQL](https://www.mysql.com/downloads/)
 * [Enable FEDERATED Storage Engine](https://dev.mysql.com/doc/refman/8.0/en/federated-storage-engine.html)
 
