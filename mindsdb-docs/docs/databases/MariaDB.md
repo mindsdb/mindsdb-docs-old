@@ -2,13 +2,13 @@
 
 Now, you can train machine learning models straight from the database by using MindsDB and [MariaDB](https://mariadb.org/).
 
-![MindsDB-ClickHouse](/assets/databases/mdb-maria.png)
+![MindsDB-ClickHouse](../assets/databases/mdb-maria.png)
 
 ### Prerequisite
 
 You will need MindsDB version >= 2.0.0 and MariaDB installed:
 
-* [Install MindsDB](/Installing/)
+* [Install MindsDB](../Installing.md)
 * [Install MariaDB](https://mariadb.com/kb/en/getting-installing-and-upgrading-mariadb/)
 
 ### Configuration
