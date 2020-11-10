@@ -2,14 +2,14 @@
 
 Now, you can train machine learning models straight from the database by using MindsDB and [ClickHouse](https://clickhouse.tech/).
 
-![MindsDB-ClickHouse](/assets/clickhouse-mdb-diagram.png)
+![MindsDB-ClickHouse](../assets/clickhouse-mdb-diagram.png)
 
 
 ### Prerequisite
 
 You will need MindsDB version >= 2.0.0 and ClickHouse installed.
 
-* [Install MindsDB](/Installing/)
+* [Install MindsDB](../Installing.md/)
 * [Install ClickHouse](https://clickhouse.tech/docs/en/getting-started/install/)
 
 ### Configuration
