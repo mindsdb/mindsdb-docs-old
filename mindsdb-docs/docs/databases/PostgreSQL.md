@@ -2,13 +2,13 @@
 
 Now, you can train machine learning models straight from the database by using MindsDB and [PostgreSQL](https://www.postgresql.org/).
 
-![MindsDB-Postgres](/assets/databases/mdb-postgres.png)
+![MindsDB-Postgres](../assets/databases/mdb-postgres.png)
 
 ### Prerequisite
 
 You will need MindsDB version >= 2.3.0 and PostgreSQL installed:
 
-* [Install MindsDB](/Installing/)
+* [Install MindsDB](../Installing.md)
 * [Install PostgreSQL](https://www.postgresql.org/download/)
 * [Install PostgreSQL foreign data wrapper for MySQL](https://github.com/EnterpriseDB/mysql_fdw#mysql-foreign-data-wrapper-for-postgresql)
 
@@ -103,7 +103,7 @@ INSERT INTO mindsdb.predictors(name, predict, select_data_query, training_option
 * name (string) -- The name of the predictor.
 * predict (string) --  The feature you want to predict, in this example consumption. To predict multiple featurs include a comma separated string e.g 'consumption,income'.
 * select_data_query (string) -- The SELECT query that will ingest the data to train the model.
-* training_options (JSON as comma separated string) -- optional value that contains additional training parameters. For a full list of the parameters check the [PredictorInterface](/PredictorInterface/#learn). If you are using timeseries data check the [Timeseries settings](/tutorials/Timeseries/).
+* training_options (JSON as comma separated string) -- optional value that contains additional training parameters. For a full list of the parameters check the [PredictorInterface](/PredictorInterface/#learn). If you are using timeseries data check the [Timeseries settings](../tutorials/Timeseries.md/).
 
 ### Query the model
 
@@ -185,4 +185,4 @@ The requirements to query with `select_data_query` are:
 * It must be a valid SQL statement
 * It must return columns with names the same as predictor fields.
 
-To get additional information follow the [AiTables in PostgreSQL tutorail](/databases/tutorials/AiTablesInPostgreSQL/).
+To get additional information follow the [AiTables in PostgreSQL tutorail](tutorials/AiTablesInPostgreSQL.md).
