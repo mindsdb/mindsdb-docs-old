@@ -72,7 +72,7 @@ The avaiable configuration options are:
           "enabled": true,
           "host": "localhost",
           "password": "root",
-          "port": 3307,
+          "port": 8123,
           "type": "mysql",
           "user": "root"
       }
