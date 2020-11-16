@@ -48,6 +48,8 @@ overrides
 └─ main.html
 .mkdocs.yml                            # Mkdocs configuration file
 ```
+# Contribute
+
 ## How can you help us? [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/mindsdb/mindsdb-docs/issues)
 
 * Report a bug
@@ -55,3 +57,10 @@ overrides
 * Propose new feature
 * Fix typos
 
+## Contributors
+
+<a href="https://github.com/mindsdb/mindsdb-docs/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=mindsdb/mindsdb-docs" />
+</a>
+
+Made with [contributors-img](https://contributors-img.web.app).
