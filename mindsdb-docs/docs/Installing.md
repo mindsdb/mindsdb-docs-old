@@ -99,7 +99,7 @@ Alternatively, you can also run MindsDB in a docker container. Assuming that you
 On your terminal, you can do the following:
 
 ```
-sh -c "$(curl -sSL https://raw.githubusercontent.com/mindsdb/mindsdb/master/distributions/docker/build-docker.sh)"
+sh -c "$(curl -sSL https://raw.githubusercontent.com/mindsdb/mindsdb/stable/distributions/docker/build-docker.sh)"
 
 ```
 
