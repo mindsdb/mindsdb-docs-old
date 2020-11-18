@@ -132,6 +132,7 @@ python3 -m mindsdb --api=http,mysql --config=config.json
 ```
 
 The arguments sent to MindsDB are:
+
 * --api - That tells MindsDB which API should be started (HTTP, MySQL or both).
 * --config - The path to the configuration file that we have created.
 If everything works as expected you should see the following message:
@@ -156,6 +157,7 @@ VALUES ('passenger_satisfaction_model', 'satisfaction', 'SELECT * FROM airline_p
 ```
 
 This query will create a new model called 'passenger_satisfaction_model', and a new table 'airline_passenger_satisfaction' inside mindsdb schema. The required columns(parameters) added in the INSERT for training the predictor are:
+
 * name (string) - the name of the predictor.
 * predict (string) -  the feature you want to predict, in this example it will be satisfaction.
 * select_data_query (string) - the SELECT query that will get the data from PostgreSQL.
