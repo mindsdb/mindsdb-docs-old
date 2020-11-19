@@ -1,17 +1,22 @@
 # AI-Tables in MySQL
 
-Anyone that has dealt with Machine Learning understands that data is a fundamental ingredient to it. Given that a great deal of the world’s organized data already exists inside databases, doesn't it make sense to bring machine learning capabilities straight to the database itself? Bringing Machine Learning to those who know their data best can significantly augment the capacity to solve important problems.
-To do so, we have developed a concept called AI-Tables.
+Database is surely the best place for Machine Learning - because data is the main ingredient of it. And now you can build, train, test & query Machine Learning models using standard SQL queries within MySQL database!
 
-## What is AI Tables
+This doesn't require hardcore data science knowledge - the whole Machine Learning workflow is automated. 
 
-AI-Tables differ from normal tables in that they can generate predictions upon being queried and returning such predictions as if it was data that existed in the table. Simply put, an AI-Table allows you to use Machine Learning models as if they were normal database tables, in something that in plain SQL looks like this:
+This solution is called AI-Tables and is available in MySQL thanks to integration with an open-source predictive engine from MindsDB.
+AI-Tables look like normal database tables and return predictions upon being queried as if it is data that exists in the table. In plain SQL it looks like this:
 
 ```sql
 SELECT <predicted_variable> FROM <ML_model> WHERE <conditions>
 ```
 
-Now, in this tutorial, you will get step-by-step instructions on how to enable AI-Tables in your database and how to build, train and query a Machine Learning model only by using SQL statements!
+This video explains how it works:
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/uQwhYpQX0m8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+In this tutorial below, you will get step-by-step instructions on how to enable AI-Tables in MySQL database. Based on the churn prediction example, you see how to build, train and query Machine Learning models only by using SQL statements with MindsDB!
+
 
 ## How to install MySQL?
 
