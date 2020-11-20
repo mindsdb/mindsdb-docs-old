@@ -5,7 +5,7 @@ title: Installing MindsDB
 
 ## Prerequisites
 
-Before you begin, you need Python version [**>=3.6**](https://realpython.com/installing-python/) or [**Conda Python3**](https://www.anaconda.com/download/), and make sure you have the **latest pip3**.
+Before you begin, you need Python version [**3.6.x, 3.7.x, 3.8.x**](https://realpython.com/installing-python/) or [**Conda Python3**](https://www.anaconda.com/download/), and make sure you have the **latest pip3**.
 
 To install python & pip:
 
@@ -77,7 +77,7 @@ If for some reason this fail, don't worry, simply follow the below [What to do i
 
 1. Python 64 bit version is required. Depending on your environment, you might have to use `pip3` instead of `pip`, and `python3.x` instead of `python` in the above commands.
 
-2. If you are using `Python 3.9` you may get `numpy.distutils.system_info.NotFoundError: No lapack/blas resources found.` when installing on Windows and MacOS. Make sure that you are using Anacond or Conda that will contain the required dependencies to avoid this issue.
+2. If you are using `Python 3.9` you may get installation errors. Some of the MindsDB's dependencies are not working with `Python 3.9`, so please downgrade to older versions for now. We are working on this and `Python 3.9` will be supported soon.
 
 3. Try manually installing pytorch following the simple instructions on their official website: https://pytorch.org/get-started/locally/
 
