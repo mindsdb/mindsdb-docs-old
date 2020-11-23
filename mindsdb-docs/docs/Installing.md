@@ -62,14 +62,14 @@ pip install mindsdb
 ```
  
 ### Install using Host Environment
-You can use MindsDB on your own computer in under a minute, if you already have a python environment setup, just run the following command:
+You can use MindsDB on your own computer in under a minute. If you already have a Python environment setup, just run the following command:
 
 1. Install MindsDB:
 ```bash
  pip install mindsdb --user
 ```
 
-If for some reason this fail, don't worry, simply follow the below [What to do if installation fails](https://docs.mindsdb.com/Installing/#what-to-do-if-installation-fails) which will lead you through a more thorough procedure which should fix most issues.
+If for some reason this fails, don't worry, simply follow the below [What to do if installation fails](https://docs.mindsdb.com/Installing/#what-to-do-if-installation-fails) which will lead you through a more thorough procedure which should fix most issues.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Uw2Phj5Q0xA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -119,7 +119,7 @@ After installing MindsDB Server can be started by running:
 python -m mindsdb
 ```
 
-You should see similar message as:
+You should see a similar message to:
 
 ```
 GUI should be available by http://127.0.0.1:47334/index.html
@@ -127,5 +127,5 @@ Start on 127.0.0.1:47334
 Serving on http://127.0.0.1:47334
 ```
 
-* To access MindsDB API's visit `http://127.0.0.1:47334`.
+* To access MindsDB APIs visit `http://127.0.0.1:47334`.
 * To access MindsDB Scout visit  `http://127.0.0.1:47334/index.html`
