@@ -20,8 +20,14 @@ plugins:
 markdown_extensions:
   - codehilite
   - admonition
+  - pymdownx.tabbed
+  - pymdownx.superfences
 nav:
-  - Installing MindsDB: Installing.md
+  - Quick Start:
+    - Install MindsDB: Installing.md
+    - Install on Linux: installation/Linux.md
+    - Install on Windows: installation/Windows.md
+    - Install on macOS:  installation/MacOS.md
   - AutoML in Databases:
     - AI Tables: databases/index.md
     - AI Tables in PostgreSQL: databases/PostgreSQL.md
