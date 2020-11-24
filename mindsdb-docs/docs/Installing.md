@@ -13,7 +13,7 @@ title: Installing MindsDB
 === "Windows"
 
     !!! info "Installation"
-        Follow the [Window installation](/installation/Windows) instructions.
+        Follow the [Windows installation](/installation/Windows) instructions.
 
 === "macOS"
 
