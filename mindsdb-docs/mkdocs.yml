@@ -16,7 +16,11 @@ plugins:
             link: 'https://twitter.com/mindsdb'
           - type: 'link'
             link: 'https://www.mindsdb.com'
+    - redirects:
+        redirect_maps:
+            'installation/Installing.md': 'Installing.md'
     - table-reader
+
 markdown_extensions:
   - codehilite
   - admonition
