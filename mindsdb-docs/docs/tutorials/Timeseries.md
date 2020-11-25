@@ -38,13 +38,13 @@ import mindsdb
 mdb = mindsdb.Predictor(name='assembly_machines_model')
 mdb.learn(
     from_data='assembly_machines_historical_data.tsv',
-    to_predict='failure'
-    ,timeseries_settings = {
-      order_by: ['timestamp'] # Order the observations by timestamp
-      group_by: ['machine_id'] # The ordering should be done on a per-machine basis, rather than for every single row
-      nr_predictions: 3 # Predict failures for the timestamp given and for 2 more timesteps in the future
-      use_previous_target: True # Us the previous values in the target column (`failure`), since when the last failure happened could be a relevant data-point for our prediction.
-      window: 20 # Consider the previous 20 rows for every single row our model is trying to predict o
+    to_predict='failure',
+    timeseries_settings = {
+      'order_by': ['timestamp'], # Order the observations by timestamp
+      'group_by': ['machine_id'], # The ordering should be done on a per-machine basis, rather than for every single row
+      'nr_predictions': 3, # Predict failures for the timestamp given and for 2 more timesteps in the future
+      'use_previous_target': True, # Us the previous values in the target column (`failure`), since when the last failure happened could be a relevant data-point for our prediction.
+      'window': 20 # Consider the previous 20 rows for every single row our model is trying to predict o
     }
 )
 

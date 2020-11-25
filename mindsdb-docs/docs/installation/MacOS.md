@@ -1,7 +1,7 @@
 
 ## Install using MindsDB installers
 
-Install MindsDB on your MacOS machine using an easy-to-install shell script.
+Install MindsDB on your MacOS machine using an easy-to-use shell script.
 
 !!! tip "Download the script"
     [MindsDB for MacOS](https://mindsdb-installer.s3-us-west-2.amazonaws.com/mindsdb-installer/linux/MindsDB-Server-Latest-Setup.sh)

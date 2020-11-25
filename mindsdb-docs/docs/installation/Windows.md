@@ -1,7 +1,7 @@
 
 ## Install using MindsDB installers
 
-Install MindsDB on your Windows machine using an easy-to-install installler.
+Install MindsDB on your Windows machine using an easy-to-use installler.
 
 !!! tip "Download the installer"
     [MindsDB for Windows](https://mindsdb-installer.s3-us-west-2.amazonaws.com/mindsdb-installer/windows/MindsDB-Latest.exe)
