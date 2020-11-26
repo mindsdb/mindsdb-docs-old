@@ -1,16 +1,14 @@
 # Introduction to MindsDB Scout
 
-MindsDB Scout is a graphical user interface that sits on top of MindsDB and MindsDB Server. It lets you to upload, analyze and visualize your data, train machine learning models and query them with few clicks directly from the Databases, your local file system or external resources.
+MindsDB Scout is a graphical user interface that sits on top of MindsDB and MindsDB Server. It lets you upload, analyze and visualize your data, train machine learning models and query them with few clicks directly from the Databases, your local file system or external resources.
 
-
-## Download MindsDB Scout(Deprecated option)
-
-MindsDB Scout works on the most widely used operating systems. One of the requirements before installing it is to have Python >=3.6 installed. You can download it for free from the [MindsDB product page](https://www.mindsdb.com/product).
 
 ## Start Scout
 
+Starting the MindsDB server will automatically run Scout on your default browser. To do that run:
+
 ```
- python3 -m mindsdb --api=http,mysql
+ python3 -m mindsdb
 ```
 
 When MindsDB server is started it will display the URL for accessing Scout:
@@ -19,7 +17,7 @@ When MindsDB server is started it will display the URL for accessing Scout:
 GUI should be available by http://localhost:47334/index.html
 ```
 
-Open up `http://localhost:47334/index.html` on your browser and the Scout should be started
+And automatically start Scout on that URL.
 
 ## Tutorial
 We have created a few tutorials that will help you to successfully install and use MindsDB Scout:
@@ -30,9 +28,8 @@ We have created a few tutorials that will help you to successfully install and u
 
 ## Overview of MindsDB Scout
 
-The MindsDB Scout interface is divided into 5 dashboards.
+The MindsDB Scout interface is divided into 4 dashboards.
 
-* [Connection](/scout/Connection)
 * [Databases](/scout/Databases)
 * [Datasets](/scout/Datasources)
 * [Predictors](/scout/Predictors)
