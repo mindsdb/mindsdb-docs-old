@@ -5,7 +5,7 @@ MindsDB Scout is a graphical user interface that sits on top of MindsDB and Mind
 
 ## Start Scout
 
-Starting the MindsDB server will automatically run Scout on your default browser. To do that run:
+You don't need to install anything to run Scout. Starting the MindsDB server will automatically run Scout on your default browser. To do start mindsdb:
 
 ```
  python3 -m mindsdb
@@ -28,9 +28,8 @@ We have created a few tutorials that will help you to successfully install and u
 
 ## Overview of MindsDB Scout
 
-The MindsDB Scout interface is divided into 4 dashboards.
+The MindsDB Scout interface is divided into 3 dashboards.
 
-* [Databases](/scout/Databases)
-* [Datasets](/scout/Datasources)
+* [Data](/scout/Datasources)
 * [Predictors](/scout/Predictors)
 * [Query](/scout/Query)
