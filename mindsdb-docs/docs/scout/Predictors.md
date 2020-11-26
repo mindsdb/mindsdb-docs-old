@@ -25,7 +25,6 @@ Inside the Advanced Mode, you can specify additional options before training new
 
 * `Sample Margin of Error`: the amount of random sampling error.
 * `Stop Training After`: stop the model training after `n ` minutes.
-* `Backend`: the Machine Learning backend to use for training ([Lightwood](https://github.com/mindsdb/lightwood) or [Ludwig](https://github.com/uber/ludwig)).
 * `Use GPU`: use Graphics Processing Unit for training.
 * `Select columns to be removed for training`: speed the training or improve accuracy by ignoring un relevant columns.
 

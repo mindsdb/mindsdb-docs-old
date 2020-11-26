@@ -8,7 +8,4 @@ After querying the Predictor, MindsDB will provide:
 
 * Explanation about the predicted value and the confidence.
    ![Explanation](/assets/scout/explanation.png)
-* Extra inisghts about the prediction
-   ![Extra Insights](/assets/scout/extra-insights.png)
-* Additional information that would help to improve the prediction 
-   ![Additional Info](/assets/scout/additional-info.png)
+
