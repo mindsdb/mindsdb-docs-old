@@ -22,15 +22,7 @@ title: Installing MindsDB
 
 ## Install with Docker
 
-If none of the above specific OS installation options doesn't work for you, alternatively, you can also run MindsDB in a docker container assuming that you have [docker](https://docs.docker.com/install/) installed in your computer.
-Open your terminal and run:
-
-```
-sh -c "$(curl -sSL https://raw.githubusercontent.com/mindsdb/mindsdb/stable/distributions/docker/build-docker.sh)"
-
-```
-
-This script download and run latest mindsdb version. If you don't want to use this script you can pull and run our latest image:
+If none of the above specific OS installation options doesn't work for you, alternatively, you can also run MindsDB in a docker container assuming that you have [docker](https://docs.docker.com/install/) installed in your computer. Run following commands to pull and run our latest image:
 
 ```
 docker pull mindsdb/mindsdb
