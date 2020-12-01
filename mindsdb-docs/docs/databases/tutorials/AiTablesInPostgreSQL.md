@@ -13,7 +13,7 @@ SELECT <predicted_variable> FROM <ML_model> WHERE <conditions>
 
 Now, in this tutorial, you will get step-by-step instructions on how to enable AI-Tables in your database and how to build, train and query a Machine Learning model only by using SQL statements!
 
-<iframe width="100%" height="415" src="https://www.youtube.com/embed/L4Hr0e2K1tc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/ROh903GAhqg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## How to install PostgreSQL?
 
