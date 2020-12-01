@@ -86,3 +86,14 @@
 	text-align: center;
 	text-decoration: none;
 }
+.nav-download-btn{
+    font-weight: bold;
+    font-style: normal;
+    fill: #FFF;
+	margin: auto;
+	padding: 7px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #FFF;
+    border-radius: 10px 10px 10px 10px;
+}
