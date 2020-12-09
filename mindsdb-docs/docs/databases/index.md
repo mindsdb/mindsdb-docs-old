@@ -1,8 +1,25 @@
-# AI Tables
+# AI Tables - Add Automated Machine Learning capabilities into databases
 
-Starting from MindsDB 2.0 version you can train machine learning models straight from the database by using MindsDB and the most popular database management systems like MySQL, MariaDB, PostgreSQL, ClickHouse. Any database user can now create, train and test machine learning models with the same knowledge they have of SQL. 
+You can make Machine Learning predictions directly inside the database by using MindsDB AI-Tables with the most popular database management systems like MySQL, MariaDB, PostgreSQL, ClickHouse. Any database user can now create, train and deploy machine learning models with the same knowledge they have of SQL.
 
-![MindsDB-Databases](/assets/databases/ex-dbs.png)
+![MindsDB-Databases](/assets/databases/ex-dbs.jpg)
+
+
+## AI Tables benefits
+
+AI tables help to accelerate development speed and reduce complexity of machine learning workflows:
+
+* Automated model training and deployment
+* Predictions done at the Data Layer
+* Saves time of moving to production
+* Greater insight into model accuracy
+* Easy to manage and use
+* Open-source based
+
+Please have a look at the video below to learn more about AI tables concept:
+
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/vHkHCZcbO4Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## AITables example
 
@@ -51,9 +68,11 @@ WHERE  model = "a6"
 
 As you can see with AI-Tables, we are aiming to simplify Machine Learning mechanics to simple SQL queries, so that you can focus on the important part; which is to think about what predictions you need and what data you want your ML to learn from to make such predictions. 
  
-![MindsDB-AutoML in Databases](/assets/databases/db-automl.png)
+![MindsDB-AutoML in Databases](/assets/databases/db-automl.jpg)
 
 Currently, we are supporting the integration with:
 
+* [MySQL](/databases/MySQL)
+* [PostgreSQL](/databases/PostgreSQL)
 * [MariaDB](/databases/MariaDB)
 * [ClickHouse](/databases/Clickhouse)
