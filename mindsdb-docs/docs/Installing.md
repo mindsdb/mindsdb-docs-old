@@ -56,5 +56,5 @@ Start on 127.0.0.1:47334
 Serving on http://127.0.0.1:47334
 ```
 
-* To access MindsDB APIs visit `http://127.0.0.1:47334`.
-* To access MindsDB Scout visit  `http://127.0.0.1:47334/index.html`
+* To access MindsDB APIs visit `http://127.0.0.1:47334/api`.
+* To access MindsDB Scout visit  `http://127.0.0.1:47334/`
