@@ -27,11 +27,12 @@ markdown_extensions:
   - pymdownx.tabbed
   - pymdownx.superfences
 nav:
-  - Quick Start:
+  - Install:
     - Install MindsDB: Installing.md
-    - Install on Linux: installation/Linux.md
-    - Install on Windows: installation/Windows.md
-    - Install on macOS:  installation/MacOS.md
+    - Windows: installation/Windows.md
+    - Linux: installation/Linux.md
+    - MacOS:  installation/MacOS.md
+    - From source: installation/source.md
   - AutoML in Databases:
     - AI Tables: databases/index.md
     - AI Tables in PostgreSQL: databases/PostgreSQL.md
