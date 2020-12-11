@@ -16,7 +16,7 @@ AI tables help to accelerate development speed and reduce complexity of machine 
 * Easy to manage and use
 * Open-source based
 
-Please have a look at the video below to learn more about AI tables concept:
+Learn more how AI Tables work from the video below. Try it by [installing MindsDB](https://docs.mindsdb.com/Installing/) and following the [tutorials](https://docs.mindsdb.com/databases/tutorials/AiTablesInMySQL/).
 
 <iframe width="100%" height="415" src="https://www.youtube.com/embed/vHkHCZcbO4Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
