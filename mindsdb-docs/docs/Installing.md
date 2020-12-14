@@ -3,41 +3,39 @@ id: installing-mindsdb
 title: Installing MindsDB
 ---
 
+There are a few options to install MindsDB on different operating systems. To find the one that works the best for you, check out the below links.
+
 ## Installation
 
-=== "Linux"
+=== "Docker"
 
     !!! info "Installation"
-        Follow the [Linux installation](/installation/Linux) instructions.
+        Follow the [Docker installation](/installation/docker) instructions.
 
 === "Windows"
 
     !!! info "Installation"
         Follow the [Windows installation](/installation/Windows) instructions.
 
+=== "Linux"
+
+    !!! info "Installation"
+        Follow the [Linux installation](/installation/Linux) instructions.
+
 === "macOS"
 
     !!! info "Installation"
         Follow the [macOS installation](/installation/MacOS) instructions.
 
-## Install with Docker
+=== "Source"
 
-If none of the above specific OS installation options doesn't work for you, alternatively, you can also run MindsDB in a docker container assuming that you have [docker](https://docs.docker.com/install/) installed in your computer. Run following commands to pull and run our latest image:
+    !!! info "Installation"
+        Follow the from [source installation](/installation/source) instructions.
 
-```
-docker pull mindsdb/mindsdb
-docker run -p 47334:47334 -p 47335:47335 -p 47336:47336 mindsdb/mindsdb
-```
 
 ## Try out using GoogleCollab
 
 Checkout [![Google Colab](https://colab.research.google.com/assets/colab-badge.svg "MindsDB")](https://colab.research.google.com/drive/1qsIkMeAQFE-MOEANd1c6KMyT44OnycSb) this example on GoogleCollab.
-
-## Hardware
-
-Due to the fact that pytorch only supports certain instruction sets, mindsdb can only use certain types of GPUs.
-Currently, on AWS, `g3` and `p3` instance types should be fine, but `p2` and `g2` instances are not supported.
-VPS on DigitalOcean with 3 GB Memory and above should work.
 
 
 ## MindsDB Server
