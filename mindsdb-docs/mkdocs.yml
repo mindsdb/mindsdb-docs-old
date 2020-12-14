@@ -29,6 +29,7 @@ markdown_extensions:
 nav:
   - Install:
     - Install MindsDB: Installing.md
+    - Docker: installation/docker.md
     - Windows: installation/Windows.md
     - Linux: installation/Linux.md
     - MacOS:  installation/MacOS.md
