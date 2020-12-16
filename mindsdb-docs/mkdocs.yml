@@ -26,6 +26,10 @@ markdown_extensions:
   - admonition
   - pymdownx.tabbed
   - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.tasklist:
+      custom_checkbox: true
 nav:
   - Install:
     - Install MindsDB: Installing.md
@@ -34,15 +38,14 @@ nav:
     - Linux: installation/Linux.md
     - MacOS:  installation/MacOS.md
     - From source: installation/source.md
-  - AutoML in Databases:
-    - AI Tables: databases/index.md
-    - AI Tables in PostgreSQL: databases/PostgreSQL.md
-    - AI Tables in MariaDB: databases/MariaDB.md
-    - AI Tables in MySQL: databases/MySQL.md
-    - AI Tables in ClickHouse: databases/Clickhouse.md
-    - Tutorials:
-      - AI Tables in PostgreSQL: databases/tutorials/AiTablesInPostgreSQL.md
-      - AI Tables in MySQL: databases/tutorials/AiTablesInMySQL.md
+  - Connect your data:
+    - MySQL: datasources/mysql.md
+  - Train a model:
+    - Create and train from Scout: model/train.md
+    - Train straight from your DB:
+      - MySQL: model/mysql.md
+  - Evaluate model quality:
+    - From Scout: model/quality.md
   - AutoML from code:
     - Python native:
       - Starter Example: tutorials/BasicExample.md
