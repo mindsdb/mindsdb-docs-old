@@ -7,7 +7,7 @@ Before training the new model you must create a Datasource. To learn how to do t
 
 ### Basic mode
 
-Training new model from MindsDB Scout is quite easy:
+Training the new model from MindsDB Scout is quite easy:
 
 1. From the left navigation menu open `Predictors` dashboard.
 2. Click on the `TRAIN NEW` button.
@@ -21,7 +21,7 @@ Training new model from MindsDB Scout is quite easy:
 
 ### Advanced mode
 
-In the `Advanced mode` you can find a few additional options to train the Machine Learning model as use GPU for training, exclude columns from training or change the sample margin of error. To do that, inside the `New Predictor` modal:
+In the `Advanced mode`, you can find a few additional options to train the Machine Learning model as use GPU for training, exclude columns from training or change the sample margin of error. To do that, inside the `New Predictor` modal:
 
 1. Select the `From` datasource option.
 2. Add the name of the model.
@@ -36,4 +36,4 @@ In the `Advanced mode` you can find a few additional options to train the Machin
 
 
 !!! Success "That's all :tada: :trophy:  :computer:"
-    You have succesfully trained new Machine Learning model. Next step is to evaluate the [model quality](/model/quality).
+    You have successfully trained a new Machine Learning model. The next step is to evaluate the [model quality](/model/quality).

@@ -45,7 +45,7 @@ nav:
     - Train straight from your DB:
       - MySQL: model/mysql.md
   - Evaluate model quality:
-    - From Scout: model/quality.md
+    - Evaluate from Scout: model/quality.md
   - AutoML from code:
     - Python native:
       - Starter Example: tutorials/BasicExample.md
