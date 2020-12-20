@@ -40,12 +40,17 @@ nav:
     - From source: installation/source.md
   - Connect your data:
     - MySQL: datasources/mysql.md
+    - PostgreSQL: datasources/postgresql.md
   - Train a model:
     - Create and train from Scout: model/train.md
-    - Train straight from your DB:
+    - Train from the Database:
       - MySQL: model/mysql.md
+      - PostgreSQL: model/postgresql.md
   - Evaluate model quality:
     - Evaluate from Scout: model/quality.md
+  - Query model:
+    - Query from the Database: 
+      - MySQL: model/query/mysql.md
   - AutoML from code:
     - Python native:
       - Starter Example: tutorials/BasicExample.md

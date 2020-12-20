@@ -1,6 +1,6 @@
 # Train new model using Scout
 
-Before training the new model you must create a Datasource. To learn how to do that check out:
+Before training the new model you must connect to a Datasource. To learn how to do that check out:
 
 * [Connect to MySQL documentation](/datasources/mysql).
 * [Connect to PostgreSQL documentation](/datasources/mysql).
