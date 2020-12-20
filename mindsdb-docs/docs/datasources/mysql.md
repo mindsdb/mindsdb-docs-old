@@ -40,7 +40,7 @@ Using MindsDB Scout, you can connect to the MySQL database with a few clicks.
 2. In the `Datasource from DB integration` modal:
     1. Add Datasource Name.
     2. Add Database name.
-    3. Add SELECT Query e.g (_SELECT * FROM my_database)
+    3. Add SELECT Query e.g (SELECT * FROM my_database)
     4. Click on `CREATE`.
 
 ![Create MySQL Datasource](/assets/data/mysql-ds.gif)
