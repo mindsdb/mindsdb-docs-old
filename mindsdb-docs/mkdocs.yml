@@ -41,16 +41,20 @@ nav:
   - Connect your data:
     - MySQL: datasources/mysql.md
     - PostgreSQL: datasources/postgresql.md
+    - MariaDB: datasources/mariadb.md
   - Train a model:
     - Create and train from Scout: model/train.md
     - Train from the Database:
       - MySQL: model/mysql.md
       - PostgreSQL: model/postgresql.md
+      - MariaDB: model/mariadb.md
   - Evaluate model quality:
     - Evaluate from Scout: model/quality.md
   - Query model:
     - Query from the Database: 
       - MySQL: model/query/mysql.md
+      - PostgreSQL: model/query/postgresql.md
+      - MariaDB: model/query/mariadb.md
   - AutoML from code:
     - Python native:
       - Starter Example: tutorials/BasicExample.md
