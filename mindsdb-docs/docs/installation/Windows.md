@@ -4,7 +4,7 @@
 Install MindsDB on your Windows machine using an easy-to-use installler.
 
 !!! tip "Download the installer"
-    [MindsDB for Windows](https://mindsdb-installer.s3-us-west-2.amazonaws.com/mindsdb-installer/windows/MindsDB_Latest-Setup.exe)
+    [MindsDB for Windows](https://mindsdb-installer.s3-us-west-2.amazonaws.com/mindsdb-installer/v2/windows/MindsDBInstaller_1.5.exe)
 
 This installer will install Python3, MindsDB and MindsDB's dependencies, and create a shortcut on the desktop for starting MindsDB server.
 
