@@ -109,6 +109,7 @@ The avaiable configuration options are:
     * password - The password of the Postgres account. 
     * type - Integration type(mariadb, postgresql, mysql, clickhouse, mongodb).
     * port(default 5432) - The TCP/IP port number to use for the connection. 
+    * publish(true|false) - Enable PostgreSQL integration.
 * [ ] log['level'] -- The logging configuration(not required):
     * console - "INFO", "DEBUG", "ERROR".
     * file - Location of the log file.

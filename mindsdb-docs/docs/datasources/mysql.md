@@ -107,7 +107,7 @@ All of the options that should be added to the `config.json` file are:
     * password - The password of the MySQL account. 
     * type - Integration type(mariadb, postgresql, mysql, clickhouse, mongodb).
     * port(default 3306) - The TCP/IP port number to use for the connection. 
-    * enabled(true|false) - Enable MySQL integration.
+    * publish(true|false) - Enable MySQL integration.
 * [ ] log['level'] -- The logging configuration(optional):
     * console - "INFO", "DEBUG", "ERROR".
     * file - Location of the log file.

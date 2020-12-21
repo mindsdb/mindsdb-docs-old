@@ -43,4 +43,4 @@ SELECT * FROM mindsdb.predictors WHERE name='<model_name>';
 ![Training model status](/assets/predictors/postgresql-status.gif)
 
 !!! Success "That's all :tada: :trophy:  :computer:"
-    You have succesfully trained new model from PostgreSQL database. Next step is to get predictions by [querying the model](/query/postgresql).
+    You have succesfully trained new model from PostgreSQL database. Next step is to get predictions by [querying the model](/model/query/postgresql/).

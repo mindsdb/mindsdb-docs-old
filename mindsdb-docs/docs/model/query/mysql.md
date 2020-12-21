@@ -18,7 +18,7 @@ WHERE
 
 ## Query example
 
-The following example shows you how to query the model from mysql-client. The table used for training the model is the same as [Us consumption](https://github.com/robjhyndman/fpp2-package/blob/15916e4fe827d1b3dcf82785a4ace80107af5ddd/data-raw/usconsumption.csv) dataset.
+The following example shows you how to query the model from mysql-client. The table used for training the model is the same as [Us consumption](https://github.com/robjhyndman/fpp2-package/blob/15916e4fe827d1b3dcf82785a4ace80107af5ddd/data-raw/usconsumption.csv) dataset. MindsDB will predict the `consumption` based on the values added in `when_data`.
 
 ```sql
 SELECT
