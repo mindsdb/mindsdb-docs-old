@@ -42,12 +42,15 @@ nav:
     - MySQL: datasources/mysql.md
     - PostgreSQL: datasources/postgresql.md
     - MariaDB: datasources/mariadb.md
+    - ClickHouse: datasources/clickhouse.md
+    - Remote URL: datasources/remote.md
   - Train a model:
     - Create and train from Scout: model/train.md
     - Train from the Database:
       - MySQL: model/mysql.md
       - PostgreSQL: model/postgresql.md
       - MariaDB: model/mariadb.md
+      - ClickHouse: model/clickhouse.md
   - Evaluate model quality:
     - Evaluate from Scout: model/quality.md
   - Query model:
@@ -55,7 +58,8 @@ nav:
       - MySQL: model/query/mysql.md
       - PostgreSQL: model/query/postgresql.md
       - MariaDB: model/query/mariadb.md
-  - AutoML from code:
+      - ClickHouse: model/query/clickhouse.md
+  - Use cases and examples:
     - Python native:
       - Starter Example: tutorials/BasicExample.md
       - Running on Google Colab: GoogleColab.md
@@ -67,6 +71,9 @@ nav:
       - Data sources: features/DataSources.md
       - Configuration Settings: Config.md
       - MindsDB SDK: server/SDKs.md
+      - Introduction to Lightwood: lightwood/info.md
+      - Predictor API: lightwood/API.md
+      - Comparison with other Libraries: comparisons/ComparsionWithOtherLibraries.md
       - Use Cases:
         - High-Tech & Manufacturing:
           - Predictive Maintenance: tutorials/PredictiveMaintenance.md
@@ -82,18 +89,7 @@ nav:
           - Hotel Booking Demand: tutorials/HotelBooking.md
         - Telecomunications:
           - Customer Churn Reduction: tutorials/ChurnReduction.md
-  - AutoML building blocks: 
-    - Introduction to Lightwood: lightwood/info.md
-    - Predictor API: lightwood/API.md
-  - AutoML Explainability:
-    - MindsDB Scout:
-      - Getting Started: scout/Introduction.md
-      - Datasources: scout/Datasources.md
-      - Predictors: scout/Predictors.md
-      - Query: scout/Query.md
-  - Comparisons:
-    - Comparison with other Libraries: comparisons/ComparsionWithOtherLibraries.md
-  - Contributing:
+  - Contribution and Community:
     - FAQ: FAQ.md
     - Inside MindsDB: InsideMindsDB.md
 extra_css:
