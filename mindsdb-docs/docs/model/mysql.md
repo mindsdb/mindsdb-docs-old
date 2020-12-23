@@ -13,9 +13,10 @@ To train a new model, you will neeed to `INSERT` a new record inside the mindsdb
 The `INSERT` query for training new model is quite simple e.g:
 
 ```sql
-INSERT INTO mindsdb.predictors(name, predict, select_data_query, training_options) 
+INSERT INTO mindsdb.predictors(name, predict, select_data_query)
 VALUES('model_name', 'target_variable', 'SELECT * FROM table_name'); 
 ```
+
 The values provided in `INSERT` query are:
 
 * name (string) -- The name of the model.
@@ -30,8 +31,7 @@ The values provided in `INSERT` query are:
 The following example shows you how to train new model from mysql-client. The table used for training the model is same as [Us consumption](https://github.com/robjhyndman/fpp2-package/blob/15916e4fe827d1b3dcf82785a4ace80107af5ddd/data-raw/usconsumption.csv) dataset.
 
 ```sql
-INSERT INTO mindsdb.predictors(name, predict, select_data_query, training_options) 
-VALUES ('us_consumption', 'consumption', 'SELECT * FROM us_consumption', '{"timeseries_settings":{"order_by": ["t"], "window":20}}');
+INSERT INTO mindsdb.predictors(name, predict, select_data_query,training_options) VALUES ('airq_predictor1', 'SO2', 'SELECT * FROM default.pollution_measurement', '{"timeseries_settings":{"order_by": ["Measurement date"], "window":20}}');
 ```
 
 Since, this is a timeseries data the `timeseries_settings` will order data by `t` column and will set the window for rows to "look back" when making a prediction.
