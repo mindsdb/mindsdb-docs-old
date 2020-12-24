@@ -18,7 +18,8 @@ plugins:
             link: 'https://www.mindsdb.com'
     - redirects:
         redirect_maps:
-            'installation/Installing.md': 'Installing.md'
+            'installation/Installing.md': 'index.md'
+            'Installing.md': 'index.md'
     - table-reader
 
 markdown_extensions:
@@ -32,7 +33,7 @@ markdown_extensions:
       custom_checkbox: true
 nav:
   - Install:
-    - Install MindsDB: Installing.md
+    - Install MindsDB: index.md
     - Docker: installation/docker.md
     - Windows: installation/Windows.md
     - Linux: installation/Linux.md
@@ -44,6 +45,7 @@ nav:
     - MariaDB: datasources/mariadb.md
     - ClickHouse: datasources/clickhouse.md
     - Remote URL: datasources/remote.md
+    - Local dataset: datasources/local.md
   - Train a model:
     - Create and train from Scout: model/train.md
     - Train from the Database:
