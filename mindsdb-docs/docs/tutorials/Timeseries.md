@@ -14,10 +14,10 @@ To build a timeseries model you need to pass `timeseries_settings` dictionary to
 ```
 timeseries_settings = {
   order_by: List<String>              | Mandatory
+  window: Int                         | Mandatory
   group_by: List<String>              | Optional (default: [])
   nr_predictions: Int                 | Optional (default: 1)
   use_previous_target: Bool           | Optional (default: True)
-  window: Int                         | Mandatory
   historical_columns: List<String>    | Optional (default: [])
 }
 ```
@@ -27,8 +27,9 @@ Let's go through these settings one by one:
 * order_by - The columns based on which the data should be ordered
 * group_by - The columns based on which to group multiple unrelated entities present in your timeseries data. For example, let's say your data consists of sequential readings from 3x sensors. Treating the problem as a timeseries makes sense for individual sensors, so you would specify: `group_by=['sensor_id']`
 * nr_predictions - The number of points in the future that predictions should be made for, defaults to `1`. Once trained, the model will be able to predict up to this many points into the future.
-* use_previous_target - Use the previous values of the target column[s] for making predictions. Defaults to `True`. [Status: Experimental]
+* use_previous_target - Use the previous values of the target column[s] for making predictions. Defaults to `True`.
 * window - The number of rows to "look back" into when making a prediction, after the rows are ordered by the order_by column and split into groups.
+* historical_columns - The temporal dynamics of these columns will be used as additional context to train the time series encoder of the predictor. Note that non-historical columns will also be used to forecast, though without considering their change through time [Status: Experimental].
 
 ### Code example
 
@@ -43,8 +44,9 @@ mdb.learn(
       'order_by': ['timestamp'], # Order the observations by timestamp
       'group_by': ['machine_id'], # The ordering should be done on a per-machine basis, rather than for every single row
       'nr_predictions': 3, # Predict failures for the timestamp given and for 2 more timesteps in the future
-      'use_previous_target': True, # Us the previous values in the target column (`failure`), since when the last failure happened could be a relevant data-point for our prediction.
-      'window': 20 # Consider the previous 20 rows for every single row our model is trying to predict o
+      'use_previous_target': True, # Use the previous values in the target column (`failure`), since when the last failure happened could be a relevant data-point for our prediction.
+      'window': 20 # Consider the previous 20 rows for every single row our model is trying to predict
+      'historical_columns': ['sensor_activity'] # Mark `sensor_activity` column as historical, to use its temporal dynamics as additional context
     }
 )
 
