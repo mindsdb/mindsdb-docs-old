@@ -112,10 +112,10 @@ After creating the `config.json` file, you will need to start MindsDB and provid
 ```
 python3 -m mindsdb --api=http,mysql --config=config.json
 ```
+
 The `--api` parameter specifies the type of API to use in this case HTTP and MySQL. The `--config` specifies the location of the configuration file.
 
-![Start MindsDB with config](/assets/data/clickhouse-client.gif)
-
+![Start MindsDB with config](/assets/data/start-config.gif)
 
 If MindsDB is succesfully connected to your ClickHouse database, it will create a new database `mindsdb` and new table `predictors`.
 After starting the server, from your clickhouse-client you can run `SELECT` query from it to make sure integration is succesfull.
