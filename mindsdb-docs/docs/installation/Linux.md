@@ -7,7 +7,7 @@ Install MindsDB on your Linux machine using an easy-to-use shell script.
     [MindsDB for Linux](https://mindsdb-installer.s3-us-west-2.amazonaws.com/mindsdb-installer/v2/linux/MindsDBInstallerBeta_1.5.sh)
 
 This script will install MindsDB and MindsDB's dependencies, and start the MindsDB server.
-> Note that you need Python 3.6.x, 3.7.x or 3.8.x installed.
+> Note that you need Python 3.6.x, 3.7.x or 3.8.x pre installed.
 
 ## Install using pip
 
@@ -35,6 +35,8 @@ We suggest you to install MindsDB in a virtual environment when using **pip** to
     pip freeze
     ```
 
+You should see a list with the names of installed packages.
+
 ## Install using Anaconda
 
 You will need [Anaconda](https://www.anaconda.com/products/individual) or [Conda](https://conda.io/projects/conda/en/latest/index.html) installed and Python 64bit version. Then open Anaconda Prompt and:
@@ -60,6 +62,7 @@ You will need [Anaconda](https://www.anaconda.com/products/individual) or [Conda
     conda list
     ```
 
+You should see a list with the names of installed packages.
 
 !!! failure "Installation fail"
     Don't worry, simply follow the below bellow instruction which should fix most issues.

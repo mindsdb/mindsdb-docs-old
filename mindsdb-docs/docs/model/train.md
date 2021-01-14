@@ -34,6 +34,22 @@ In the `Advanced mode`, you can find a few additional options to train the Machi
 
 ![Train model advanced mode](/assets/predictors/train-advanced.gif)
 
+#### Timeseries
+
+To build the timeseries model, you need to select `Yes, it is` checkbox inside the `Advanced Mode` section:
+
+1. Select the `From` datasource option.
+2. Add the name of the model.
+3. Check the column name (feature) that you want to predict.
+4. Press the `ADVANCED MODE` button and:
+    1. Check the `Yes, it is.` checkbox.
+    2. Select the `Order by:` value, the column based on which the data should be ordered.
+    3. Select the `Group by:` value, the column based on which to group multiple entities in timeseries data.
+    4. Add the `Look Back Window:` value, the number of rows to `look back` into when making a prediction.iyDNE5g9fw9kdrCLIKoS3bkOJkE
+5. Press `TRAIN`. 
+
+![Train timeseries](/assets/predictors/train-timeseries.gif)
+
 
 !!! Success "That's all :tada: :trophy:  :computer:"
     You have successfully trained a new Machine Learning model. The next step is to evaluate the [model quality](/model/quality).

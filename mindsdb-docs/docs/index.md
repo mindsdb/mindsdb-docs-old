@@ -46,12 +46,14 @@ After succesfull installation MindsDB Server can be started by running:
 python -m mindsdb
 ```
 
+![Start mindsdb](/assets/mindsdb-start.gif)
+
 You should see a similar message to:
 
 ```
-GUI should be available by http://127.0.0.1:47334/index.html
-Start on 127.0.0.1:47334
-Serving on http://127.0.0.1:47334
+mysql API: started on 47335
+GUI available at http://127.0.0.1:47334/
+http API: started on 47334
 ```
 
 * To access MindsDB APIs visit `http://127.0.0.1:47334/api`.

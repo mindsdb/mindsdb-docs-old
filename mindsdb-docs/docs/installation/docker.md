@@ -6,7 +6,7 @@ You can run MindsDB in a docker container assuming that you have [docker](https:
 docker run hello-world
 ```
 
-You should see the `Hello from Docker!` message displayed.
+You should see the `Hello from Docker!` message displayed. If not, check the [get started](https://www.docker.com/get-started) documentation.
 
 
 ### Run MindsDB container
@@ -35,6 +35,10 @@ Next, run the bellow command to start the container:
 docker run -p 47334:47334 mindsdb/mindsdb
 ```
 
+![Docker run](/assets/docker-install.gif)
+
+That's all. MindsDB should automaticaly start the Scout on your default browser.
+
 !!! info "Publish ports"
 
-    Note that, you must publish a container’s port to the host `-p 47334:47334` which is used by MindsDB GUI and HTTTP API. Also, to use MindsDB MySQL API or MongoDB API publish `-p 47335:47335 -p 47336:47336` too.
+    Note that, you must publish a container’s port to the host `-p 47334:47334` which is used by MindsDB GUI and HTTTP API. Also, to use MindsDB MySQL API or MongoDB API publish `-p 47335:47335 -p 47336:47336` ports too.
