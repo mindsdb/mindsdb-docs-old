@@ -46,6 +46,7 @@ nav:
     - ClickHouse: datasources/clickhouse.md
     - Remote URL: datasources/remote.md
     - Local dataset: datasources/local.md
+    - Snowflake: datasources/snowflake.md
   - Train a model:
     - Create and train from Scout: model/train.md
     - Train from the Database:
@@ -61,6 +62,7 @@ nav:
       - PostgreSQL: model/query/postgresql.md
       - MariaDB: model/query/mariadb.md
       - ClickHouse: model/query/clickhouse.md
+    - Query from Scout: model/query/scout.md
   - Use cases and examples:
     - Python native:
       - Starter Example: tutorials/BasicExample.md
