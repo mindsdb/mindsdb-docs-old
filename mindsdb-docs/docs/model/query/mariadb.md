@@ -10,7 +10,7 @@ SELECT
 FROM
    mindsdb.<model_name>
 WHERE 
-   when_data=<JSON features values>
+   <feature_one> AND <feature_two>
 ```
 
 !!! question "Query the model from other databases"

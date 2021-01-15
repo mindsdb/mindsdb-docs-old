@@ -103,7 +103,7 @@ All of the options that should be added to the `config.json` file are:
     * port(default 47335).
 * [x] integrations['default_mysql'] -- This key specifies the integration type in this case `default_mysql`. The required keys are:
     * user(default root) - The MySQL user name.
-    * host(default 127.0.0.1) - Connect to the MySQL server on the given host. 
+    * host(default 127.0.0.1, don't use localhost here) - Connect to the MySQL server on the given host. 
     * password - The password of the MySQL account. 
     * type - Integration type(mariadb, postgresql, mysql, clickhouse, mongodb).
     * port(default 3306) - The TCP/IP port number to use for the connection. 

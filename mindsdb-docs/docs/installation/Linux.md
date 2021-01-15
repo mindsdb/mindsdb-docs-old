@@ -11,7 +11,7 @@ This script will install MindsDB and MindsDB's dependencies, and start the Minds
 
 ## Install using pip
 
-We suggest you to install MindsDB in a virtual environment when using **pip** to avoid dependency issues. Make sure your Python version is **>=3.6**.
+We suggest you to install MindsDB in a virtual environment when using **pip** to avoid dependency issues. Make sure your Python version is **>=3.6** and pip version **>= 19.3**.
 
 1. Create and activate venv:
 

@@ -4,7 +4,7 @@ This section describes how to install MindsDB from source. This is a prefered wa
 
 ## Prerequisite
 
-* [Python version](https://www.python.org/downloads/) >=3.6 (64 bit).
+* [Python version](https://www.python.org/downloads/) >=3.6 (64 bit) and pip version >= 19.3.
 * [Pip](https://pip.pypa.io/en/stable/installing/) (usually is pre installed with latest Python versions).
 * [Git](https://git-scm.com/).
 

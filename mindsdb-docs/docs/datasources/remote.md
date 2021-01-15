@@ -7,7 +7,13 @@ Connecting MindsDB to your remote data could be easly done with a few clicks. Yo
 * [x] Azure Blob storage files
 * [x] Google cloud storage 
 
-Or, wherever your files are publicly accessible.
+Or, wherever your files are publicly accessible. You can upload any tabular data format as:
+
+* [x] CSV, TSV
+* [x] XLS/XLSX/ODC
+* [x] TXT
+* [x] JSON
+* [x] XML
 
 #### Upload from remote URL
 

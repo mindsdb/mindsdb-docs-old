@@ -36,7 +36,7 @@ You should see a list with the names of installed packages.
 
 ## Install using pip
 
-We suggest you to install MindsDB in a virtual environment when using `pip` to avoid dependency issues. Make sure your Python version is >=3.6.
+We suggest you to install MindsDB in a virtual environment when using `pip` to avoid dependency issues. Make sure your Python version is **>=3.6** and pip version **>= 19.3**.
 
 1. Create new virtual environment called mindsdb:
 
@@ -47,7 +47,7 @@ We suggest you to install MindsDB in a virtual environment when using `pip` to a
     And, activate it:
 
     ```
-    .\mindsdb\Scripts\activate
+    .\mindsdb\Scripts\activate.bat
     ```
 
 2. Install MindsDB:
