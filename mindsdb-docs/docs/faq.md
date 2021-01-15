@@ -9,7 +9,7 @@ If you want to learn more about why this is important and how we aim to do this,
 
 ### Who are we building MindsDB for?
 
-We are building MindsDB for all of those that can get their hands in data. and can type a few lines of code.
+We are building MindsDB for all of those that can get their hands in data, and can type a few lines of code.
 
 ### What are MindsDB's current Goals?
 
