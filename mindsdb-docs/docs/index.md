@@ -1,11 +1,13 @@
 ---
 id: installing-mindsdb
-title: Installing MindsDB
+title: Getting started
 ---
 
-There are a few options to install MindsDB on different operating systems. To find the one that works the best for you, check out the below links.
+# Getting started
 
 ## Installation
+
+There are a few options to install MindsDB on different operating systems. To find the one that works the best for you, check out the below links.
 
 === "Docker"
 
@@ -33,28 +35,12 @@ There are a few options to install MindsDB on different operating systems. To fi
         Follow the from [source installation](/installation/source) instructions.
 
 
-## Try out using GoogleCollab
+## Tutorials
 
-Checkout [![Google Colab](https://colab.research.google.com/assets/colab-badge.svg "MindsDB")](https://colab.research.google.com/drive/1qsIkMeAQFE-MOEANd1c6KMyT44OnycSb) this example on GoogleCollab.
+## Contribute to MindsDB
 
-
-## MindsDB Server
-
-After succesfull installation MindsDB Server can be started by running:
-
-```
-python -m mindsdb
-```
-
-![Start mindsdb](/assets/mindsdb-start.gif)
-
-You should see a similar message to:
-
-```
-mysql API: started on 47335
-GUI available at http://127.0.0.1:47334/
-http API: started on 47334
-```
-
-* To access MindsDB APIs visit `http://127.0.0.1:47334/api`.
-* To access MindsDB Scout visit `http://127.0.0.1:47334/`.
+## Useful links
+ * MindsDB API
+ * Connect
+ * Train
+ * Query

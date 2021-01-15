@@ -47,9 +47,9 @@ Using MindsDB Scout, you can connect to the MariaDB database with a few clicks.
 !!! Success "That's all :tada: :trophy:  :computer:"
     You have succesfully connected to MariaDB from MindsDB Scout. Next step is to train the [Machine Learning model](/model/train).
 
-## SQL clients
+## MySQL client
 
-Before using sql client to connect MindsDB and MariaDB you will need to add additional configuration before starting MindsDB Server. Create a new `config.json` file. Expand the example below to preview the configuration example.
+Before using mysql-client to connect MindsDB and MariaDB you will need to add additional configuration before starting MindsDB Server. Create a new `config.json` file. Expand the example below to preview the configuration example.
 
 <details class="success">
     <summary> Configuration example</summary>  
@@ -123,7 +123,7 @@ The `--api` parameter specifies the type of API to use in this case HTTP and MyS
 ![Start MindsDB with config](/assets/data/start-config.gif)
 
 If MindsDB is succesfully connected to your MariaDB database, it will create a new database `mindsdb` and new table `predictors`.
-After starting the server, from your mysql-client you can run `SELECT` query from it to make sure integration is succesfull.
+After starting the server, from your mariadb-client you can run `SELECT` query from it to make sure integration is succesfull.
 
 ```sql
 SELECT * FROM mindsdb.predictors;

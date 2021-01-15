@@ -7,7 +7,7 @@
 To train a new model, you will neeed to `INSERT` a new record inside the mindsdb.predictors table.
 
 !!! question "How to create mindsb.predictors table"
-    Note that after connecting [MindsDB and MariaDB](datasources/mariadb/#sql-clients), on
+    Note that after connecting [MindsDB and MariaDB](/datasources/mariadb/#mysql-client), on
     start, MindsDB server will automaticly create the mindsdb database and add predictors table.
 
 The `INSERT` query for training new model is quite simple e.g:
@@ -19,7 +19,7 @@ VALUES('model_name', 'target_variable', 'SELECT * FROM table_name');
 The values provided in `INSERT` query are:
 
 * name (string) -- The name of the model.
-* predict (string) --  The feature you want to predict. To predict multiple features include a comma separated string e.g 'consumption,income'.
+* predict (string) --  The feature you want to predict. To predict multiple features include a comma separated string e.g 'feature1,feature2'.
 * select_data_query (string) -- The SELECT query that will ingest the data to train the model.
 * training_options (JSON as comma separated string) -- optional value that contains additional training parameters. For a full list of the parameters check the [PredictorInterface](/PredictorInterface/#learn).
 
@@ -35,6 +35,8 @@ INSERT INTO
 VALUES
    ('used_cars_model', 'price', 'SELECT * FROM data.used_cars_data');
 ```
+
+The `INSERT` query will train a new model called `used_cars_model` that predicts the cars `price` value.
 
 ### How to check model training status?
 

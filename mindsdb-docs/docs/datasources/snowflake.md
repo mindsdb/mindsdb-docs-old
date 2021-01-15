@@ -1,6 +1,6 @@
 # Connect to Snowflake Data Warehouse
 
-Connecting MindsDB to Snowflake could be easly done with a few clicks. 
+Connecting MindsDB to the [Snowflake](https://www.snowflake.com/) could be easly done with a few clicks. 
 
 #### Connect to Snowflake
 
@@ -27,7 +27,7 @@ Connecting MindsDB to Snowflake could be easly done with a few clicks.
 2. In the `Datasource from DB integration` modal:
     1. Add Datasource Name.
     2. Add Database name.
-    3. Add SELECT Query e.g (SELECT * FROM my_database)
+    3. Add SELECT Query e.g (SELECT * FROM my_database).
     4. Click on `CREATE`.
 
 ![Create Snowflake Datasource](/assets/data/snowflake-ds.gif)

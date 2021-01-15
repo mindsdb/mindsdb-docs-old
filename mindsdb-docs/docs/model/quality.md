@@ -35,3 +35,7 @@ This section tries to answer the `When can you trust this model?` question.
 Here, the confusion matrix shows the performance that the model gets when solving a classification problem. Each entry in the confusion matrix can tell how many samples of each class were correctly classified and how many and where incorrectly classified. To get a detailed explanation you can move the mouse cursor over the graphics.
 
 ![Confusion matrix](/assets/predictors/confusion-matrix.png)
+
+
+!!! Success "Let's Query the model :bar_chart: :mag_right:"
+    After evaluating the performance of the model, next step is to get predictions by [querying the model](/model/query/scout/).

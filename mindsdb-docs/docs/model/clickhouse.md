@@ -18,7 +18,7 @@ VALUES('model_name', 'target_variable', 'SELECT * FROM table_name', '{"additiona
 The values provided in `INSERT` query are:
 
 * name (string) -- The name of the model.
-* predict (string) --  The feature you want to predict. To predict multiple features include a comma separated string e.g 'consumption,income'.
+* predict (string) --  The feature you want to predict. To predict multiple features include a comma separated string e.g 'feature1, feature2'.
 * select_data_query (string) -- The SELECT query that will ingest the data to train the model.
 * training_options (JSON as comma separated string) -- optional value that contains additional training parameters. For a full list of the parameters check the [PredictorInterface](/PredictorInterface/#learn).
 
@@ -33,6 +33,7 @@ INSERT INTO mindsdb.predictors(name, predict, select_data_query,training_options
 VALUES('airq_model', 'SO2', 'SELECT * FROM default.pollution_measurement', '{"timeseries_settings":{"order_by": ["Measurement date"], "window":20}}');
 ```
 
+This `INSERT` query will train a new model called `pollution_measurement` that predicts the passenger `SO2` value. 
 Since, this is a timeseries data the `timeseries_settings` will order data by `Measurement date` column and will set the window for rows to "look back" when making a prediction.
 
 ### Model training status

@@ -12,12 +12,13 @@ To train a new model, you will neeed to `INSERT` a new record inside the mindsdb
 The `INSERT` query for training new model is quite simple e.g:
 
 ```sql
-INSERT INTO mindsdb.predictors(name, predict, select_data_query, training_options) VALUES ('model_name', 'target_variable', 'SELECT * FROM table_name', '{"additional_training_params:value"}');
+INSERT INTO mindsdb.predictors(name, predict, select_data_query, training_options) 
+VALUES ('model_name', 'target_variable', 'SELECT * FROM table_name', '{"additional_training_params:value"}');
 ```
 The values provided in `INSERT` query are:
 
 * name (string) -- The name of the model.
-* predict (string) --  The feature you want to predict. To predict multiple features include a comma separated string e.g 'consumption,income'.
+* predict (string) --  The feature you want to predict. To predict multiple features include a comma separated string e.g 'feature1,feature2'.
 * select_data_query (string) -- The SELECT query that will ingest the data to train the model.
 * training_options (JSON as comma separated string) -- optional value that contains additional training parameters. For a full list of the parameters check the [PredictorInterface](/PredictorInterface/#learn).
 
@@ -30,7 +31,7 @@ The following example shows you how to train new model from psql-client. The tab
 ```sql
 INSERT INTO mindsdb.predictors(name, predict, select_data_query) VALUES('airline_survey_model', 'satisfaction', 'SELECT * FROM airline_passenger_satisfaction');
 ```
-
+This `INSERT` query will train a new model called `airline_survey_model` that predicts the passenger `satisfaction` value. 
 
 ### Model training status
 

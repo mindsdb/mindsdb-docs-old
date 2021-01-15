@@ -6,7 +6,7 @@ Uploading local dataset to MindsDB could be easly done with a few clicks. You ca
 * [x] XLS/XLSX/ODC
 * [x] TXT
 * [x] JSON
-* [x] XLM
+* [x] XML
 
 #### Upload local dataset
 
