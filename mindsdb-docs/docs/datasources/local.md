@@ -13,10 +13,10 @@ Uploading local dataset to MindsDB can be easily done with a few clicks. You can
 1. From the left navigation menu, select the `Data` dashboard.
 2. Click on the `UPLOAD` button.
 3. In the `New data source` modal window:
-   1. Click on the File explorer.
-   2. Choose the dataset you want to upload.
-   3. Add the name of the datasource.
-   4. Click on `UPLOAD`.
+    1. Click on the File explorer.
+    2. Choose the dataset you want to upload.
+    3. Add the name of the datasource.
+    4. Click on `UPLOAD`.
 
 ![upload data locally](/assets/data/local.gif)
 

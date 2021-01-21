@@ -20,9 +20,9 @@ Or, wherever your files are publicly accessible. You can upload any tabular data
 1. From the left navigation menu, select the `Data` dashboard.
 2. Click on the `ADD BY URL` button.
 3. In the `New data source from URL` modal window:
-   1. Add a URL link to your data.
-   2. Add name for the datasource.
-   3. Click on `UPLOAD`.
+    1. Add a URL link to your data.
+    2. Add name for the datasource.
+    3. Click on `UPLOAD`.
 
 ![Connect to remote url](/assets/data/remote.gif)
 
