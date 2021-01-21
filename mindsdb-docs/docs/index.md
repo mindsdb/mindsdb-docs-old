@@ -48,5 +48,4 @@ There are a few options to install MindsDB on different operating systems. To fi
 ## Useful links
  * [MindsDB APIs documentation](https://apidocs.mindsdb.com/)
  * [Get in touch](https://mindsdb.com/contact-us/)
- * [Book a demo](https://mindsdb.com/book-a-demo)
- * [MindsDB Benchmarks]()
+ 

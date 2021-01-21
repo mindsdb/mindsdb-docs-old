@@ -12,9 +12,8 @@ If you want to become a part of our product and get first access to all of our l
 
 ## Talk to our engineers :telephone:
 
-If you want to use MindsDB or you have more questions, you can [book a demo](https://mindsdb.com/book-a-demo) with one of our engineers.
+If you want to use MindsDB or you have more questions, you can schedula a call by clicking on `Talk to our Engineers` button.
 
 ## Get in touch for collaboration :telephone_receiver:
 
 Contact us by submitting [this form](https://mindsdb.com/contact-us/).
-
