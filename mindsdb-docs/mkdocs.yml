@@ -67,6 +67,7 @@ nav:
     - Query from Scout: model/query/scout.md
   - Tutorials:
     - AI Tables in MySQL: tutorials/mysql.md
+    - AI Tables in MariaDB: tutorials/mariadb.md
     - AI Tables in PostgreSQL: tutorials/postgresql.md
     - AI Tables in ClickHouse: tutorials/clickhouse.md
   - Use cases:

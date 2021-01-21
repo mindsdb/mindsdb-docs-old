@@ -36,11 +36,17 @@ There are a few options to install MindsDB on different operating systems. To fi
 
 
 ## Tutorials
+* [AiTables in MySQL](/tutorials/mysql)
+* [AiTables in MariaDB](/tutorials/mariadb)
+* [AiTables in PostgreSQL](/tutorials/postgresql)
+* [AiTables in ClickHouse](/tutorials/clickhouse)
 
 ## Contribute to MindsDB
+* [Became a contributor to MindsDB](/contribute)
+* [Join MindsDB community](/community)
 
 ## Useful links
- * MindsDB API
- * Connect
- * Train
- * Query
+ * [MindsDB APIs documentation](https://apidocs.mindsdb.com/)
+ * [Get in touch](https://mindsdb.com/contact-us/)
+ * [Book a demo](https://mindsdb.com/book-a-demo)
+ * [MindsDB Benchmarks]()
