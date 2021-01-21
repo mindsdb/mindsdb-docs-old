@@ -41,7 +41,7 @@ In the `Advanced mode`, you can find a few additional options when training the 
 
 #### Timeseries
 
-To build a thae timeseries model, you need to select the `Yes, it is` timeseries checkbox inside the `Advanced Mode` section:
+To build a timeseries model, you need to select the `Yes, it is` timeseries checkbox inside the `Advanced Mode` section:
 
 1. Select the `From` datasource option.
 2. Add the name of the model.
@@ -56,5 +56,5 @@ To build a thae timeseries model, you need to select the `Yes, it is` timeseries
 ![Train timeseries](/assets/predictors/train-timeseries.gif)
 
 
-!!! Success "That's it all :tada: :trophy:  :computer:"
+!!! Success "That's it :tada: :trophy:  :computer:"
     You have successfully trained a new Machine Learning model. The next step is to evaluate the [model quality](/model/quality).
