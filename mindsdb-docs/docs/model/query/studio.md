@@ -1,4 +1,4 @@
-# Query the model using Scout
+# Query the model using MindsDB Studio
 
 To get predictive analytics from trained model:
 

@@ -50,21 +50,21 @@ nav:
     - Local dataset: datasources/local.md
     - Snowflake: datasources/snowflake.md
   - Train a model:
-    - Create and train from Scout: model/train.md
+    - Create and train from Studio: model/train.md
     - Train from the Database:
       - MySQL: model/mysql.md
       - PostgreSQL: model/postgresql.md
       - MariaDB: model/mariadb.md
       - ClickHouse: model/clickhouse.md
   - Evaluate model quality:
-    - Evaluate from Scout: model/quality.md
+    - Evaluate from Studio: model/quality.md
   - Query model:
     - Query from the Database: 
       - MySQL: model/query/mysql.md
       - PostgreSQL: model/query/postgresql.md
       - MariaDB: model/query/mariadb.md
       - ClickHouse: model/query/clickhouse.md
-    - Query from Scout: model/query/scout.md
+    - Query from Studio: model/query/studio.md
   - Tutorials:
     - AI Tables in MySQL: tutorials/mysql.md
     - AI Tables in MariaDB: tutorials/mariadb.md
