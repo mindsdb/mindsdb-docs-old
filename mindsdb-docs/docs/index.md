@@ -17,17 +17,17 @@ There are a few options to install MindsDB on different operating systems. To fi
 === "Windows"
 
     !!! info "Installation"
-        Follow the [Windows installation](/installation/Windows) instructions.
+        Follow the [Windows installation](/installation/windows) instructions.
 
 === "Linux"
 
     !!! info "Installation"
-        Follow the [Linux installation](/installation/Linux) instructions.
+        Follow the [Linux installation](/installation/linux) instructions.
 
 === "macOS"
 
     !!! info "Installation"
-        Follow the [macOS installation](/installation/MacOS) instructions.
+        Follow the [macOS installation](/installation/macos) instructions.
 
 === "Source"
 

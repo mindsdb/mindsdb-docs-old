@@ -37,9 +37,9 @@ nav:
   - Install:
     - Install MindsDB: index.md
     - Docker: installation/docker.md
-    - Windows: installation/Windows.md
-    - Linux: installation/Linux.md
-    - MacOS:  installation/MacOS.md
+    - Windows: installation/windows.md
+    - Linux: installation/linux.md
+    - MacOS:  installation/macos.md
     - From source: installation/source.md
   - Connect your data:
     - MySQL: datasources/mysql.md
