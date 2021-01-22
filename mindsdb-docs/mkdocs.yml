@@ -76,7 +76,7 @@ nav:
     - AI Tables in MariaDB: tutorials/mariadb.md
     - AI Tables in PostgreSQL: tutorials/postgresql.md
     - AI Tables in ClickHouse: tutorials/clickhouse.md
-  - Use cases:
+  - MindsDB for Developers:
     - Python native:
       - Starter Example: tutorials/BasicExample.md
       - Running on Google Colab: GoogleColab.md
