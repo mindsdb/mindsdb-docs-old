@@ -97,7 +97,6 @@ To train a new model, insert a new record inside the mindsdb.predictors table as
 
 ```sql
 INSERT INTO mindsdb.predictors(name, predict, select_data_query, training_options) VALUES ('us_consumption', 'consumption', 'SELECT * FROM us_consumption', '{"timeseries_settings":{"order_by": ["t"], "window":20}}');
-
 ```
 
 * name (string) -- The name of the predictor.

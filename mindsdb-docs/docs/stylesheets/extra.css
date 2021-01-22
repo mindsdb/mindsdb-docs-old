@@ -91,9 +91,9 @@
     font-style: normal;
     fill: #FFF;
 	margin: auto;
-	padding: 7px;
+	padding: 9px;
     border-style: solid;
     border-width: 2px;
     border-color: #FFF;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
 }
