@@ -27,5 +27,5 @@ Or, wherever your files are publicly accessible. You can upload any tabular data
 ![Connect to remote url](/assets/data/remote.gif)
 
 !!! Success "That's it :tada: :trophy:  :computer:"
-   You have successfully connected to your remote dataset from MindsDB Studio. The next step is to train the [Machine Learning model](/model/train).
+    You have successfully connected to your remote dataset from MindsDB Studio. The next step is to train the [Machine Learning model](/model/train).
 

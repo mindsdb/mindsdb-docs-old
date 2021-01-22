@@ -22,13 +22,13 @@ Using MindsDB Studio, you can connect to the PostgreSQL database with a few clic
 1. From the left navigation menu, select Database Integration.
 2. Click on the `ADD DATABASE` button.
 3. In the `Connect to Database` modal:
-   1. Select PostgreSQL as the Supported Database.
-   2. Add the Database name.
-   3. Add the Hostname.
-   4. Add Port.
-   5. Add PostgreSQL user.
-   6. Add Password for PostgreSQL user.
-   7. Click on `CONNECT`.
+    1. Select PostgreSQL as the Supported Database.
+    2. Add the Database name.
+    3. Add the Hostname.
+    4. Add Port.
+    5. Add PostgreSQL user.
+    6. Add Password for PostgreSQL user.
+    7. Click on `CONNECT`.
 
 
 ![Connect to PostgreSQL](/assets/data/postgresql.gif)
@@ -37,15 +37,15 @@ Using MindsDB Studio, you can connect to the PostgreSQL database with a few clic
 
 1. Click on the `NEW DATASOURCE` button.
 2. In the `Datasource from DB integration` modal:
-   1. Add Datasource Name.
-   2. Add Database name.
-   3. Add SELECT Query (e.g. SELECT * FROM my_database)
-   4. Click on `CREATE`.
+    1. Add Datasource Name.
+    2. Add Database name.
+    3. Add SELECT Query (e.g. SELECT * FROM my_database)
+    4. Click on `CREATE`.
 
 ![Create PostgreSQL Datasource](/assets/data/postgresql-ds.gif)
 
 !!! Success "That's it:tada: :trophy:  :computer:"
-   You have successfully connected to PostgreSQL from MindsDB Studio. The next step is to train the [Machine Learning model](/model/train).
+    You have successfully connected to PostgreSQL from MindsDB Studio. The next step is to train the [Machine Learning model](/model/train).
 
 ## PSQL client
 
@@ -95,23 +95,23 @@ All of the options that should be added to the `config.json` file are:
 
 
 * [x] api['http] -- This key is used for starting the MindsDB http server by providing:
-   * host(default 127.0.0.1) - The mindsDB server address.
-   * port(default 47334) - The mindsDB server port.
+    * host(default 127.0.0.1) - The mindsDB server address.
+    * port(default 47334) - The mindsDB server port.
 * [x] api['mysql'] -- This key is used for database integrations that works through MySQL protocol. The required keys are:
-   * user(default root).
-   * password(default empty).
-   * host(default 127.0.0.1).
-   * port(default 47335).
+    * user(default root).
+    * password(default empty).
+    * host(default 127.0.0.1).
+    * port(default 47335).
 * [x] integrations['default_postgres'] -- This key specifies the integration type, in this case `default_postgres`. The required keys are:
-   * user(default postgres) - The Postgres user name.
-   * host(default 127.0.0.1) - Connect to the PostgreSQL server on the given host.
-   * password - The password of the Postgres account.
-   * type - Integration type(mariadb, postgresql, mysql, clickhouse, mongodb).
-   * port(default 5432) - The TCP/IP port number to use for the connection.
-   * publish(true|false) - Enable PostgreSQL integration.
+    * user(default postgres) - The Postgres user name.
+    * host(default 127.0.0.1) - Connect to the PostgreSQL server on the given host.
+    * password - The password of the Postgres account.
+    * type - Integration type(mariadb, postgresql, mysql, clickhouse, mongodb).
+    * port(default 5432) - The TCP/IP port number to use for the connection.
+    * publish(true|false) - Enable PostgreSQL integration.
 * [ ] log['level'] -- The logging configuration(not required):
-   * console - "INFO", "DEBUG", "ERROR".
-   * file - Location of the log file.
+    * console - "INFO", "DEBUG", "ERROR".
+    * file - Location of the log file.
 * [x] storage_dir -- The directory where mindsDB will store models and configuration.
 
 After creating the `config.json` file, you will need to start MindsDB and provide the path to the newly created `config.json`:
@@ -134,5 +134,5 @@ SELECT * FROM mindsdb.predictors;
 ![SELECT from MindsDB predictors table](/assets/data/psql-select.gif)
 
 !!! Success "That's it :tada: :trophy:  :computer:"
-   You have successfully connected MindsDB Server and PostgreSQL. The next step is to [train the Machine Learning model](/model/postgresql).
+    You have successfully connected MindsDB Server and PostgreSQL. The next step is to [train the Machine Learning model](/model/postgresql).
 

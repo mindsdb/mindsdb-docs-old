@@ -21,5 +21,5 @@ Uploading local dataset to MindsDB can be easily done with a few clicks. You can
 ![upload data locally](/assets/data/local.gif)
 
 !!! Success "That's it :tada: :trophy:  :computer:"
-   You have successfully uploaded your local dataset from MindsDB Studio. The next step is to train the [Machine Learning model](/model/train).
+    You have successfully uploaded your local dataset from MindsDB Studio. The next step is to train the [Machine Learning model](/model/train).
 
