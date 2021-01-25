@@ -47,5 +47,5 @@ SELECT * FROM mindsdb.predictors WHERE name='<model_name>';
 ![Training model status](/assets/predictors/mysql-status.gif)
 
 !!! Success "That's it :tada: :trophy:  :computer:"
-    You have successfully trained a new model from a MySQL database. The next step is to get predictions by [querying the model](/query/mysql).
+    You have successfully trained a new model from a MySQL database. The next step is to get predictions by [querying the model](/model/query/mysql).
 
