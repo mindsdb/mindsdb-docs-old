@@ -52,6 +52,7 @@ nav:
     - PostgreSQL: datasources/postgresql.md
     - MariaDB: datasources/mariadb.md
     - ClickHouse: datasources/clickhouse.md
+    - Microsoft SQL Server: datasources/mssql.md
     - Remote URL: datasources/remote.md
     - Local dataset: datasources/local.md
     - Snowflake: datasources/snowflake.md
