@@ -3,7 +3,7 @@
 Connecting MindsDB to your Microsoft SQL Server can be done in two ways:
 
 * Using [MindsDB Studio](#mindsdb-studio).
-* Using [MySQL client](#mysql-client).
+* Using [mssql client](#) WIP.
 
 ## Prerequisite
 
