@@ -1,17 +1,17 @@
 # Install with Docker
 
-You can run MindsDB in a docker container assuming that you have [docker](https://docs.docker.com/install/) installed on your machine. To make sure Docker is successfully installed on your machine, run:
+You can run MindsDB in a docker container assuming that you have <a href="https://docs.docker.com/install" target="_blank">docker</a> installed on your machine. To make sure Docker is successfully installed on your machine, run:
 
 ```
 docker run hello-world
 ```
 
-You should see the `Hello from Docker!` message displayed. If not, check the [get started](https://www.docker.com/get-started) documentation.
+You should see the `Hello from Docker!` message displayed. If not, check the <a href="https://www.docker.com/get-started" target="_blank">get started</a> documentation.
 
 
 ### Run MindsDB container
 
-MindsDB images are uploaded to the [MindsDB repo on docker hub](https://hub.docker.com/u/mindsdb) after each release.
+MindsDB images are uploaded to the <a href="https://hub.docker.com/u/mindsdb" target="_blank">MindsDB repo on docker hub</a> after each release.
 
 #### Pull image
 

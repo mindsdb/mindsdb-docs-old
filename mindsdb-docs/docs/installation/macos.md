@@ -10,7 +10,7 @@ This installer will install Python3, MindsDB and MindsDB's dependencies.
 
 ## Install using Anaconda
 
-You will need [Anaconda](https://www.anaconda.com/products/individual) or [Conda](https://conda.io/projects/conda/en/latest/index.html) installed and a Python 64bit version. Then open the Anaconda prompt and:
+You will need <a href="https://www.anaconda.com/products/individual" target="_blank">Anaconda</a> or <a href="https://conda.io/projects/conda/en/latest/index.html" target="_blank">Conda</a> installed and a Python 64bit version. Then open the Anaconda prompt and:
 
 1. Create a new virtual environment and install mindsdb:
 

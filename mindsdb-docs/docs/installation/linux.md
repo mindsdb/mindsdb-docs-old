@@ -37,7 +37,7 @@ We suggest you to install MindsDB in a virtual environment when using **pip** to
 
 ## Install using Anaconda
 
-You will need [Anaconda](https://www.anaconda.com/products/individual) or [Conda](https://conda.io/projects/conda/en/latest/index.html) installed and Python 64bit version. Then open Anaconda Prompt and:
+You will need <a href="https://www.anaconda.com/products/individual" target="_blank">Anaconda</a> or <a href="https://conda.io/projects/conda/en/latest/index.html" target="_blank">Conda</a> installed and Python 64bit version. Then open Anaconda Prompt and:
 
 1. Create new virtual environment and install mindsdb:
 
