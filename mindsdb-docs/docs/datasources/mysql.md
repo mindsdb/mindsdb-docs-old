@@ -10,9 +10,9 @@ Connecting MindsDB to your MySQL database can be done in two ways:
 To connect to your MySQL Server from MindsDB, you will need to enable the FEDERATED Storage Engine.
 
 !!! Tip "How to enable the FEDERATED Storage Engine"
-   * Please check the MySQL [documentation](https://dev.mysql.com/doc/refman/8.0/en/federated-storage-engine.html).
-   * Stackoverflow [answers](https://stackoverflow.com/questions/5210309/how-can-i-enable-federated-engine-in-mysql-after-installation).
-   * Read more about the [FEDERATED Storage Engine](https://dev.mysql.com/doc/refman/8.0/en/federated-description.html).
+    * Please check the MySQL <a href="https://dev.mysql.com/doc/refman/8.0/en/federated-storage-engine.html" target="_blank">documentation</a>.
+    * Stackoverflow <a href="https://stackoverflow.com/questions/5210309/how-can-i-enable-federated-engine-in-mysql-after-installation" target="_blank">answers</a>.
+    * Read more about the <a href="https://dev.mysql.com/doc/refman/8.0/en/federated-description.html" target="_blank">FEDERATED Storage Engine</a>.
 
 ## MindsDB Studio
 

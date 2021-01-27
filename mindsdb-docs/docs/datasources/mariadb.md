@@ -10,8 +10,8 @@ Connecting MindsDB to your MariaDB database can be done in two ways:
 To connect to MariaDB from MindsDB, you will need to install the CONNECT Storage Engine.
 
 !!! Tip "How to install the CONNECT Storage Engine"
-   * Please check the MariaDB [documentation](https://mariadb.com/kb/en/installing-the-connect-storage-engine/).
-   * Read more about the [CONNECT Storage Engine](https://mariadb.com/kb/en/introduction-to-the-connect-engine/).
+    * Please check the MariaDB <a href="https://mariadb.com/kb/en/installing-the-connect-storage-engine/" target="_blank">documentation</a>.
+    * Read more about the <a href="https://mariadb.com/kb/en/introduction-to-the-connect-engine/" target="_blank">CONNECT Storage Engine</a>.
 
 ## MindsDB Studio
 

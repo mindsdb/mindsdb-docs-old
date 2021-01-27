@@ -1,6 +1,6 @@
 # Connect to Snowflake Data Warehouse
 
-Connecting MindsDB to the [Snowflake](https://www.snowflake.com/) can be easily done with a few clicks.
+Connecting MindsDB to the <a href="https://www.snowflake.com/" target="_blank">Snowflake</a> can be easily done with a few clicks.
 
 #### Connect to Snowflake
 
