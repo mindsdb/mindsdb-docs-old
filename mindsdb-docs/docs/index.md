@@ -48,6 +48,6 @@ There are a few options to install MindsDB on different operating systems. To fi
 * [Join MindsDB community](/community)
 
 ## Useful links
- * [MindsDB APIs documentation](https://apidocs.mindsdb.com/)
- * [Get in touch](https://mindsdb.com/contact-us/)
+ * <a href="https://apidocs.mindsdb.com/" target="_blank">MindsDB APIs documentation</a>
+ * <a href="https://mindsdb.com/contact-us/" target="_blank">Get in touch</a>
  
