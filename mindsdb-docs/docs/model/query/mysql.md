@@ -1,6 +1,6 @@
-# Query the model from PostgreSQL database
+# Query the model from MySQL database
 
-This section assumes that you have trained a new model using [psql](/model/postgresql/) or [MindsDB Studio](/model/train/). To query the model, you will need to `SELECT` from the model table:
+This section assumes that you have trained a new model using [MySQL](/model/mysql/) or [MindsDB Studio](/model/train/). To query the model, you will need to `SELECT` from the model table:
 
 ```sql
 SELECT
@@ -10,47 +10,39 @@ SELECT
 FROM
   mindsdb.<model_name>
 WHERE
-  <feature_one> AND <feature_two>
+  when_data=<JSON features values>
 ```
-
 !!! question "Query the model from other databases"
-    Note that even if you have trained the model from the PostgreSQL database, you will be able to query it from other databases too.
+    Note that even if you have trained the model from the MySQL database, you will be able to
+    query it from other databases too.
 
 ## Query example
 
-The following example shows you how to query the model from a psql client. The table used for training the model is the [Airline Passenger sattisfaction](https://www.kaggle.com/teejmahal20/airline-passenger-satisfaction) dataset. MindsDB will predict the `satisfaction`  based on the values added in the `WHERE` statement.
+The following example shows you how to query the model from a MySQL client. The table used for training the model is the  [Us consumption](https://github.com/robjhyndman/fpp2-package/blob/15916e4fe827d1b3dcf82785a4ace80107af5ddd/data-raw/usconsumption.csv) dataset. MindsDB will predict the `consumption` based on the values added in `when_data`.
 
 ```sql
-SELECT satisfaction AS predicted,
-      satisfaction_confidence AS confidence,
-      satisfaction_explain AS info
-FROM mindsdb.airline_survey_model
-WHERE "Customer Type"='Loyal Customer'
- AND age=52
- AND "Type of Travel"='Business travel'
- AND "Class"='Eco';
+SELECT
+  consumption AS predicted,
+  consumption_confidence AS confidence,
+  consumption_explain AS info
+FROM
+  mindsdb.us_consumption
+WHERE
+  when_data='{"income": 1.182497938, "production": 5.854555956,"savings": 3.183292657, "unemployment": 0.1, "t":"2020-01-02"}';
 ```
 You should get a response from MindsDB similar to:
 
-| satisfaction  | confidence | info   |
+| consumption  | confidence | info   |
 |----------------|------------|------|
-| satisfied | 0.94 | Check JSON below  |
+| 1.0 | 0.93 | Check JSON below  |
 
 ```json
 info: {
- "predicted_value": "satisfied",
- "confidence": 0.94,
- "prediction_quality": "very confident",
- "important_missing_information": [
-   "id",
-   "Inflight wifi service",
-   "Online boarding",
-   "Seat comfort",
-   "Baggage handling"
- ]
+   "predicted_value": "1.0",
+   "confidence": 0.93,
+   "prediction_quality": "very confident",
+   "important_missing_information": []
 }
 ```
 
-![Model predictions](/assets/predictors/postgresql-query.gif)
-
-
+![Model predictions](/assets/predictors/mysql-query.gif)
