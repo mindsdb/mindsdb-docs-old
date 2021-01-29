@@ -1,13 +1,13 @@
 # Train a model from Microsoft SQL Server
 
-![MindsDB-Mssql](/assets/databases/mdb-mysql.png)
+
 
 ### Train new model
 
 To train a new model, you will need to `INSERT` a new record inside the mindsdb.predictors table.
 
 !!! question "How to create the mindsb.predictors table"
-    Note that after connecting the [MindsDB and Microsoft SQL server](/datasources/mysql/#mysql-client), on
+    Note that after connecting the [MindsDB and Microsoft SQL server](/datasources/mssql/#mssql-client), on
     start, the MindsDB server will automatically create the mindsdb database and add the predictors table.
 
 There are both options for training the model by using the `openquery` or `exec` statement. The `INSERT` query for training new model using `exec` statement:
@@ -28,16 +28,16 @@ The values provided in the `INSERT` query are:
 * select_data_query (string) -- The SELECT query that will ingest the data to train the model.
 * training_options (JSON as comma separated string) -- optional value that contains additional training parameters. For a full list of parameters, check the [PredictorInterface](/PredictorInterface/#learn).
 
-![Train model from mySQL client](/assets/predictors/mssql-insert.gif)
+![Train model from mssql client](/assets/predictors/mssql-insert.gif)
 
 ### Train new model example
 
-The following example shows you how to train a new model from a mysql client. The table used for training the model is the [Medical insurance](https://www.kaggle.com/mirichoi0218/insurance) dataset.
+The following example shows you how to train a new model from a mssql client. The table used for training the model is the [Medical insurance](https://www.kaggle.com/mirichoi0218/insurance) dataset.
 
 ```sql
 exec ('INSERT INTO mindsdb.predictors (name, predict, select_data_query) 
 VALUES ("insurance_model", "charges", "SELECT * FROM mindsdb_test.dbo.insurance")') 
-AT mindsdb_db;
+AT mindsdb;
 ```
 
 This `INSERT` query will train a new model called `insurance_model` that predicts the `charges` value.
@@ -47,11 +47,14 @@ This `INSERT` query will train a new model called `insurance_model` that predict
 To check that the training finished successfully, you can `SELECT` from the mindsdb.predictors table and get the training status, e.g.:
 
 ```sql
-SELECT * FROM mindsdb.predictors;
+exec ('SELECT * FROM mindsdb.predictors') AT mindsdb;
 ```
+
+>Note: `mindsdb` is the name of the api['mysql]['database'] key from config.json. The default name is `mindsdb`.
+
 
 ![Training model status](/assets/predictors/mssql-status.gif)
 
 !!! Success "That's it :tada: :trophy:  :computer:"
-    You have successfully trained a new model from a Microsoft SQL Server. The next step is to get predictions by [querying the model](/model/query/mysql).
+    You have successfully trained a new model from a Microsoft SQL Server. The next step is to get predictions by [querying the model](/model/query/mssql).
 
