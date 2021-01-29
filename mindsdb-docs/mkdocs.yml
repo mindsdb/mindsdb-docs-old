@@ -63,6 +63,7 @@ nav:
       - PostgreSQL: model/postgresql.md
       - MariaDB: model/mariadb.md
       - ClickHouse: model/clickhouse.md
+      - Microsoft SQL Server: model/mssql.md
   - Evaluate model quality:
     - Evaluate from Studio: model/quality.md
   - Query model:
@@ -71,6 +72,7 @@ nav:
       - PostgreSQL: model/query/postgresql.md
       - MariaDB: model/query/mariadb.md
       - ClickHouse: model/query/clickhouse.md
+      - Microsoft SQL Server: model/query/mssql.md
     - Query from Studio: model/query/studio.md
   - Tutorials:
     - AI Tables in MySQL: tutorials/mysql.md
