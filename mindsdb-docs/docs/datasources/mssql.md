@@ -137,4 +137,4 @@ select * from openquery(mindsdb, 'select * from mindsdb.predictors');
 ![SELECT from MindsDB predictors table](/assets/data/mssql-select.gif)
 
 !!! Success "That's it :tada: :trophy:  :computer:"
-    You have successfully connected MindsDB Server and Microsoft SQL Server. The next step is to [train the Machine Learning model](/model/mariadb).
+    You have successfully connected MindsDB Server and Microsoft SQL Server. The next step is to [train the Machine Learning model](/model/mssql).

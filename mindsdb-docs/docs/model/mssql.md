@@ -32,20 +32,22 @@ The values provided in the `INSERT` query are:
 
 ### Train new model example
 
-The following example shows you how to train a new model from a mysql client. The table used for training the model is the [Us consumption](https://github.com/robjhyndman/fpp2-package/blob/15916e4fe827d1b3dcf82785a4ace80107af5ddd/data-raw/usconsumption.csv) dataset.
+The following example shows you how to train a new model from a mysql client. The table used for training the model is the [Medical insurance](https://www.kaggle.com/mirichoi0218/insurance) dataset.
 
 ```sql
-INSERT INTO mindsdb.predictors(name, predict, select_data_query,training_options) VALUES ('airq_predictor', 'SO2', 'SELECT * FROM default.pollution_measurement', '{"timeseries_settings":{"order_by": ["Measurement date"], "window":20}}');
+exec ('INSERT INTO mindsdb.predictors (name, predict, select_data_query) 
+VALUES ("insurance_model", "charges", "SELECT * FROM mindsdb_test.dbo.insurance")') 
+AT mindsdb_db;
 ```
 
-This `INSERT` query will train a new model called `airq_predictor` that predicts the `SO2` value. Since this is timeseries data, the `timeseries_settings` will order the data by the `t` column and will set the window for rows to "look back" when making a prediction.
+This `INSERT` query will train a new model called `insurance_model` that predicts the `charges` value.
 
 #### Model training status
 
 To check that the training finished successfully, you can `SELECT` from the mindsdb.predictors table and get the training status, e.g.:
 
 ```sql
-SELECT * FROM mindsdb.predictors WHERE name='<model_name>';
+SELECT * FROM mindsdb.predictors;
 ```
 
 ![Training model status](/assets/predictors/mssql-status.gif)
