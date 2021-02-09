@@ -24,7 +24,7 @@ If you don’t have MySQL installed, you can download the installers for various
 
 ## Example dataset
 
-In this tutorial, we will use the [Churn Modelling Data Set
+In this tutorial, we will use the [Churn Modelling Dataset
 ](https://www.kaggle.com/shrutimechlearn/churn-modelling). If you have other datasets in your MySQL database, please skip this section.
 
 This data set contains details of a bank's customers, and the target variable is a binary variable reflecting whether the customer left the bank (closed their account) or is still a customer.

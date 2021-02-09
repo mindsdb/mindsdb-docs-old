@@ -8,6 +8,7 @@ With the increase of data in volume, variety, velocity in today's databases. Is 
 #### How can we achieve this?
 
 We make use of ClickHouse’s neat capabilities of accessing external tables as if they were internal tables. As such, the integration of these models is painless and transparent allowing us to:
+
 * Exposing machine learning models like tables that can be queried. You simply SELECT what you want to predict and you pass in the WHERE statement the conditions for the prediction.
 * Automatically, build, test and train machine learning models with a simple INSERT statement, where you specify what you want to learn and from what query.
 

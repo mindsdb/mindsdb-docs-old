@@ -79,6 +79,7 @@ nav:
     - AI Tables in MariaDB: tutorials/mariadb.md
     - AI Tables in PostgreSQL: tutorials/postgresql.md
     - AI Tables in ClickHouse: tutorials/clickhouse.md
+    - AI Tables in Microsoft SQL Server: tutorials/microsoft-sql-server.md
   - MindsDB for Developers:
     - Python native:
       - Starter Example: tutorials/BasicExample.md
