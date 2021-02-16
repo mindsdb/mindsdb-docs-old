@@ -8,6 +8,9 @@ Install MindsDB on your Windows machine using an easy-to-use installler.
 
 This installer will install Python3, MindsDB and MindsDB's dependencies, and create a shortcut on the desktop for starting MindsDB server.
 
+!!! info "Unknown publisher warning"
+    Currently, we are in a process of signing the Windows application, so in case you got a warning that the application is from `Unknown publisher`, click on a `Run anyway` button. If you experience additional issues using the Windows installer, please reach out to us on [GitHub](https://github.com/mindsdb/mindsdb/issues), or use the other installation options from bellow.
+
 ## Install using Anaconda
 
 You will need <a href="https://www.anaconda.com/products/individual" target="_blank">Anaconda</a> or <a href="https://conda.io/projects/conda/en/latest/index.html" target="_blank">Conda</a> installed and Python 64bit version. Then open Anaconda Prompt and:

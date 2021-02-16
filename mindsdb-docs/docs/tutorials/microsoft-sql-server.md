@@ -2,6 +2,9 @@
 
 Data is the main ingredient for machine learning. Nowadays most enterprise structured data lives inside a database, so moving the machine learning inside the database layer can bring great benefits. This is one of the main reasons we decided to build an integration with the most widely used database systems, so that any database user can create, train and query machine learning models with minimal knowledge of SQL.
 
+![MindsDB integration](/assets/tutorials/aitables-mssql/AI Tables.jpg)
+
+
 Using the MindsDB AI Tables feature, users can automate model training workflows and reduce deployment time and complexity by adding the predictive layer to the database.
 AI Tables allow database users to query predictive models in seconds as if they were data that existed on the table. Simply explained, AI Tables allow users to use machine learning models as if they were normal database tables. In plain SQL, that looks like this:
 
@@ -9,14 +12,14 @@ AI Tables allow database users to query predictive models in seconds as if they 
 SELECT <predicted_variable> FROM <ML_model> WHERE <conditions>
 ```
 
-MindsDB acts like a database and interacts with your SQL database. AI Tables accelerate development speed, reduce costs and eliminate the complexity of machine learning workflows.
+MindsDB acts like an AutoML platform and interacts with your SQL database through an ODBC driver. AI Tables accelerate development speed, reduce costs and eliminate the complexity of machine learning workflows.
 
 * Train models from the data inside the SQL database
 * Get predictions through simple SQL queries
 * Get insights into model accuracy
 * Move from idea to production in minutes
 
-In this tutorial, you will get step-by-step instructions on how to enable AI Tables in Microsoft SQL Server. Based on a medical insurance example, you will see how to train and query machine learning models by using only SQL statements.
+In this tutorial, you will get step-by-step instructions on how to enable AI Tables in Microsoft SQL Server. Based on a medical insurance example dataset, you will see how to train and query machine learning models by using only SQL statements.
 
 
 ## How to install MindsDB
