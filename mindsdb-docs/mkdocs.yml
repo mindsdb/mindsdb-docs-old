@@ -93,7 +93,6 @@ nav:
       - Configuration Settings: Config.md
       - MindsDB SDK: server/SDKs.md
       - Introduction to Lightwood: lightwood/info.md
-      - Predictor API: lightwood/API.md
       - Comparison with other Libraries: comparisons/ComparsionWithOtherLibraries.md
       - Use Cases:
         - High-Tech & Manufacturing:
