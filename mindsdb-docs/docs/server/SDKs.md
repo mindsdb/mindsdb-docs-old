@@ -1,9 +1,10 @@
 
+!!! info "Work In Progress documentation :warning: :construction: :construction_worker: "
+    Note that the documentation for MindsDB SDK's is under development. If you found missing feature or something isn't working please reach out to us on the [Python SDK](https://github.com/mindsdb/mindsdb_python_sdk/issues/new/choose) or [JS SDK](https://github.com/mindsdb/mindsdb_js_sdk/issues/new/choose) repositories.
+
 !!! info "MindsDB Server"
     Note that to use MindsDB SDK, you will need to have MindsDB Server started so you can connect to it.
 
-!!! info "Missing documentation :warning: :construction: :construction_worker: "
-    Note that the documentation for MindsDB SDK's is under development. If you found missing feature or something isn't working please reach out to us on the [Python SDK](https://github.com/mindsdb/mindsdb_python_sdk/issues/new/choose) or [JS SDK](https://github.com/mindsdb/mindsdb_js_sdk/issues/new/choose) repositories.
 
 The MindsDB SDK's are providing all of the MindsDB's native functionalities through MindsDB HTTP Interface. Currently, MindsDB provides SDK's for Python and JavaScript.
 
@@ -26,19 +27,23 @@ pip install -r requirements.txt
 
 ## Connect to your data
 
-DataSources make it very simple to connect MindsDB to your data. Datasource can be file(csv, tsv, json, xslx, xls), pandas dataframe or MindsDB datasource that is an enriched version of a pandas dataframe. MindsDB datasource could be MariaDB, Snowflake, S3, Sqlite3, Redshift, PostgreSQL, MsSQL, MongoDB, GCS, Clickhouse, AWS Athena,please check the full list of datasource implementation [here](https://github.com/mindsdb/mindsdb_native/tree/stable/mindsdb_native/libs/data_sources).
+DataSources make it very simple to connect MindsDB to your data. Datasource can be:
+
+* File(csv, tsv, json, xslx, xls)
+* Pandas dataframe 
+* MindsDB datasource that is an enriched version of a pandas dataframe. MindsDB datasource could be MariaDB, Snowflake, S3, Sqlite3, Redshift, PostgreSQL, MsSQL, MongoDB, GCS, Clickhouse, AWS Athena. For more info please check the full list of datasource implementation [here](https://github.com/mindsdb/mindsdb_native/tree/stable/mindsdb_native/libs/data_sources).
 
 ### Create new datasource from local file
 
-Let's load the local file as an pandas dataframe and create new datasource:
+Before you train new model you need to create a datasource, so MindsDB can ingest and prepare the data. The following example use [Medical Cost dataset](https://www.kaggle.com/mirichoi0218/insurance). Let's load the local file as an pandas dataframe and create new datasource:
 
 ```python
-from mindsdb_sdk import SDK
-import pandas as pd
-mindsdb_sdk = SDK('http://localhost:47334') # MindsDB Server URL
-datasources = mindsdb_sdk.datasources
-df = pd.read_csv('datasets/insurance.csv')
-datasources['health_insurance'] = {'df': df}
+from mindsdb_sdk import SDK # import SDK
+import pandas as pd # import pandas
+mindsdb_sdk = SDK('http://localhost:47334') # Connect to MindsDB Server URL
+datasources = mindsdb_sdk.datasources 
+df = pd.read_csv('datasets/insurance.csv') # read the dataset
+datasources['health_insurance'] = {'df': df} # create new datasource
 ```
 
 To check that the datasource was succesfully created, you can call the `list_info()` method from datasources:
@@ -53,7 +58,7 @@ This will return the info for each datasource as the following example:
 {
     'name': 'health_insurance',
     'source_type': 'file',
-    'source': '/home/zoran/MyProjects/mindsdb-examples/mysql/mdb/lib/python3.7/site-packages/mindsdb/var/datasources/health_insurance/tmpgob9an1e',
+    'source': '/mindsdb/var/datasources/health_insurance/',
     'missed_files': None,
     'created_at': '2021-02-19T14:20:57.860292',
     'updated_at': '2021-02-19T14:20:57.908497',
@@ -63,46 +68,18 @@ This will return the info for each datasource as the following example:
         'type': None,
         'file_type': None,
         'dict': None
-    }, {
-        'name': 'sex',
-        'type': None,
-        'file_type': None,
-        'dict': None
-    }, {
-        'name': 'bmi',
-        'type': None,
-        'file_type': None,
-        'dict': None
-    }, {
-        'name': 'children',
-        'type': None,
-        'file_type': None,
-        'dict': None
-    }, {
-        'name': 'smoker',
-        'type': None,
-        'file_type': None,
-        'dict': None
-    }, {
-        'name': 'region',
-        'type': None,
-        'file_type': None,
-        'dict': None
-    }, {
-        'name': 'charges',
-        'type': None,
-        'file_type': None,
-        'dict': None
-    }
+    } ... other columns
 }
 ```
+
 ### Train new model
 
-The `learn` method is used to make the predictor learn from some data. The arguments sent are `model_name`, `target_variable`, `datasource`.
+The `learn` method is used to make the predictor learn from the data. The required arguments to `learn` from data are `model_name`, `target_variable`, `datasource`.
+The following example train new model called `insurance_model` that predicts the `charges` from `health_insurance` datasource.
 
 ```python
 model = mindsdb_sdk.predictors
-model.learn('new_model',  'charges', 'health_insurance',)
+model.learn('insurance_model',  'charges', 'health_insurance',)
 ```
 
 
