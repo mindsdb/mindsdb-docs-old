@@ -41,6 +41,9 @@ Using MindsDB Studio, you can connect to the ClickHouse database with a few clic
 
 ## ClickHouse client
 
+!!! Info "How to extend MindsDB configuration"
+    Our suggestion is to always use [MindsDB Studio](/datasources/clickhouse/#mindsdb-studio) to connect MindsDB to your database. If you still want to extend the configuration without using MindsDB Studio follow the steps below.
+
 Before using ClickHouse client to connect MindsDB and ClickHouse Server, you will need to add additional configuration before starting MindsDB Server. Create a new `config.json` file. Expand the example below to preview the configuration example.
 
 <details class="success">

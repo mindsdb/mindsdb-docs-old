@@ -49,6 +49,9 @@ Using MindsDB Studio, you can connect to the MariaDB database with a few clicks.
 
 ## MySQL client
 
+!!! Info "How to extend MindsDB configuration"
+    Our suggestion is to always use [MindsDB Studio](/datasources/mariadb/#mindsdb-studio) to connect MindsDB to your database. If you still want to extend the configuration without using MindsDB Studio follow the steps below.
+
 Before using mysql-client to connect MindsDB and MariaDB, you will need to add additional configuration before starting MindsDB Server. Create a new `config.json` file. Expand the example below to preview the configuration example.
 
 <details class="success">
