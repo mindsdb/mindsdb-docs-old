@@ -50,6 +50,9 @@ Using MindsDB Studio, you can connect to the Microsoft SQL Server with a few cli
 
 ## MSSQL client
 
+!!! Info "How to extend MindsDB configuration"
+    Our suggestion is to always use [MindsDB Studio](/datasources/mssql/#mindsdb-studio) to connect MindsDB to your database. If you still want to extend the configuration without using MindsDB Studio follow the steps below.
+
 Before using mssql-cli or any SQL client to connect MindsDB and Microsoft SQL Server, you will need to add additional configuration before starting MindsDB Server. Create a new `config.json` file. Expand the example below to preview the configuration example.
 
 <details class="success">
