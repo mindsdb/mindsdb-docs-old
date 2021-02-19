@@ -54,7 +54,7 @@ Use an [s3](https://aws.amazon.com/s3/) object as the input.
 ```python
 from mindsdb import Predictor, S3DS
 
-s3_ds = S3DS(bucket_name='mindsdb-example-data', file_path='home_rentals.csv')`
+s3_ds = S3DS(bucket_name='mindsdb-example-data', file_path='home_rentals.csv')
 
 Predictor(name='test').learn(from_data=s3_ds, to_predict='target')
 ```

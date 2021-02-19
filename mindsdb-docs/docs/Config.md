@@ -40,4 +40,4 @@ mindsdb.CONFIG.MINDSDB_STORAGE_PATH = '/home/my_wonderful_username/place_where_i
 ```
 
 
-You can see all the config variables available [here](https://github.com/mindsdb/mindsdb/blob/master/mindsdb/config/__init__.py)
+You can see all the config variables available [here](https://github.com/mindsdb/mindsdb_native/blob/stable/mindsdb_native/config/__init__.py).

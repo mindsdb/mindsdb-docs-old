@@ -189,7 +189,7 @@ model.close()
 
 *Note: If the data is inconsistent or of erroneous, null value it may throw an error. So you may want to  preprocess/clean  the data first.*
 
-### Mindsdb
+### Mindsdb Native
 
 ```python
 from mindsdb import Predictor
@@ -200,13 +200,13 @@ Predictor(name='home_rentals_price').learn(
     from_data='train.csv' # the path to the file where we can learn from, (note: can be url)
 )
 # use the model to make predictions
-result = Predictor(name='home_rentals_price').predict(when={'number_of_rooms': 2, 'initial_price': 2000, 'number_of_bathrooms':1, 'sqft': 1190})
+result = Predictor(name='home_rentals_price').predict(when_data={'number_of_rooms': 2, 'initial_price': 2000, 'number_of_bathrooms':1, 'sqft': 1190})
 
 # now print the results
 print('The predicted price is between ${price} with {conf} confidence'.format(price=result[0].explanation['rental_price']['confidence_interval'], conf=result[0].explanation['rental_price']['confidence']))
 ```
 
-Generally speaking, Mindsdb differentiates itself from other libraries by its **simplicity**. Lastly, [Mindsdb Scout](https://www.mindsdb.com/product) provides you with an easy way to visiualize more insights about the model. This can also be done by calling `mdb.get_model_data('model_name')`, but it's easier to use Mindsdb Scout to visualize the data, rather than looking at the raw json.
+Generally speaking, Mindsdb differentiates itself from other libraries by its **simplicity**. Lastly, [Mindsdb Studio](/model/train/) provides you with an easy way to visiualize more insights about the model. This can also be done by calling `mdb.get_model_data('model_name')`, but it's easier to use Mindsdb Studio to visualize the data, rather than looking at the raw json.
 
 
 # Comparing Mindsdb accuracy with state-of-the-art models
@@ -217,7 +217,7 @@ It should be noted, Mindsdb accuracy doesn't always beat or match stat-of-the-ar
 
 If you have the time and know-how to build a model that performs better than Mindsdb, but you still want the insights into the model and the data, as well as the pre-processing that Mindsdb provides, you can always plug in a custom machine learning model into Mindsdb.
 
-We are currently creating a new Benchmarks repository where you can find detailed list with up to date examples. Untill we release that you can check the old list of accuracy comparisons on our [examples repo](https://github.com/mindsdb/mindsdb-examples/tree/master/benchmarks).
+We are currently creating a new Benchmarks repository where you can find detailed list with up to date examples. Untill we release that you can check the old list of accuracy comparisons on our [examples repo](https://github.com/mindsdb/mindsdb-examples/tree/master/benchmarks) and [public benchmarks](https://github.com/mindsdb/benchmarks).
 
 Each directory containes different examples, datasets and `README.md`. To see the accuracies and the models, simply run `mindsdb_acc.py` to run mindsdb on the dataset.
 
