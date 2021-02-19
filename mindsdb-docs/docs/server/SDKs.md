@@ -1,4 +1,10 @@
 
+!!! info "MindsDB Server"
+    Note that to use MindsDB SDK, you will need to have MindsDB Server started so you can connect to it.
+
+!!! info "Missing documentation :warning: :construction: :construction_worker: "
+    Note that the documentation for MindsDB SDK's is under development. If you found missing feature or something isn't working please reach out to us on the [Python SDK](https://github.com/mindsdb/mindsdb_python_sdk/issues/new/choose) or [JS SDK](https://github.com/mindsdb/mindsdb_js_sdk/issues/new/choose) repositories.
+
 The MindsDB SDK's are providing all of the MindsDB's native functionalities through MindsDB HTTP Interface. Currently, MindsDB provides SDK's for Python and JavaScript.
 
 ## Installing Python SDK

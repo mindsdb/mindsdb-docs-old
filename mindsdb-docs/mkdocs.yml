@@ -91,7 +91,6 @@ nav:
       - Timeseries Data: tutorials/Timeseries.md
       - Data sources: features/DataSources.md
       - Configuration Settings: Config.md
-      - MindsDB SDK: server/SDKs.md
       - Introduction to Lightwood: lightwood/info.md
       - Comparison with other Libraries: comparisons/ComparsionWithOtherLibraries.md
       - Use Cases:
@@ -109,6 +108,7 @@ nav:
           - Hotel Booking Demand: tutorials/HotelBooking.md
         - Telecomunications:
           - Customer Churn Reduction: tutorials/ChurnReduction.md
+    - MindsDB SDK: server/SDKs.md
   - Contribution and Community:
     - How to contribute: contribute.md
     - Join our community: community.md
