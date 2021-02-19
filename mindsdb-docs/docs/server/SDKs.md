@@ -1,5 +1,138 @@
 
-The MindsDB SDK's are providing all of the MindsDB's native functionalities through MindsDB HTTP Interface. Currently, MindsDB provides SDK's for JavaScript and Python.
+The MindsDB SDK's are providing all of the MindsDB's native functionalities through MindsDB HTTP Interface. Currently, MindsDB provides SDK's for Python and JavaScript.
+
+## Installing Python SDK
+
+The Python SDK can be installed from PyPI:
+
+```
+pip install mindsdb_sdk
+```
+
+Or you can install it from source:
+
+```
+git clone git@github.com:mindsdb/mindsdb_python_sdk.git
+cd mindsdb_python_sdk
+python setup.py develop
+pip install -r requirements.txt
+```
+
+## Connect to your data
+
+DataSources make it very simple to connect MindsDB to your data. Datasource can be file(csv, tsv, json, xslx, xls), pandas dataframe or MindsDB datasource that is an enriched version of a pandas dataframe. MindsDB datasource could be MariaDB, Snowflake, S3, Sqlite3, Redshift, PostgreSQL, MsSQL, MongoDB, GCS, Clickhouse, AWS Athena,please check the full list of datasource implementation [here](https://github.com/mindsdb/mindsdb_native/tree/stable/mindsdb_native/libs/data_sources).
+
+### Create new datasource from local file
+
+Let's load the local file as an pandas dataframe and create new datasource:
+
+```python
+from mindsdb_sdk import SDK
+import pandas as pd
+mindsdb_sdk = SDK('http://localhost:47334') # MindsDB Server URL
+datasources = mindsdb_sdk.datasources
+df = pd.read_csv('datasets/insurance.csv')
+datasources['health_insurance'] = {'df': df}
+```
+
+To check that the datasource was succesfully created, you can call the `list_info()` method from datasources:
+
+```python
+datasources.list_info()
+```
+
+This will return the info for each datasource as the following example:
+
+```json
+{
+    'name': 'health_insurance',
+    'source_type': 'file',
+    'source': '/home/zoran/MyProjects/mindsdb-examples/mysql/mdb/lib/python3.7/site-packages/mindsdb/var/datasources/health_insurance/tmpgob9an1e',
+    'missed_files': None,
+    'created_at': '2021-02-19T14:20:57.860292',
+    'updated_at': '2021-02-19T14:20:57.908497',
+    'row_count': 27,
+    'columns': [{
+        'name': 'age',
+        'type': None,
+        'file_type': None,
+        'dict': None
+    }, {
+        'name': 'sex',
+        'type': None,
+        'file_type': None,
+        'dict': None
+    }, {
+        'name': 'bmi',
+        'type': None,
+        'file_type': None,
+        'dict': None
+    }, {
+        'name': 'children',
+        'type': None,
+        'file_type': None,
+        'dict': None
+    }, {
+        'name': 'smoker',
+        'type': None,
+        'file_type': None,
+        'dict': None
+    }, {
+        'name': 'region',
+        'type': None,
+        'file_type': None,
+        'dict': None
+    }, {
+        'name': 'charges',
+        'type': None,
+        'file_type': None,
+        'dict': None
+    }
+}
+```
+### Train new model
+
+The `learn` method is used to make the predictor learn from some data. The arguments sent are `model_name`, `target_variable`, `datasource`.
+
+```python
+model = mindsdb_sdk.predictors
+model.learn('new_model',  'charges', 'health_insurance',)
+```
+
+
+### Query the model
+
+To get the predictons from the model use the `predict` method. This method is used to make predictions and it can take `when_data` argument. This can be file, dataframe or url or if you want to make the single predicton as in the following example use a dictionary.
+
+
+```python
+model.predict(when_data={'age': 30, 'bmi': 22})
+```
+
+## Usage example
+
+The following example trains new model from [home_rentals dataset](https://github.com/mindsdb/benchmarks/blob/main/datasets/home_rentals/data.csv) and predicts the rental price.
+
+```python
+from mindsdb_sdk import SDK
+
+# connect
+mdb = SDK('http://localhost:47334')
+
+# upload datasource
+mdb.datasources['home_rentals_data'] = {'file' : 'home_rentals.csv'}
+
+# create a new predictor and learn to predict
+predictor = mdb.predictors.learn(
+    name='home_rentals',
+    datasource='home_rentals_data',
+    to_predict='rental_price'
+)
+
+# predict
+result = predictor.predict({'initial_price': '2000','number_of_bathrooms': '1', 'sqft': '700'})
+```
+
 
 ## Installing JavaScript SDK
 
@@ -49,45 +182,4 @@ const result = rentalsPredictor.queryPredict({'initial)|_price': 2000, 'sqft': 5
 console.log(result);
 
 MindsDB.disconnect();
-```
-
-## Installing Python SDK
-
-The Python SDK can be installed from PyPI:
-
-```
-pip install mindsdb-client
-```
-
-Or you can install it from source:
-
-```
-git clone git@github.com:mindsdb/mindsdb_python_sdk.git
-cd mindsdb_python_sdk
-python setup.py develop
-pip install -r requirements.txt
-```
-
-## Usage example
-
-The following example covers the basic flow: connect to MindsDB Server, train new model, make predictions.
-
-```python
-from mindsdb_client import MindsDB
-
-# connect
-mdb = MindsDB(server='http://mindsdb.server:47334', params={'email': 'login@email.com', 'password': 'loginpass'})
-
-# upload datasource
-mdb.datasources.add('home_rentals_data', path='home_rentals.csv')
-
-# create a new predictor and learn to predict
-predictor = mdb.predictors.learn(
-    name='home_rentals',
-    data_source_name='home_rentals_data',
-    to_predict='rental_price'
-)
-
-# predict
-result = predictor.predict({'initial_price': '2000','number_of_bathrooms': '1', 'sqft': '700'})
 ```
