@@ -126,7 +126,7 @@ Predictor(name='test').learn(from_data=ch_ds, to_predict='target')
 
 This data source also take the optional initialization/constructor arguments:
 
-* query -- Query whith which to extract the data, mutually exclusive with `table` [string]
+* query -- Query with which to extract the data, mutually exclusive with `table` [string]
 * host -- The host of the database (e.g. localhost or some ip) [string]
 * user -- User for the database [string]
 * password -- Password for the user [string]
