@@ -1,6 +1,11 @@
 # Query the model from Microsoft SQL Server
 
-This section assumes that you have trained a new model using [SQL client](/model/mssql/) or [MindsDB Studio](/model/train/). To query the model, you will need to `SELECT` from the model table:
+This section assumes that you have trained a new model using [SQL client](/model/mssql/) or [MindsDB Studio](/model/train/). 
+
+!!! info "Prerequisite"
+    Don't forget to install the prerequisites as explained in [connect your data section](/datasources/mssql/#prerequisite).
+
+To query the model, you will need to `SELECT` from the model table:
 
 ```sql
 exec('SELECT <target_variable> AS predicted,

@@ -10,6 +10,9 @@ To train a new model, you will need to `INSERT` a new record inside the mindsdb.
     Note that after connecting the [MindsDB and Microsoft SQL server](/datasources/mssql/#mssql-client), on
     start, the MindsDB server will automatically create the mindsdb database and add the predictors table.
 
+!!! info "Prerequisite"
+    Don't forget to install the prerequisites as explained in [connect your data section](/datasources/mssql/#prerequisite).
+
 There are both options for training the model by using the `openquery` or `exec` statement. The `INSERT` query for training new model using `exec` statement:
 
 ```sql
