@@ -9,7 +9,7 @@ Connecting MindsDB to your PostgreSQL database can be done in two ways:
 
 To connect to your PostgreSQL Server from MindsDB, you will need to install the MySQL foreign data wrapper for PostgreSQL.
 
-!!! Tip "How to install the PostgreSQL foreign data wrapper"
+!!! Tip "How to install the MySQL foreign data wrapper"
     * Please check the mysql_fdw <a href="https://github.com/EnterpriseDB/mysql_fdw#installation" target="_blank">documentation</a>.
     * Stackoverflow <a href="https://stackoverflow.com/questions/24683035/setup-mysql-foreign-data-wrapper-in-postgresql" target="_blank">answers</a>.
 

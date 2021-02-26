@@ -1,6 +1,12 @@
 # Query the model from PostgreSQL database
 
-This section assumes that you have trained a new model using [psql](/model/postgresql/) or [MindsDB Studio](/model/train/). To query the model, you will need to `SELECT` from the model table:
+This section assumes that you have trained a new model using [psql](/model/postgresql/) or [MindsDB Studio](/model/train/). 
+
+
+!!! info "Prerequisite"
+    Don't forget to install the PostgreSQL foreign data wrapper as explained in [connect your data section](/datasources/postgresql/#prerequisite).
+
+To query the model, you will need to `SELECT` from the model table:
 
 ```sql
 SELECT
