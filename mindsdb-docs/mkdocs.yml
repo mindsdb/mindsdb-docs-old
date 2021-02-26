@@ -1,4 +1,5 @@
 site_name: MindsDB Documentation
+site_url: 'https://docs.mindsdb.com'
 repo_name: 'mindsdb/mindsdb'
 repo_url: 'https://github.com/mindsdb/mindsdb'
 theme:
@@ -8,6 +9,8 @@ theme:
   favicon: assets/mdb_logo.png
   icon:
     repo: fontawesome/brands/github
+extra:
+  disqus: docs-mindsdb-com
 plugins:
     - search:
         lang: 'en'
@@ -116,3 +119,4 @@ nav:
     - Inside MindsDB: InsideMindsDB.md
 extra_css:
   - stylesheets/extra.css
+

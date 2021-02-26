@@ -9,6 +9,10 @@ To train a new model, you will need to `INSERT` a new record inside the mindsdb.
 !!! question "How to create the mindsb schema and tables"
     Note that after connecting [MindsDB and PostgreSQL](/datasources/postgresql/#psql-client), on start, the MindsDB server will automatically create the mindsDB schema and add the predictors table.
 
+
+!!! info "Prerequisite"
+    Don't forget to install the MySQL foreign data wrapper as explained in [connect your data section](/datasources/postgresql/#prerequisite).
+
 The `INSERT` query for training a new model is quite simple, e.g.:
 
 ```sql

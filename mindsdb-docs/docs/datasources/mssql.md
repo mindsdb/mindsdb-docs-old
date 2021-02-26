@@ -73,7 +73,7 @@ Before using mssql-cli or any SQL client to connect MindsDB and Microsoft SQL Se
        "mysql": {
            "host": "127.0.0.1",
            "database": "mindsdb",
-           "password": "",
+           "password": "123456",
            "port": "47335",
            "ssl": true,
            "user": "root"
@@ -109,7 +109,7 @@ All of the options that should be added to the `config.json` file are:
     * port(default 47334) - The mindsDB server port.
 * [x] api['mysql'] -- This key is used for database integrations that work through MySQL protocol. The required keys are:
     * user(default root).
-    * password(default empty).
+    * password(default 123456) - Required to have a password, since Microsoft SQL will use default user pass. This is the password for MindsDB MySQL API.
     * database - The name of the server that mindsdb will start.
     * ssl(default true) -- Use SSL true/false.
     * host(default 127.0.0.1).
