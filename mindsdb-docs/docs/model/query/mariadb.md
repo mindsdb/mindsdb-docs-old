@@ -1,5 +1,9 @@
 # Query the model from MariaDB database
 
+
+!!! info "Prerequisite"
+    Don't forget to enable CONNECT Storage Engine as explained in [connect your data section](/datasources/mariadb/#prerequisite).
+
 This section assumes that you have trained a new model using [MariaDB](/model/mariadb/) or [MindsDB Studio](/model/train/). To query the model, you will need to `SELECT` from the model table:
 
 ```sql

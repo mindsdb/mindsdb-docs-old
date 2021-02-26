@@ -9,6 +9,9 @@ To train a new model, you will need to `INSERT` a new record inside the mindsdb.
 !!! question "How to create the mindsb.predictors table"
     Note that after connecting [MindsDB and MariaDB](/datasources/mariadb/#mysql-client), on start, the MindsDB server will automatically create the mindsdb database and add the predictors table.
 
+!!! info "Prerequisite"
+    Don't forget to enable CONNECT Storage Engine as explained in [connect your data section](/datasources/mariadb/#prerequisite).
+
 The `INSERT` query for training new model is quite simple, e.g.:
 
 ```sql
