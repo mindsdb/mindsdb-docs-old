@@ -10,6 +10,10 @@ To train a new model, you will need to `INSERT` a new record inside the mindsdb.
     Note that after connecting the [MindsDB and MySQL servers](/datasources/mysql/#mysql-client), on
     start, the MindsDB server will automatically create the mindsdb database and add the predictors table.
 
+
+!!! info "Prerequisite"
+    Don't forget to enable FEDERATED Storage Engine as explained in [connect your data section](/datasources/mysql/#prerequisite).
+
 The `INSERT` query for training new model is quite simple, e.g.:
 
 ```sql

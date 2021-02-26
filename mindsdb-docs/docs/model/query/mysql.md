@@ -1,6 +1,11 @@
 # Query the model from MySQL database
 
-This section assumes that you have trained a new model using [MySQL](/model/mysql/) or [MindsDB Studio](/model/train/). To query the model, you will need to `SELECT` from the model table:
+This section assumes that you have trained a new model using [MySQL](/model/mysql/) or [MindsDB Studio](/model/train/).
+
+!!! info "Prerequisite"
+    Don't forget to enable FEDERATED Storage Engine as explained in [connect your data section](/datasources/mysql/#prerequisite).
+
+To query the model, you will need to `SELECT` from the model table:
 
 ```sql
 SELECT
