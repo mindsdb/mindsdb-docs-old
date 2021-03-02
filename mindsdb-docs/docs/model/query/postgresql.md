@@ -4,7 +4,7 @@ This section assumes that you have trained a new model using [psql](/model/postg
 
 
 !!! info "Prerequisite"
-    Don't forget to install the PostgreSQL foreign data wrapper as explained in [connect your data section](/datasources/postgresql/#prerequisite).
+    Don't forget to install the MySQL foreign data wrapper as explained in [connect your data section](/datasources/postgresql/#prerequisite).
 
 To query the model, you will need to `SELECT` from the model table:
 

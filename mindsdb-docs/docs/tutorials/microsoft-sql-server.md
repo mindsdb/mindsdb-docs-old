@@ -1,5 +1,7 @@
 # Automated Machine Learning in Microsoft SQL Server
 
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/p9aficF_-Tk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Data is the main ingredient for machine learning. Nowadays most enterprise structured data lives inside a database, so moving the machine learning inside the database layer can bring great benefits. This is one of the main reasons we decided to build an integration with the most widely used database systems, so that any database user can create, train and query machine learning models with minimal knowledge of SQL.
 
 ![MindsDB integration](/assets/tutorials/aitables-mssql/AI Tables.jpg)
