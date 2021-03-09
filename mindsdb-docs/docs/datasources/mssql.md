@@ -4,12 +4,7 @@ Connecting MindsDB to your Microsoft SQL Server can be done in two ways:
 
 * Using [MindsDB Studio](#mindsdb-studio).
 * Using [mssql client](#mssql-client).
-
-!!! Warning "Install MindsDB"
-    If you want to use Microsoft SQL Server integration, you will need to install MindsDB with pip or from source. The reason for this is that you will need to install additonal requirements:
-    ```
-    pip3 install 'pymssql >= 2.1.4' --upgrade
-    ```
+  
 
 ## Prerequisite
 
@@ -19,6 +14,20 @@ To connect to your Microsoft SQL Server from MindsDB, you will need to install M
     * Please check that your MSSQL instance have [MSDASQL installed](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/open-the-odbc-data-source-administrator?view=sql-server-ver15).
     * If not, download  driver from [here](https://dev.mysql.com/downloads/connector/odbc/).
     * [Microsoft OLE DB Provider for ODBC Overview](https://docs.microsoft.com/en-us/sql/ado/guide/appendixes/microsoft-ole-db-provider-for-odbc?view=sql-server-ver15).
+
+
+!!! Warning "Install additional dependency"
+    Also, you will need to install MSSQL as an additional requirement.
+
+    ### Install MSSQL
+
+    1. On the right bottom of the screen, select `dependencies`.
+    2. Click on Mssql `INSTALL`.
+    3. After installation finish, restart or stop/start MindsDB studio.
+
+    ![Install MSSQL](/assets/data/install-mssql.gif)
+
+
 
 ## MindsDB Studio
 
