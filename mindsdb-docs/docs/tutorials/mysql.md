@@ -98,7 +98,7 @@ The last step is to create the MindsDB configuration file. MindsDB will try to u
   "debug": true,
   "integrations": {
     "default_mysql": {
-          "published": true,
+          "publish": true,
           "host": "localhost",
           "password": "root",
           "port": 3307,
