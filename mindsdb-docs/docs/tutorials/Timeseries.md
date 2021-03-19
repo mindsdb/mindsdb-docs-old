@@ -88,13 +88,27 @@ date,       nr_customers, store
 
 This wouldn't count as historical context, since you are grouping by the `store` column, so only rows where `store` is `A1` will be relevant historical context for predicting a row where the `store == A1`
 
+## Experimental features
+
+Some features are still very experimental and have many blindspots, so if you're interested in using them please contact us so we can help and get your feedback on how to improve.
 
 ### Database integration
 
-There is an experimental feature, when you train mindsdb from a database, that auto-generates a query to select historical context, based on the query you used to source your training data.
+When you train MindsDB from a database, it can auto-generate a query to select historical context, based on the query you used to source your training data.
 
-This can be enabled by passing `advanced_args={'use_database_history': True}` to the `predict` call (or to the `SELECT` call if operating from within a database). This is still very experimental and has many blindspots, so if you're interested in using this please contact us so we can help and get your feedback on how to improve this.
+This can be enabled by passing `advanced_args={'use_database_history': True}` to the `predict` call (or to the `SELECT` call if operating from within a database). 
 
+### Anomaly detection
+
+We support anomaly detection for numerical time series. Our approach tags a data point as anomalous if it falls outside of the predicted range.
+
+Normally, MindsDB will try to generate bounds that are tight enough to be informative about your predictions. However, as this feature is  unsupervised (because it does not need labeled anomalies in the data), we offer two parameters to tune it for any specific use case:
+
+`anomaly_error_rate` (Float, `0 < x < 1`): If smaller, it leads to wider bounds, thus less sensitivity to anomalies. If bigger, it leads to narrower bounds and increased sensitivity. By default, MindsDB will try to find an appropriate value.
+
+`anomaly_cooldown` (Int): period during which no anomalies will be flagged, triggered after an initial anomaly is detected. Copes with potential predictor accuracy issues while it adjusts to the anomalous event.
+
+These parameters can be passed in the `advanced_args` dictionary when calling `predict`, and do not require predictor re-training.
 
 ### Database example (from SQL)
 -- Pending, feel free to contribute some or ask us directly about this feature
