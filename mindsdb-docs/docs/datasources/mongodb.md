@@ -1,9 +1,12 @@
-# Connect to MongoDB database
+# Connect to MongoDB Atlas
 
 Currently, the MongoDB integration works only with MongoDB Atlas the cloud-hosted MongoDB service. Connecting MindsDB to MongoDB Atlas can be done in two ways:
 
 * Using [MindsDB Studio](#mindsdb-studio).
-* Using [Mongo shell](#mongo-shell).
+* Using [Mongo clients](#mongo-shell).
+
+![MindsDB-MongoDB](/assets/databases/mongodb/mongo-mdb.png)
+
 
 ## MindsDB Studio
 
@@ -38,3 +41,78 @@ Using MindsDB Studio, you can connect to the MongoDB Atlas with a few clicks.
 
 !!! Success "That's it :tada: :trophy:  :computer:"
     You have successfully connected to MongoDB Atlas from MindsDB Studio. The next step is to train the [Machine Learning model](/model/train).
+
+
+## Mongo shell
+
+
+!!! Info "How to extend MindsDB configuration"
+    Our suggestion is to always use [MindsDB Studio](/datasources/mariadb/#mindsdb-studio) to connect MindsDB to your database. If you still want to extend the configuration without using MindsDB Studio follow the steps below.
+
+Before using mongo client to connect MindsDB and MongoDB Atlas, you will need to add additional configuration before starting MindsDB Server. Create a new `config.json` file. Expand the example below to preview the configuration example.
+
+<details class="success">
+   <summary> Configuration example</summary> 
+```json
+{
+    "api": {
+        "http": {
+            "host": "127.0.0.1",
+            "port": "47334"
+        },
+        "mysql": {}
+        "mongodb": {
+            "database": "mindsdb",
+            "host": "127.0.0.1",
+            "port": "47336"
+        }
+    },
+    "config_version": "1.4",
+    "debug": true,
+    "integrations": {},
+    "storage_dir": "/mindsdb_storage"
+}
+```       
+</details>
+
+All of the options that should be added to the `config.json` file are:
+
+* [x] api['http'] -- This key is used for starting the MindsDB HTTP API by providing:
+    * host(default 127.0.0.1) - MindsDB server address.
+    * port(default 47334) - MindsDB server port.
+* [x] api['mongodb'] -- This key is used for starting MindsDB Mongo API by providing:
+    * database(default mindsdb) - The database name that MindsDB will create on start.
+    * host(default 127.0.0.1) - MindsDB Mongo API address.
+    * port(default 47335) - MindsDB Mongo API port.
+* [ ] api['mysql] -- This key is used for starting MindsDB MySQL API. Leave it empty if you work only with MongoDB.
+* [ ] config_version(latest 1.4) - The version of config.json file. 
+* [ ] debug(true|false)
+* [ ] integrations[''] -- This key specifies the integration options with other sql databases. Leave it empty if you work only with MongoDB. 
+* [ ] log['level'] -- The logging configuration(optional):
+    * console - "INFO", "DEBUG", "ERROR".
+    * file - Location of the log file.
+* [x] storage_dir -- The directory where mindsDB will store models and configuration files.
+
+After creating the `config.json` file, you will need to start MindsDB and provide the path to the newly created `config.json`:
+
+```
+python3 -m mindsdb --api=http,mongodb --config=config.json
+```
+
+The `--api` parameter specifies the type of API to use -- in this case HTTP and Mongo. The `--config` parameter specifies the location of the configuration file.
+
+![Start MindsDB with config](/assets/data/mongo/start-mongo.gif)
+
+If MindsDB is successfully connected to your MongoDB database, it will create a new database `mindsdb` and new collection `predictors`.
+After starting the server, you can list the collections in mindsdb database to make sure integration has been successful.
+
+```
+use mindsdb
+show collections
+```
+
+![find mindsdb predictors collection](/assets/data/mongo/find-predictors.gif)
+
+!!! Success "That's it :tada: :trophy:  :computer:"
+    You have successfully connected MindsDB Server and MongoDB. The next step is to [train the Machine Learning model](/model/mongodb).
+

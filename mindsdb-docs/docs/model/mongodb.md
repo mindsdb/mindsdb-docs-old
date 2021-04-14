@@ -1,6 +1,4 @@
-# Train a model from MySQL database
-
-![MindsDB-MySQL](/assets/databases/mdb-mysql.png)
+# Train a model from MongoDB database
 
 ### Train new model
 
@@ -33,30 +31,32 @@ The values provided in the `insert()` object are:
 * predict (string) --  The feature you want to predict. To predict multiple features, include a list of features.
 * connection(string) -- The connection string for connecting to MongoDB Atlas. If you have used GUI to connect to MongoDB Atlas, that connection will be used.
 * select_data_query (object) -- The object that contains info about getting the data to train the model.
-    * databse(string) -- The name of the database
-    * collection(string) -- The name of the collection
-    * find(dict) -- The dict that selects the documents from the collection. Same as [db.collection.find({...})](https://docs.mongodb.com/manual/reference/method/db.collection.find/)
-* training_options (dict) -- optional value that contains additional training parameters. For a full list of parameters, check the [PredictorInterface](/PredictorInterface/#learn).
+    * databse(string) - The name of the database
+    * collection(string) - The name of the collection
+    * find(dict) - The dict that selects the documents from the collection. Same as [db.collection.find({...})](https://docs.mongodb.com/manual/reference/method/db.collection.find/)
+* training_options (dict) -- Optional value that contains additional training parameters. For a full list of parameters, check the [PredictorInterface](/PredictorInterface/#learn).
 
-![Train model from mySQL client](/assets/predictors/mysql-insert.gif)
 
 ### Train new model example
 
-The following example shows you how to train a new model from a mongo shell client. The collection used for training the model is the [Aids](https://think.cs.vt.edu/corgis/json/aids/) dataset.
+The following example shows you how to train a new model from a mongo shell client. The collection used for training the model is the [Telcom Customer Churn](https://www.kaggle.com/blastchar/telco-customer-churn) dataset.
 
 ```sql
 db.predictors.insert({
-    'name': 'aids_model',
-    'predict': 'Data.People Living with HIV.Total',
+    'name': 'churn',
+    'predict': 'Churn',
     'select_data_query':{
         'database': 'test_data',
-        'collection': 'aids',
+        'collection': 'customer_churn',
         'find': {} 
     }
 })
 ```
 
-This `INSERT` query will train a new model called `aids_model` that predicts the `Data.People Living with HIV.Total` value. 
+![Train model from mongo shell](/assets/predictors/mongo/mongo-insert.gif)
+
+
+This `INSERT` query will train a new model called `churn` that predicts the customer`Churn` value. 
 
 #### Model training status
 
@@ -66,8 +66,7 @@ To check that the training finished successfully, you can `find()` the model sta
 db.predictors.find()
 ```
 
-![Training model status](/assets/predictors/mysql-status.gif)
+![Training model status](/assets/predictors/mongo/mongo-status.gif)
 
 !!! Success "That's it :tada: :trophy:  :computer:"
-    You have successfully trained a new model from a mongo shell. The next step is to get predictions by [querying the model](/model/query/mysql).
-
+    You have successfully trained a new model from a mongo shell. The next step is to get predictions by [querying the model](/model/query/mongodb).
