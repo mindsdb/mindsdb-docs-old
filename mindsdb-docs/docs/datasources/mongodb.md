@@ -49,7 +49,7 @@ Using MindsDB Studio, you can connect to the MongoDB Atlas with a few clicks.
 !!! Info "How to extend MindsDB configuration"
     Our suggestion is to always use [MindsDB Studio](/datasources/mariadb/#mindsdb-studio) to connect MindsDB to your database. If you still want to extend the configuration without using MindsDB Studio follow the steps below.
 
-Before using mongo client to connect MindsDB and MongoDB Atlas, you will need to add additional configuration before starting MindsDB Server. Create a new `config.json` file. Expand the example below to preview the configuration example.
+Before using the mongo client to connect MindsDB and MongoDB Atlas, you will need to add additional configuration before starting MindsDB Server. Create a new `config.json` file. Expand the example below to preview the configuration example.
 
 <details class="success">
    <summary> Configuration example</summary> 
@@ -87,7 +87,7 @@ All of the options that should be added to the `config.json` file are:
 * [ ] api['mysql] -- This key is used for starting MindsDB MySQL API. Leave it empty if you work only with MongoDB.
 * [ ] config_version(latest 1.4) - The version of config.json file. 
 * [ ] debug(true|false)
-* [ ] integrations[''] -- This key specifies the integration options with other sql databases. Leave it empty if you work only with MongoDB. 
+* [ ] integrations[''] -- This key specifies the integration options with other SQL databases. Leave it empty if you work only with MongoDB. 
 * [ ] log['level'] -- The logging configuration(optional):
     * console - "INFO", "DEBUG", "ERROR".
     * file - Location of the log file.

@@ -1,12 +1,13 @@
-# Query the model from MongoDB database
+# Query the model from MongoDB
 
 This section assumes that you have trained a new model using [MongoDB client](/model/mongodb/) or [MindsDB Studio](/model/train/).
 
-To get the predictions from the model, you will need to call `find()` method on the model collection as:
+To get the predictions from the model, you will need to call `find()` method on the model collection and provide values for which you want to get prediction as an object:
 
 ```sql
 db.model_name.find({'key_name': 'value'})
 ```
+
 
 ## Query example
 
@@ -39,5 +40,3 @@ You should get a response from MindsDB similar to:
   }
 }
 ```
-
-![Model predictions](/assets/predictors/mysql-query.gif)
