@@ -1,13 +1,15 @@
-# Query the model from MongoDB
+# Query the model from MongoDB API
 
 This section assumes that you have trained a new model using [MongoDB client](/model/mongodb/) or [MindsDB Studio](/model/train/).
 
 To get the predictions from the model, you will need to call `find()` method on the model collection and provide values for which you want to get prediction as an object:
 
 ```sql
-db.model_name.find({'key_name': 'value'})
+db.model_name.find({'key': 'value', 'key':'value'})
 ```
 
+!!! Info "Note"
+    The object provided to `find()` method must be valid JSON format.
 
 ## Query example
 

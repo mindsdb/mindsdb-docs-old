@@ -1,4 +1,4 @@
-# Train a model from the MongoDB
+# Train a model from the MongoDB API
 
 ![Train model from mongodb](/assets/databases/mongodb/mongo-mdb-code.png)
 
@@ -7,20 +7,16 @@
 
 To train a new model, you will need to `insert()` a new document inside the mindsdb.predictors collection.
 
-!!! question "How to create the mindsb.predictors table"
-    Note that after connecting the [MindsDB and MongoDB Atlas](/datasources/mysql/#mysql-client), on
-    start, the MindsDB server will automatically create the mindsdb database and add the predictors collection.
-
 
 The object sent to the `insert()` for training the new model should contain:
 
 * name (string) -- The name of the model.
 * predict (string) --  The feature you want to predict. To predict multiple features, include a list of features.
-* connection(string) -- The connection string for connecting to MongoDB Atlas. If you have used GUI to connect to MongoDB Atlas, that connection will be used.
+* connection(string) -- The connection string for connecting to MongoDB. If you have used GUI to connect to MongoDB, that connection will be used.
 * select_data_query (object) -- The object that contains info about getting the data to train the model.
     * database(string) - The name of the database
     * collection(string) - The name of the collection
-    * find(dict) - The dict that selects the documents from the collection. Same as [db.collection.find({...})](https://docs.mongodb.com/manual/reference/method/db.collection.find/)
+    * find(dict) - The dict that selects the documents from the collection, must be valid JSON format. Same as [db.collection.find({...})](https://docs.mongodb.com/manual/reference/method/db.collection.find/)
 * training_options (dict) -- Optional value that contains additional training parameters. For a full list of parameters, check the [PredictorInterface](/PredictorInterface/#learn).
 
 ```sql

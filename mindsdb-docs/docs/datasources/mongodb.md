@@ -1,16 +1,22 @@
-# Connect to MongoDB Atlas
+# Connect to MongoDB database
 
-Currently, the MongoDB integration works only with MongoDB Atlas the cloud-hosted MongoDB service. Connecting MindsDB to MongoDB Atlas can be done in two ways:
+Connecting MindsDB to MongoDB can be done in two ways:
 
 * Using [MindsDB Studio](#mindsdb-studio).
 * Using [Mongo clients](#mongo-shell).
+
+The current integration works by accessing MongoDB through MindsDB MongoDB API as a new datasource.
+
+![MindsDB-MongoDB](/assets/databases/mongodb/mongo-mdb-current.png)
+
+The new version of MindsDB will allow direct integration inside MongoDB.
 
 ![MindsDB-MongoDB](/assets/databases/mongodb/mongo-mdb.png)
 
 
 ## MindsDB Studio
 
-Using MindsDB Studio, you can connect to the MongoDB Atlas with a few clicks.
+Using MindsDB Studio, you can connect to the MongoDB with a few clicks.
 
 #### Connect to database
 
@@ -18,7 +24,7 @@ Using MindsDB Studio, you can connect to the MongoDB Atlas with a few clicks.
 2. Click on the `ADD DATABASE` button.
 3. In the `Connect to Database` modal window:
     1. Select MongoDB as the Supported Database.
-    2. Add Host
+    2. Add Host (connection string)
     3. Add Port
     4. Add Username
     5. Add Password
@@ -34,13 +40,13 @@ Using MindsDB Studio, you can connect to the MongoDB Atlas with a few clicks.
     1. Add Datasource Name
     2. Add Database name
     3. Add Collection name
-    3. Add find query to select documents from the collection
+    3. Add find query to select documents from the collection(must be valid JSON format)
     4. Click on `CREATE`.
 
 ![Create Mongodb Datasource](/assets/data/mongo/mongo-ds.gif)
 
 !!! Success "That's it :tada: :trophy:  :computer:"
-    You have successfully connected to MongoDB Atlas from MindsDB Studio. The next step is to train the [Machine Learning model](/model/train).
+    You have successfully connected to MongoDB from MindsDB Studio. The next step is to train the [Machine Learning model](/model/train).
 
 
 ## Mongo shell
@@ -49,7 +55,7 @@ Using MindsDB Studio, you can connect to the MongoDB Atlas with a few clicks.
 !!! Info "How to extend MindsDB configuration"
     Our suggestion is to always use [MindsDB Studio](/datasources/mariadb/#mindsdb-studio) to connect MindsDB to your database. If you still want to extend the configuration without using MindsDB Studio follow the steps below.
 
-Before using the mongo client to connect MindsDB and MongoDB Atlas, you will need to add additional configuration before starting MindsDB Server. Create a new `config.json` file. Expand the example below to preview the configuration example.
+Before using the mongo client to connect MindsDB and MongoDB, you will need to add additional configuration before starting MindsDB Server. Create a new `config.json` file. Expand the example below to preview the configuration example.
 
 <details class="success">
    <summary> Configuration example</summary> 
@@ -62,7 +68,6 @@ Before using the mongo client to connect MindsDB and MongoDB Atlas, you will nee
         },
         "mysql": {}
         "mongodb": {
-            "database": "mindsdb",
             "host": "127.0.0.1",
             "port": "47336"
         }
@@ -81,7 +86,6 @@ All of the options that should be added to the `config.json` file are:
     * host(default 127.0.0.1) - MindsDB server address.
     * port(default 47334) - MindsDB server port.
 * [x] api['mongodb'] -- This key is used for starting MindsDB Mongo API by providing:
-    * database(default mindsdb) - The database name that MindsDB will create on start.
     * host(default 127.0.0.1) - MindsDB Mongo API address.
     * port(default 47335) - MindsDB Mongo API port.
 * [ ] api['mysql] -- This key is used for starting MindsDB MySQL API. Leave it empty if you work only with MongoDB.
@@ -103,13 +107,23 @@ The `--api` parameter specifies the type of API to use -- in this case HTTP and 
 
 ![Start MindsDB with config](/assets/data/mongo/start-mongo.gif)
 
-If MindsDB is successfully connected to your MongoDB database, it will create a new database `mindsdb` and new collection `predictors`.
-After starting the server, you can list the collections in mindsdb database to make sure integration has been successful.
+
+### Connect to MongoDB API
+
+To connect to mindsdb's MongoDB API, use the `host` that you have specified inside the `api['mongodb']` key e.g:
+
+```
+mongo --host 127.0.0.1
+```
+
+To make sure everything works, you should be able to see the predictors collection.
 
 ```
 use mindsdb
 show collections
 ```
+
+
 
 ![find mindsdb predictors collection](/assets/data/mongo/find-predictors.gif)
 
