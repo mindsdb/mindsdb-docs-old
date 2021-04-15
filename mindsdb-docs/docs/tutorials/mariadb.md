@@ -149,36 +149,29 @@ The data is inside MariaDB so the next step is to add the required configuration
 ### Required Configuration
 The first thing we need to set up is the required configuration for MindsDB Server. Let’s create a new file called config.json and add the following example:
 
-```sql
+```json
 {
     "api": {
         "http": {
-            "host": "0.0.0.0",
+            "host": "127.0.0.1",
             "port": "47334"
         },
         "mysql": {
             "host": "127.0.0.1",
-            "password": "",
+            "password": "password",
             "port": "47335",
             "user": "root"
         }
     },
-    "config_version": "1.3",
-    "debug": true,
+    "config_version": "1.4",
     "integrations": {
         "default_mariadb": {
-            "enabled": true,
+            "publish": true,
             "host": "localhost",
             "password": "password",
             "port": 3306,
             "type": "mariadb",
             "user": "root"
-        }
-    },
-    "log": {
-        "level": {
-            "console": "DEBUG",
-            "file": "INFO"
         }
     },
     "storage_dir": "/storage"
@@ -203,7 +196,7 @@ That’s pretty much everything related to the configuration required for succes
 First, we need to start MindsDB:
 
 ```
-python3 -m mindsdb –api=mysql –config=config.json
+python3 -m mindsdb --api=mysql --config=config.json
 ```
 
 The flags added here are:

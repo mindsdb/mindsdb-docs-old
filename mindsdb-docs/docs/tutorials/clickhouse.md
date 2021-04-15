@@ -106,7 +106,7 @@ We are halfway there! We have successfully installed MindsDB and ClickHouse and 
 Let’s start MindsDB:
 
 ```
-python3 -m mindsdb --api mysql --config config.json
+python3 -m mindsdb --api=mysql --config=config.json
 ```
 
 The --api parameter specifies the type of API to use (mysql). The --config specifies the location of the configuration file. The minimum required configuration for connecting to ClickHouse is:
@@ -115,22 +115,20 @@ The --api parameter specifies the type of API to use (mysql). The --config speci
 {
     "api": {
         "http": {
-            "host": "0.0.0.0",
+            "host": "127.0.0.1",
             "port": "47334"
         },
         "mysql": {
             "host": "127.0.0.1",
-            "password": "",
+            "password": "password",
             "port": "47335",
             "user": "root"
         }
     },
-    "config_version": "1.3",
-    "debug": true,
+    "config_version": "1.4",
     "integrations": {
         "default_clickhouse": {
-            "database_name": "default_clickhouse",
-            "enabled": true,
+            "publish": true,
             "host": "localhost",
             "password": "pass",
             "port": 8123,
@@ -138,17 +136,11 @@ The --api parameter specifies the type of API to use (mysql). The --config speci
             "user": "default"
         }
     },
-    "log": {
-        "level": {
-            "console": "DEBUG",
-            "file": "INFO"
-        }
-    },
     "storage_dir": "/storage"
 }
 ```
 
-In the default_clickhouse key, include the values for connecting to ClickHouse. In the mindsdb_native storage_dir add a path to the location where MindsDB will save some configuration as (metadata and .pickle files). The Running on http://0.0.0.0:47334/ (Press CTRL+C to quit) message will be displayed if MindsDB is successfully started. That means MindsDB server is running and listening on localhost:47334.First, when MindsDB starts it creates a database and tables inside the ClickHouse. The database created is of ENGINE type MySQL(connection), where 'connection' is established from the parameters provided inside the config.json. 
+In the default_clickhouse key, include the values for connecting to ClickHouse. In the storage_dir add a path to the location where MindsDB will save some configuration as (metadata and .pickle files). The Running on http://127.0.0.1:47334/ (Press CTRL+C to quit) message will be displayed if MindsDB is successfully started. That means MindsDB server is running and listening on localhost:47334.First, when MindsDB starts it creates a database and tables inside the ClickHouse. The database created is of ENGINE type MySQL(connection), where 'connection' is established from the parameters provided inside the config.json. 
 
 ```
 USE mindsdb;

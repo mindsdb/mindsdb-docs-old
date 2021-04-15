@@ -11,6 +11,9 @@ MindsDB is an open-source AI layer for existing databases that allows you to eff
 
 There are a few options to install MindsDB on different operating systems. To find the one that works the best for you, check out the below links.
 
+!!! tip "Recommended"
+    Our suggestion is to always use Docker as the most stable and easy way because it encapsulates all of the dependencies that MindsDB Server needs.
+
 === "Docker"
 
     !!! info "Installation"
