@@ -56,6 +56,7 @@ nav:
     - MariaDB: datasources/mariadb.md
     - ClickHouse: datasources/clickhouse.md
     - Microsoft SQL Server: datasources/mssql.md
+    - MongoDB: datasources/mongodb.md
     - Remote URL: datasources/remote.md
     - Local dataset: datasources/local.md
     - Snowflake: datasources/snowflake.md
@@ -67,6 +68,7 @@ nav:
       - MariaDB: model/mariadb.md
       - ClickHouse: model/clickhouse.md
       - Microsoft SQL Server: model/mssql.md
+      - MongoDB: model/mongodb.md
   - Evaluate model quality:
     - Evaluate from Studio: model/quality.md
   - Query model:
@@ -76,6 +78,7 @@ nav:
       - MariaDB: model/query/mariadb.md
       - ClickHouse: model/query/clickhouse.md
       - Microsoft SQL Server: model/query/mssql.md
+      - MongoDB: model/query/mongodb.md
     - Query from Studio: model/query/studio.md
   - Tutorials:
     - AI Tables in MySQL: tutorials/mysql.md

@@ -7,6 +7,7 @@ Before training the new model, you must connect to a Datasource. To learn how to
 * [Connect to MariaDB](/datasources/mariadb)
 * [Connect to ClickHouse](/datasources/clickhouse)
 * [Connect to Microsoft SQL Server](/datasources/mssql)
+* [Connect to MongoDB Atlas](/datasources/mongodb)
 * [Connect to remote URL](/datasources/remote)
 * [Upload local dataset](/datasources/local)
 * [Connect to Snowflake](/datasources/snowflake)
