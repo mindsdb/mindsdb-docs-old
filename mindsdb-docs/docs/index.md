@@ -45,6 +45,7 @@ There are a few options to install MindsDB on different operating systems. To fi
 * [AiTables in MariaDB](/tutorials/mariadb)
 * [AiTables in PostgreSQL](/tutorials/postgresql)
 * [AiTables in ClickHouse](/tutorials/clickhouse)
+* [AiTables in SQL Server](/tutorials/microsoft-sql-server)
 
 ## Contribute to MindsDB
 * [Became a contributor to MindsDB](/contribute)
