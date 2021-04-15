@@ -83,17 +83,16 @@ We have the data inside PostgreSQL, so the next step is to install the PostgreSQ
        },
        "mysql": {
            "host": "127.0.0.1",
-           "password": "",
+           "password": "password",
            "port": "47335",
            "user": "root"
        }
    },
-   "config_version": "1.3",
-   "debug": true,
+   "config_version": "1.4",
    "integrations": {
        "default_postgres": {
            "database": "postgres",
-           "enabled": true,
+           "publish": true,
            "host": "127.0.0.1",
            "password": "postgres",
            "port": 5432,
@@ -101,7 +100,7 @@ We have the data inside PostgreSQL, so the next step is to install the PostgreSQ
            "user": "postgres"
        }
    },
-   "storage_dir": "storage/"
+   "storage_dir": "/storage"
 }
 ```
 

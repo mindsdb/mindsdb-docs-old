@@ -89,13 +89,12 @@ The last step is to create the MindsDB configuration file. MindsDB will try to u
       },
       "mysql": {
           "host": "127.0.0.1",
-          "password": "",
+          "password": "password",
           "port": "47335",
           "user": "root"
       }
   },
-  "config_version": "1.3",
-  "debug": true,
+  "config_version": "1.4",
   "integrations": {
     "default_mysql": {
           "publish": true,
@@ -106,7 +105,7 @@ The last step is to create the MindsDB configuration file. MindsDB will try to u
           "user": "root"
     }
   },
-  "storage_dir": "storage/"
+  "storage_dir": "/storage"
 }
 ```
 
