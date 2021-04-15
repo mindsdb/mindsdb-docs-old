@@ -1,6 +1,6 @@
 # Join our community :bear:
 
-If you have additional questions or you want to chat with the MindsDB core team, you can join our [MindsDB community forum](https://community.mindsdb.com/).
+If you have questions or you want to chat with the MindsDB core team or other community members, you can join our [Slack workspace](https://join.slack.com/t/mindsdbcommunity/shared_invite/zt-o8mrmx3l-5ai~5H66s6wlxFfBMVI6wQ).
 
 ## MindsDB newsletter :newspaper:
 
