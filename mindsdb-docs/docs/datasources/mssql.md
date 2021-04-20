@@ -66,76 +66,9 @@ Using MindsDB Studio, you can connect to the Microsoft SQL Server with a few cli
 ## MSSQL client
 
 !!! Info "How to extend MindsDB configuration"
-    Our suggestion is to always use [MindsDB Studio](/datasources/mssql/#mindsdb-studio) to connect MindsDB to your database. If you still want to extend the configuration without using MindsDB Studio follow the steps below.
+    Our suggestion is to always use [MindsDB Studio](/datasources/mssql/#mindsdb-studio) to connect MindsDB to your database. If you still want to extend the configuration without using MindsDB Studio follow the [configuration example](/datasources/configuration/#sql-server-configuration).
 
-Before using mssql-cli or any SQL client to connect MindsDB and Microsoft SQL Server, you will need to add additional configuration before starting MindsDB Server. Create a new `config.json` file. Expand the example below to preview the configuration example.
-
-<details class="success">
-   <summary> Configuration example</summary> 
-```json
-{
-   "api": {
-       "http": {
-           "host": "127.0.0.1",
-           "port": "47334"
-       },
-       "mysql": {
-           "host": "127.0.0.1",
-           "database": "mindsdb",
-           "password": "123456",
-           "port": "47335",
-           "ssl": true,
-           "user": "root"
-       }
-   },
-   "config_version": "1.4",
-   "debug": true,
-   "integrations": {
-       "default_mariadb": {
-           "host": "localhost",
-           "password": "pass",
-           "port": 1433,
-           "publish": true,
-           "type": "mssql",
-           "user": "sa"
-       }
-   },
-   "log": {
-       "level": {
-           "console": "DEBUG",
-           "file": "INFO"
-       }
-   },
-   "storage_dir": "/storage"
-}
-```       
-</details>
-
-All of the options that should be added to the `config.json` file are:
-
-* [x] api['http'] -- This key is used for starting the MindsDB HTTP server by providing:
-    * host(default 127.0.0.1) - The mindsDB server address.
-    * port(default 47334) - The mindsDB server port.
-* [x] api['mysql'] -- This key is used for database integrations that work through MySQL protocol. The required keys are:
-    * user(default root).
-    * password(default 123456) - Required to have a password, since Microsoft SQL will use default user pass. This is the password for MindsDB MySQL API.
-    * database - The name of the server that mindsdb will start.
-    * ssl(default true) -- Use SSL true/false.
-    * host(default 127.0.0.1).
-    * port(default 47335).
-* [x] integrations['default_mssql'] -- This key specifies the integration type, in this case `default_mssql`. The required keys are:
-    * user(default sa) - The Microsoft SQL Server user name.
-    * host(default 127.0.0.1) - Connect to the Microsoft SQL Server on the given host.
-    * password - The password of the Microsoft SQL Server user.
-    * type - Integration type(mariadb, postgresql, mysql, clickhouse, mongodb).
-    * port(default 1433) - The TCP/IP port number to use for the connection.
-    * publish(true|false) - Enable Microsoft SQL Server integration.
-* [ ] log['level'] -- The logging configuration(optional):
-    * console - "INFO", "DEBUG", "ERROR".
-    * file - Location of the log file.
-* [x] storage_dir -- The directory where mindsDB will store models and configuration.
-
-After creating the `config.json` file, you will need to start MindsDB and provide the path to the newly created `config.json`:
+After adding the required configuration to the `config.json` file, you will need to start MindsDB and provide the path to the newly created `config.json`:
 
 ```
 python3 -m mindsdb --api=http,mysql --config=config.json
