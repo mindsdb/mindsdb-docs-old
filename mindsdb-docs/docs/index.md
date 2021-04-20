@@ -5,7 +5,7 @@ title: Getting started
 
 # Getting started
 
-MindsDB is an open-source AI layer for existing databases that allows you to effortlessly develop, train and deploy state-of-the-art machine learning models using SQL queries. With MindsDB any developer, analyst or data scientist can automatically build and deploy Machine Learning models from inside the databases in minutes using graphical user interface or plain SQL.
+MindsDB is an open-source AI layer for existing databases that allows you to effortlessly develop, train and deploy state-of-the-art machine learning models using SQL queries. With MindsDB any developer, analyst or data scientist can automatically build and deploy Machine Learning models from inside the databases in minutes using a graphical user interface or plain SQL.
 
 ## Installation
 
@@ -41,6 +41,7 @@ There are a few options to install MindsDB on different operating systems. To fi
 
 
 ## Tutorials
+
 * [AiTables in MySQL](/tutorials/mysql)
 * [AiTables in MariaDB](/tutorials/mariadb)
 * [AiTables in PostgreSQL](/tutorials/postgresql)
@@ -48,10 +49,12 @@ There are a few options to install MindsDB on different operating systems. To fi
 * [AiTables in SQL Server](/tutorials/microsoft-sql-server)
 
 ## Contribute to MindsDB
+
 * [Became a contributor to MindsDB](/contribute)
 * [Join MindsDB community](/community)
 
 ## Useful links
+
  * <a href="https://apidocs.mindsdb.com/" target="_blank">MindsDB APIs documentation</a>
  * <a href="https://mindsdb.com/contact-us/" target="_blank">Get in touch</a>
  
