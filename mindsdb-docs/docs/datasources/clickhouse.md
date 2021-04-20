@@ -42,74 +42,9 @@ Using MindsDB Studio, you can connect to the ClickHouse database with a few clic
 ## ClickHouse client
 
 !!! Info "How to extend MindsDB configuration"
-    Our suggestion is to always use [MindsDB Studio](/datasources/clickhouse/#mindsdb-studio) to connect MindsDB to your database. If you still want to extend the configuration without using MindsDB Studio follow the steps below.
+    Our suggestion is to always use [MindsDB Studio](/datasources/clickhouse/#mindsdb-studio) to connect MindsDB to your database. If you still want to extend the configuration without using MindsDB Studio follow the [configuration example](/datasources/configuration/#clickhouse-configuration).
 
-Before using ClickHouse client to connect MindsDB and ClickHouse Server, you will need to add additional configuration before starting MindsDB Server. Create a new `config.json` file. Expand the example below to preview the configuration example.
-
-<details class="success">
-   <summary> Configuration example</summary> 
-```json
-{
-   "api": {
-       "http": {
-           "host": "127.0.0.1",
-           "port": "47334"
-       },
-       "mysql": {
-           "host": "127.0.0.1",
-           "password": "",
-           "port": "47335",
-           "user": "root"
-       }
-   },
-   "config_version": "1.4",
-   "debug": true,
-   "integrations": {
-       "default_clickhouse": {
-           "database": "default",
-           "published": true,
-           "type": "clickhouse",
-           "host": "localhost",
-           "password": "pass",
-           "port": 8123,
-           "user": "default"
-       }
-   },
-   "log": {
-       "level": {
-           "console": "DEBUG",
-           "file": "INFO"
-       }
-   },
-   "storage_dir": "/storage"
-}
-```       
-</details>
-
-All of the options that should be added to the `config.json` file are:
-
-
-* [x] api['http] -- This key is used for starting the MindsDB http server by providing:
-    * host(default 127.0.0.1) - The mindsDB server address.
-    * port(default 47334) - The mindsDB server port.
-* [x] api['mysql'] -- This key is used for database integrations that work through MySQL protocol. The required keys are:
-    * user(default root).
-    * password(default empty).
-    * host(default 127.0.0.1).
-    * port(default 47335).
-* [x] integrations['default_clickhouse'] -- This key specifies the integration type in this case `default_clickhouse`. The required keys are:
-    * user(default is default user) - The ClickHouse user name.
-    * host(default 127.0.0.1) - Connect to the ClickHouse server on the given host.
-    * password - The password of the ClickHouse user.
-    * type - Integration type(mariadb, postgresql, mysql, clickhouse, mongodb).
-    * port(default 8123) - The TCP/IP port number to use for the connection.
-    * publish(true|false) - Enable ClickHouse integration.
-* [ ] log['level'] -- The logging configuration(not required):
-    * console - "INFO", "DEBUG", "ERROR".
-    * file - Location of the log file.
-* [x] storage_dir -- The directory where mindsDB will store models and configuration.
-
-After creating the `config.json` file, you will need to start MindsDB and provide the path to the newly created `config.json`:
+After adding the required configuration, you will need to start MindsDB and provide the path to the newly created `config.json`:
 
 ```
 python3 -m mindsdb --api=http,mysql --config=config.json
