@@ -51,72 +51,10 @@ Using MindsDB Studio, you can connect to the MySQL database with a few clicks.
 ## MySQL client
 
 !!! Info "How to extend MindsDB configuration"
-    Our suggestion is to always use [MindsDB Studio](/datasources/mysql/#mindsdb-studio) to connect MindsDB to your database. If you still want to extend the configuration without using MindsDB Studio follow the steps below.
+    Our suggestion is to always use [MindsDB Studio](/datasources/mysql/#mindsdb-studio) to connect MindsDB to your database. If you still want to extend the configuration without using MindsDB Studio follow the [configuration example](/datasources/configuration/#mysql-configuration)
 
-Before using MySQL client to connect MindsDB and MySQL Server, you will need to add additional configuration before starting MindsDB Server. Create a new `config.json` file. Expand the example below to preview the configuration example.
 
-<details class="success">
-   <summary> Configuration example</summary> 
-```json
-{
-   "api": {
-       "http": {
-           "host": "0.0.0.0",
-           "port": "47334"
-       },
-       "mysql": {
-           "host": "127.0.0.1",
-           "password": "",
-           "port": "47335",
-           "user": "root"
-       }
-   },
-   "config_version": "1.4",
-   "debug": true,
-   "integrations": {
-      "default_mysql": {
-           "publish": true,
-           "host": "localhost",
-           "password": "root",
-           "port": 3307,
-           "type": "mysql",
-           "user": "root"
-       }
-   },
-   "log": {
-       "level": {
-           "console": "DEBUG",
-           "file": "INFO"
-       }
-   },
-   "storage_dir": "/storage"
-}
-```       
-</details>
-
-All of the options that should be added to the `config.json` file are:
-
-* [x] api['http'] -- This key is used for starting the MindsDB HTTP server by providing:
-    * host(default 127.0.0.1) - The mindsDB server address.
-    * port(default 47334) - The mindsDB server port.
-* [x] api['mysql'] -- This key is used for database integrations that work through MySQL protocol. The required keys are:
-    * user(default root).
-    * password(default empty).
-    * host(default 127.0.0.1).
-    * port(default 47335).
-* [x] integrations['default_mysql'] -- This key specifies the integration type -- in this case `default_mysql`. The required keys are:
-    * user(default root) - The MySQL user name.
-    * host(default 127.0.0.1, don't use localhost here) - Connect to the MySQL server on the given host.
-    * password - The password of the MySQL account.
-    * type - Integration type(mariadb, postgresql, mysql, clickhouse, mongodb).
-    * port(default 3306) - The TCP/IP port number to use for the connection.
-    * publish(true|false) - Enable MySQL integration.
-* [ ] log['level'] -- The logging configuration(optional):
-    * console - "INFO", "DEBUG", "ERROR".
-    * file - Location of the log file.
-* [x] storage_dir -- The directory where mindsdb will store models and configuration.
-
-After creating the `config.json` file, you will need to start MindsDB and provide the path to the newly created `config.json`:
+After adding the required configuration, you will need to start MindsDB and provide the path to the newly created `config.json`:
 
 ```
 python3 -m mindsdb --api=http,mysql --config=config.json
