@@ -50,74 +50,10 @@ Using MindsDB Studio, you can connect to the PostgreSQL database with a few clic
 ## PSQL client
 
 !!! Info "How to extend MindsDB configuration"
-    Our suggestion is to always use [MindsDB Studio](/datasources/postgresql/#mindsdb-studio) to connect MindsDB to your database. If you still want to extend the configuration without using MindsDB Studio follow the steps below.
-
-Before using psql client to connect MindsDB and PostgreSQL Server, you will need to add additional configuration before starting MindsDB Server. Create a new `config.json` file. Expand the example below to preview the configuration example.
-
-<details class="success">
-   <summary> Configuration example</summary> 
-```json
-{
-   "api": {
-       "http": {
-           "host": "127.0.0.1",
-           "port": "47334"
-       },
-       "mysql": {
-           "host": "127.0.0.1",
-           "password": "",
-           "port": "47335",
-           "user": "root"
-       }
-   },
-   "config_version": "1.4",
-   "debug": true,
-   "integrations": {
-       "default_postgres": {
-           "database": "postgres",
-           "publish": true,
-           "host": "localhost",
-           "password": "postgres",
-           "port": 5432,
-           "type": "postgres",
-           "user": "postgres"
-       }
-   },
-   "log": {
-       "level": {
-           "console": "DEBUG",
-           "file": "INFO"
-       }
-   },
-   "storage_dir": "/storage"
-}
-```       
-</details>
-
-All of the options that should be added to the `config.json` file are:
+    Our suggestion is to always use [MindsDB Studio](/datasources/postgresql/#mindsdb-studio) to connect MindsDB to your database. If you still want to extend the configuration without using MindsDB Studio follow [configuration example](/datasources/configuration/#postgresql-configuration).
 
 
-* [x] api['http] -- This key is used for starting the MindsDB http server by providing:
-    * host(default 127.0.0.1) - The mindsDB server address.
-    * port(default 47334) - The mindsDB server port.
-* [x] api['mysql'] -- This key is used for database integrations that works through MySQL protocol. The required keys are:
-    * user(default root).
-    * password(default empty).
-    * host(default 127.0.0.1).
-    * port(default 47335).
-* [x] integrations['default_postgres'] -- This key specifies the integration type, in this case `default_postgres`. The required keys are:
-    * user(default postgres) - The Postgres user name.
-    * host(default 127.0.0.1) - Connect to the PostgreSQL server on the given host.
-    * password - The password of the Postgres account.
-    * type - Integration type(mariadb, postgresql, mysql, clickhouse, mongodb).
-    * port(default 5432) - The TCP/IP port number to use for the connection.
-    * publish(true|false) - Enable PostgreSQL integration.
-* [ ] log['level'] -- The logging configuration(not required):
-    * console - "INFO", "DEBUG", "ERROR".
-    * file - Location of the log file.
-* [x] storage_dir -- The directory where mindsDB will store models and configuration.
-
-After creating the `config.json` file, you will need to start MindsDB and provide the path to the newly created `config.json`:
+After creating the required configuration, you will need to start MindsDB and provide the path to the newly created `config.json`:
 
 ```
 python3 -m mindsdb --api=http,mysql --config=config.json
