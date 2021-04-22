@@ -11,6 +11,9 @@ This script will install MindsDB and MindsDB's dependencies, and start the Minds
 
 ## Install using pip
 
+!!! warning "Python 3.9"
+    Currently, some of our dependencies have issues with the latest versions of Python 3.9.x. For now, our suggestion is to use Python 3.6.x, 3.7.x, or 3.8.x versions.
+
 We suggest you to install MindsDB in a virtual environment when using **pip** to avoid dependency issues. Make sure your Python version is **>=3.6**.
 
 1. Create and activate venv:
@@ -36,6 +39,9 @@ We suggest you to install MindsDB in a virtual environment when using **pip** to
     ```
 
 ## Install using Anaconda
+
+!!! warning "Python 3.9"
+    Currently, some of our dependencies have issues with the latest versions of Python 3.9.x. For now, our suggestion is to use Python 3.6.x, 3.7.x, or 3.8.x versions.
 
 You will need <a href="https://www.anaconda.com/products/individual" target="_blank">Anaconda</a> or <a href="https://conda.io/projects/conda/en/latest/index.html" target="_blank">Conda</a> installed and Python 64bit version. Then open Anaconda Prompt and:
 
