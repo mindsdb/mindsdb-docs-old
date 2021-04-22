@@ -8,10 +8,14 @@ Install MindsDB on your Windows machine using an easy-to-use installler.
 
 This installer will install Python3, MindsDB and MindsDB's dependencies, and create a shortcut on the desktop for starting MindsDB server.
 
-!!! info "Unknown publisher warning"
-    Currently, we are in a process of signing the Windows application, so in case you got a warning that the application is from `Unknown publisher`, click on a `Run anyway` button. If you experience additional issues using the Windows installer, please reach out to us on [GitHub](https://github.com/mindsdb/mindsdb/issues), or use the other installation options from bellow.
+!!! info "Windows protected your PC warning"
+    The Windows application is signed by MindsDB INC as a publisher but it takes some time to build trust. So, in case you got this warning, click on a `Run anyway` button. If you experience additional issues using the Windows installer, please reach out to us on [GitHub](https://github.com/mindsdb/mindsdb/issues), or use the other installation options from bellow.
+
 
 ## Install using Anaconda
+
+!!! warning "Python 3.9"
+    Currently, some of our dependencies have issues with the latest versions of Python 3.9.x. For now, our suggestion is to use Python 3.6.x, 3.7.x, or 3.8.x versions.
 
 You will need <a href="https://www.anaconda.com/products/individual" target="_blank">Anaconda</a> or <a href="https://conda.io/projects/conda/en/latest/index.html" target="_blank">Conda</a> installed and Python 64bit version. Then open Anaconda Prompt and:
 
@@ -38,6 +42,9 @@ You will need <a href="https://www.anaconda.com/products/individual" target="_bl
 You should see a list with the names of installed packages.
 
 ## Install using pip
+
+!!! warning "Python 3.9"
+    Currently, some of our dependencies have issues with the latest versions of Python 3.9.x. For now, our suggestion is to use Python 3.6.x, 3.7.x, or 3.8.x versions.
 
 We suggest you to install MindsDB in a virtual environment when using `pip` to avoid dependency issues. Make sure your Python version is **>=3.6** and pip version **>= 19.3**.
 
