@@ -43,6 +43,8 @@ That's it. MindsDB should automatically start the Studio on your default browser
     Note that you must publish a container’s port to the host `-p 47334:47334`, which is used by the MindsDB GUI and HTTP API. Also, to use MindsDB MySQL API or MongoDB API, publish `-p 47335:47335 -p 47336:47336` ports too.
 
 !!! warning "MKL Issues"
-	Note that If you experience issue related to MKL or if training process does not finish please run this command:
-
+	Note that If you experience issue related to MKL or if training process does not finish please add env var or start Docker with this command: 
+	```
+	docker run --env MKL_SERVICE_FORCE_INTEL=1 -it -p 47334:47334 mindsdb/mindsdb
+	```
 
