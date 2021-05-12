@@ -126,7 +126,7 @@ The InnoDB is a general storage engine and the one offered as the best choice in
 * Use the LOAD DATA statement that reads the local file from the location provided and sends the content to the MariaDB Server:
 
 ```
-LOAD DATA LOCAL INFILE 'data.csv' INTO used_cars_data FIELDS TERMINATED BY ',' LINES TERMINATED BY '\r\n';
+LOAD DATA LOCAL INFILE 'data.csv' INTO TABLE used_cars_data FIELDS TERMINATED BY ',' LINES TERMINATED BY '\r\n';
 
 ```
 The TERMINATED BY specifies the separator in the data. The escape characters and new lines are manageable with the ENCLOSED BY and LINES TERMINATED BY clause.
