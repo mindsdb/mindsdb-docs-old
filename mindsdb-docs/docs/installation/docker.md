@@ -48,3 +48,6 @@ That's it. MindsDB should automatically start the Studio on your default browser
 	docker run --env MKL_SERVICE_FORCE_INTEL=1 -it -p 47334:47334 mindsdb/mindsdb
 	```
 
+	
+
+
