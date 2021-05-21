@@ -69,20 +69,18 @@ The `--api` parameter specifies the type of API to use -- in this case HTTP and 
 
 ### Connect to MongoDB API
 
-To connect to mindsdb's MongoDB API, use the `host` that you have specified inside the `api['mongodb']` key e.g:
+You can use mongo shell to connect to mindsdb's MongoDB API. As a prerequisite you need mongo shell version greather then 3.6. To connect use the `host` that you have specified inside the `api['mongodb']` key e.g:
 
 ```
-mongo --host 127.0.0.1
+mongo --host 127.0.0.1 -u "username" -p "password"
 ```
 
-To make sure everything works, you should be able to see the predictors collection.
+To make sure everything works, you should be able to list the predictors collection:
 
 ```
 use mindsdb
 show collections
 ```
-
-
 
 ![find mindsdb predictors collection](/assets/data/mongo/find-predictors.gif)
 
