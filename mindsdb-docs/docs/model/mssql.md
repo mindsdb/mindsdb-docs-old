@@ -65,7 +65,7 @@ exec ('SELECT * FROM mindsdb.predictors') AT mindsdb;
 ### Train time series model example
 
 
-The following example shows you how to train a new model from the ClickHouse client. The table used for training the model is the [Air Pollution in Seoul](https://www.kaggle.com/bappekim/air-pollution-in-seoul) timeseries dataset.
+The table used for training the model is the [Air Pollution in Seoul](https://www.kaggle.com/bappekim/air-pollution-in-seoul) timeseries dataset.
 
 ```sql
 INSERT INTO mindsdb.predictors(name, predict, select_data_query,training_options)
