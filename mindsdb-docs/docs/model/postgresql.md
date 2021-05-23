@@ -50,3 +50,28 @@ SELECT * FROM mindsdb.predictors WHERE name='<model_name>';
 !!! Success "That's it :tada: :trophy:  :computer:"
     You have successfully trained a new model from  PostgreSQL database. The next step is to get predictions by [querying the model](/model/query/postgresql/).
 
+
+### Train time series model example
+
+
+The table used for training the model is the [Air Pollution in Seoul](https://www.kaggle.com/bappekim/air-pollution-in-seoul) timeseries dataset.
+
+ ```sql
+ INSERT INTO mindsdb.predictors(name, predict, select_data_query,training_options)
+ VALUES('airq_model', 'SO2', 'SELECT * FROM default.pollution_measurement', '{"timeseries_settings":{"order_by": ["Measurement date"], "window":20}}');
+ ```
+
+ This `INSERT` query will train a new model called `pollution_measurement` that predicts the passenger `SO2` value.
+ Since, this is a timeseries dataset, the `timeseries_settings` will order the data by the `Measurement date` column and will set the window for rows to "look back" when making a prediction.
+
+ ### Model training status
+
+ To check that the training finished successfully, you can `SELECT` from mindsdb.predictors table and get the training status, e.g.:
+
+ ```sql
+ SELECT * FROM mindsdb.predictors WHERE name='<model_name>';
+ ```
+
+
+
+
