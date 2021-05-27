@@ -16,6 +16,9 @@ WHERE
 !!! question "Query the model from other databases"
     Note that even if you have trained the model from the ClickHouse database, you will be able to query it from other databases too.
 
+!!! warning "Using functions inside WHERE clause"
+    There is an issue where ClickHouse is not parsing the functions sent inside the WHERE clause. So, for e.g toDate() or toDateTime() inside WHERE will not work. For now you can avoid using the functions until we got feedback from ClickHouse. Track the progress of this issue [here](https://github.com/ClickHouse/ClickHouse/issues/24093)
+
 ## Query example
 
 The following example shows you how to train a new model from the ClickHouse client. The table used for training the model is the [Air Pollution in Seoul](https://www.kaggle.com/bappekim/air-pollution-in-seoul) timeseries dataset. MindsDB will predict the `SO2` (Sulfur dioxide) value in the air based on the values added in the `WHERE` statement.
