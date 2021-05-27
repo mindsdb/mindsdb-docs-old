@@ -17,7 +17,7 @@ The object sent to the `insert()` for training the new model should contain:
     * database(string) - The name of the database
     * collection(string) - The name of the collection
     * find(dict) - The dict that selects the documents from the collection, must be valid JSON format. Same as [db.collection.find({...})](https://docs.mongodb.com/manual/reference/method/db.collection.find/)
-* training_options (dict) -- Optional value that contains additional training parameters. For a full list of parameters, check the [PredictorInterface](/PredictorInterface/#learn).
+* training_options (dict) -- Optional value that contains additional training parameters. To train timeseries model you need to provide `training_options`.
 
 ```sql
 db.predictors.insert({
@@ -31,6 +31,30 @@ db.predictors.insert({
     },
     'training_options': dict  # optional
 })
+```
+For the timeseries model:
+
+```
+db.predictors.insert({
+    'name': str,
+    'predict': str | list of fields,
+    'connection': str,  # optional
+    'select_data_query':{
+    'database': str,
+    'collection': str,
+    'find': dict  
+    },
+    'training_options': { 
+        "timeseries_settings": {                
+                "order_by": list of fields,                
+                "group_by": list of fields,    #optional            
+                "nr_predictions": int,         #optional       
+                "use_previous_target": Boolean,                
+                "window": int            
+            }
+    }        
+})
+
 ```
 
 ### Train new model example
@@ -68,26 +92,6 @@ db.predictors.find()
     You have successfully trained a new model from a mongo shell. The next step is to get predictions by [querying the model](/model/query/mongodb).
 
 
-### Train time series model example
-
-
-The table used for training the model is the [Air Pollution in Seoul](https://www.kaggle.com/bappekim/air-pollution-in-seoul) timeseries dataset.
-
- ```sql
- INSERT INTO mindsdb.predictors(name, predict, select_data_query,training_options)
- VALUES('airq_model', 'SO2', 'SELECT * FROM default.pollution_measurement', '{"timeseries_settings":{"order_by": ["Measurement date"], "window":20}}');
- ```
-
- This `INSERT` query will train a new model called `pollution_measurement` that predicts the passenger `SO2` value.
- Since, this is a timeseries dataset, the `timeseries_settings` will order the data by the `Measurement date` column and will set the window for rows to "look back" when making a prediction.
-
- ### Model training status
-
- To check that the training finished successfully, you can `SELECT` from mindsdb.predictors table and get the training status, e.g.:
-
- ```sql
- SELECT * FROM mindsdb.predictors WHERE name='<model_name>';
- ```
 
 
 
