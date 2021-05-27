@@ -92,6 +92,14 @@ db.predictors.find()
     You have successfully trained a new model from a mongo shell. The next step is to get predictions by [querying the model](/model/query/mongodb).
 
 
+#### Delete model
+
+To delete the model run `remove` function on predictors collection and send the name of the model to delete as:
+
+```
+db.predictors.remove({name: 'model_name'})
+```
+
 
 
 
