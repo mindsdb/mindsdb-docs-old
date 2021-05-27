@@ -17,7 +17,7 @@ WHERE
     Note that even if you have trained the model from the ClickHouse database, you will be able to query it from other databases too.
 
 !!! warning "Using functions inside WHERE clause"
-    There is an issue where ClickHouse is not parsing the functions sent inside the WHERE clause. So, for e.g toDate() or toDateTime() inside WHERE will not work. For now you can avoid using the functions until we got feedback from ClickHouse. Track the progress of this issue [here](https://github.com/ClickHouse/ClickHouse/issues/24093)
+    There is an issue where ClickHouse is not parsing the functions sent inside the WHERE clause. So, for e.g toDate() or toDateTime() inside WHERE will not work. For now you can avoid using the functions until we got feedback from ClickHouse. Track the progress of this issue [here](https://github.com/ClickHouse/ClickHouse/issues/24093).
 
 ## Query example
 

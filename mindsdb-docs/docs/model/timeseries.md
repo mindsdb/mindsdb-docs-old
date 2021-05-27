@@ -36,7 +36,7 @@ Please, check the following example to get more info. The table used for trainin
  VALUES('airq_model', 'SO2', 'SELECT * FROM default.pollution_measurement', '{"timeseries_settings":{"order_by": ["Measurement date"], "window":20}}');
  ```
 
- This `INSERT` query will train a new model called `pollution_measurement` that predicts the passenger `SO2` value.
+ This `INSERT` query will train a new model called `airq_model` that predicts the passenger `SO2` value.
  Since, this is a timeseries dataset, the `timeseries_settings` will order the data by the `Measurement date` column and will set the window for rows to **look back** when making a prediction.
 
 
