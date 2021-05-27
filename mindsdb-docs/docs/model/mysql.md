@@ -30,6 +30,9 @@ The values provided in the `INSERT` query are:
 
 ![Train model from mySQL client](/assets/predictors/mysql-insert.gif)
 
+!!! info "Timeseries"
+    To train timeseries model, check out the [timeseries example](/model/timeseries).
+
 ### Train new model example
 
 The following example shows you how to train a new model from a mysql client. The table used for training the model is the [Us consumption](https://github.com/robjhyndman/fpp2-package/blob/15916e4fe827d1b3dcf82785a4ace80107af5ddd/data-raw/usconsumption.csv) dataset.
@@ -54,26 +57,7 @@ SELECT * FROM mindsdb.predictors WHERE name='<model_name>';
     You have successfully trained a new model from a MySQL database. The next step is to get predictions by [querying the model](/model/query/mysql).
 
 
-### Train time series model example
-
-
-The table used for training the model is the [Air Pollution in Seoul](https://www.kaggle.com/bappekim/air-pollution-in-seoul) timeseries dataset.
-
- ```sql
- INSERT INTO mindsdb.predictors(name, predict, select_data_query,training_options)
- VALUES('airq_model', 'SO2', 'SELECT * FROM default.pollution_measurement', '{"timeseries_settings":{"order_by": ["Measurement date"], "window":20}}');
- ```
-
- This `INSERT` query will train a new model called `pollution_measurement` that predicts the passenger `SO2` value.
- Since, this is a timeseries dataset, the `timeseries_settings` will order the data by the `Measurement date` column and will set the window for rows to "look back" when making a prediction.
-
- ### Model training status
-
- To check that the training finished successfully, you can `SELECT` from mindsdb.predictors table and get the training status, e.g.:
-
- ```sql
- SELECT * FROM mindsdb.predictors WHERE name='<model_name>';
- ```
+        
 
 
 
