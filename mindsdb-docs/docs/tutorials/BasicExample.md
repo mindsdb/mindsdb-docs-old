@@ -27,8 +27,6 @@ Predictor(name='real_estate_model').learn(
 ### Predicting
 
 ```python
-mdb = mindsdb_native.Predictor(name='real_estate_model')
-
 # use the model to make predictions
 result = Predictor(name='home_rentals_price').predict(when_data={'number_of_rooms': 1, 'initial_price': 1222, 'sqft': 1190})
 
