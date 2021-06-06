@@ -55,14 +55,14 @@ concave points_sestandard error for number of concave portions of the contour
 
 ## MindsDB Code example
 ```python
-import mindsdb
+import mindsdb_native
 import sys
 import pandas as pd
 from sklearn.metrics import balanced_accuracy_score
 
 
-def run(sample):
-    mdb = mindsdb.Predictor(name='cancer_model')
+def run():
+    mdb = mindsdb_native.Predictor(name='cancer_model')
 
     mdb.learn(from_data='processed_data/train.csv', to_predict='diagnosis')
 
@@ -77,12 +77,10 @@ def run(sample):
     return {
         'accuracy': accuracy
         ,'accuracy_function': 'balanced_accuracy_score'
-        ,'backend': backend
     }
 
 if __name__ == '__main__':
-    sample = bool(sys.argv[1]) if len(sys.argv) > 1 else False
-    result = run(sample)
+    result = run()
     print(result)
 ```
 

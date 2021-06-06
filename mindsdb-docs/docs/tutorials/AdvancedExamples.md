@@ -14,9 +14,9 @@ In the following example, we've altered the real estate model to predict the `lo
 
 ### Code example
 ```python
-import mindsdb
+import mindsdb_native
 
-mdb = mindsdb.Predictor(name='multilabel_real_estate_model')
+mdb = mindsdb_native.Predictor(name='multilabel_real_estate_model')
 mdb.learn(
     from_data="https://s3.eu-west-2.amazonaws.com/mindsdb-example-data/home_rentals.csv",
     to_predict=['location','neighborhood'] # Array with the names of the columns we want to predict

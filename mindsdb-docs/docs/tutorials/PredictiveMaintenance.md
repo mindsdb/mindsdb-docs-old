@@ -35,13 +35,13 @@ Fx1 ... Fx15 is the evolution of force Fx in the observation window
 </details>
 
 ```python
-import mindsdb
+import mindsdb_native
 import pandas as pd
 from sklearn.metrics import r2_score
 
 
 def run():
-    mdb = mindsdb.Predictor(name='robotic_failure')
+    mdb = mindsdb_native.Predictor(name='robotic_failure')
 
     mdb.learn(from_data='dataset/train.csv', to_predict=['target'])
 

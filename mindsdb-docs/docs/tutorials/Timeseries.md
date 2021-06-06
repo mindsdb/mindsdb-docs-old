@@ -34,9 +34,9 @@ Let's go through these settings one by one:
 ### Code example
 
 ```python
-import mindsdb
+import mindsdb_native
 
-mdb = mindsdb.Predictor(name='assembly_machines_model')
+mdb = mindsdb_native.Predictor(name='assembly_machines_model')
 mdb.learn(
     from_data='assembly_machines_historical_data.tsv',
     to_predict='failure',
@@ -45,7 +45,7 @@ mdb.learn(
       'group_by': ['machine_id'], # The ordering should be done on a per-machine basis, rather than for every single row
       'nr_predictions': 3, # Predict failures for the timestamp given and for 2 more timesteps in the future
       'use_previous_target': True, # Use the previous values in the target column (`failure`), since when the last failure happened could be a relevant data-point for our prediction.
-      'window': 20 # Consider the previous 20 rows for every single row our model is trying to predict
+      'window': 20, # Consider the previous 20 rows for every single row our model is trying to predict
       'historical_columns': ['sensor_activity'] # Mark `sensor_activity` column as historical, to use its temporal dynamics as additional context
     }
 )
