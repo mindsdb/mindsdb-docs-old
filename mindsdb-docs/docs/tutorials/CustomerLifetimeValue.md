@@ -22,14 +22,14 @@ This is a [dataset](http://ai.stanford.edu/~amaas/data/sentiment/) for binary se
 ## MindsDB Code example
 
 ```python
-import mindsdb
+import mindsdb_native
 from sklearn.metrics import accuracy_score
 
 
-predictor = mindsdb.Predictor(name='movie_sentiment_predictor')
+predictor = mindsdb_native.Predictor(name='movie_sentiment_predictor')
 predictor.learn(from_data='train.tsv', to_predict=['sentiment'])
 
-accuracy_data = predictions.test('test.tsv', accuracy_score)
+accuracy_data = predictor.test('test.tsv', accuracy_score)
 
 accuracy_pct = accuracy_data['sentiment_accuracy'] * 100
 print(f'Accuracy of {accuracy_pct}% !')

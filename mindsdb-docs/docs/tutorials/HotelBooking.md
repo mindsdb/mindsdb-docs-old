@@ -61,7 +61,7 @@ adrAverage Daily Rate as defined by dividing the sum of all lodging transactions
 
 ## MindsDB Code example
 ```python
-import mindsdb
+import mindsdb_native
 import sys
 import pandas as pd
 from sklearn.metrics import balanced_accuracy_score
@@ -69,12 +69,12 @@ from sklearn.metrics import balanced_accuracy_score
 
 def run():
 
-    mdb = mindsdb.Predictor(name='hotel_booking')
+    mdb = mindsdb_native.Predictor(name='hotel_booking')
 
-    mdb.learn(from_data='dataset/train.csv', to_predict='is_canceled')
+    mdb.learn(from_data='processed_data/train.csv', to_predict='is_canceled')
 
-    test_df = pd.read_csv('dataset/test.csv')
-    predictions = mdb.predict(when_data='dataset/test.csv')
+    test_df = pd.read_csv('processed_data/test.csv')
+    predictions = mdb.predict(when_data='processed_data/test.csv')
 
     results = [str(x['is_canceled']) for x in predictions]
     real = list(map(str, list(test_df['is_canceled'])))
@@ -87,7 +87,6 @@ def run():
     return {
         'accuracy': accuracy,
         'accuracy_function': 'balanced_accuracy_score',
-        'backend': backend,
         'additional_info': additional_info
     }
 

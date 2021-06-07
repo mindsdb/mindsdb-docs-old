@@ -51,12 +51,12 @@ In the Heart Disease UCI dataset, the data comes from 4 databases: the Hungarian
 
 ## MindsDB Code example
 ```python
-import mindsdb
+import mindsdb_native
 import pandas as pd
 from sklearn.metrics import balanced_accuracy_score
 
 def run():
-    mdb = mindsdb.Predictor(name='hd')
+    mdb = mindsdb_native.Predictor(name='hd')
 
     mdb.learn(from_data='processed_data/train.csv', to_predict='target')
 

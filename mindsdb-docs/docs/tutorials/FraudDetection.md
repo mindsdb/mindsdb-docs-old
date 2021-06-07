@@ -58,20 +58,20 @@ This dataset presents transactions that occurred in two days, where we have 492 
 ## MindsDB Code example
 
 ```python
-import mindsdb
+import mindsdb_native
 import pandas as pd
 from sklearn.metrics import balanced_accuracy_score
 
 def run():
 
-    mdb = mindsdb.Predictor(name='cc_fraud')
+    mdb = mindsdb_native.Predictor(name='cc_fraud')
 
     mdb.learn(from_data='processed_data/train.csv', to_predict='Class')
 
     predictions = mdb.predict(when_data='processed_data/test.csv')
 
     pred_val = [int(x['Class']) for x in predictions]
-    real_val = [int(x) for x in list(pd.read_csv('processed_data/test.csv'))['Class'])]
+    real_val = [int(x) for x in list(pd.read_csv('processed_data/test.csv'))['Class']]
 
     accuracy = balanced_accuracy_score(real_val, pred_val)
 
@@ -80,7 +80,6 @@ def run():
       
     return {
         'accuracy': accuracy,
-        'backend': backend,
         'additional info': additional_info
     }
 

@@ -142,12 +142,12 @@ The German Credit dataset is a publically available from the [UCI Machine Learni
 
 ## MindsDB Code example
 ```python
-from mindsdb import Predictor
+from mindsdb_native import Predictor
 import pandas as pd
-from sklearn.metrics import balanced_accuracy_score, confusion_matrix
+from sklearn.metrics import balanced_accuracy_score
 
 
-def run(sample=False):
+def run():
 
     mdb = Predictor(name='german_data')
 

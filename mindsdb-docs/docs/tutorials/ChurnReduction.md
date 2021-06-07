@@ -47,14 +47,14 @@ tenureNumber of months the customer has stayed with the company
 
 ## MindsDB Code example
 ```python
-import mindsdb
+import mindsdb_native
 import pandas as pd
 from sklearn.metrics import accuracy_score
 
 
 def run():
 
-    mdb = mindsdb.Predictor(name='employee_retention_model')
+    mdb = mindsdb_native.Predictor(name='customer_churn_model')
 
     mdb.learn(from_data='dataset/train.csv', to_predict='Churn')
 
@@ -73,7 +73,6 @@ def run():
     return {
         'accuracy': accuracy,
         'accuracy_function': 'accuracy_score',
-        'backend': backend,
         'prediction_per_row': additional_info
     }
 

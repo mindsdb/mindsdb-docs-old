@@ -13,10 +13,10 @@ The goal is to be able to predict the best **rental_price** for new properties g
 ### Learning
 
 ```python
-from mindsdb import Predictor
+from mindsdb_native import Predictor
 
 # We tell the Predictor what column or key we want to learn and from what data
-Predictor(name='real_estate_model').learn(
+Predictor(name='home_rentals_price').learn(
     from_data="https://s3.eu-west-2.amazonaws.com/mindsdb-example-data/home_rentals.csv", # the path to the file where we can learn from, (note: can be url)
     to_predict='rental_price', # the column we want to learn to predict given all the data in the file
 )
@@ -27,8 +27,6 @@ Predictor(name='real_estate_model').learn(
 ### Predicting
 
 ```python
-mdb = mindsdb.Predictor(name='real_estate_model')
-
 # use the model to make predictions
 result = Predictor(name='home_rentals_price').predict(when_data={'number_of_rooms': 1, 'initial_price': 1222, 'sqft': 1190})
 
