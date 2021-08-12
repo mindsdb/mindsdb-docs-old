@@ -46,8 +46,8 @@ nav:
   - Getting Started:
     - What is MindsDB: info.md
     - Deploying MindsDB:
-      - Docker: installation/docker.md
-      - From source: installation/source.md
+      - Docker: deployment/docker.md
+      - From source: deployment/source.md
   - Connect your data: connect.md
   - SQL-ML:
     - Connect: sql/connect.md
