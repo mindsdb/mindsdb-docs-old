@@ -1,15 +1,4 @@
-
-## Install using MindsDB installers
-
-Install MindsDB on your Linux machine using an easy-to-use shell script.
-
-!!! tip "Download the script"
-    [MindsDB for Linux](https://mindsdb-installer.s3-us-west-2.amazonaws.com/mindsdb-installer/v2/linux/MindsDBInstaller_1.5.sh)
-
-This script will install MindsDB and MindsDB's dependencies, and start the MindsDB server.
-> Note that you need Python 3.6.x, 3.7.x or 3.8.x installed.
-
-## Install using pip
+# Deploy using pip
 
 !!! warning "Python 3.9"
     Currently, some of our dependencies have issues with the latest versions of Python 3.9.x. For now, our suggestion is to use Python 3.6.x, 3.7.x, or 3.8.x versions.
@@ -37,8 +26,9 @@ We suggest you to install MindsDB in a virtual environment when using **pip** to
     ```
     pip freeze
     ```
+You should see a list with the names of installed packages.
 
-## Install using Anaconda
+# Deploy using Anaconda
 
 !!! warning "Python 3.9"
     Currently, some of our dependencies have issues with the latest versions of Python 3.9.x. For now, our suggestion is to use Python 3.6.x, 3.7.x, or 3.8.x versions.
@@ -67,6 +57,19 @@ You will need <a href="https://www.anaconda.com/products/individual" target="_bl
     ```
 
 
+## Deploy using MindsDB installers
+
+Deploy MindsDB on your Linux machine using an easy-to-use shell script.
+
+!!! tip "Download the script"
+    [MindsDB for Linux](https://mindsdb-installer.s3-us-west-2.amazonaws.com/mindsdb-installer/v2/linux/MindsDBInstaller_1.5.sh)
+
+This script will install MindsDB and MindsDB's dependencies, and start the MindsDB server.
+> Note that you need Python 3.6.x, 3.7.x or 3.8.x installed.
+
+
+## Troubleshooting
+
 !!! failure "Installation fail"
     Don't worry, simply follow the below bellow instruction which should fix most issues.
 
@@ -75,8 +78,9 @@ You will need <a href="https://www.anaconda.com/products/individual" target="_bl
 
 2. If you are using **Python 3.9** you may get installation errors. Some of the MindsDB's dependencies are not working with **Python 3.9**, so please downgrade to older versions for now. We are working on this and **Python 3.9** will be supported soon.
 
+3. `No module named mindsdb`. If you get this error, make sure that your **virtual environment**(where you installed mindsdb) is activated.
 
-3. If you are using Linux install `tkinter` from your package manager in certain situations.
+4. If you are using Linux install `tkinter` from your package manager in certain situations.
     - Ubuntu/Debian: `sudo apt-get install python3-tk tk`
     - Fedora: `sudo dnf -y install python3-tkinter`
     - Arch: `sudo pacman -S tk`
