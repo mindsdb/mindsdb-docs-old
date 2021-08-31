@@ -31,7 +31,7 @@ DataSources make it very simple to connect MindsDB to your data. Datasource can 
 
 * File(csv, tsv, json, xslx, xls)
 * Pandas dataframe 
-* MindsDB datasource that is an enriched version of a pandas dataframe. MindsDB datasource could be MariaDB, Snowflake, S3, Sqlite3, Redshift, PostgreSQL, MsSQL, MongoDB, GCS, Clickhouse, AWS Athena. For more info please check the full list of datasource implementation [here](https://github.com/mindsdb/mindsdb_native/tree/stable/mindsdb_native/libs/data_sources).
+* MindsDB datasource that is an enriched version of a pandas dataframe. MindsDB datasource could be MariaDB, Snowflake, S3, Sqlite3, Redshift, PostgreSQL, MsSQL, MongoDB, GCS, Clickhouse, AWS Athena. For more info please check the full list of datasource implementation [here](https://github.com/mindsdb/datasources/tree/stable/mindsdb_datasources/datasources).
 
 ### Create new datasource from local file
 
