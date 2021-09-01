@@ -240,7 +240,7 @@ mixer_schema = Schema({
 ```
 
 !!! note ""
-    * **class**: Its the actual class, that defines the Mixer, you can use any of the BUILTIN_MIXERS or pass your own.
+    * **class**: It's the actual class, that defines the Mixer, you can use any of the BUILTIN_MIXERS or pass your own.
     * **attrs**: This is a dictionary containing the attributes you want to replace on the mixer object once its initialized. We do this, so you have maximum flexibility as to what you can customize on your Mixers.
 
 ## learn()
@@ -251,9 +251,9 @@ my_predictor.learn(from_data=pandas_dataframe)
 !!! note ""
     This method is used to make the predictor learn from some data, thus the learn method takes the following arguments.
     
-    * **from_data**: A pandas dataframe, that has some or all the columns in the config. The reason why we decide to only suppor pandas dataframes, its because, its easy to load any data to a pandas draframe, and spark for python dataframe is a format we support.
+    * **from_data**: A pandas dataframe, that has some or all the columns in the config. The reason why we decide to only support pandas dataframes, its because, its easy to load any data to a pandas dataframe, and spark for python dataframe is a format we support.
     * **test_data**: (Optional) This is if you want to specify what data to test with, if no test_data passed, lightwood will break the from_data into test and train automatically.
-    * **callback_on_iter**: (Optional) This is function callback that is called every 100 epocs the during the learn process.
+    * **callback_on_iter**: (Optional) This is function callback that is called every 100 epochs during the learn process.
 
 
 ## predict()
@@ -265,7 +265,7 @@ my_predictor.predict(when={..} | when_data=pandas_dataframe)
     This method is used to make predictions and it can take one of the following arguments
     
     * **when**: this is a dictionary of conditions to predict under.
-    * **when_data**: Sometimes you want to predict more than one row a ta time, so here it is: a pandas dataframe containing the conditional values you want to use to make a prediction.
+    * **when_data**: Sometimes you want to predict more than one row at a time, so here it is: a pandas dataframe containing the conditional values you want to use to make a prediction.
 
 
 ## save()
