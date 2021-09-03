@@ -15,7 +15,7 @@ MindsDB is an open-source predictive layer for existing databases that enables r
 
     ![SQFT vs Price](/assets/info/sqft-price.png)
 
-!!! note "You could query the database for information in this table, and if your search criteria has a match, you get results:"
+!!! note "You could query the database for information in this table, and if your search criteria have a match, you get results:"
     
 
     ```sql
