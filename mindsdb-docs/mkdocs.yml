@@ -48,6 +48,7 @@ nav:
     - Deploying MindsDB:
       - Docker: deployment/docker.md
       - From source: deployment/source.md
+      - MindsDB Cloud: deployment/cloud.md
   - Connect your data: connect.md
   - SQL-ML:
     - Connect: sql/connect.md
