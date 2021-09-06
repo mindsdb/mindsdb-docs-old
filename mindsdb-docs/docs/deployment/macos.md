@@ -58,16 +58,6 @@ You will need <a href="https://www.anaconda.com/products/individual" target="_bl
 
 You should see a list with the names of installed packages.
 
-
-## Deploy using MindsDB installers
-
-Install MindsDB on your MacOS machine using an easy-to-use shell script.
-
-!!! tip "Download the script"
-    [MindsDB for MacOS](https://mindsdb-installer.s3-us-west-2.amazonaws.com/mindsdb-installer/v2/osx/MindsDBInstaller_1.5.dmg)
-
-This installer will install Python3, MindsDB and MindsDB's dependencies.
-
 ## Troubleshooting
 
 !!! failure "Installation fail"

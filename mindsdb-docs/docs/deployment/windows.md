@@ -62,18 +62,6 @@ We suggest you to install MindsDB in a virtual environment when using `pip` to a
 You should see a list with the names of installed packages.
 
 
-## Deploy using MindsDB installers
-
-Install MindsDB on your Windows machine using an easy-to-use installler.
-
-!!! tip "Download the installer"
-    [MindsDB for Windows](https://mindsdb-installer.s3-us-west-2.amazonaws.com/mindsdb-installer/v2/windows/MindsDBInstaller_1.5.exe)
-
-This installer will install Python3, MindsDB and MindsDB's dependencies, and create a shortcut on the desktop for starting MindsDB server.
-
-!!! info "Windows protected your PC warning"
-    The Windows application is signed by MindsDB INC as a publisher but it takes some time to build trust. So, in case you got this warning, click on a `Run anyway` button. If you experience additional issues using the Windows installer, please reach out to us on [GitHub](https://github.com/mindsdb/mindsdb/issues), or use the other installation options from bellow.
-
 ## Troubleshooting
 
 !!! failure "Installation fail"

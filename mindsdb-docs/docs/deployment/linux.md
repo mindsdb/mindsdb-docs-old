@@ -56,18 +56,6 @@ You will need <a href="https://www.anaconda.com/products/individual" target="_bl
     conda list
     ```
 
-
-## Deploy using MindsDB installers
-
-Deploy MindsDB on your Linux machine using an easy-to-use shell script.
-
-!!! tip "Download the script"
-    [MindsDB for Linux](https://mindsdb-installer.s3-us-west-2.amazonaws.com/mindsdb-installer/v2/linux/MindsDBInstaller_1.5.sh)
-
-This script will install MindsDB and MindsDB's dependencies, and start the MindsDB server.
-> Note that you need Python 3.6.x, 3.7.x or 3.8.x installed.
-
-
 ## Troubleshooting
 
 !!! failure "Installation fail"
