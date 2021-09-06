@@ -54,7 +54,8 @@ nav:
     - Connect: sql/connect.md
     - Tutorials:
       - Regression: sql/tutorials/test.md
-      - Classification: sql/tutorials/test.md
+      - Classification: 
+        - Customer Churn: sql/tutorials/customer-churn.md
       - Time series: sql/tutorials/test.md
     - API:
       - Create:
@@ -159,4 +160,3 @@ nav:
       - Inside MindsDB: InsideMindsDB.md
 extra_css:
   - stylesheets/extra.css
-
