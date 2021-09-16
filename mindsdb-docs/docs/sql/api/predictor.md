@@ -1,4 +1,4 @@
-# Create Predictor Statement
+# CREATE PREDICTOR Statement
 
 The `CREATE PREDICTOR` statement is used to train new model. The basic syntax for training the model is:
 
