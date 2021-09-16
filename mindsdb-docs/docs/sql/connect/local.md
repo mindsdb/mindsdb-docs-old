@@ -1,18 +1,18 @@
 # MindsDB as a SQL Database
 
-MindsDB provides a powerful MySQL API that allows to the users to connect to it using any mysql-client. To run MySQL API you will need to provide additional parameter on the server start:
+MindsDB provides a powerful MySQL API that allows to the users to connect to it using any mysql-client. By default, on the server start MindsDB will satart http and mysql APIs. If you want to run only the mysql API provide that as a parameter on the server start:
 
 ```
-python3 -m mindsdb --api=http,mysql
+python3 -m mindsdb --api=mysql
 ```
 
-This will start MySQL API on a `127.0.0.1:47335` with the `mindsdb` as a default user and crete a `mindsdb` database. To change the deafult parameters you need to extend the MindsDBs config.json or create another one and send it as a parameter to the serve start command as:
+This will start MySQL API on a `127.0.0.1:47335` with the `mindsdb` as a default user and create a `mindsdb` database. To change the deafult parameters you need to extend the MindsDBs config.json or create another one and send it as a parameter to the serve start command as:
 
 ```
-python3 -m mindsdb --api=http,mysql --config=config.json
+python3 -m mindsdb --api=mysql --config=config.json
 ```
 
-In case you are using Docker, visit the [Docker docs](/deployment/docker/#extend-configjson).
+In case you are using Docker, visit the [Docker extend config docs](/deployment/docker/#extend-configjson).
 To read more about avaiable config.json options check the [configuration docs](/datasources/configuration/#extending-default-configuration).
 
 ## Connect
@@ -39,10 +39,9 @@ Or, if you are using another database manager interface make sure to select Driv
 
 ## MindsDB Database
 
-On the start mindsdb database will contain 2 tables `predictors` and `commands`. Run `show tables` to list them.
+On the start mindsdb database will contain 2 tables `predictors` and `commands`. 
 
 ![Connect](/assets/sql/show.png)
-![Connect](/assets/sql/showt.png)
 
 All of the new trained machine learning models will be vissible as a new record inside the `predictors` table. The `predictors` columns contains information about each model as:
 
