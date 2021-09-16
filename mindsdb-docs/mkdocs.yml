@@ -51,13 +51,16 @@ nav:
       - MindsDB Cloud: deployment/cloud.md
   - Connect your data: connect.md
   - SQL-ML:
-    - Connect: sql/connect.md
+    - Connect: 
+      - Local Deployment: sql/connect/local.md
+      - MindsDB Cloud: sql/connect/cloud.md
     - Tutorials:
       - Regression: sql/tutorials/test.md
       - Classification: 
         - Customer Churn: sql/tutorials/customer-churn.md
       - Time series: sql/tutorials/test.md
     - API:
+      - Use: sql/api/use.md
       - Create:
         - Predictor: sql/api/predictor.md
         - View: sql/api/predictor.md
