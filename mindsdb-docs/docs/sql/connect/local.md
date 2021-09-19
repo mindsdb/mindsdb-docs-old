@@ -1,6 +1,6 @@
 # MindsDB as a SQL Database
 
-MindsDB provides a powerful MySQL API that allows to the users to connect to it using any mysql-client. By default, on the server start MindsDB will satart http and mysql APIs. If you want to run only the mysql API provide that as a parameter on the server start:
+MindsDB provides a powerful MySQL API that allows to the users to connect to it using any mysql-client. By default, MindsDB Server will start http and mysql APIs. If you want to run only the mysql API provide that as a parameter on the server start:
 
 ```
 python3 -m mindsdb --api=mysql
