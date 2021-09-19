@@ -66,9 +66,9 @@ nav:
         - View: sql/api/view.md
         - Integration: sql/api/predictor.md
         - Stream: sql/api/predictor.md
-      - Drop: sql/api/predictor.md
-      - Select: sql/api/predictor.md
-      - Publish: sql/api/predictor.md
+      - Drop: sql/api/drop.md
+      - Select: sql/api/select.md
+      - Publish: sql/api/publish.md
   - Mongo-ML:
     - Connect: mongo/connect.md
     - Tutorials:
