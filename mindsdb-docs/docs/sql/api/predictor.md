@@ -17,7 +17,7 @@ PREDICT column_name as column_alias;
 
 The bellow database table contains prices of properties from a metropolitan area in the US.
 
-{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/classics/home_rentals/dataset/train.csv', nrows=7) }}
+{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/classics/home_rentals/dataset/train.csv', nrows=5) }}
 
 
 ### Create Predictor example

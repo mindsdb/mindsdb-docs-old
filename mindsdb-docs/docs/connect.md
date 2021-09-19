@@ -44,7 +44,5 @@
 
 ![Create MySQL Datasource](/assets/data/mysql-ds.gif)
 
-!!! Success "That's it :tada: :trophy:  :computer:"
-    You have successfully connected MindsDB Studio to your database. The next step is to train the [Machine Learning model](/model/train).
 
 
