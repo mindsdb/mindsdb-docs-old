@@ -9,35 +9,40 @@ MindsDB is an open-source AI layer for existing databases that allows you to eff
 
 ## Installation
 
-There are a few options to install MindsDB on different operating systems. To find the one that works the best for you, check out the below links.
+There are a few options to deploy MindsDB on different operating systems. To find the one that works the best for you, check out the below links.
 
 !!! tip "Recommended"
     Our suggestion is to always use Docker as the most stable and easy way because it encapsulates all of the dependencies that MindsDB Server needs.
 
 === "Docker"
 
+    !!! info "Deployment"
+        Follow the [Docker deployment](/deployment/docker) instructions.
+
+=== "MindsDB Cloud"
+
     !!! info "Installation"
-        Follow the [Docker installation](/installation/docker) instructions.
+        Follow the [MindsDB cloud](/deployment/cloud) instructions.
 
 === "Windows"
 
-    !!! info "Installation"
-        Follow the [Windows installation](/installation/windows) instructions.
+    !!! info "Deployment"
+        Follow the [Windows deployment](/deployment/windows) instructions.
 
 === "Linux"
 
-    !!! info "Installation"
-        Follow the [Linux installation](/installation/linux) instructions.
+    !!! info "Deployment"
+        Follow the [Linux deployment](/deployment/linux) instructions.
 
-=== "macOS"
+=== "Deployment"
 
     !!! info "Installation"
-        Follow the [macOS installation](/installation/macos) instructions.
+        Follow the [macOS deployment](/deployment/macos) instructions.
 
 === "Source"
 
-    !!! info "Installation"
-        Follow the from [source installation](/installation/source) instructions.
+    !!! info "Deployment"
+        Follow the from [source deployment](/deployment/source) instructions.
 
 
 ## Tutorials

@@ -6,6 +6,8 @@ The `SELECT` statement is used to get a predictons from the model table. The dat
 SELECT column_name, column_name2 FROM model_table;
 ```
 
+## Model table columns 
+
 The below list contains the column names of the model table. Note that `target_varaiable_` will be the name of the target variable column.
 
 * target_variable_original - The original value of the target variable.
@@ -16,6 +18,8 @@ The below list contains the column names of the model table. Note that `target_v
 * when_data - The data to make the predictions from(WHERE clause params).
 * select_data_query - SQL select query to create the datasource.
 * external_datasource - Name of the pre-existing datasource that the model was built from.
+
+{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/classics/home_rentals/home_rentals_model.csv') }}
 
 
 
@@ -33,8 +37,6 @@ WHERE when_data='{"sqft": 800, "number_of_rooms": 4, "number_of_bathrooms": 2,
 ```
 
 ![SELECT model_name](/assets/sql/select_hr.png)
-
-{{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/classics/home_rentals/home_rentals_model.csv') }}
 
 
 The following SQL statement selects only the target variable `rental_price` and accuracy from the `home_rentals_model` and adds alias names:
