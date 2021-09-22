@@ -9,6 +9,19 @@ theme:
   favicon: assets/mdb_logo.png
   icon:
     repo: fontawesome/brands/github
+  features:
+    - search.suggest
+    - search.highlight
+    - header.autohide
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
 extra:
   disqus: docs-mindsdb-com
 plugins:
@@ -43,14 +56,13 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
 nav:
-  - Getting Started:
-    - What is MindsDB: info.md
-    - Deploying MindsDB:
-      - Docker: deployment/docker.md
-      - From source: deployment/source.md
-      - MindsDB Cloud: deployment/cloud.md
+  - What is MindsDB: info.md
+  - Deploying MindsDB:
+    - Docker: deployment/docker.md
+    - From source: deployment/source.md
+    - MindsDB Cloud: deployment/cloud.md
   - Connect your data: connect.md
-  - SQL-ML:
+  - SQL:
     - Connect: 
       - Local Deployment: sql/connect/local.md
       - MindsDB Cloud: sql/connect/cloud.md
@@ -59,16 +71,15 @@ nav:
       - Classification: 
         - Customer Churn: sql/tutorials/customer-churn.md
       - Time series: sql/tutorials/test.md
-    - API:
-      - Use: sql/api/use.md
-      - Create:
-        - Predictor: sql/api/predictor.md
-        - View: sql/api/view.md
-        - Integration: sql/api/predictor.md
-        - Stream: sql/api/predictor.md
-      - Drop: sql/api/drop.md
-      - Select: sql/api/select.md
-      - Publish: sql/api/publish.md
+    - Use: sql/api/use.md
+    - Create:
+      - Predictor: sql/api/predictor.md
+      - View: sql/api/view.md
+      - Integration: sql/api/predictor.md
+      - Stream: sql/api/predictor.md
+    - Drop: sql/api/drop.md
+    - Select: sql/api/select.md
+    - Publish: sql/api/publish.md
   - Mongo-ML:
     - Connect: mongo/connect.md
     - Tutorials:
@@ -108,7 +119,7 @@ nav:
         - PostgreSQL: model/postgresql.md
         - MariaDB: model/mariadb.md
         - ClickHouse: model/clickhouse.md
-        - Microsoft SQL Server: model/mssql.md
+        - Microsoft SQL Server: model/mssql.mdiwguesspass
         - MongoDB: model/mongodb.md
     - Evaluate model quality:
       - Evaluate from Studio: model/quality.md
