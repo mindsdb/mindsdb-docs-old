@@ -2,7 +2,7 @@
 
 To quickly jumpstart and try MindsDB you can sign up for our Cloud. MindsDB Cloud is hosted by the MindsDB team and has all of the latest updates. You can start using it immediately for free by following the next steps:
 
-1. Create an account by visiting the [cloud.mindsdb.com](https://cloud.mindsdb.com/) and filling out the sign-up form.
+1. Create an account by visiting the [cloud.mindsdb.com/signup](https://cloud.mindsdb.com/signup) and filling out the sign-up form.
 
     ![Sign up](/assets/cloud/login.png)
 

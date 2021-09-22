@@ -17,6 +17,7 @@
 
     If you want to connect without using the MindsDB Studio, [here]((datasources/configuration/#extending-default-configuration)) you can find the specific database configuration example.
 
+
 #### Connect to database
 
 1. From the left navigation menu, select Database Integration.
