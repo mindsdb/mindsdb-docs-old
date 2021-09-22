@@ -42,6 +42,10 @@
 	align-items: center;
 }
 
+.md-grid {
+	max-width: 75rem;
+}
+
 .grid_mt {
 	margin-top: 20px;
 }
