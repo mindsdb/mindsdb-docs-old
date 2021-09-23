@@ -1,10 +1,10 @@
-MindsDB Machine Learning can help marketing, sales, and customer retention teams determine the best incentive and the right time to make an offer to minimize customer turnover.
+MindsDB as a Machine Learning framework can help marketing, sales, and customer retention teams determine the best incentive and the right time to make an offer to minimize customer turnover.
 
 In this tutorial you will learn how to use SQL queries to train a machine learning model and make predictions in three simple steps:
 
 1. Connect a database with customers' data to MindsDB.
-2. Use an `INSERT` statement to train the machine learning model automatically.
-3. Query predictions with a simple `SELECT` statement from MindsDB "AI Table" (this special table returns data from an ML model upon being queried).
+2. Use an `CREATE PREDICTOR` statement to train the machine learning model automatically.
+3. Query predictions with a simple `SELECT` statement from MindsDB `AI Table` (this special table returns data from an ML model upon being queried).
 
 Using SQL to perform machine learning at the data layer will bring you many benefits like removing unnecessary ETL-ing, seamless integration with your data, and enabling predictive analytics in your BI tool.  Let's see how this works with real world example to predict the probability of churn for a new customer of a telecom company.
 
@@ -28,23 +28,11 @@ First, we need to connect MindsDB to the database where the Customer Churn data 
 
 ![Connect to DB](/assets/sql/tutorials/connect.gif)
 
-Then, click on CONNECT.
-
-## Create Datasource
-
-We have successfully connected MindsDB to the database. Now, we need to create a datasource which requires that we connect MindsDB to the Customer Churn table. Click on the NEW DATASET and add:
-
-* Datasource Name - the name of the new source you are creating
-* Database - the name of the database to connect
-* Query - SELECT statement to select the data from database e.g SELECT * FROM table_name;
-
-![Created dataset from DB](/assets/sql/tutorials/create_ds.gif)
-
-After filling in all the values click on CREATE. Now, we have successfully created a new Datasource that is connected to the database. The next step is to use the MySQL client to connect to MindsDB’s MySQL API and train a new model to help us predict customer churn.
+Then, click on CONNECT. The next step is to use the MySQL client to connect to MindsDB’s MySQL API and train a new model that shall predict customer churn.
 
 ## Connect to MindsDB’s MySQL API
 
-I will use mysql command line client in the next part of the tutorial but you can follow up with the one that works the best for you, like MySQL Workbench, Dbeaver, etc. The first step we need to do is to use the MindsDB Cloud user to connect to the MySQL API:
+I will use mysql command line client in the next part of the tutorial but you can follow up with the one that works the best for you, like Dbeaver. The first step we need to do is to use the MindsDB Cloud user to connect to the MySQL API:
 
 ```
 mysql -h cloud-mysql.mindsdb.com --port 3306 -u theusername@mail.com -p
@@ -95,29 +83,31 @@ show tables;
 
 ![use  mindsdb](/assets/sql/tutorials/use.png)
 
-You will notice there are 2 tables available inside the MindsDB database. To train a new machine learning model we will need to INSERT a new record inside the predictors table as:
+You will notice there are 2 tables available inside the MindsDB database. To train a new machine learning model we will need to CREATE Predictor as a new record inside the predictors table as:
 
 ```sql
-INSERT INTO mindsdb.predictors(name, predict, external_datasource, training_options)
-VALUES('model_name', 'target_variable', 'datasource_name', {“ignore_columns”: []});
+CREATE PREDICTOR predictor_name
+FROM integration_name 
+(SELECT column_name, column_name2 FROM table_name)
+PREDICT column_name as column_alias;
 ```
 
 The required values that we need to provide are:
 
-* name (string) - The name of the model
-* predict (string) - The feature you want to predict
-* external_datasource (string) - The datasource name that we have created using MindsDB Studio
-* training_options (JSON as comma separated string) - optional value that contains additional training parameters. The full list with parameters can be found at [PredictorInterface docs](/assets/PredictorInterface/#learn).
+* predictor_name (string) - The name of the model
+* integration_name (string) - The name of connection to your database.
+* column_name (string) - The feature you want to predict.
 
 To train the model that will predict customer churn run:
 
 ```sql
-INSERT INTO mindsdb.predictors(name, predict, external_datasource, training_options ) VALUES('churn_model', 'Churn', 'CustomerChurnData', '{"ignore_columns": ["gender"]}');
+CREATE PREDICTOR churn_model FROM demo (SELECT * FROM CustomerChurnData)
+PREDICT Churn as customer_churn USING {"ignore_columns": "gender"};
 ```
 
 ![INSERT query](/assets/sql/tutorials/insert.png)
 
-What we did here was to create a model called customer_churn to predict the Churn and also ignore the gender column as an irrelevant column for the model. Also note that the ID columns in this case customerId will be automatically detected by MindsDB and ignored. The model training has started. To check if the training has finished you can SELECT the model name from the predictors table:
+What we did here was to create a predictor called `customer_churn `to predict the `Churn` and also ignore the `gender` column as an irrelevant column for the model. Also note that the ID columns in this case `customerId` will be automatically detected by MindsDB and ignored. The model training has started. To check if the training has finished you can SELECT the model name from the predictors table:
 
 ```sql
 SELECT * FROM predictors WHERE name='churn_model';

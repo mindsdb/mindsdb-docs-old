@@ -3,7 +3,7 @@
 The `SELECT` statement is used to get a predictons from the model table. The data is not persistent and is returned on the fly as a result-set.
 
 ```sql
-SELECT column_name, column_name2 FROM model_table;
+SELECT target_variable, target_variable_explain FROM model_table WHERE when_data='{"column3": "value", "column2": "value"}';
 ```
 
 ## Model table columns 

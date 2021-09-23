@@ -72,7 +72,7 @@ CREATE PREDICTOR predictor_name
 FROM integration_name 
 (SELECT column_name, column_name2 FROM table_name) as ds_name
 PREDICT column_name as column_alias
-GROUP BY column_name
+GROUP BY column_name;
 ```
 
 ### GROUP BY example
@@ -87,22 +87,6 @@ PREDICT rental_price as price
 GROUP BY location;
 ```
 
-
-## Time Series keywords
-
-If you are training a timeseries model, MindsDB provides additional keywords. The `WINDOW` keyword specifies the number of rows to "look back" into when making a prediction after the rows are ordered by the order_by column and split into groups. Could be used to specify something like "Always use the previous 10 rows". The `HORIZON` keyword specifies the number of future predictions. 
-
-```sql
-CREATE PREDICTOR predictor_name
-FROM integration_name 
-(SELECT column_name, column_name2 FROM table_name) as ds_name
-PREDICT column_name as column_alias
-GROUP BY column_name
-WINDOW 10
-HORIZON 7;
-```
-
-
 ## USING keyword
 
 The `USING` keyword accepts arguments as a JSON format where additional arguments can be provided to the `CREATE PREDICTOR` statement as:
@@ -111,6 +95,7 @@ The `USING` keyword accepts arguments as a JSON format where additional argument
 * `use_gpu` - Switch between training on CPU or GPU(true|false).
 * `sample_margin_of_error` - The ammount of random sampling error in results (0 - 1)
 * `ignore_columns` - Columns to be removed from the model training.
+* `is_timeseries` - Training from time series data (True - False).
 
 ```sql
 CREATE PREDICTOR predictor_name
@@ -130,4 +115,21 @@ FROM integration_name
 (SELECT * FROM house_rentals_data) as rentals
 PREDICT rental_price as price
 USING {"ignore_columns": "number_of_bathrooms"}
+```
+
+
+
+## Time Series keywords
+
+If you are training a timeseries model, MindsDB provides additional keywords. The `WINDOW` keyword specifies the number of rows to "look back" into when making a prediction after the rows are ordered by the order_by column and split into groups. Could be used to specify something like "Always use the previous 10 rows". The `HORIZON` keyword specifies the number of future predictions. 
+
+```sql
+CREATE PREDICTOR predictor_name
+FROM integration_name 
+(SELECT column_name, column_name2 FROM table_name) as ds_name
+PREDICT column_name as column_alias
+GROUP BY column_name
+WINDOW 10
+HORIZON 7;
+USING {"is_timeseries": "Yes"}
 ```
