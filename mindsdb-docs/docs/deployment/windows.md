@@ -64,30 +64,24 @@ You should see a list with the names of installed packages.
 
 ## Troubleshooting
 
+If the installation fails, don't worry, simply follow the below bellow instruction which should fix most issues. If none of this works, try using the [docker container]() and create an issue with the installation errors you got on our [Github repository](https://github.com/mindsdb/mindsdb/issues). We'll try to review the issue and give you response within a few hours.
+
+
 !!! failure "Installation fail"
-    Don't worry, simply follow the below bellow instruction which should fix most issues.
+    Note that **Python 64** bit version is required. 
 
-1. **Python 64** bit version is required. 
-
-
-2. Depending on your environment, you might have to use **pip3** instead of **pip**, and **python3.x** instead of **py** in the above commands e.g
+!!! failure "pip command not found fail"
+    Depending on your environment, you might have to use **pip3** instead of **pip**, and **python3.x** instead of **py** in the above commands e.g
 
     ```
     pip3 install mindsdb
     ```
 
-3. If you are using **Python 3.9** you may get installation errors. Some of the MindsDB's dependencies are not working with **Python 3.9**, so please downgrade to older versions for now. We are working on this and **Python 3.9** will be supported soon.
+!!! failure "Installation fail"
+    If you are using **Python 3.9** you may get installation errors. Some of the MindsDB's dependencies are not working with **Python 3.9**, so please downgrade to older versions for now. We are working on this and **Python 3.9** will be supported soon.
 
-4. If installation fails when installing **torch** or **torchvision** try manually installing them following the simple instructions on their [official website](https://pytorch.org/get-started/locally/).
+!!! failure "Installation fail"
+    If installation fails when installing **torch** or **torchvision** try manually installing them following the simple instructions on their [official website](https://pytorch.org/get-started/locally/).
 
-5. If you are using Windows, but are not using Anaconda or Conda, try installing one of them and running the installation from the **anaconda prompt**.
-
-6. If you've previously installed mindsdb and are having issues upgrading to a new version, try installing with the command: 
-
-    `pip install mindsdb --upgrade`
-
-    If that still fails, try: 
-
-    `pip install mindsdb --no-cache-dir --force-reinstall`
-
-7. If none of this works, try installing mindsdb using the [docker container]() and create an issue with the installation errors you got on our  [Github repository](https://github.com/mindsdb/mindsdb/issues) and we'll try to review it within a few hours.
+!!! failure "Installation fails because of system dependencies"
+    Try installing MindsDB with [Anaconda](https://www.anaconda.com/products/individual), and run the installation from the **anaconda prompt**.

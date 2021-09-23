@@ -1,14 +1,6 @@
-# Deploy from PyPi
-
-There are few ways to deploy MindsDB on your local machine or server using pip, depending on the OS. The prefered way is to always install inside virtaul environment. Follow the instructions for your operating system:
-
-* [Linux](/deployment/linux)
-* [Windows](/deployment/windows)
-* [MacOS](/deployment/macos)
-
 # Deploy from the source code
 
-This section describes how to deploy MindsDB from the source code. This is the prefered way to install MindsDB if you want to contribute to our code or simply to debug MindsDB.
+This section describes how to deploy MindsDB from the source code. This is the prefered way to use MindsDB if you want to contribute to our code or simply to debug MindsDB.
 
 ## Prerequisite
 

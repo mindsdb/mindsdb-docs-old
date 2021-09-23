@@ -26,7 +26,10 @@ We suggest you to install MindsDB in a virtual environment when using **pip** to
     ```
     pip freeze
     ```
-You should see a list with the names of installed packages.
+You should see a list with the names of installed packages:
+
+![Pip list](/assets/pipfreeze.png)
+
 
 # Deploy using Anaconda
 
@@ -58,19 +61,18 @@ You will need <a href="https://www.anaconda.com/products/individual" target="_bl
 
 ## Troubleshooting
 
+If the installation fails, don't worry, simply follow the below bellow instruction which should fix most issues. If none of this works, try using the [docker container]() and create an issue with the installation errors you got on our [Github repository](https://github.com/mindsdb/mindsdb/issues). We'll try to review the issue and give you response within a few hours.
+
+
+!!! failure "`No module named mindsdb`"
+    If you get this error, make sure that your **virtual environment**(where you installed mindsdb) is activated.
+   
 !!! failure "Installation fail"
-    Don't worry, simply follow the below bellow instruction which should fix most issues.
+    Note that **Python 64** bit version is required.
 
+!!! failure "IOError: [Errno 28] No space left on device while installing MindsDB"
+    MindsDB requires around 3GB of free disk space to install all of its dependencies.
 
-1. **Python 64** bit version is required. 
+!!! failure "Installation fail"
+    If you are using **Python 3.9** you may get installation errors. Some of the MindsDB's dependencies are not working with **Python 3.9**, so please downgrade to older versions for now. We are working on this and **Python 3.9** will be supported soon.
 
-2. If you are using **Python 3.9** you may get installation errors. Some of the MindsDB's dependencies are not working with **Python 3.9**, so please downgrade to older versions for now. We are working on this and **Python 3.9** will be supported soon.
-
-3. `No module named mindsdb`. If you get this error, make sure that your **virtual environment**(where you installed mindsdb) is activated.
-
-4. If you are using Linux install `tkinter` from your package manager in certain situations.
-    - Ubuntu/Debian: `sudo apt-get install python3-tk tk`
-    - Fedora: `sudo dnf -y install python3-tkinter`
-    - Arch: `sudo pacman -S tk`
-
-4. If none of this works, try installing mindsdb using the [docker container]() and create an issue with the installation errors you got on our  [Github repository](https://github.com/mindsdb/mindsdb/issues) and we'll try to review it within a few hours.

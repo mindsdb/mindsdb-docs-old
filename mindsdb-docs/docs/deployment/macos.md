@@ -27,7 +27,9 @@ We suggest you to install MindsDB in a virtual environment when using **pip** to
     pip freeze
     ```
 
-You should see a list with the names of installed packages.
+You should see a list with the names of installed packages:
+
+![Pip list](/assets/pipfreeze.png)
 
 # Deploy using Anaconda
 
@@ -60,17 +62,22 @@ You should see a list with the names of installed packages.
 
 ## Troubleshooting
 
+If the installation fails, don't worry, simply follow the below bellow instruction which should fix most issues. If none of this works, try using the [docker container]() and create an issue with the installation errors you got on our [Github repository](https://github.com/mindsdb/mindsdb/issues). We'll try to review the issue and give you response within a few hours.
+
+
+!!! failure "numpy.distutils.system_info.NotFoundError: No lapack/blas resources found. Note: Accelerate is no longer supported." 
+    Please downgrade to an older version of Python for now **3.7.x** or **3.8.x**. We are working on this, and **Python 3.9** will be supported soon.
+
 !!! failure "Installation fail"
-    Don't worry; simply follow the instructions below, which should fix most issues.
+    Note that **Python 64** bit version is required.
 
+!!! failure "Installation fails because of system dependencies"
+    Try installing MindsDB with [Anaconda](https://www.anaconda.com/products/individual), and run the installation from the **anaconda prompt**.
 
-1. If you got a `numpy.distutils.system_info.NotFoundError: No lapack/blas resources found. Note: Accelerate is no longer supported.` error when installing on macOS and you are using **Python 3.9**, please downgrade to an older version of Python for now. We are working on this, and **Python 3.9** will be supported soon.
+!!! failure "`No module named mindsdb`"
+    If you get this error, make sure that your **virtual environment**(where you installed mindsdb) is activated.
 
-2. **Python 64** bit version is required.
-
-3. If you are using macOS and got an error about system dependencies, try installing MindsDB with [Anaconda](https://www.anaconda.com/products/individual), and run the installation from the **anaconda prompt**.
-
-4. `No module named mindsdb`. If you get this error, make sure that your **virtual environment**(where you installed mindsdb) is activated.
-
-5. If none of this works, try installing mindsdb using the [docker container](/installation/docker), and create an issue with the installation errors you got on our [Github repository](https://github.com/mindsdb/mindsdb/issues) and we'll try to review it within a few hours.
+!!! failure "IOError: [Errno 28] No space left on device while installing MindsDB"
+    MindsDB requires around 3GB of free disk space to install all of its dependencies.
+  
 
