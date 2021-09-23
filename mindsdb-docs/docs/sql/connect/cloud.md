@@ -1,6 +1,6 @@
 # MindsDB Cloud as a SQL Database
 
-MindsDB Cloud provides a powerful MySQL API that allows cloud users to connect to it using any db client as mysql-client, MySQL Workbench, Dbeaver, etc. The first step to connect is to use the MindsDB Cloud user. If you haven't signup to the MindsDB Cloud follow the steps explained [here](/deployment/cloud).
+MindsDB Cloud provides a powerful MySQL API that allows cloud users to connect to it using the [MySQL Command-Line Client](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) or [DBeaver](https://dbeaver.io/). The first step to connect is to use the MindsDB Cloud user. If you haven't signup to the MindsDB Cloud follow the steps explained [here](/deployment/cloud).
 
 Open mysql client and run:
 

@@ -59,7 +59,7 @@ nav:
   - What is MindsDB: info.md
   - Deploying MindsDB:
     - Docker: deployment/docker.md
-    - From source: deployment/source.md
+    - Pip: deployment/pypi.md
     - MindsDB Cloud: deployment/cloud.md
   - Connect your data: connect.md
   - SQL:
@@ -71,15 +71,15 @@ nav:
       - Classification: 
         - Customer Churn: sql/tutorials/customer-churn.md
       - Time series: sql/tutorials/test.md
-    - Use: sql/api/use.md
-    - Create:
+    - USE: sql/api/use.md
+    - CREATE:
       - Predictor: sql/api/predictor.md
       - View: sql/api/view.md
       - Integration: sql/api/predictor.md
       - Stream: sql/api/predictor.md
-    - Drop: sql/api/drop.md
-    - Select: sql/api/select.md
-    - Publish: sql/api/publish.md
+    - DROP: sql/api/drop.md
+    - SELECT: sql/api/select.md
+    - PUBLISH: sql/api/publish.md
   - Mongo-ML:
     - Connect: mongo/connect.md
     - Tutorials:
