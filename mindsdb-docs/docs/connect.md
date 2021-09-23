@@ -34,16 +34,6 @@
 
 ![Connect to database](/assets/data/mysql.gif)
 
-#### Create new Datasource
-
-1. Click on the `NEW DATASOURCE` button.
-2. In the `Datasource from DB integration` modal window:
-    1. Add Datasource Name.
-    2. Add Database name.
-    3. Add SELECT Query (e.g. SELECT * FROM my_database)
-    4. Click on `CREATE`.
-
-![Create MySQL Datasource](/assets/data/mysql-ds.gif)
-
+After connecting MindsDB and the database you are ready to train new model using [SQL syntax](/sql/api/predictor).
 
 

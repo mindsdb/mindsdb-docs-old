@@ -1,11 +1,21 @@
-# Machine Learning in Database using SQL
+# What is MindsDB?
 
-MindsDB is an open-source predictive layer for existing databases that enables rapid prototyping & deployment of ML Models from your database. Significantly reducing the time and cost of machine learning workflows.
+MindsDB enables advanced predictive capabilities directly in the Database. This puts sophisticated machine learning techniques into the hands of those who know SQL, such as, data analysts, developers and business intelligence users without the need for a new tool or significant training. 
 
-![Machine Learning in Database using SQL](https://camo.githubusercontent.com/0a37568c84d116410e4ecb142056b0d8b66b3646105bdcb768bd3ca8c2f6da11/68747470733a2f2f6d696e647364622d7265736f75726365732e73332e616d617a6f6e6177732e636f6d2f4d696e647344422b476c75652e706e67)
+Data is the single most important ingredient in machine learning, and your data lives in a database. So why do machine learning anywhere else? 
 
 
-# From Database Tables to Machine Learning Model
+![Machine Learning in Database using SQL](/assets/mdb_image.png)
+
+## The Vision:
+
+***A world where people use intelligent databases to make better data-driven decisions.***
+
+...and we think the best way to do this is to enable this capability inside existing databases rather than to create another one. (Despite the name we are not actually a Database). 
+
+
+
+## From Database Tables to Machine Learning Models
 
 !!! info "As a quick example, think of a database that stores home rentals sqft and price:"
 
