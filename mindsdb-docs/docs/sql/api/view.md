@@ -1,5 +1,8 @@
 # CREATE VIEW statement
 
+!!! info "Work in progress"
+    Note this feature is in beta version. If you have additional questions or issues [reach out to us on Slack](https://join.slack.com/t/mindsdbcommunity/shared_invite/zt-o8mrmx3l-5ai~5H66s6wlxFfBMVI6wQ).
+
 In MindsDB, the `AI Table` is a virtual table based on the result-set of the SQL Statement that `JOINS` the table data with the models prediction. The `AI Table` can be created using the `CREATE AI table ai_table_name` statement.
 
 ```sql

@@ -1,9 +1,10 @@
 # SELECT statement
 
-The `SELECT` statement is used to get a predictons from the model table. The data is not persistent and is returned on the fly as a result-set.
+The `SELECT` statement is used to get a predictons from the model table. The data is not persistent and is returned on the fly as a result-set. The basic syntax for selecting from the model is:
 
 ```sql
-SELECT target_variable, target_variable_explain FROM model_table WHERE when_data='{"column3": "value", "column2": "value"}';
+SELECT target_variable, target_variable_explain FROM model_table 
+                                                WHERE when_data='{"column3": "value", "column2": "value"}';
 ```
 
 ## Model table columns 
@@ -21,11 +22,10 @@ The below list contains the column names of the model table. Note that `target_v
 
 {{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/classics/home_rentals/home_rentals_model.csv') }}
 
-
-
 ## SELECT example
 
-The following SQL statement selects all information from the `home_rentals_model`:
+The following SQL statement selects all information from the `home_rentals_model` for the property that has "sqft": 800, "number_of_rooms": 4, "number_of_bathrooms": 2,
+"location": "good", "days_on_market" : 12, "neighborhood": "downtown", "initial_price": "2222".
 
 
 ```sql
@@ -39,7 +39,7 @@ WHERE when_data='{"sqft": 800, "number_of_rooms": 4, "number_of_bathrooms": 2,
 ![SELECT model_name](/assets/sql/select_hr.png)
 
 
-The following SQL statement selects only the target variable `rental_price` and accuracy from the `home_rentals_model` and adds alias names:
+The following SQL statement selects only the target variable `rental_price` as `price` and the `home_rentals_model` confidence as `accuracy`:
 
 
 ```sql

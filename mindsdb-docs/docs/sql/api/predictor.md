@@ -2,10 +2,6 @@
 
 The `CREATE PREDICTOR` statement is used to train new model. The basic syntax for training the model is:
 
-* `CREATE PREDICTOR predictor_name` - where `predictor_name` is the name of the model.
-* `FROM integration_name (select column_name FROM table_name)` - where `integration_name` is the name of the [datasource](/connect/#create-new-datasource), where `(select column_name FROM table_name)` is the SELECT statement for selecting the data. If you want to change the default name of the datasource you can use the alias `as ds_name`.
-* `PREDICT column_name` - where `column_name` is the column name of the target variable. If you want to change the name of the target variable you can use the `as column_alias`.
-
 ```sql
 CREATE PREDICTOR predictor_name
 FROM integration_name 
@@ -13,9 +9,13 @@ FROM integration_name
 PREDICT column_name as column_alias;
 ```
 
+* `CREATE PREDICTOR predictor_name` - where `predictor_name` is the name of the model.
+* `FROM integration_name (select column_name FROM table_name)` - where `integration_name` is the name of the [datasource](/connect/#create-new-datasource), where `(select column_name FROM table_name)` is the SELECT statement for selecting the data. If you want to change the default name of the datasource you can use the alias `as ds_name`.
+* `PREDICT column_name` - where `column_name` is the column name of the target variable. If you want to change the name of the target variable you can use the `as column_alias`.
+
 ### Example Data
 
-The bellow database table contains prices of properties from a metropolitan area in the US.
+The bellow database table contains prices of properties from a metropolitan area in the US. This table will be used in all of the docs examples.
 
 {{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/classics/home_rentals/dataset/train.csv', nrows=5) }}
 
@@ -25,7 +25,7 @@ This example shows how you can train the Machine Learning Model called `house_pr
 
 ```sql
 CREATE PREDICTOR house_price_model
-FROM integration_name (SELECT * FROM house_rentals_data) as rentals
+FROM db_integration (SELECT * FROM house_rentals_data) as rentals
 PREDICT rental_price as price;
 ```
 
@@ -47,7 +47,7 @@ The following example trains the new `house_price_model` model which predicts th
 
 ```sql
 CREATE PREDICTOR house_price_model
-FROM integration_name (SELECT * FROM house_rentals_data) as rentals
+FROM db_integration (SELECT * FROM house_rentals_data) as rentals
 PREDICT rental_price as price
 ORDER BY days_on_market ASC;
 ```
@@ -58,7 +58,7 @@ The following example trains the new `house_price_model` model which predicts th
 
 ```sql
 CREATE PREDICTOR house_price_model
-FROM integration_name (SELECT * FROM house_rentals_data) as rentals
+FROM db_integration (SELECT * FROM house_rentals_data) as rentals
 PREDICT rental_price as price
 ORDER BY days_on_market DESC;
 ```
@@ -81,7 +81,7 @@ The following example trains the new `house_price_model` model which predicts th
 
 ```sql
 CREATE PREDICTOR house_price_model
-FROM integration_name 
+FROM db_integration 
 (SELECT * FROM house_rentals_data) as rentals
 PREDICT rental_price as price
 GROUP BY location;
@@ -92,10 +92,10 @@ GROUP BY location;
 The `USING` keyword accepts arguments as a JSON format where additional arguments can be provided to the `CREATE PREDICTOR` statement as:
 
 * `stop_train_in_x_seconds` - Stop model training after X seconds.
-* `use_gpu` - Switch between training on CPU or GPU(true|false).
+* `use_gpu` - Switch between training on CPU or GPU(True|False).
 * `sample_margin_of_error` - The ammount of random sampling error in results (0 - 1)
 * `ignore_columns` - Columns to be removed from the model training.
-* `is_timeseries` - Training from time series data (True - False).
+* `is_timeseries` - Training from time series data (True|False).
 
 ```sql
 CREATE PREDICTOR predictor_name
@@ -111,21 +111,21 @@ The following example trains the new `house_price_model` model which predicts th
 
 ```sql
 CREATE PREDICTOR house_price_model
-FROM integration_name 
+FROM db_integration 
 (SELECT * FROM house_rentals_data) as rentals
 PREDICT rental_price as price
 USING {"ignore_columns": "number_of_bathrooms"}
 ```
 
-
-
 ## Time Series keywords
 
-If you are training a timeseries model, MindsDB provides additional keywords. The `WINDOW` keyword specifies the number of rows to "look back" into when making a prediction after the rows are ordered by the order_by column and split into groups. Could be used to specify something like "Always use the previous 10 rows". The `HORIZON` keyword specifies the number of future predictions. 
+To train a timeseries model, MindsDB provides additional keywords.
+* `WINDOW` - keyword specifies the number of rows to "look back" into when making a prediction after the rows are ordered by the order_by column and split into groups. Could be used to specify something like "Always use the previous 10 rows". 
+* `HORIZON` - keyword specifies the number of future predictions. 
 
 ```sql
 CREATE PREDICTOR predictor_name
-FROM integration_name 
+FROM db_integration 
 (SELECT column_name, column_name2 FROM table_name) as ds_name
 PREDICT column_name as column_alias
 GROUP BY column_name
