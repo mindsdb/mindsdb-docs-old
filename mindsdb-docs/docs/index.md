@@ -11,8 +11,7 @@ Data is the single most important ingredient in machine learning, and your data 
 
 ***A world where people use intelligent databases to make better data-driven decisions.***
 
-...and we think the best way to do this is to enable this capability inside existing databases rather than to create another one. (Despite the name we are not actually a Database). 
-
+We think the best strategy to do this is to enable ML capabilities for existing databases rather than to create another one. (You can think of MindsDB as Intelligence for exsiting Databases). 
 
 
 ## From Database Tables to Machine Learning Models
