@@ -1,8 +1,9 @@
 # DROP statement
 
+!!! info "Work in progress"
+    Note this feature is in beta version. If you have additional questions or issues [reach out to us on Slack](https://join.slack.com/t/mindsdbcommunity/shared_invite/zt-o8mrmx3l-5ai~5H66s6wlxFfBMVI6wQ).
+    
 The `DROP` statement is used to delete an existing model table or delete datasource integration.
-
-
 
 ## DROP TABLE statement
 
