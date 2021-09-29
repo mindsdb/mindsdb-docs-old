@@ -10,7 +10,7 @@ PREDICT column_name as column_alias;
 ```
 
 * `CREATE PREDICTOR predictor_name` - where `predictor_name` is the name of the model.
-* `FROM integration_name (select column_name FROM table_name)` - where `integration_name` is the name of the [datasource](/connect/#create-new-datasource), where `(select column_name FROM table_name)` is the SELECT statement for selecting the data. If you want to change the default name of the datasource you can use the alias `as ds_name`.
+* `FROM integration_name (select column_name, column_name2 FROM table_name)` - where `integration_name` is the name of the [datasource](/connect/#create-new-datasource), where `(select column_name, column_name2 FROM table_name)` is the SELECT statement for selecting the data. If you want to change the default name of the datasource you can use the alias `as ds_name`.
 * `PREDICT column_name` - where `column_name` is the column name of the target variable. If you want to change the name of the target variable you can use the `as column_alias`.
 
 ### Example Data
@@ -120,6 +120,7 @@ USING {"ignore_columns": "number_of_bathrooms"}
 ## Time Series keywords
 
 To train a timeseries model, MindsDB provides additional keywords.
+
 * `WINDOW` - keyword specifies the number of rows to "look back" into when making a prediction after the rows are ordered by the order_by column and split into groups. Could be used to specify something like "Always use the previous 10 rows". 
 * `HORIZON` - keyword specifies the number of future predictions. 
 

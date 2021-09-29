@@ -1,6 +1,11 @@
 # MindsDB Cloud as a SQL Database
 
-MindsDB Cloud provides a powerful MySQL API that allows cloud users to connect to it using the [MySQL Command-Line Client](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) or [DBeaver](https://dbeaver.io/). The first step to connect is to use the MindsDB Cloud user. If you haven't signup to the MindsDB Cloud follow the steps explained [here](/deployment/cloud).
+MindsDB Cloud provides a powerful MySQL API that allows cloud users to connect to it. The first step to connect is to use the MindsDB Cloud user. If you haven't signup to the MindsDB Cloud follow the steps explained [here](/deployment/cloud). After that you can use one of the bellow db clients:
+
+* [MySQL Command-Line Client](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) 
+* [DBeaver](https://dbeaver.io/)
+
+## MySQL client
 
 Open mysql client and run:
 
@@ -16,7 +21,24 @@ The required parameters are:
 
 ![Connect](/assets/sql/mysql-client.gif)
 
-Or, if you are using another database manager interface make sure to select Driver for MySQL 8 and later.
+
+## Dbeaver
+
+If you are using Dbeaver make sure to select Driver for MySQL 8 and later. If the driver is missing you can [download it](https://dev.mysql.com/downloads/connector/j/) and add it from the [database-drivers section](https://dbeaver.com/docs/wiki/Database-drivers/).
+
+1. From the navigation menu, click Connect to database.
+2. Search `MySQL 8+`.
+
+![Connect mysql 8](/assets/sql/dbeaver8.png)
+
+1. Select the `MySQL 8+` or `MySQL`.
+2. Click on `Next`.
+3. Add the Hostname (cloud-mysql.mindsdb.com).
+3. Add the Database name (leave empty).
+5. Add Port (3306).
+6. Add the database user (your MindsDB Cloud username).
+7. Add Password for the user (your MindsDB Cloud password).
+8. Click on `Finish`.
 
 ![Connect](/assets/sql/connectcloud.png)
 

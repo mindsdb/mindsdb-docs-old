@@ -17,25 +17,50 @@ To read more about avaiable config.json options check the [configuration docs](/
 
 ## Connect
 
-Connecting to MySQL API is the same as connecting to MySQL database. The required parameters are:
+Connecting to MySQL API is the same as connecting to MySQL database. You can use one of the bellow clients to connect:
 
-* -h, --host: Host on which MySQL API is located(default 127.0.0.1)	
-* --port: TCP/IP port number for connection(default 3306)	
-* -u, --user: MySQL user name to use when connecting(default mindsdb)	
-* -p, --password: Password to use when connecting(default no password)	
+* [MySQL Command-Line Client](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) 
+* [DBeaver](https://dbeaver.io/)
 
-Open mysql-client and run:
+
+## MySQL client
+
+Open mysql client and run:
 
 ```
 mysql -h 127.0.0.1 --port 3306 -u mindsdb -p 
 ```
 
+The required parameters are:
+
+* -h: Host name of mindsdbs mysql api (127.0.0.1).
+* --port: TCP/IP port number for connection(3306).
+* -u: MySQL user name to use when connecting(default mindsdb).
+* -p:  Password to use when connecting(default no password).
+
 ![Connect](/assets/sql/mysql-client.gif)
 
 
-Or, if you are using another database manager interface make sure to select Driver for MySQL 8 and later.
+## Dbeaver
 
-![Connect](/assets/sql/connectdb.png)
+If you are using Dbeaver make sure to select Driver for MySQL 8 and later. If the driver is missing you can [download it](https://dev.mysql.com/downloads/connector/j/) and add it from the [database-drivers section](https://dbeaver.com/docs/wiki/Database-drivers/).
+
+1. From the navigation menu, click Connect to database.
+2. Search `MySQL 8+`.
+
+![Connect mysql 8](/assets/sql/dbeaver8.png)
+
+1. Select the `MySQL 8+` or `MySQL`.
+2. Click on `Next`.
+3. Add the Hostname (127.0.0.1).
+3. Add the Database name (leave empty).
+5. Add Port (3306).
+6. Add the database user (default mindsdb).
+7. Add Password for the user (default empty).
+8. Click on `Finish`.
+
+![Connect](/assets/sql/connectcloud.png)
+
 
 ## MindsDB Database
 
