@@ -9,10 +9,10 @@ SELECT t.column_name1, t.column_name2, FROM integration_name.table AS t
 
 ## JOIN example
 
-The following SQL statement joins the home_rentals data with the home_rentals_model predicted price:
+The following SQL statement joins the `home_rentals` data with the `home_rentals_model` predicted price:
 
 ```sql
-SELECT * FROM db_integration.house_rentals_data AS t JOIN mindsdb.home_rentals AS tb 
+SELECT * FROM db_integration.house_rentals_data AS t JOIN mindsdb.home_rentals_model AS tb 
                                                        WHERE t.neighborhood in ('downtown', 'south_side');
 ```
 

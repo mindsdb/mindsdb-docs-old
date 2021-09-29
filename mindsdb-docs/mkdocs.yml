@@ -62,15 +62,10 @@ nav:
     - Pip: deployment/pypi.md
     - MindsDB Cloud: deployment/cloud.md
   - Connect your data: connect.md
-  - SQL:
-    - Connect: 
+  - Connect to MindsDB as a Database:
       - Local Deployment: sql/connect/local.md
       - MindsDB Cloud: sql/connect/cloud.md
-    - Tutorials:
-      - Regression: sql/tutorials/test.md
-      - Classification: 
-        - Customer Churn: sql/tutorials/customer-churn.md
-      - Time series: sql/tutorials/test.md
+  - SQL:
     - USE: sql/api/use.md
     - CREATE:
       - Predictor: sql/api/predictor.md
@@ -80,14 +75,11 @@ nav:
     - DROP: sql/api/drop.md
     - SELECT: sql/api/select.md
     - JOIN: sql/api/join.md
-  - Mongo-ML:
-    - Connect: mongo/connect.md
-    - Tutorials:
-      - Regression: mongo/tutorials/test.md
-      - Classification: mongo/tutorials/test.md
-      - Time series: mongo/tutorials/test.md
-  - ML from Bi Tools:
-    - Tableau: bi-tools/tableau.md
+  - Tutorials:
+    - Regression: sql/tutorials/test.md
+    - Classification: 
+      - Customer Churn: sql/tutorials/customer-churn.md
+    - Time series: sql/tutorials/test.md
   - Contribution and Community:
       - How to contribute: contribute.md
       - Join our community: community.md

@@ -21,10 +21,10 @@ The bellow database table contains prices of properties from a metropolitan area
 
 
 ### Create Predictor example
-This example shows how you can train the Machine Learning Model called `house_price_model` to predict the rentals price from the above data.
+This example shows how you can train the Machine Learning Model called `home_rentals_model` to predict the rentals price from the above data.
 
 ```sql
-CREATE PREDICTOR house_price_model
+CREATE PREDICTOR home_rentals_model
 FROM db_integration (SELECT * FROM house_rentals_data) as rentals
 PREDICT rental_price as price;
 ```
@@ -43,10 +43,10 @@ ORDER BY column_name column_name2 ASC OR DESC;
 
 ### ORDER BY ASC example
 
-The following example trains the new `house_price_model` model which predicts the `rental_price` and orders the data in ascending order by the number of days on the market.
+The following example trains the new `home_rentals_model` model which predicts the `rental_price` and orders the data in ascending order by the number of days on the market.
 
 ```sql
-CREATE PREDICTOR house_price_model
+CREATE PREDICTOR home_rentals_model
 FROM db_integration (SELECT * FROM house_rentals_data) as rentals
 PREDICT rental_price as price
 ORDER BY days_on_market ASC;
@@ -54,10 +54,10 @@ ORDER BY days_on_market ASC;
 
 ### ORDER BY DESC example
 
-The following example trains the new `house_price_model` model which predicts the `rental_price` and orders the data in descending order by the number of days on the market.
+The following example trains the new `home_rentals_model` model which predicts the `rental_price` and orders the data in descending order by the number of days on the market.
 
 ```sql
-CREATE PREDICTOR house_price_model
+CREATE PREDICTOR home_rentals_model
 FROM db_integration (SELECT * FROM house_rentals_data) as rentals
 PREDICT rental_price as price
 ORDER BY days_on_market DESC;
@@ -77,10 +77,10 @@ GROUP BY column_name;
 
 ### GROUP BY example
 
-The following example trains the new `house_price_model` model which predicts the `rental_price` and groups the data per location(good, great).
+The following example trains the new `home_rentals_model` model which predicts the `rental_price` and groups the data per location(good, great).
 
 ```sql
-CREATE PREDICTOR house_price_model
+CREATE PREDICTOR home_rentals_model
 FROM db_integration 
 (SELECT * FROM house_rentals_data) as rentals
 PREDICT rental_price as price
@@ -107,10 +107,10 @@ USING {"ignore_columns": "column_name3"}
 
 ## USING example
 
-The following example trains the new `house_price_model` model which predicts the `rental_price` and removes the number of bathrooms.
+The following example trains the new `home_rentals_model` model which predicts the `rental_price` and removes the number of bathrooms.
 
 ```sql
-CREATE PREDICTOR house_price_model
+CREATE PREDICTOR home_rentals_model
 FROM db_integration 
 (SELECT * FROM house_rentals_data) as rentals
 PREDICT rental_price as price

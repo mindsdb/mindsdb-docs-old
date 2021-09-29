@@ -24,10 +24,10 @@ The bellow table can be `JOINED` with the model trained from it as an AI Table.
 
 {{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/classics/home_rentals/dataset/train.csv', nrows=2) }}
 
-SQL Query for creating the house_price_model that predicts rental_price:
+SQL Query for creating the home_rentals_model that predicts rental_price:
 
 ```sql
-CREATE PREDICTOR house_price_model
+CREATE PREDICTOR home_rentals_model
 FROM integration_name (SELECT * FROM house_rentals_data) as rentals
 PREDICT rental_price as price;
 ```
@@ -42,6 +42,6 @@ CREATE AI table home_rentals as (
         a.location,
         p.rental_price as price
     FROM mysql_db.home_rentals as a
-    JOIN house_price_model as p 
+    JOIN home_rentals_model as p 
 );
 ```
