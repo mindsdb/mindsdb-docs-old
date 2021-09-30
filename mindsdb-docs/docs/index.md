@@ -1,6 +1,6 @@
 # What is MindsDB?
 
-MindsDB enables advanced predictive capabilities directly in the Database. This puts sophisticated machine learning techniques into the hands of those who know SQL, such as, data analysts, developers and business intelligence users without the need for a new tool or significant training. 
+MindsDB enables advanced predictive capabilities directly in your Database. This puts sophisticated machine learning techniques into the hands of anyone who knows SQL (data analysts, developers and business intelligence users) without the need for a new tool or significant training. 
 
 Data is the single most important ingredient in machine learning, and your data lives in a database. So why do machine learning anywhere else? 
 
@@ -11,12 +11,14 @@ Data is the single most important ingredient in machine learning, and your data 
 
 ***A world where people use intelligent databases to make better data-driven decisions.***
 
-We think the best strategy to do this is to enable ML capabilities for existing databases rather than to create another one. (You can think of MindsDB as Intelligence for exsiting Databases). 
+...and we believe the best way to make these decisions is to enable this capability within existing databases without the effort of creating a new one.
+
+(Despite the name we are not actually a database!)
 
 
 ## From Database Tables to Machine Learning Models
 
-!!! info "As a quick example, think of a database that stores home rentals sqft and price:"
+!!! info "As a quick example, let's consider a database that stores the SqFt and Price of Home Rentals:"
 
     ```sql
     SELECT sqft, price FROM home_rentals_table;
@@ -24,7 +26,7 @@ We think the best strategy to do this is to enable ML capabilities for existing 
 
     ![SQFT vs Price](/assets/info/sqft-price.png)
 
-!!! note "You could query the database for information in this table, and if your search criteria have a match, you get results:"
+!!! note "You query the database for information in this table and if your search criteria generates a match: you get results:"
     
 
     ```sql
@@ -33,7 +35,7 @@ We think the best strategy to do this is to enable ML capabilities for existing 
 
     ![SELECT FROM Table](/assets/info/select.png)
 
-!!! note "If there is no match for your search criteria you get empty results:"
+!!! note "If your search criteria do not generate a match - your results will be empty:"
 
     ```sql
     SELECT sqft, price FROM home_rentals_table WHERE sqft = 800;
@@ -41,7 +43,7 @@ We think the best strategy to do this is to enable ML capabilities for existing 
 
     ![SELECT FROM Table No Results](/assets/info/selectm.png)
 
-!!! tip "An ML model could be fitted to the data in the home rentals table."
+!!! tip "An ML model can be fitted to the data in the home rentals table."
 
     ```sql
     CREATE PREDICTOR  home_rentals_model TRAIN FROM home_rentals_table PREDICT price;   
@@ -49,7 +51,7 @@ We think the best strategy to do this is to enable ML capabilities for existing 
 
     ![Model](/assets/info/model.png)
 
-!!! success "An ML model could provide approximate answers for searches where there is no exact match in the income table:"
+!!! success "An ML model can provide approximate answers for searches where there is no exact match in the income table:"
     
 
     ```sql
@@ -59,6 +61,6 @@ We think the best strategy to do this is to enable ML capabilities for existing 
     ![Query model](/assets/info/query.png)
 
 
-## Getting started
+## Getting Started
 
-To start using MindsDB, check out our [Getting started guide](/info)
+To start using MindsDB, check out our [Getting Started Guide](/info)
