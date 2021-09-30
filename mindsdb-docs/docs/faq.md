@@ -2,36 +2,10 @@
 id: faq
 title: FAQ
 ---
-### Why MindsDB?
-
-We are building MindsDB, because we want to *Democratize Machine Learning*.
-If you want to learn more about why this is important and how we aim to do this, you can check out our presentation [here](https://docs.google.com/presentation/d/e/2PACX-1vTfmQfc4rV2OjepzAMsCRAK3Z0h-IbOLMx66Ao_tFAvNX6yjNv4f1AkRK31mCLmKm8DbWwz-2F0NeBQ/pub?start=false&loop=false&delayms=3000).
-
-### Who are we building MindsDB for?
-
-We are building MindsDB for all of those that can get their hands in data, and can type a few lines of code.
-
-### What are MindsDB's current Goals?
-
-MindsDB has 3 simple goals.
-
-1. Provide a way to learn and predict from data with a line of code.
-
-2. Explainable, by answering the following questions:
-* When learning:
-    * What is interesting in my data and why?
-    * When can I trust this model and why?
-    * When I should not trust this model and why?
-    * How can I improve this model?
-* When predicting:
-    * Why this prediction?
-    * Why not something else?
-
-3. Remain state of the art. Since MindsDB users are delegating the ML machinery, MindsDB should try to always generate state of the art models for the users.
 
 ### What is the roadmap?
 
-MindsDB roadmap is aimed to be aligned with our goals:
+The MindsDB roadmap is aimed to be aligned with our goals:
 
 !!! success check done
     * **versions 1.0**  
@@ -50,27 +24,19 @@ MindsDB roadmap is aimed to be aligned with our goals:
 
 ### What type of data can MindsDB learn and predict from?   
 
-We support tabular data, this is CSV, Excel, JSON, text files, pandas data frame, URLs, s3 files or MySQL, Mongo, ClickHouse, PostgreSQL data stores. For more information please see the [data sources documentation](/features/DataSources/).
+We support tabular data formats as a CSV, Excel, JSON, text files also pandas data frame, URLs, s3 files. We support the following database integration:
 
-### How does it work? 
 
-In very simple terms, MindsDB follows the following steps:
-
- * **to learn**:
-    * break data source intro train, test, validate
-    * transform data source into tensors
-    * build and train encoders (if necessary)
-    * produce a neural network based model that can take in the input tensor and produce the target tensor
-    * break train data into batches and try learning a model that can fit the target
-      * test and validate until model convergence
-    * store metadata about the most fit model
- * **to predict**:
-    * transform question data into input tensor
-    * load most fit model
-    * run input tensor into model
-    * transform output tensor into readable output
-
-You can learn more about the internals of mindsdb [here](/InsideMindsDB/).
+| SQL | NoSQL | Streams | Data Warehouse|
+|-| -| -| -|
+| <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white" alt="Connect MySQL"></a> | <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="Connect MongoDB"></a> | <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/redis-%23DD0031.svg?&style=for-the-badge&logo=redis&logoColor=white" alt="Connect Redis"></a> | <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/Snowflake-35aedd?style=for-the-badge&logo=snowflake&logoColor=blue" alt="Connect Snowflake"></a> |
+| <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="Connect PostgreSQL"></a> | <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/ScyllaDB-F4F5FF?style=for-the-badge&logo=scylladb&logoColor=white" alt="Connect ScyllaDB"></a>  |  <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/Apache Kafka-808080?style=for-the-badge&logo=apache-kafka&logoColor=white" alt="Connect Kafka"></a> | -|
+| <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white" alt="Connect MariaDB"></a> | -| -| -|
+| <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/Clickhouse-e6e600?style=for-the-badge&logo=clickhouse&logoColor=white" alt="Connect Clickhouse"></a> |-| -| -|
+| <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/Cassandra-1287B1?style=for-the-badge&logo=apache%20cassandra&logoColor=white" alt="Connect Cassandra"></a> |-| -| -|
+| <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/Microsoft%20SQL%20Sever-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white" alt="Connect SQL Server"></a> | -| -| -|
+| <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/Singlestore-5f07b4?style=for-the-badge&logo=singlestore&logoColor=white" alt="Connect Singlestore"></a> | -| -| -|
+| <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/CockroachDB-585AF4?style=for-the-badge&logo=cockroachdb&logoColor=white" alt="Connect CockroachDB"></a> | -| -| -|
 
 ### How can I help?
 
@@ -86,7 +52,7 @@ You can help in the following ways:
 
 Well, as most names, we needed one, we like science fiction and the [culture series](https://en.wikipedia.org/wiki/The_Culture_(series)), where there are these AI super smart entities called Minds.
 
-How about the DB part?. Although in the future we will support all kinds of data, currently our objective is to add intelligence to existing data stores/databases, hence the term DB.
+How about the DB part? Although in the future we will support all kinds of data, currently our objective is to add intelligence to existing data stores/databases, hence the term DB.
 As to becoming a **Mind** to your **DB**.
 
 Why the bear? Who *doesn't* like bears! Anyway, a bear for UC Berkeley where this all was initially coded.

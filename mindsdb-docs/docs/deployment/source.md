@@ -1,11 +1,11 @@
-# Install MindsDB from the source code
+# Deploy from the source code
 
-This section describes how to install MindsDB from the source code. This is the prefered way to install MindsDB if you want to contribute to our code or simply to debug MindsDB.
+This section describes how to deploy MindsDB from the source code. This is the prefered way to use MindsDB if you want to contribute to our code or simply to debug MindsDB.
 
 ## Prerequisite
 
 !!! warning "Python 3.9"
-    Currently, some of our dependencies have issues with the latest versions of Python 3.9.x. For now, our suggestion is to use Python 3.6.x, 3.7.x, or 3.8.x versions.
+    Currently, some of our dependencies have issues with the latest versions of Python 3.9.x. For now, our suggestion is to use Python 3.7.x, or 3.8.x versions.
 
 * [Python version](https://www.python.org/downloads/) >=3.6 (64 bit) and pip version >= 19.3.
 * [Pip](https://pip.pypa.io/en/stable/installing/) (is usually pre-installed with the latest Python versions).
@@ -61,6 +61,5 @@ python -m mindsdb
     This type of error can occur if you skipped the 3rd step. Make sure that you install all of the MindsDB requirements.
 
 !!! failure "This site can’t be reached. 127.0.0.1 refused to connect."
-    Please check the MindsDB server console in case the server is still in the `starting` phase. If the server has started and there is an error displayed, please
-    report it on our [GitHub](https://github.com/mindsdb/mindsdb/issues).
+    Please check the MindsDB server console in case the server is still in the `starting` phase. If the server has started and there is an error displayed, please report it on our [GitHub](https://github.com/mindsdb/mindsdb/issues).
 

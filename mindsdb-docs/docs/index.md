@@ -1,60 +1,66 @@
----
-id: installing-mindsdb
-title: Getting started
----
+# What is MindsDB?
 
-# Getting started
+MindsDB enables advanced predictive capabilities directly in your Database. This puts sophisticated machine learning techniques into the hands of anyone who knows SQL (data analysts, developers and business intelligence users) without the need for a new tool or significant training. 
 
-MindsDB is an open-source AI layer for existing databases that allows you to effortlessly develop, train and deploy state-of-the-art machine learning models using SQL queries. With MindsDB any developer, analyst or data scientist can automatically build and deploy Machine Learning models from inside the databases in minutes using a graphical user interface or plain SQL.
-
-## Installation
-
-There are a few options to install MindsDB on different operating systems. To find the one that works the best for you, check out the below links.
-
-!!! tip "Recommended"
-    Our suggestion is to always use Docker as the most stable and easy way because it encapsulates all of the dependencies that MindsDB Server needs.
-
-=== "Docker"
-
-    !!! info "Installation"
-        Follow the [Docker installation](/installation/docker) instructions.
-
-=== "Windows"
-
-    !!! info "Installation"
-        Follow the [Windows installation](/installation/windows) instructions.
-
-=== "Linux"
-
-    !!! info "Installation"
-        Follow the [Linux installation](/installation/linux) instructions.
-
-=== "macOS"
-
-    !!! info "Installation"
-        Follow the [macOS installation](/installation/macos) instructions.
-
-=== "Source"
-
-    !!! info "Installation"
-        Follow the from [source installation](/installation/source) instructions.
+Data is the single most important ingredient in machine learning, and your data lives in a database. So why do machine learning anywhere else? 
 
 
-## Tutorials
+![Machine Learning in Database using SQL](/assets/mdb_image.png)
 
-* [AiTables in MySQL](/tutorials/mysql)
-* [AiTables in MariaDB](/tutorials/mariadb)
-* [AiTables in PostgreSQL](/tutorials/postgresql)
-* [AiTables in ClickHouse](/tutorials/clickhouse)
-* [AiTables in SQL Server](/tutorials/microsoft-sql-server)
+## The Vision:
 
-## Contribute to MindsDB
+***A world where people use intelligent databases to make better data-driven decisions.***
 
-* [Became a contributor to MindsDB](/contribute)
-* [Join MindsDB community](/community)
+...and we believe the best way to make these decisions is to enable this capability within existing databases without the effort of creating a new one.
 
-## Useful links
+(Despite the name we are not actually a database!)
 
- * <a href="https://apidocs.mindsdb.com/" target="_blank">MindsDB APIs documentation</a>
- * <a href="https://mindsdb.com/contact-us/" target="_blank">Get in touch</a>
- 
+
+## From Database Tables to Machine Learning Models
+
+!!! info "As a quick example, let's consider a database that stores the SqFt and Price of Home Rentals:"
+
+    ```sql
+    SELECT sqft, price FROM home_rentals_table;
+    ```
+
+    ![SQFT vs Price](/assets/info/sqft-price.png)
+
+!!! note "You query the database for information in this table and if your search criteria generates a match: you get results:"
+    
+
+    ```sql
+    SELECT sqft, price FROM home_rentals_table WHERE sqft = 900;
+    ```
+
+    ![SELECT FROM Table](/assets/info/select.png)
+
+!!! note "If your search criteria do not generate a match - your results will be empty:"
+
+    ```sql
+    SELECT sqft, price FROM home_rentals_table WHERE sqft = 800;
+    ```
+
+    ![SELECT FROM Table No Results](/assets/info/selectm.png)
+
+!!! tip "An ML model can be fitted to the data in the home rentals table."
+
+    ```sql
+    CREATE PREDICTOR  home_rentals_model TRAIN FROM home_rentals_table PREDICT price;   
+    ```
+
+    ![Model](/assets/info/model.png)
+
+!!! success "An ML model can provide approximate answers for searches where there is no exact match in the income table:"
+    
+
+    ```sql
+    SELECT sqft, price FROM home_rentals_model WHERE sqft = 800;
+    ```
+
+    ![Query model](/assets/info/query.png)
+
+
+## Getting Started
+
+To start using MindsDB, check out our [Getting Started Guide](/info)
