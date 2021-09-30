@@ -1,12 +1,12 @@
 # MindsDB as a SQL Database
 
-MindsDB provides a powerful MySQL API that allows to the users to connect to it using the [MySQL Command-Line Client](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) or [DBeaver](https://dbeaver.io/). By default, MindsDB Server will start the HTTP and MySQL APIs. If you want to run only the MySQL API provide that as a parameter on the server start:
+MindsDB provides a powerful MySQL API that allows users to connect to it using the [MySQL Command-Line Client](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) or [DBeaver](https://dbeaver.io/). By default, MindsDB Server will start the HTTP and MySQL APIs. If you want to run only the MySQL API you can provide that as a parameter on the server start:
 
 ```
 python3 -m mindsdb --api=mysql
 ```
 
-This will start MySQL API on a `127.0.0.1:47335` with the `mindsdb` as a default user and create a `mindsdb` database. To change the deafult parameters you need to extend the MindsDBs `config.json` or create another config and send it as a parameter to the serve start command as:
+This will start MySQL API on a `127.0.0.1:47335` with `mindsdb` as default user and create a `mindsdb` database. To change the deafult parameters you need to extend the MindsDBs `config.json` or create another config and send it as a parameter to the serve start command as:
 
 ```
 python3 -m mindsdb --api=mysql --config=config.json
@@ -17,7 +17,7 @@ To read more about avaiable config.json options check the [configuration docs](/
 
 ## Connect
 
-Connecting to MySQL API is the same as connecting to MySQL database. You can use one of the bellow clients to connect:
+Connecting to MySQL API is the same as connecting to a MySQL database. You can use one of the bellow clients to connect:
 
 * [MySQL Command-Line Client](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) 
 * [DBeaver](https://dbeaver.io/)
@@ -43,7 +43,7 @@ The required parameters are:
 
 ## Dbeaver
 
-If you are using Dbeaver make sure to select Driver for MySQL 8 and later. If the driver is missing you can [download it](https://dev.mysql.com/downloads/connector/j/) and add it from the [database-drivers section](https://dbeaver.com/docs/wiki/Database-drivers/).
+If you are using Dbeaver make sure to select Driver for MySQL 8 or later. If the driver is missing you can [download it](https://dev.mysql.com/downloads/connector/j/) and add it from the [database-drivers section](https://dbeaver.com/docs/wiki/Database-drivers/).
 
 1. From the navigation menu, click Connect to database.
 2. Search `MySQL 8+`.
@@ -59,21 +59,21 @@ If you are using Dbeaver make sure to select Driver for MySQL 8 and later. If th
 7. Add Password for the user (default empty).
 8. Click on `Finish`.
 
-![Connect](/assets/sql/connectcloud.png)
+![Connect](/assets/sql/dbeaver-local.png)
 
 
 ## MindsDB Database
 
-On the start mindsdb database will contain 2 tables `predictors` and `commands`. 
+On startup the mindsdb database will contain 2 tables `predictors` and `commands`. 
 
 ![Connect](/assets/sql/show.png)
 
-All of the new trained machine learning models will be vissible as a new record inside the `predictors` table. The `predictors` columns contains information about each model as:
+All of the newly trained machine learning models will be visible as a new record inside the `predictors` table. The `predictors` columns contains information about each model as:
 
 * name - The name of the model.
 * status - Training stauts(training, complete, error).
 * accuracy - The model accuracy.
-* predict - The name of the target varaibale.
+* predict - The name of the target variable.
 * select_data_query - SQL select query to create the datasource.
-* external_datasource - Name of the pre existing datasource created from GUI.
-* training options - Additional training parameters. The full list can be found at [PredictorInterface docs](/PredictorInterface/#learn).
+* external_datasource - Name of the pre-existing datasource created from GUI.
+* training options - Additional training parameters. The full list can be found at [Predictor Interface docs](/PredictorInterface/#learn).

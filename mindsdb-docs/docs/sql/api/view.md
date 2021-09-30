@@ -20,7 +20,7 @@ CREATE AI table ai_table_name as (
 
 ## Example view
 
-The bellow table can be `JOINED` with the model trained from it as an AI Table. 
+The below table can be `JOINED` with the model trained from it as an AI Table. 
 
 {{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/classics/home_rentals/dataset/train.csv', nrows=2) }}
 

@@ -2,13 +2,13 @@ MindsDB as a Machine Learning framework can help marketing, sales, and customer 
 
 In this tutorial you will learn how to use SQL queries to train a machine learning model and make predictions in three simple steps:
 
-1. Connect a database with customers' data to MindsDB.
+1. Connect a database with customer's data to MindsDB.
 2. Use an `CREATE PREDICTOR` statement to train the machine learning model automatically.
 3. Query predictions with a simple `SELECT` statement from MindsDB `AI Table` (this special table returns data from an ML model upon being queried).
 
-Using SQL to perform machine learning at the data layer will bring you many benefits like removing unnecessary ETL-ing, seamless integration with your data, and enabling predictive analytics in your BI tool.  Let's see how this works with real world example to predict the probability of churn for a new customer of a telecom company.
+Using SQL to perform machine learning at the data layer will bring you many benefits like removing unnecessary ETL-ing, seamless integration with your data, and enabling predictive analytics in your BI tool.  Let's see how this works with a real world example to predict the probability of churn for a new customer of a telecom company.
 
-> Note that you can follow up on this tutorial by connecting to your own database and using different data - the same workflow applies to most machine learning use cases.
+> Note: You can follow up this tutorial by connecting to your own database and using different data - the same workflow applies to most machine learning use cases.
 
 ## Pre-requisites
 
@@ -24,7 +24,7 @@ First, we need to connect MindsDB to the database where the Customer Churn data 
 * Host - database host name
 * Port - database port
 * Username - database user
-* Password - users password
+* Password - user's password
 
 ![Connect to DB](/assets/sql/tutorials/connect.gif)
 
@@ -32,7 +32,7 @@ Then, click on CONNECT. The next step is to use the MySQL client to connect to M
 
 ## Connect to MindsDB’s MySQL API
 
-I will use mysql command line client in the next part of the tutorial but you can follow up with the one that works the best for you, like Dbeaver. The first step we need to do is to use the MindsDB Cloud user to connect to the MySQL API:
+I will use a mysql command line client in the next part of the tutorial but you can follow up with the one that works the best for you, like Dbeaver. The first step is to use the MindsDB Cloud user to connect to the MySQL API:
 
 ```
 mysql -h cloud-mysql.mindsdb.com --port 3306 -u theusername@mail.com -p
@@ -43,7 +43,7 @@ In the above command, we specify the hostname and user name explicitly, as well 
 
 ![Connect mysql-client](/assets/sql/tutorials/connect.png)
 
-If you got the above screen that means you have successfully connected. If you have an authentication error, please make sure you are providing the email you have used to create an account on MindsDB Cloud.
+If you got the above screen that means you have successfully connected. If you have an authentication error, please make sure you are providing the email address you have used to create an account on MindsDB Cloud.
 
 ### Data Overview
 
