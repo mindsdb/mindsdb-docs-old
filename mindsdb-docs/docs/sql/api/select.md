@@ -1,6 +1,6 @@
 # SELECT statement
 
-The `SELECT` statement is used to get a predictons from the model table. The data is not persistent and is returned on the fly as a result-set. The basic syntax for selecting from the model is:
+The `SELECT` statement is used to get a predictions from the model table. The data is not persistent and is returned on the fly as a result-set. The basic syntax for selecting from the model is:
 
 ```sql
 SELECT target_variable, target_variable_explain FROM model_table 
@@ -9,7 +9,7 @@ SELECT target_variable, target_variable_explain FROM model_table
 
 ## Model table columns 
 
-The below list contains the column names of the model table. Note that `target_varaiable_` will be the name of the target variable column.
+The below list contains the column names of the model table. Note that `target_variable_` will be the name of the target variable column.
 
 * target_variable_original - The original value of the target variable.
 * target_variable_min - Lower bound of the predicted value.

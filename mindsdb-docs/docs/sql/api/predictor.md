@@ -15,7 +15,7 @@ PREDICT column_name as column_alias;
 
 ### Example Data
 
-The bellow database table contains prices of properties from a metropolitan area in the US. This table will be used in all of the docs examples.
+The below database table contains prices of properties from a metropolitan area in the US. This table will be used in all of the docs examples.
 
 {{ read_csv('https://raw.githubusercontent.com/mindsdb/mindsdb-examples/master/classics/home_rentals/dataset/train.csv', nrows=5) }}
 
@@ -31,7 +31,7 @@ PREDICT rental_price as price;
 
 ## ORDER BY keyword
 
-The `ORDER BY` keyword is used to order the data by descending(DESC) or ascending(ASC) order. The default order will always be `ASC`
+The `ORDER BY` keyword is used to order the data by descending (DESC) or ascending (ASC) order. The default order will always be `ASC`
 
 ```sql
 CREATE PREDICTOR predictor_name
@@ -77,7 +77,7 @@ GROUP BY column_name;
 
 ### GROUP BY example
 
-The following example trains the new `home_rentals_model` model which predicts the `rental_price` and groups the data per location(good, great).
+The following example trains the new `home_rentals_model` model which predicts the `rental_price` and groups the data per location (good,great).
 
 ```sql
 CREATE PREDICTOR home_rentals_model
@@ -92,8 +92,8 @@ GROUP BY location;
 The `USING` keyword accepts arguments as a JSON format where additional arguments can be provided to the `CREATE PREDICTOR` statement as:
 
 * `stop_train_in_x_seconds` - Stop model training after X seconds.
-* `use_gpu` - Switch between training on CPU or GPU(True|False).
-* `sample_margin_of_error` - The ammount of random sampling error in results (0 - 1)
+* `use_gpu` - Switch between training on CPU or GPU (True|False).
+* `sample_margin_of_error` - The amount of random sampling error in results (0 - 1)
 * `ignore_columns` - Columns to be removed from the model training.
 * `is_timeseries` - Training from time series data (True|False).
 
@@ -121,7 +121,7 @@ USING {"ignore_columns": "number_of_bathrooms"}
 
 To train a timeseries model, MindsDB provides additional keywords.
 
-* `WINDOW` - keyword specifies the number of rows to "look back" into when making a prediction after the rows are ordered by the order_by column and split into groups. Could be used to specify something like "Always use the previous 10 rows". 
+* `WINDOW` - keyword specifies the number of rows to "look back" into when making a prediction after the rows are ordered by the order_by column and split into groups. This could be used to specify something like "Always use the previous 10 rows". 
 * `HORIZON` - keyword specifies the number of future predictions. 
 
 ```sql

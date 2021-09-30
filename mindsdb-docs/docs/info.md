@@ -43,11 +43,7 @@ There are a few options to deploy MindsDB on different operating systems. To fin
 
 ## Tutorials
 
-* [AiTables in MySQL](/tutorials/mysql)
-* [AiTables in MariaDB](/tutorials/mariadb)
-* [AiTables in PostgreSQL](/tutorials/postgresql)
-* [AiTables in ClickHouse](/tutorials/clickhouse)
-* [AiTables in SQL Server](/tutorials/microsoft-sql-server)
+* [Customer Churn](/tutorials/customer-churn/)
 
 ## Contribute to MindsDB
 
