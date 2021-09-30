@@ -28,6 +28,21 @@ CREATE PREDICTOR home_rentals_model
 FROM db_integration (SELECT * FROM house_rentals_data) as rentals
 PREDICT rental_price as price;
 ```
+### SELECT Predictor status
+
+After you run the `CREATE Predictor` statement, you can check the status of the training model, by selecting from `mindsdb.predictors` table:
+
+```
+SELECT * FROM mindsdb.predictors WHERE name='predictor_name';
+```
+
+### SELECT Predictor example
+
+To check the training status for the `home_rentals_model` run:
+
+```
+SELECT * FROM mindsdb.predictors WHERE name='home_rentals_model';
+```
 
 ## ORDER BY keyword
 
