@@ -1,10 +1,10 @@
 # Contribute to MindsDB :bear:
 
-Thank you for your interest in contributing to MindsDB. MindsDB is free open source software, and all types of contributions are welcome, whether they’re documentation changes, bug reports, bug fixes or new source code changes.
+Thank you for your interest in contributing to MindsDB. MindsDB is free, open source software, and all types of contributions are welcome, whether they’re documentation changes, bug reports, bug fixes or new source code changes.
 
 ## Report issue :loudspeaker:
 
-We use [GitHub issues](https://github.com/mindsdb/mindsdb/issues) to track bugs and features. Report them by opening a new issue and fill out all of the required inputs: `Your Python version`, `MindsDB version`, `Describe the bug` and `Steps to reproduce`.
+We use [GitHub issues](https://github.com/mindsdb/mindsdb/issues) to track bugs and features. Report them by opening a new issue and complete out all of the required inputs: `Your Python version`, `MindsDB version`, `Describe the bug` and `Steps to reproduce`.
 
 ![Github Issue](/assets/report-issue.gif)
 

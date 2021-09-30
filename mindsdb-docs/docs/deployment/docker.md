@@ -1,12 +1,12 @@
 # Deploy using Docker
 
-You can use MindsDBs Docker container assuming that you have <a href="https://docs.docker.com/install" target="_blank">docker</a> installed on your machine. To make sure Docker is successfully installed on your machine, run:
+To use MindsDB's Docker Container you first need to have <a href="https://docs.docker.com/install" target="_blank">Docker</a> installed on your machine. To make sure Docker is successfully installed on your machine, run:
 
 ```
 docker run hello-world
 ```
 
-You should see the `Hello from Docker!` message displayed. If not, check the <a href="https://www.docker.com/get-started" target="_blank">get started</a> documentation.
+You should see the `Hello from Docker!` message displayed. If not, check the <a href="https://www.docker.com/get-started" target="_blank">Get Started</a> documentation.
 
 
 ### MindsDB container
@@ -29,7 +29,7 @@ docker pull mindsdb/mindsdb_beta
 
 #### Publish ports
 
-By default, when you run the MindsDB container, it does not publish any of its ports. To make the ports avaiable you must run the container by providing `-p` flag as:
+By default, when you run the MindsDB container, it does not publish any of its ports. To make the ports available you must run the container by providing `-p` flag as:
 
 * `-p 47334:47334` - Map 47734 port which is used by the MindsDB GUI and the HTTP API. 
 * `-p 47335:47335` - Map 47335 to use MindsDB MySQL API.
@@ -48,7 +48,7 @@ docker run -p 47334:47334 mindsdb/mindsdb
 That's it. MindsDB should automatically start the Studio on your default browser.
 
 !!! warning "MKL Issues"
-	Note that If you experience issue related to MKL or if training process does not finish, please add env var or start Docker with this command:
+	Note. If you experience any issue related to MKL or if your training process does not complete, please add env var or starter Docker with this command:
 	```
 	docker run --env MKL_SERVICE_FORCE_INTEL=1 -it -p 47334:47334 mindsdb/mindsdb
 	```

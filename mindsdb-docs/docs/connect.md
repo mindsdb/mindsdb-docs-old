@@ -2,7 +2,7 @@
 
 !!! tip "The recommended way to connect MindsDB to your data store is through MindsDB Studio."
     
-    Bellow you can find the list with the current supported integrations.
+    Below is a list of all the integrations we currently support:
 
     | SQL | NoSQL | Streams | Data Warehouse|
     |-| -| -| -|
@@ -15,8 +15,7 @@
     | <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/Singlestore-5f07b4?style=for-the-badge&logo=singlestore&logoColor=white" alt="Connect Singlestore"></a> | -| -| -|
     | <a href="https://docs.mindsdb.com/"><img src="https://img.shields.io/badge/CockroachDB-585AF4?style=for-the-badge&logo=cockroachdb&logoColor=white" alt="Connect CockroachDB"></a> | -| -| -|
 
-    If you want to connect without using the MindsDB Studio, [here]((datasources/configuration/#extending-default-configuration)) you can find the specific database configuration example.
-
+    If you want to connect without using the MindsDB Studio, you can find the specific database configuration examples [here](/datasources/configuration/#extending-default-configuration).
 
 #### Connect to database
 
@@ -31,7 +30,6 @@
     6. Add the database user.
     7. Add Password for the user.
     8. Click on `CONNECT`.
-
 
 ![Connect to database](/assets/data/mysql.gif)
 
