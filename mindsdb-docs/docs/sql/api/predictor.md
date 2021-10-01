@@ -44,6 +44,55 @@ To check the training status for the `home_rentals_model` run:
 SELECT * FROM mindsdb.predictors WHERE name='home_rentals_model';
 ```
 
+
+## USING keyword
+
+The `USING` keyword accepts arguments as a JSON format where additional arguments can be provided to the `CREATE PREDICTOR` statement as:
+
+* `stop_train_in_x_seconds` - Stop model training after X seconds.
+* `use_gpu` - Switch between training on CPU or GPU (True|False).
+* `sample_margin_of_error` - The amount of random sampling error in results (0 - 1)
+* `ignore_columns` - Columns to be removed from the model training.
+* `is_timeseries` - Training from time series data (True|False).
+
+```sql
+CREATE PREDICTOR predictor_name
+FROM integration_name 
+(SELECT column_name, column_name2 FROM table_name) as ds_name
+PREDICT column_name as column_alias
+USING {"ignore_columns": "column_name3"}
+```
+
+## USING example
+
+The following example trains the new `home_rentals_model` model which predicts the `rental_price` and removes the number of bathrooms.
+
+```sql
+CREATE PREDICTOR home_rentals_model
+FROM db_integration 
+(SELECT * FROM house_rentals_data) as rentals
+PREDICT rental_price as price
+USING {"ignore_columns": "number_of_bathrooms"}
+```
+
+## Time Series keywords
+
+To train a timeseries model, MindsDB provides additional keywords.
+
+* `WINDOW` - keyword specifies the number of rows to "look back" into when making a prediction after the rows are ordered by the order_by column and split into groups. This could be used to specify something like "Always use the previous 10 rows". 
+* `HORIZON` - keyword specifies the number of future predictions. 
+
+```sql
+CREATE PREDICTOR predictor_name
+FROM db_integration 
+(SELECT column_name, column_name2 FROM table_name) as ds_name
+PREDICT column_name as column_alias
+GROUP BY column_name
+WINDOW 10
+HORIZON 7;
+USING {"is_timeseries": "Yes"}
+```
+
 ## ORDER BY keyword
 
 The `ORDER BY` keyword is used to order the data by descending (DESC) or ascending (ASC) order. The default order will always be `ASC`
@@ -100,52 +149,4 @@ FROM db_integration
 (SELECT * FROM house_rentals_data) as rentals
 PREDICT rental_price as price
 GROUP BY location;
-```
-
-## USING keyword
-
-The `USING` keyword accepts arguments as a JSON format where additional arguments can be provided to the `CREATE PREDICTOR` statement as:
-
-* `stop_train_in_x_seconds` - Stop model training after X seconds.
-* `use_gpu` - Switch between training on CPU or GPU (True|False).
-* `sample_margin_of_error` - The amount of random sampling error in results (0 - 1)
-* `ignore_columns` - Columns to be removed from the model training.
-* `is_timeseries` - Training from time series data (True|False).
-
-```sql
-CREATE PREDICTOR predictor_name
-FROM integration_name 
-(SELECT column_name, column_name2 FROM table_name) as ds_name
-PREDICT column_name as column_alias
-USING {"ignore_columns": "column_name3"}
-```
-
-## USING example
-
-The following example trains the new `home_rentals_model` model which predicts the `rental_price` and removes the number of bathrooms.
-
-```sql
-CREATE PREDICTOR home_rentals_model
-FROM db_integration 
-(SELECT * FROM house_rentals_data) as rentals
-PREDICT rental_price as price
-USING {"ignore_columns": "number_of_bathrooms"}
-```
-
-## Time Series keywords
-
-To train a timeseries model, MindsDB provides additional keywords.
-
-* `WINDOW` - keyword specifies the number of rows to "look back" into when making a prediction after the rows are ordered by the order_by column and split into groups. This could be used to specify something like "Always use the previous 10 rows". 
-* `HORIZON` - keyword specifies the number of future predictions. 
-
-```sql
-CREATE PREDICTOR predictor_name
-FROM db_integration 
-(SELECT column_name, column_name2 FROM table_name) as ds_name
-PREDICT column_name as column_alias
-GROUP BY column_name
-WINDOW 10
-HORIZON 7;
-USING {"is_timeseries": "Yes"}
 ```

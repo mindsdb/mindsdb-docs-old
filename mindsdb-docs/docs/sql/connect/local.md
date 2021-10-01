@@ -17,6 +17,9 @@ To read more about avaiable config.json options check the [configuration docs](/
 
 ## Connect
 
+!!! tip "Connecting to the localhost"
+    Make sure you always use 127.0.0.1 locally instead of localhost as a hostname.
+
 Connecting to MySQL API is the same as connecting to a MySQL database. You can use one of the bellow clients to connect:
 
 * [MySQL Command-Line Client](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) 

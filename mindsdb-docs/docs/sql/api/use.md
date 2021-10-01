@@ -1,6 +1,6 @@
 # USE statement
 
-The `use datasource_name` statement provides an option to use the connected datasources and `SELECT` from the database tables. Even if you are connecting to MindsDB as MySQL database, you will still be able to preview or `SELECT` from your database. 
+The `use integration_name` statement provides an option to use the connected datasources and `SELECT` from the database tables. Even if you are connecting to MindsDB as MySQL database, you will still be able to preview or `SELECT` from your database. 
 If you haven't created a datasource after connecting to your database check out the simple steps explained [here](/connect/#create-new-datasource).
 
 
@@ -9,7 +9,7 @@ If you haven't created a datasource after connecting to your database check out 
 To connect to your database `use` the created datasource: 
 
 ```sql
-use datasource_name
+use integration_name
 ```
 
 Then, simply `SELECT` from the tables:
