@@ -33,6 +33,9 @@
 
 ![Connect to database](/assets/data/mysql.gif)
 
+!!! tip "Required inputs"
+    Note: For different type of database there could be different required inputs you need to provide.
+
 After connecting MindsDB and the database, use your SQL client to [connect to MindsDB as a database](/sql/connect/cloud/).
 
 

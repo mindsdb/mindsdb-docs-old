@@ -46,7 +46,7 @@ Data is the single most important ingredient in machine learning, and your data 
 !!! tip "An ML model can be fitted to the data in the home rentals table."
 
     ```sql
-    CREATE PREDICTOR  home_rentals_model TRAIN FROM home_rentals_table PREDICT price;   
+    CREATE PREDICTOR  home_rentals_model FROM home_rentals_table PREDICT price;   
     ```
 
     ![Model](/assets/info/model.png)

@@ -24,8 +24,8 @@ We recommend installing MindsDB inside a virtual environment to avoid dependency
 2. Create a virtual environment and activate it:
 
     ```
-    python3 -m venv mindsdb
-    source mindsdb/bin/activate
+    python3 -m venv mindsdb-venv
+    source mindsdb-venv/bin/activate
     ```
 
 3. Install MindsDB prerequisites:

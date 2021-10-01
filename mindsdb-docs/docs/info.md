@@ -17,7 +17,7 @@ There are a few options to deploy MindsDB on different operating systems. To fin
 
 === "MindsDB Cloud"
 
-    !!! info "Installation"
+    !!! info "Deployment"
         Follow the [MindsDB cloud](/deployment/cloud) instructions.
 
 === "Windows"
@@ -30,9 +30,9 @@ There are a few options to deploy MindsDB on different operating systems. To fin
     !!! info "Deployment"
         Follow the [Linux deployment](/deployment/linux) instructions.
 
-=== "Deployment"
+=== "MacOS"
 
-    !!! info "Installation"
+    !!! info "Deployment"
         Follow the [macOS deployment](/deployment/macos) instructions.
 
 === "Source"
