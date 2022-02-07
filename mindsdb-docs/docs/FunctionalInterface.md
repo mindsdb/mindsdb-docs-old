@@ -18,7 +18,7 @@ Takes no argument, returns a list with all the models and some information about
 
 `F.get_model_data(model_name='model_name')`
 
-Returns all the data we have about a given model. This is a rather complex python dictionary meant to be interpreted by the Scout GUI. We recommend looking at the training logs mindsdb_native gives to see some of these insights in an easy to read format.
+Returns all the data we have about a given model. This is rather a complex python dictionary meant to be interpreted by the Scout GUI. We recommend looking at the training logs mindsdb_native gives to see some of these insights in an easy to read format.
 
 * model_name -- Required argument, the name of the model to return data about.
 
@@ -61,7 +61,7 @@ Loads a predictor that was previously exported into the current mindsdb_native s
 
 `F.delete_model(model_name='blah')`
 
-Deletes a given predictor from the storage path mindsdb_native is currently operating with.
+Deletes a given predictor from the storage path, with which mindsdb_native is currently operating with.
 
 * model_name -- The name of the model to delete (defaults to the name of the current Predictor).
 
@@ -69,7 +69,7 @@ Deletes a given predictor from the storage path mindsdb_native is currently oper
 
 `F.analyse_dataset(from_data=the_data_source, sample_settings={})`
 
-Analyse the dataset inside the data source, file, ulr or pandas dataframe. This runs all the steps prior to actually training a predictive model.
+Analyse the dataset inside the data source, file, url or pandas dataframe. This runs all the steps prior to actually training a predictive model.
 
 * from_data -- the data that you want to analyse, this can be either a file, a pandas data frame, a url or a mindsdb data source.
 * sample_settings --  A dictionary of options for sampling from the dataset. Includes `sample_for_analysis`. `sample_for_training`, `sample_margin_of_error`, `sample_confidence_level`, `sample_percentage`, `sample_function`.
