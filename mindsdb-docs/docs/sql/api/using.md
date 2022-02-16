@@ -34,5 +34,3 @@ use_gpu = 'True'
 | parameter   |      Type       |  example  |
 |----------|:-------------:|------:|
 | 'use_gpu' |  boolean  | True |
-
-If you haven't created a datasource after connecting to your database check out the simple steps explained [here](/connect/#create-new-datasource).
