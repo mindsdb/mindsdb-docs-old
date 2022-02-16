@@ -19,14 +19,30 @@ USING
 
 # Parameters:
 
- THE ENCODER KEY 
+## THE ENCODER KEY (USING encoders)
 
-Grants access to configure how each column is encoded; by default, the auto_ML will try to get the best match for the data. 
+Grants access to configure how each column is encoded; by default, the auto_ML will try to get the best match for the data.
+
+
+```sql
+... 
+USING 
+encoders.[column_name].module='value'
+;
+```
+
 To learn more about how encoders work and their options, go [here](https://lightwood.io/encoder.html).
 
- THE MODEL KEY 
+## THE MODEL KEY (USING model)
 
-Allows you to specify what type of Machine Learning algorithm to learn from the encoder data. 
+Allows you to specify what type of Machine Learning algorithm to learn from the encoder data.
+
+```sql
+... 
+USING 
+model.args [].=''
+;
+```
 
 To learn more about all the model options, go [here](https://lightwood.io/mixer.html).
 # Commmon Parameters Used
@@ -41,13 +57,21 @@ To learn more about all the model options, go [here](https://lightwood.io/mixer.
 # Actual example 
 
 ```sql
-CREATE PREDICTOR home_rentals_model
-FROM mariadb_integration
-    (SELECT * FROM test_data.home_rentals)
-PREDICT rental_price 
+CREATE PREDICTOR home_rentals_predictor 
+FROM my_db_integration (
+    SELECT * FROM home_rentals
+) PREDICT rental_price
 USING 
-use_gpu = 'True'
-,encoders.location.module='CategoricalAutoEncoder'
-,encoders.rental_price.module = 'NumericEncoder'
+    /* Change the encoder for a column */
+    encoders.location.module='CategoricalAutoEncoder',
+    /* Change the encoder for another colum (the target) */
+    encoders.rental_price.module = 'NumericEncoder',
+    /* Change the arguments that will be passed to that encoder */
+    encoders.rental_price.args.positive_domain = 'True',
+    /* Set the list of models lightwood will try to use to a single one, a Light Gradient Boosting Machine.*/
+    model.args='{"submodels": [{"module": "LightGBM", "args": {"stop_after": 12, "fit_on_dev": true}}]}';
 ;
 ```
+
+
+If you're unsure how to configure a model to solve your problem, feel free to ask us how to do it on the community [Slack workspace](https://join.slack.com/t/mindsdbcommunity/shared_invite/zt-o8mrmx3l-5ai~5H66s6wlxFfBMVI6wQ).
