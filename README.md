@@ -1,4 +1,4 @@
-# MindsDB Documentation
+# 🚧 MindsDB Documentation(Migrated to MindsDB repository) 🚧 
 [![Build Status](https://travis-ci.org/mindsdb/mindsdb-docs.svg?branch=master)](https://travis-ci.com/mindsdb/mindsdb-docs)
    <a href="https://community.mindsdb.com/"><img src="https://img.shields.io/discourse/posts?server=https%3A%2F%2Fcommunity.mindsdb.com%2F" alt="MindsDB Community"></a>
   <img alt="Website" src="https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fdocs.mindsdb.com%2F">
