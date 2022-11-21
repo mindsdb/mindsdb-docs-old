@@ -1,38 +1,74 @@
-# DROP statement
+# `#!sql DROP MODEL` Statement
 
-!!! info "Work in progress"
-    Note this feature is in beta version. If you have additional questions or issues [reach out to us on Slack](https://join.slack.com/t/mindsdbcommunity/shared_invite/zt-o8mrmx3l-5ai~5H66s6wlxFfBMVI6wQ).
-    
-The `DROP` statement is used to delete an existing model table or delete datasource integration.
+## Description
 
-## DROP TABLE statement
+The `#!sql DROP MODEL` statement deletes the model table.
 
-The `DROP TABLE` statement is used to delete the model table:
+## Syntax
 
-```
-DROP TABLE table_name;
-```
+Here is the syntax:
 
-### DROP TABLE example
-
-The following SQL statement drops the model table called `home_rentals_model`:
-
-```
-DROP TABLE home_rentals_model;
+```sql
+DROP MODEL [predictor_name];
 ```
 
-## DROP DATABASE statement
+On execution, we get:
 
-The `DROP DATABASE` statement is used to delete datasource integration database:
-
-```
-DROP DATABSE integration_name
+```sql
+Query OK, 0 rows affected (0.058 sec)
 ```
 
-### DROP DATABASE example
+Where:
 
-The following SQL statement drops the integration database called `psql_rentals`:
+| Name               | Description                      |
+| ------------------ | -------------------------------- |
+| `[predictor_name]` | Name of the model to be deleted. |
 
+## Example
+
+Let's list all the available predictor tables.
+
+```sql
+SELECT name
+FROM mindsdb.models;
 ```
-DROP TABLE psql_rentals;
+
+On execution, we get:
+
+```sql
++---------------------+
+| name                |
++---------------------+
+| other_model         |
+| home_rentals_model  |
++---------------------+
+```
+
+Now we delete the `home_rentals_model` table.
+
+```sql
+DROP MODEL home_rentals_model;
+```
+
+On execution, we get:
+
+```sql
+Query OK, 0 rows affected (0.058 sec)
+```
+
+We can check if the deletion was successful by querying the `mindsdb.models` table again.
+
+```sql
+SELECT name
+FROM mindsdb.models;
+```
+
+On execution, we get:
+
+```sql
++---------------------+
+| name                |
++---------------------+
+| other_model         |
++---------------------+
 ```

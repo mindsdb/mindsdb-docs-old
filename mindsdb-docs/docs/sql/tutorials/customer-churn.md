@@ -1,134 +1,260 @@
-MindsDB as a Machine Learning framework can help marketing, sales, and customer retention teams determine the best incentive and the right time to make an offer to minimize customer turnover.
+# Predicting Customer Churn with MindsDB
 
-In this tutorial you will learn how to use SQL queries to train a machine learning model and make predictions in three simple steps:
+## Introduction
 
-1. Connect a database with customer's data to MindsDB.
-2. Use an `CREATE PREDICTOR` statement to train the machine learning model automatically.
-3. Query predictions with a simple `SELECT` statement from MindsDB `AI Table` (this special table returns data from an ML model upon being queried).
+In this tutorial, we'll create and train a machine learning model, or as we call it, an `AI Table` or a `predictor`. By querying the model, we'll predict the probability of churn for new customers of a telecom company.
 
-Using SQL to perform machine learning at the data layer will bring you many benefits like removing unnecessary ETL-ing, seamless integration with your data, and enabling predictive analytics in your BI tool.  Let's see how this works with a real world example to predict the probability of churn for a new customer of a telecom company.
+Make sure you have access to a working MindsDB installation, either locally or at [MindsDB Cloud](https://cloud.mindsdb.com/).
 
-> Note: You can follow up this tutorial by connecting to your own database and using different data - the same workflow applies to most machine learning use cases.
+If you want to learn how to set up your account at MindsDB Cloud, follow [this guide](https://docs.mindsdb.com/setup/cloud/). Another way is to set up MindsDB locally using [Docker](https://docs.mindsdb.com/setup/self-hosted/docker/) or [Python](https://docs.mindsdb.com/setup/self-hosted/pip/source/).
 
-## Pre-requisites
+Let's get started.
 
-First, make sure you have succesfully installed MindsDB. Check out the installation guide for [Docker](/deployment/docker/) or [PyPi](/deployment/source/) install. Second, you will need to have mysql-client or DBeaver, MySQL WOrkbench etc installed locally to connect to MySQL API.
+## Data Setup
 
-## Database Connection
+### Connecting the Data
 
-First, we need to connect MindsDB to the database where the Customer Churn data is stored. In the left navigation click on Database. Next, click on the ADD DATABASE. Here, we need to provide all of the required parameters for connecting to the database.
+There are a couple of ways you can get the data to follow through with this tutorial.
 
-* Supported Database - select the database that you want to connect to
-* Integrations Name - add a name to the integration
-* Database - the database name
-* Host - database host name
-* Port - database port
-* Username - database user
-* Password - user's password
+=== "Connecting as a database"
 
-![Connect to DB](/assets/sql/tutorials/connect.gif)
+    You can connect to a demo database that we've prepared for you. It contains the data used throughout this tutorial (the `#!sql example_db.demo_data.customer_churn` table).
 
-Then, click on CONNECT. The next step is to use the MySQL client to connect to MindsDB’s MySQL API and train a new model that shall predict customer churn.
+    ```sql
+    CREATE DATABASE example_db
+    WITH ENGINE = "postgres",
+    PARAMETERS = {
+        "user": "demo_user",
+        "password": "demo_password",
+        "host": "3.220.66.106",
+        "port": "5432",
+        "database": "demo"
+    };
+    ```
 
-## Connect to MindsDB’s MySQL API
+    Now you can run queries directly on the demo database. Let's preview the data that we'll use to train our predictor.
 
-I will use a mysql command line client in the next part of the tutorial but you can follow up with the one that works the best for you, like Dbeaver. The first step is to use the MindsDB Cloud user to connect to the MySQL API:
+    ```sql
+    SELECT * 
+    FROM example_db.demo_data.customer_churn
+    LIMIT 10;
+    ```
 
-```
-mysql -h cloud-mysql.mindsdb.com --port 3306 -u theusername@mail.com -p
-```
+=== "Connecting as a file"
 
-In the above command, we specify the hostname and user name explicitly, as well as a password for connecting.
+    You can download [the `CSV` data file here](https://github.com/mindsdb/mindsdb-examples/blob/master/classics/customer_churn/raw_data/WA_Fn-UseC_-Telco-Customer-Churn.csv) and upload it via [MindsDB SQL Editor](/connect/mindsdb_editor/).
 
+    Follow [this guide](/sql/create/file/) to find out how to upload a file to MindsDB.
 
-![Connect mysql-client](/assets/sql/tutorials/connect.png)
+    Now you can run queries directly on the file as if it were a table. Let's preview the data that we'll use to train our predictor.
 
-If you got the above screen that means you have successfully connected. If you have an authentication error, please make sure you are providing the email address you have used to create an account on MindsDB Cloud.
+    ```sql
+    SELECT *
+    FROM files.churn
+    LIMIT 10;
+    ```
 
-### Data Overview
+!!! Warning "Pay Attention to the Queries"
+    From now on, we'll use the `#!sql files.churn` file as a table. Make sure you replace it with `example_db.demo_data.customer_churn` if you connect the data as a database.
 
-In this tutorial, we will use the customer churn data-set. Each row represents a customer and we will train a machine learning model to help us predict if the customer is going to stop using the company products. Below is a short description of each feature inside the data.
+### Understanding the Data
 
-* CustomerId - Customer ID
-* Gender - Male or Female customer
-* SeniorCitizen - Whether the customer is a senior citizen or not (1, 0)
-* Partner - Whether the customer has a partner or not (Yes, No)
-* Dependents - Whether the customer has dependents or not (Yes, No)
-* Tenure - Number of months the customer has stayed with the company
-* PhoneService - Whether the customer has a phone service or not (Yes, No)
-* MultipleLines - Whether the customer has multiple lines or not (Yes, No, No phone service)
-* InternetService - Customer’s internet service provider (DSL, Fiber optic, No)
-* OnlineSecurity - Whether the customer has online security or not (Yes, No, No internet service)
-* OnlineBackup - Whether the customer has online backup or not (Yes, No, No internet service)
-* DeviceProtection - Whether the customer has device protection or not (Yes, No, No internet service)
-* TechSupport - Whether the customer has tech support or not (Yes, No, No internet service)
-* StreamingTv - Whether the customer has streaming TV or not (Yes, No, No internet service)
-* StreamingMovies - Whether the customer has streaming movies or not (Yes, No, No internet service)
-* Contract - The contract term of the customer (Month-to-month, One year, Two year)
-* PaperlessBilling - Whether the customer has paperless billing or not (Yes, No)
-* PaymentMethod - The customer’s payment method (Electronic check, Mailed check, Bank transfer (automatic), Credit card (automatic))
-* MonthlyCharges - The monthly charge amount
-* TotalCharges - The total amount charged to the customer
-* Churn - Whether the customer churned or not (Yes or No). This is what we want to predict.
+We use the customer churn dataset, where each row is one customer, to predict whether the customer is going to stop using the company products.
 
-## Using SQL Statements to train/query models
-
-Now, we will train a new machine learning model from the datasource we have created using MindsDB Studio. 
-Switch back to mysql-client and run:
-
-```
-use mindsdb;
-show tables;
-```
-
-![use  mindsdb](/assets/sql/tutorials/use.png)
-
-You will notice there are 2 tables available inside the MindsDB database. To train a new machine learning model we will need to CREATE Predictor as a new record inside the predictors table as:
+Below is the sample data stored in the `#!sql files.churn` table.
 
 ```sql
-CREATE PREDICTOR predictor_name
-FROM integration_name 
-(SELECT column_name, column_name2 FROM table_name)
-PREDICT column_name as column_alias;
++----------+------+-------------+-------+----------+------+------------+----------------+---------------+--------------+------------+----------------+-----------+-----------+---------------+--------------+----------------+-------------------------+--------------+------------+-----+
+|customerID|gender|SeniorCitizen|Partner|Dependents|tenure|PhoneService|MultipleLines   |InternetService|OnlineSecurity|OnlineBackup|DeviceProtection|TechSupport|StreamingTV|StreamingMovies|Contract      |PaperlessBilling|PaymentMethod            |MonthlyCharges|TotalCharges|Churn|
++----------+------+-------------+-------+----------+------+------------+----------------+---------------+--------------+------------+----------------+-----------+-----------+---------------+--------------+----------------+-------------------------+--------------+------------+-----+
+|7590-VHVEG|Female|0            |Yes    |No        |1     |No          |No phone service|DSL            |No            |Yes         |No              |No         |No         |No             |Month-to-month|Yes             |Electronic check         |29.85         |29.85       |No   |
+|5575-GNVDE|Male  |0            |No     |No        |34    |Yes         |No              |DSL            |Yes           |No          |Yes             |No         |No         |No             |One year      |No              |Mailed check             |56.95         |1889.5      |No   |
+|3668-QPYBK|Male  |0            |No     |No        |2     |Yes         |No              |DSL            |Yes           |Yes         |No              |No         |No         |No             |Month-to-month|Yes             |Mailed check             |53.85         |108.15      |Yes  |
+|7795-CFOCW|Male  |0            |No     |No        |45    |No          |No phone service|DSL            |Yes           |No          |Yes             |Yes        |No         |No             |One year      |No              |Bank transfer (automatic)|42.3          |1840.75     |No   |
+|9237-HQITU|Female|0            |No     |No        |2     |Yes         |No              |Fiber optic    |No            |No          |No              |No         |No         |No             |Month-to-month|Yes             |Electronic check         |70.7          |151.65      |Yes  |
++----------+------+-------------+-------+----------+------+------------+----------------+---------------+--------------+------------+----------------+-----------+-----------+---------------+--------------+----------------+-------------------------+--------------+------------+-----+
 ```
 
-The required values that we need to provide are:
+Where:
 
-* predictor_name (string) - The name of the model
-* integration_name (string) - The name of connection to your database.
-* column_name (string) - The feature you want to predict.
+| Column                | Description                                                                                                              | Data Type           | Usage   |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------- | ------- |
+| `CustomerId`          | The identification number of a customer.                                                                                 | `character varying` | Feature |
+| `Gender`              | The gender of a customer.                                                                                                | `character varying` | Feature |
+| `SeniorCitizen`       | It indicates whether the customer is a senior citizen (`1`) or not (`0`).                                                | `integer`           | Feature |
+| `Partner`             | It indicates whether the customer has a partner (`Yes`) or not (`No`).                                                   | `character varying` | Feature |
+| `Dependents`          | It indicates whether the customer has dependents (`Yes`) or not (`No`).                                                  | `character varying` | Feature |
+| `Tenure`              | Number of months the customer has been staying with the company.                                                         | `integer`           | Feature |
+| `PhoneService`        | It indicates whether the customer has a phone service (`Yes`) or not (`No`).                                             | `character varying` | Feature |
+| `MultipleLines`       | It indicates whether the customer has multiple lines (`Yes`) or not (`No`, `No phone service`).                          | `character varying` | Feature |
+| `InternetService`     | Customer’s internet service provider (`DSL`, `Fiber optic`, `No`).                                                       | `character varying` | Feature |
+| `OnlineSecurity`      | It indicates whether the customer has online security (`Yes`) or not (`No`, `No internet service`).                      | `character varying` | Feature |
+| `OnlineBackup`        | It indicates whether the customer has online backup (`Yes`) or not (`No`, `No internet service`).                        | `character varying` | Feature |
+| `DeviceProtection`    | It indicates whether the customer has device protection (`Yes`) or not (`No`, `No internet service`).                    | `character varying` | Feature |
+| `TechSupport`         | It indicates whether the customer has tech support (`Yes`) or not (`No`, `No internet service`).                         | `character varying` | Feature |
+| `StreamingTv`         | It indicates whether the customer has streaming TV (`Yes`) or not (`No`, `No internet service`).                         | `character varying` | Feature |
+| `StreamingMovies`     | It indicates whether the customer has streaming movies (`Yes`) or not (`No`, `No internet service`).                     | `character varying` | Feature |
+| `Contract`            | The contract term of the customer (`Month-to-month`, `One year`, `Two year`).                                            | `character varying` | Feature |
+| `PaperlessBilling`    | It indicates whether the customer has paperless billinig (`Yes`) or not (`No`).                                          | `character varying` | Feature |
+| `PaymentMethod`       | Customer’s payment method (`Electronic check`, `Mailed check`, `Bank transfer (automatic)`, `Credit card (automatic)`).  | `character varying` | Feature |
+| `MonthlyCharges`      | The monthly charge amount.                                                                                               | `money`             | Feature |
+| `TotalCharges`        | The total amount charged to the customer.                                                                                | `money`             | Feature |
+| `Churn`               | It indicates whether the customer churned (`Yes`) or not (`No`).                                                         | `character varying` | Label   |
 
-To train the model that will predict customer churn run:
+!!!Info "Labels and Features"
+    A **label** is a column whose values will be predicted (the y variable in simple linear regression).<br/>
+    A **feature** is a column used to train the model (the x variable in simple linear regression).
+
+## Training a Predictor
+
+Let's create and train the machine learning model. For that, we use the [`#!sql CREATE MODEL`](/sql/create/predictor) statement and specify the input columns used to train `#!sql FROM` (features) and what we want to `#!sql PREDICT` (labels).
 
 ```sql
-CREATE PREDICTOR churn_model FROM demo (SELECT * FROM CustomerChurnData)
-PREDICT Churn as customer_churn USING {"ignore_columns": "gender"};
+CREATE MODEL mindsdb.customer_churn_predictor
+FROM files
+  (SELECT * FROM churn)
+PREDICT Churn;
 ```
 
-![INSERT query](/assets/sql/tutorials/insert.png)
+We use all of the columns as features, except for the `Churn` column, whose values will be predicted.
 
-What we did here was to create a predictor called `customer_churn `to predict the `Churn` and also ignore the `gender` column as an irrelevant column for the model. Also note that the ID columns in this case `customerId` will be automatically detected by MindsDB and ignored. The model training has started. To check if the training has finished you can SELECT the model name from the predictors table:
+## Status of a Predictor
+
+A predictor may take a couple of minutes for the training to complete. You can monitor the status of the predictor by using this SQL command:
 
 ```sql
-SELECT * FROM predictors WHERE name='churn_model';
+SELECT status
+FROM mindsdb.models
+WHERE name='customer_churn_predictor';
 ```
 
-The complete status means that the model training has successfully finished. 
-
-![SELECT status](/assets/sql/tutorials/status.png)
-
-The next steps would be to query the model and predict the customer churn. Let’s be creative and imagine a customer. Customer will use only DSL service, no phone service and multiple lines, she was with the company for 1 month and has a partner. Add all of this information to the `WHERE` clause.
+If we run it right after creating a predictor, we get this output:
 
 ```sql
-SELECT Churn, Churn_confidence, Churn_explain as Info  FROM customer_churn WHERE when_data='{"SeniorCitizen": 0, "Partner": "Yes", "Dependents": "No", "tenure": 1, "PhoneService": "No", "MultipleLines": "No phone service", "InternetService": "DSL"}';
++------------+
+| status     |
++------------+
+| generating |
++------------+
 ```
 
-![SELECT from model](/assets/sql/tutorials/select.png)
-
-With the confidence of around 82% MindsDB predicted that this customer will churn. One important thing to check here is the important_missing_information value, where MindsDB is pointing to the important missing information for giving a more accurate prediction, in this case, Contract, MonthlyCharges, TotalCharges and OnlineBackup. Let’s include those values in the WHERE clause, and run a new query:
+A bit later, this is the output:
 
 ```sql
-SELECT Churn, Churn_confidence, Churn_explain as Info  FROM customer_churn WHERE when_data='{"SeniorCitizen": 0, "Partner": "Yes", "Dependents": "No", "tenure": 1, "PhoneService": "No", "MultipleLines": "No phone service", "InternetService": "DSL", "OnlineSecurity": "No", "OnlineBackup": "Yes", "DeviceProtection": "No", "TechSupport": "No", "StreamingTV": "No", "StreamingMovies": "No", "Contract": "Month-to-month", "PaperlessBilling": "Yes", "PaymentMethod": "Electronic check", "MonthlyCharges": 29.85, "TotalCharges": 29.85}';
++----------+
+| status   |
++----------+
+| training |
++----------+
 ```
 
-![SELECT from model info](/assets/sql/tutorials/selecti.png)
+And at last, this should be the output:
+
+```sql
++----------+
+| status   |
++----------+
+| complete |
++----------+
+```
+
+Now, if the status of our predictor says `complete`, we can start making predictions!
+
+## Making Predictions
+
+### Making a Single Prediction
+
+You can make predictions by querying the predictor as if it were a table. The [`SELECT`](/sql/api/select/) statement lets you make predictions for the label based on the chosen features.
+
+```sql
+SELECT Churn, Churn_confidence, Churn_explain
+FROM mindsdb.customer_churn_predictor
+WHERE SeniorCitizen=0 
+AND Partner='Yes' 
+AND Dependents='No' 
+AND tenure=1 
+AND PhoneService='No' 
+AND MultipleLines='No phone service' 
+AND InternetService='DSL';
+```
+
+On execution, we get:
+
+```sql
++-------+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Churn | Churn_confidence    | Churn_explain                                                                                                                                                    |
++-------+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Yes   | 0.7752808988764045  | {"predicted_value": "Yes", "confidence": 0.7752808988764045, "anomaly": null, "truth": null, "probability_class_No": 0.4756, "probability_class_Yes": 0.5244}    |
++-------+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+```
+To get more accurate predictions, we should provide as much data as possible in the `WHERE` clause. Let's run another query.
+
+```sql
+SELECT Churn, Churn_confidence, Churn_explain
+FROM mindsdb.customer_churn_predictor
+WHERE SeniorCitizen=0 
+AND Partner='Yes' 
+AND Dependents='No' 
+AND tenure=1 
+AND PhoneService='No' 
+AND MultipleLines='No phone service' 
+AND InternetService='DSL'
+AND Contract='Month-to-month'
+AND MonthlyCharges=29.85
+AND TotalCharges=29.85
+AND OnlineBackup='Yes'
+AND OnlineSecurity='No' 
+AND DeviceProtection='No' 
+AND TechSupport='No' 
+AND StreamingTV='No' 
+AND StreamingMovies='No' 
+AND PaperlessBilling='Yes' 
+AND PaymentMethod='Electronic check';
+```
+
+On execution, we get:
+
+```sql
++-------+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Churn | Churn_confidence    | Churn_explain                                                                                                                                                    |
++-------+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Yes   | 0.8202247191011236  | {"predicted_value": "Yes", "confidence": 0.8202247191011236, "anomaly": null, "truth": null, "probability_class_No": 0.4098, "probability_class_Yes": 0.5902}    |
++-------+---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+```
+
+MindsDB predicted the probability of this customer churning with confidence of around 82%. The previous query predicted it with confidence of around 79%. So providing more data improved the confidence level of predictions.
+
+### Making Batch Predictions
+
+Also, you can make bulk predictions by joining a data table with your predictor using [`#!sql JOIN`](/sql/api/join).
+
+```sql
+SELECT t.customerID, t.Contract, t.MonthlyCharges, m.Churn 
+FROM files.churn AS t 
+JOIN mindsdb.customer_churn_predictor AS m
+LIMIT 100;
+```
+
+On execution, we get:
+
+```sql
++----------------+-------------------+------------------+---------+
+| customerID     | Contract          | MonthlyCharges   | Churn   |
++----------------+-------------------+------------------+---------+
+| 7590-VHVEG     | Month-to-month    | 29.85            | Yes     |
+| 5575-GNVDE     | One year          | 56.95            | No      |
+| 3668-QPYBK     | Month-to-month    | 53.85            | Yes     |
+| 7795-CFOCW     | One year          | 42.3             | No      |
+| 9237-HQITU     | Month-to-month    | 70.7             | Yes     |
++----------------+-------------------+------------------+---------+
+```
+
+## What's Next?
+
+Have fun while trying it out yourself!
+
+* Bookmark [MindsDB repository on GitHub](https://github.com/mindsdb/mindsdb).
+* Sign up for a free [MindsDB account](https://cloud.mindsdb.com/register).
+* Engage with the MindsDB community on [Slack](https://mindsdb.com/joincommunity) or [GitHub](https://github.com/mindsdb/mindsdb/discussions) to ask questions and share your ideas and thoughts.
+
+If this tutorial was helpful, please give us a GitHub star [here](https://github.com/mindsdb/mindsdb).

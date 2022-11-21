@@ -7,6 +7,8 @@ theme:
   custom_dir: overrides
   logo: assets/mdb_logo_w.svg
   favicon: assets/mdb_logo.png
+  font:
+      text: Inter
   icon:
     repo: fontawesome/brands/github
   features:
@@ -22,8 +24,6 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-extra:
-  disqus: docs-mindsdb-com
 plugins:
     - search:
         lang: 'en'
@@ -41,46 +41,132 @@ plugins:
             'databases/tutorials/AiTablesInPostgreSQL': 'tutorials/postgresql.md'
             'databases/tutorials/AiTablesInMySQL': 'tutorials/mysql.md'
             'databases/MariaDB': 'tutorials/mariadb.md'
-            'installation/Linux/': 'installation/linux.md'
-            'installation/Windows/': 'installation/windows.md'
-            'installation/MacOS/': 'installation/macos.md'
+            'installation/Linux/': '/deployment/linux.md'
+            'installation/Windows/': '/deployment/windows.md'
+            'installation/MacOS/': '/deployment/macos.md'
+            'installation/macos/': '/deployment/macos.md'
+            'installation/linux/': '/deployment/linux.md'
     - table-reader
-
+    - mkdocs-video
 markdown_extensions:
+  - attr_list
+  - md_in_html
   - codehilite
   - admonition
-  - pymdownx.tabbed
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.superfences
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
   - pymdownx.tasklist:
       custom_checkbox: true
+  - toc:
+      permalink: true
+  - tables
+
 nav:
-  - What is MindsDB: index.md
-  - Deploying MindsDB:
-    - Docker: deployment/docker.md
-    - Pip: deployment/pypi.md
-    - MindsDB Cloud: deployment/cloud.md
-  - Connect your data: connect.md
-  - Connect to MindsDB as a Database:
-      - Local Deployment: sql/connect/local.md
-      - MindsDB Cloud: sql/connect/cloud.md
-  - SQL:
-    - USE: sql/api/use.md
+  - Quickstart: index.md
+  - What is MindsDB?: what-is-mindsdb.md
+  - Deployment:
+    - Self-hosted:
+      - Docker: setup/self-hosted/docker.md
+      - pip:
+        - Windows via pip: setup/self-hosted/pip/windows.md
+        - Linux via pip: setup/self-hosted/pip/linux.md
+        - MacOS via pip: setup/self-hosted/pip/macos.md
+        - Sourcecode via pip: setup/self-hosted/pip/source.md
+    - Extend the Default MindsDB Configuration: setup/custom-config.md
+    - MindsDB Cloud: setup/cloud.md
+    - Digital Ocean: setup/digital-ocean.md
+    - Google Cloud Platform: setup/gcp.md
+    - Vultr Cloud: setup/vultr.md
+    - Civo Cloud: setup/civo.md
+  - Connect to MindsDB:
+      - DBeaver: connect/dbeaver.md
+      - DBT: connect/dbt.md
+      - Deepnote: connect/deepnote.md
+      - Kafka: connect/kafka.md
+      - MariaDB SkySQL: connect/connect-mariadb-skysql.md
+      - Metabase: connect/metabase.md
+      - MindsDB SQL Editor: connect/mindsdb_editor.md
+      - Mongo Compass: connect/mongo-compass.md
+      - Mongo Shell: connect/mongo-shell.md
+      - MySQL CLI: connect/mysql-client.md
+      - SQL Alchemy: connect/sql-alchemy.md
+      - Tableau: connect/tableau.md
+  - Data Setup in MindsDB: sql/create/databases.md
+  - Upload a File to MindsDB: sql/create/file.md
+  - MindsDB Data Insights: sql/data-insights.md
+  - Train a Predictor: sql/create/predictor.md
+  - Get a Prediction: sql/api/select.md
+  - Feature Engineering in MindsDB: sql/feature-eng.md
+  - SQL API:
+    - MindsDB Structure: sql/table-structure.md
+    - Running Native Queries: sql/native-queries.md
+    - PROJECTS: sql/project.md
     - CREATE:
-      - Predictor: sql/api/predictor.md
-      - View: sql/api/view.md
-    - DROP: sql/api/drop.md
+      - DATABASE: sql/create/databases.md
+      - MODEL: sql/create/predictor.md
+      - TABLE: sql/create/table.md
+      - VIEW: sql/create/view.md
+      - ML_ENGINE: sql/create/ml_engine.md
+    - UPDATE: sql/api/update.md
+    - INSERT INTO: sql/api/insert.md
+    - DESCRIBE MODEL: sql/api/describe.md
+    - RETRAIN: sql/api/retrain.md
+    - DROP MODEL: sql/api/drop.md
     - SELECT: sql/api/select.md
+    - SELECT from files: sql/api/select_files.md
     - JOIN: sql/api/join.md
+  - REST API:
+    - SQL Queries: rest/sql.md
+  - Mongo API:
+    - Collection Structure: mongo/collection-structure.md
+    - Insert():
+      - Databases: mongo/database.md
+      - Predictors: mongo/insert.md
+    - Stats(): mongo/stats.md
+    - Find(): mongo/find.md
+    - Delete(): mongo/delete.md
+  - Using Custom Models:
+    - MLflow: custom-model/mlflow.md
+    - Ray Serve: custom-model/ray-serve.md
+    - HuggingFace: custom-model/huggingface.md
+    - OpenAI: custom-model/openai.md
   - Tutorials:
-    - Regression: sql/tutorials/test.md
-    - Classification: 
+    - Regression:
+      - Home Rentals: sql/tutorials/home-rentals.md
+    - Classification:
       - Customer Churn: sql/tutorials/customer-churn.md
-    - Time series: sql/tutorials/test.md
-  - Contribution and Community:
-      - How to contribute: contribute.md
-      - Join our community: community.md
-      - FAQ: faq.md
+    - Time Series:
+      #- AI powered forecasts with MindsDB: sql/tutorials/mindsdb-superset-snowflake.md
+      - House Sales: sql/tutorials/house-sales-forecasting.md
+      - Brain Activity: sql/tutorials/eeg-forecasting.md
+  - Community Tutorials:
+    - Regression:
+      - Insurance Cost: sql/tutorials/insurance-cost-prediction.md
+      - Body Fat Prediction: sql/tutorials/bodyfat.md
+      - Process Quality: sql/tutorials/process-quality.md
+    - Classification:
+      - Crop Recommendation: sql/tutorials/crop-prediction.md
+      - Diabetes: sql/tutorials/diabetes.md
+      - Email spam: sql/tutorials/spam_emails_tutorial.md
+      - Mushrooms Hunting: sql/tutorials/mushrooms.md
+      - Heart Disease: sql/tutorials/heart-disease.md
+    - Tutorials List: tutorials.md
+  - Contributing Guide:
+      - MindsDB Installation for Development: contribute/install.md
+      - Bug Reports and Feature Requests: contribute/issues.md
+      - Building a New Integration: contribute/integrations.md
+      - Building an ML Engine: contribute/ml_handlers.md
+      - Writing Documentation: contribute/docs.md
+      - Docs Style Guide: docs-rules.md
+      - Testing and Improving Test Coverage: contribute/tests.md
+      - Writing Tutorials: contribute/tutorials.md
+  - Community:
+      - How to Contribute: contribute.md
+      - Join our Community: community.md
 extra_css:
   - stylesheets/extra.css
