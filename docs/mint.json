@@ -65,18 +65,18 @@
   },
   "navigation": [
     {
-      "group": "Introduction",
+      "group": "Overview",
       "pages": [
         "what-is-mindsdb",
         {
           "group": "Concepts",
           "pages": [
             "automation",
-            "model_types",
-            "sql/project",
+            "mindsdb-handlers",
             "data_sources",
             "ml_engines",
-            "mindsdb-handlers",
+            "sql/project",
+            "model-types",
             "tables_views_files"
           ]
         },
@@ -179,8 +179,7 @@
           "group": "MindsDB Cloud",
           "pages": [
             "setup/cloud",
-            "setup/cloud-starter",
-            "setup/cloud-pro"
+            "setup/cloud-starter"
           ]
         },
         {
@@ -275,6 +274,7 @@
             {
               "group": "REST API",
               "pages": [
+                "rest/overview",
                 "rest/usage"
               ]
             }
@@ -306,7 +306,6 @@
               "pages": [
                 "sdk_python/create_database",
                 "sdk_python/drop_database",
-                "sdk_python/get_database",
                 "sdk_python/list_databases"
               ]
             },
@@ -315,7 +314,6 @@
               "pages": [
                 "sdk_javascript/create_database",
                 "sdk_javascript/drop_database",
-                "sdk_javascript/get_database",
                 "sdk_javascript/list_databases"
               ]
             },
@@ -369,9 +367,9 @@
             {
               "group": "REST API",
               "pages": [
-                "rest/create",
-                "rest/delete",
-                "rest/list"
+                "rest/ml_engines/create",
+                "rest/ml_engines/delete",
+                "rest/ml_engines/list"
               ]
             }
           ]
@@ -398,7 +396,6 @@
               "pages": [
                 "sdk_python/create_project",
                 "sdk_python/drop_project",
-                "sdk_python/get_project",
                 "sdk_python/list_projects",
                 "sdk_python/query_projects"
               ]
@@ -408,17 +405,16 @@
               "pages": [
                 "sdk_javascript/create_project",
                 "sdk_javascript/drop_project",
-                "sdk_javascript/get_project",
                 "sdk_javascript/list_projects"
               ]
             },
             {
               "group": "REST API",
               "pages": [
-                "rest/projects/get-projects",
-                "rest/projects/get-project",
                 "rest/projects/create",
-                "rest/projects/drop"
+                "rest/projects/drop",
+                "rest/projects/get-projects",
+                "rest/projects/get-project"
               ]
             }
           ]
@@ -445,7 +441,6 @@
                 "mongo/models/insertOne",
                 "mongo/models/deleteOne",
                 "mongo/models/find",
-                "mongo/models/join",
                 "mongo/models/describe",
                 "mongo/models/retrain",
                 "mongo/models/finetune",
@@ -457,7 +452,6 @@
               "pages": [
                 "sdk_python/create_model",
                 "sdk_python/drop_model",
-                "sdk_python/get_model",
                 "sdk_python/list_models",
                 "sdk_python/describe",
                 "sdk_python/get_status",
@@ -470,15 +464,14 @@
             {
               "group": "JavaScript",
               "pages": [
-                "sdk_python/create_model",
-                "sdk_python/drop_model",
-                "sdk_python/get_model",
-                "sdk_python/list_models",
-                "sdk_python/describe",
-                "sdk_python/get_status",
-                "sdk_python/retrain",
-                "sdk_python/finetune",
-                "sdk_python/manage-model-versions"
+                "sdk_javascript/create_model",
+                "sdk_javascript/drop_model",
+                "sdk_javascript/list_models",
+                "sdk_javascript/describe",
+                "sdk_javascript/get_status",
+                "sdk_javascript/retrain",
+                "sdk_javascript/finetune",
+                "sdk_javascript/manage-model-versions"
               ]
             },
             {
@@ -508,7 +501,8 @@
             {
               "group": "Mongo-QL",
               "pages": [
-                "mongo/make predictions"
+                "mongo/make predictions",
+                "mongo/models/join"
               ]
             },
             {
