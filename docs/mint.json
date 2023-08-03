@@ -501,8 +501,7 @@
             {
               "group": "Mongo-QL",
               "pages": [
-                "mongo/make predictions",
-                "mongo/models/join"
+                "mongo/models/make-predictions"
               ]
             },
             {
@@ -521,13 +520,14 @@
             {
               "group": "REST API",
               "pages": [
-                "rest/models/query-model"
+                "rest/models/query-model",
+                "rest/models/query-model-joined-with-data"
               ]
             }
           ]
         },
         {
-          "group": "Work with Tables, Views, and Files",
+          "group": "Tables, Views, and Files",
           "pages": [
             {
               "group": "SQL",
@@ -538,7 +538,7 @@
                 "sql/drop/view",
                 "sql/create/file",
                 "sql/drop/file",
-                "sql/select",
+                "sql/api/select",
                 "sql/api/select-files",
                 "sql/native-queries",
                 "sql/api/update",
@@ -557,7 +557,6 @@
                 "sdk_python/insert_into_table",
                 "sdk_python/create_view",
                 "sdk_python/drop_view",
-                "sdk_python/get_view",
                 "sdk_python/list_views",
                 "sdk_python/upload_file",
                 "sdk_python/delete_file",
@@ -624,7 +623,6 @@
               "pages": [
                 "sdk_python/create_job",
                 "sdk_python/drop_job",
-                "sdk_python/get_job",
                 "sdk_python/list_jobs",
                 "sdk_python/refresh_job",
                 "sdk_python/get_history"

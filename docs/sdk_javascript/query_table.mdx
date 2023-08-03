@@ -1,6 +1,17 @@
 ---
-title: todo
-sidebarTitle: query_table
+title: runQuery('SELECT ...')
+sidebarTitle: runQuery('SELECT ...')
 ---
 
-TODO
+## Description
+
+The `runQuery()` function executes a query given as its argument directly in MindsDB.
+
+## Syntax
+
+Here is the syntax:
+
+```
+const query = `SELECT * FROM table_name`;
+const queryResult = await MindsDB.SQL.runQuery(query);
+```
