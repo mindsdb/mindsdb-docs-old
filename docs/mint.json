@@ -149,6 +149,7 @@
       "group": "Overview",
       "pages": [
         "what-is-mindsdb",
+        "quickstart",
         {
           "group": "Concepts",
           "pages": [
@@ -176,7 +177,6 @@
     {
       "group": "Use Cases",
       "pages": [
-        "quickstart",
         {
           "group": "Chatbots",
           "pages": [
